@@ -4,9 +4,9 @@
     i18n_domain="eea">
 
   <browser:page
-    for="*"
+    for="collective.sendaspdf.tool.ISendAsPDFTool"
     layer="eea.pdf.interfaces.ILayer"
-    name="eea.pdf.view"
+    name="view"
     template="zpt/view.pt"
     class=".app.view.View"
     permission="zope2.View"

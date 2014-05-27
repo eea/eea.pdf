@@ -1,22 +1,21 @@
-================
+=======
 EEA PDF
-================
-Download as PDF
+=======
+Extend collective.sendaspdf functionality
 
 .. contents::
 
 
 Installation
 ============
+
   * Go to admin > Site Setup > Add-ons
   * Activate eea.pdf
 
 Getting started
 ===============
 
-1.
-2.
-3.
+  * Go to admin > Site Setup > PDF Settings
 
 Authors
 =======

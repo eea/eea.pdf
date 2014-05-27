@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <object name="portal_controlpanel">
 
-  <configlet
-    title="EEA PDF Settings"
-    action_id="eea.pdf.settings"
-    icon_expr="string:$portal_url/++resource++eea.pdf.images/icon.png"
-    appId="eea.pdf"
-    category="Products"
-    condition_expr=""
-    url_expr="string:$portal_url/@@pdf-controlpanel"
-    visible="True">
-      <permission>Manage portal</permission>
-  </configlet>
+ <configlet
+  title="PDF Settings"
+  action_id="sendaspdf"
+  appId="collective.sendaspdf"
+  category="Products"
+  condition_expr=""
+  icon_expr="string:$portal_url/++resource++eea.pdf.images/icon.png"
+  url_expr="string:${portal_url}/portal_sendaspdf"
+  visible="True">
+  <permission>Manage portal</permission>
+ </configlet>
 
 </object>

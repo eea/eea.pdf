@@ -37,6 +37,8 @@ setup(name=NAME,
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'collective.sendaspdf',
+          'eea.converter',
       ],
       entry_points="""
       # -*- entry_points -*-

@@ -2,10 +2,4 @@
   xmlns="http://namespaces.zope.org/zope"
   i18n_domain="eea">
 
-  <permission
-    id="eea.pdf.add"
-    title="eea.pdf: Add"
-    description="Add EEA PDF"
-    />
-
 </configure>

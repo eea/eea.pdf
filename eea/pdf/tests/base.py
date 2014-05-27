@@ -15,6 +15,9 @@ class EEAFixture(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         """ Setup Zope
         """
+        import collective.sendaspdf
+        self.loadZCML(package=collective.sendaspdf)
+
         import eea.pdf
         self.loadZCML(package=eea.pdf)
         z2.installProduct(app, 'eea.pdf')
