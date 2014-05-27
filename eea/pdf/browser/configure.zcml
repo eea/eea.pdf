@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="eea">
+
+  <browser:page
+    for="*"
+    layer="eea.pdf.interfaces.ILayer"
+    name="eea.pdf.view"
+    template="zpt/view.pt"
+    class=".app.view.View"
+    permission="zope2.View"
+    />
+
+  <browser:resource
+    name="eea.pdf.view.css"
+    file="./css/view.css"
+   />
+
+  <browser:resource
+    name="eea.pdf.view.js"
+    file="./js/view.js"
+   />
+
+  <browser:resourceDirectory
+    name="eea.pdf.images"
+    directory="./img" />
+
+</configure>

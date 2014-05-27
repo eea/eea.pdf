@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<layers>
+  <layer name="eea.pdf.layer"
+    interface="eea.pdf.interfaces.ILayer" />
+</layers>
