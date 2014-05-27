@@ -3,4 +3,6 @@ Changelog
 
 1.0-dev - (unreleased)
 ----------------------
-- Initial release
+* Upgrade step: Within "Plone > Site setup > Add-ons" install "EEA PDF"
+  [voineali refs #19761]
+* Initial release
