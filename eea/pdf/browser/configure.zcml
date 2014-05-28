@@ -6,9 +6,9 @@
   <browser:page
     for="collective.sendaspdf.tool.ISendAsPDFTool"
     layer="eea.pdf.interfaces.ILayer"
-    name="view"
-    template="zpt/view.pt"
-    class=".app.view.View"
+    name="themes"
+    template="zpt/themes.pt"
+    class=".app.themes.Themes"
     permission="zope2.View"
     />
 

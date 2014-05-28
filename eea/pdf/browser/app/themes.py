@@ -2,6 +2,6 @@
 """
 from Products.Five.browser import BrowserView
 
-class View(BrowserView):
+class Themes(BrowserView):
     """ Custom view controller
     """
