@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+        metal:use-macro="here/main_template/macros/master"
+        i18n:domain="eea">
+
+<body>
+<metal:content-core fill-slot="content-core">
+  <metal:block define-macro="listing"
+               extend-macro="context/folder_listing/macros/content-core">
+    <metal:entries fill-slot="entries">
+      <metal:block use-macro="context/folder_listing/macros/entries">
+        <metal:entry fill-slot="entry">
+          <div class="eea-pdf-tool tileItem visualIEFloatFix" tal:define="
+                  item_object item/getObject;
+                  index repeat/item/index;
+                  default python: index == 0">
+
+            <div class="eea-pdf-thumb" tal:condition="exists:item_object/image_thumb">
+                <a
+                   tal:attributes="href string:$item_url/edit">
+                  <img tal:attributes="src string:$item_url/image_thumb" />
+                </a>
+            </div>
+
+            <h2 class="tileHeadline"
+                    metal:define-macro="listitem">
+
+              <a href="#"
+                 class="summary url" tal:attributes="href string:$item_url/edit">
+                <span tal:content="item_title_or_id">Title or id</span>
+                <span tal:condition="default" i18n:translate="">(default)</span>
+              </a>
+
+            </h2>
+
+            <p class="tileBody" tal:define="types python:item_object.getField('types').getAccessor(item_object)()">
+                <strong i18n:translate="">Used for:</strong>
+                <span class="description" tal:content="python:', '.join(types)">Portal types</span>
+            </p>
+          </div>
+        </metal:entry>
+      </metal:block>
+    </metal:entries>
+  </metal:block>
+</metal:content-core>
+</body>
+</html>

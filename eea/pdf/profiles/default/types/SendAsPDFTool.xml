@@ -6,7 +6,7 @@
    <element value="themes" />
  </property>
  <action title="Themes" action_id="view" category="object" condition_expr=""
-         url_expr="string:${object_url}" visible="True">
+         url_expr="string:${portal_url}/portal_pdf" visible="True">
    <permission value="Manage portal" />
  </action>
   <action title="Advanced settings" action_id="edit" category="object" condition_expr=""

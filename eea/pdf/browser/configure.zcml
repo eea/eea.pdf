@@ -4,21 +4,30 @@
     i18n_domain="eea">
 
   <browser:page
-    for="collective.sendaspdf.tool.ISendAsPDFTool"
+    for="eea.pdf.interfaces.IPDFTool"
     layer="eea.pdf.interfaces.ILayer"
-    name="themes"
-    template="zpt/themes.pt"
-    class=".app.themes.Themes"
+    name="view"
+    template="zpt/tool.pt"
+    class=".app.tool.Tool"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="eea.pdf.interfaces.IPDFTheme"
+    layer="eea.pdf.interfaces.ILayer"
+    name="view"
+    template="zpt/theme.pt"
+    class=".app.theme.Theme"
     permission="zope2.View"
     />
 
   <browser:resource
-    name="eea.pdf.view.css"
+    name="eea.pdf.css"
     file="./css/view.css"
    />
 
   <browser:resource
-    name="eea.pdf.view.js"
+    name="eea.pdf.js"
     file="./js/view.js"
    />
 

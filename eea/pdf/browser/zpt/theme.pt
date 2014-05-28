@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+  metal:use-macro="here/main_template/macros/master"
+  i18n:domain="eea">
+
+  <body>
+    <div metal:fill-slot="content-core" >
+      <div class="eea-pdf">
+        <div class="eea-pdf-thumb" tal:condition="exists:context/image_preview">
+          <img tal:define="url context/absolute_url" tal:attributes="src string:$url/image_preview" />
+        </div>
+
+        <div class="eea-pdf-body">
+          <strong i18n:translate="">Used for:</strong>
+          <span tal:define="types view/types" tal:content="python:', '.join(types)">Portal types</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -8,7 +8,7 @@
   category="Products"
   condition_expr=""
   icon_expr="string:$portal_url/++resource++eea.pdf.images/icon.png"
-  url_expr="string:${portal_url}/portal_sendaspdf"
+  url_expr="string:${portal_url}/portal_pdf"
   visible="True">
   <permission>Manage portal</permission>
  </configlet>

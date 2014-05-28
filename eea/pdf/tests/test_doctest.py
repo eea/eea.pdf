@@ -28,6 +28,12 @@ def test_suite():
             layer=FUNCTIONAL_TESTING),
         layered(
             doctest.DocFileSuite(
+                'content/interfaces.py',
+                optionflags=OPTIONFLAGS,
+                package='eea.pdf'),
+            layer=FUNCTIONAL_TESTING),
+        layered(
+            doctest.DocFileSuite(
                 'README.txt',
                 optionflags=OPTIONFLAGS,
                 package='eea.pdf'),
