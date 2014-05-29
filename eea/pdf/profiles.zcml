@@ -23,4 +23,19 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:importStep
+    name="pdf.xml"
+    title="PDF Settings"
+    description="PDF Themes"
+    handler="eea.pdf.exportimport.importPDFTool">
+    <depends name="toolset"/>
+  </genericsetup:importStep>
+
+  <genericsetup:exportStep
+    name="pdf.xml"
+    title="PDF Settings"
+    description="PDF Themes"
+    handler="eea.pdf.exportimport.exportPDFTool"
+    />
+
 </configure>

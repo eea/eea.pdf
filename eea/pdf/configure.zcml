@@ -10,6 +10,7 @@
 
   <include package=".browser" />
   <include package=".content" />
+  <include package=".exportimport" />
   <include package=".upgrades" />
 
 </configure>

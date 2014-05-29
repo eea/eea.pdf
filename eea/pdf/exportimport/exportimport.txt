@@ -1,0 +1,66 @@
+=====================
+EEA PDF Export/Import
+=====================
+XML Adapters to be used within GenericSetup profiles
+
+::
+
+    >>> from zope.interface import alsoProvides
+    >>> from zope.component import queryMultiAdapter
+    >>> from Products.GenericSetup.interfaces import IBody
+    >>> from Products.GenericSetup.testing import DummySetupEnviron
+    >>> from Products.CMFCore.utils import getToolByName
+    >>> from eea.pdf.interfaces import ILayer
+
+PDF Themes
+==========
+XML Adapters to be used within GenericSetup profiles.
+
+Exporter
+
+    >>> from zope.component import queryUtility
+    >>> from eea.pdf.interfaces import IPDFTool
+    >>> tool = queryUtility(IPDFTool)
+    >>> exporter = importer = queryMultiAdapter((tool, DummySetupEnviron()), IBody)
+    >>> exporter
+    <eea.pdf.exportimport.tool.PDFToolXMLAdapter object at ...>
+
+See default settings
+
+    >>> print exporter.body
+    <?xml version="1.0" encoding="utf-8"?>
+    <object name="portal_pdf" meta_type="PDFTool"/>
+
+Import some data.
+
+    >>> importer.body = '''<?xml version="1.0" encoding="utf-8"?>
+    ... <object name="portal_pdf" meta_type="PDFTool">
+    ...  <object name="zu" meta_type="PDFTheme">
+    ...   <property name="title">ZU Theme</property>
+    ...   <property name="types">
+    ...    <element value="Document" />
+    ...   </property>
+    ...  </object>
+    ... </object>
+    ... '''
+
+Export
+
+    >>> print exporter.body
+    <?xml version="1.0" encoding="utf-8"?>
+    <object name="portal_pdf" meta_type="PDFTool">
+     <object name="zu" meta_type="PDFTheme">
+      <property name="title">ZU Theme</property>
+      <property name="cover">@@pdf.cover</property>
+      <property name="disclaimer">@@pdf.disclaimer</property>
+      <property name="body">@@pdf.body</property>
+      <property name="backdisclaimer">@@pdf.disclaimer.back</property>
+      <property name="backcover">@@pdf.cover.back</property>
+      <property name="header">@@pdf.header</property>
+      <property name="footer">@@pdf.footer</property>
+      <property name="types">
+       <element value="Document"/>
+      </property>
+      <property name="image"></property>
+     </object>
+    </object>
