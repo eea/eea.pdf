@@ -1,0 +1,22 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="eea">
+
+  <adapter
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    provides="collective.sendaspdf.interfaces.ISendAsPDFOptionsMaker"
+    factory=".pdfview.OptionsMaker"/>
+
+  <browser:page
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    name="download.pdf"
+    class=".pdfview.Download"
+    permission="zope2.View"
+    />
+
+  <!-- Themes -->
+  <include package=".classical" />
+  <include package=".modern" />
+
+</configure>

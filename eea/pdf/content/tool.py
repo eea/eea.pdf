@@ -22,3 +22,9 @@ class PDFTool(UniqueObject, ATFolder):
         for theme in self.objectValues('PDFTheme'):
             return theme
         return None
+
+    def themes(self):
+        """ Available themes
+        """
+        for theme in self.objectValues('PDFTheme'):
+            yield theme

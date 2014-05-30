@@ -11,6 +11,7 @@
   <include package=".browser" />
   <include package=".content" />
   <include package=".exportimport" />
+  <include package=".themes" />
   <include package=".upgrades" />
 
 </configure>

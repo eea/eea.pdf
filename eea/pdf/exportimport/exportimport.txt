@@ -51,13 +51,12 @@ Export
     <object name="portal_pdf" meta_type="PDFTool">
      <object name="zu" meta_type="PDFTheme">
       <property name="title">ZU Theme</property>
-      <property name="cover">@@pdf.cover</property>
-      <property name="disclaimer">@@pdf.disclaimer</property>
-      <property name="body">@@pdf.body</property>
-      <property name="backdisclaimer">@@pdf.disclaimer.back</property>
-      <property name="backcover">@@pdf.cover.back</property>
-      <property name="header">@@pdf.header</property>
-      <property name="footer">@@pdf.footer</property>
+      <property name="cover">pdf.cover</property>
+      <property name="body">pdf.body</property>
+      <property name="backcover">pdf.cover.back</property>
+      <property name="header">pdf.header</property>
+      <property name="footer">pdf.footer</property>
+      <property name="offset">0</property>
       <property name="types">
        <element value="Document"/>
       </property>

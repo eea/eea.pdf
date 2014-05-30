@@ -27,6 +27,15 @@ class IPDFTool(Interface):
 
         """
 
+    def themes():
+        """ Available themes
+
+            >>> ptool.themes()
+            <generator object themes at ...>
+
+        """
+
+
 class IPDFTheme(Interface):
     """
     Content-type

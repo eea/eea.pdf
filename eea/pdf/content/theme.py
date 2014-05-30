@@ -10,7 +10,7 @@ from eea.pdf.config import EEAMessageFactory as _
 EditSchema = atapi.Schema((
     atapi.StringField('cover',
         schemata='default',
-        default='@@pdf.cover',
+        default='pdf.cover',
         widget=atapi.StringWidget(
             label=_(u"Cover"),
             description=_(
@@ -19,21 +19,9 @@ EditSchema = atapi.Schema((
             )
         )
     ),
-    atapi.StringField('disclaimer',
-        schemata='default',
-        default='@@pdf.disclaimer',
-        widget=atapi.StringWidget(
-            label=_(u"Disclaimer"),
-            description=_(
-                u"A page template to be used for PDF Disclaimer, "
-                u"the page between PDF Cover and PDF Body. "
-                u"Leave empty to disable it."
-            )
-        )
-    ),
     atapi.StringField('body',
         schemata='default',
-        default='@@pdf.body',
+        default='pdf.body',
         widget=atapi.StringWidget(
             label=_(u"Body"),
             description=_(
@@ -42,20 +30,9 @@ EditSchema = atapi.Schema((
             )
         )
     ),
-    atapi.StringField('backdisclaimer',
-        schemata='default',
-        default='@@pdf.disclaimer.back',
-        widget=atapi.StringWidget(
-            label=_(u"Back disclaimer"),
-            description=_(
-                u"A page template to be used for PDF back disclaimer. "
-                u"Leave empty to disable it."
-            )
-        )
-    ),
     atapi.StringField('backcover',
         schemata='default',
-        default='@@pdf.cover.back',
+        default='pdf.cover.back',
         widget=atapi.StringWidget(
             label=_(u"Back Cover"),
             description=_(
@@ -66,7 +43,7 @@ EditSchema = atapi.Schema((
     ),
     atapi.StringField('header',
         schemata='default',
-        default='@@pdf.header',
+        default='pdf.header',
         widget=atapi.StringWidget(
             label=_(u"Header"),
             description=_(
@@ -77,12 +54,22 @@ EditSchema = atapi.Schema((
     ),
     atapi.StringField('footer',
         schemata='default',
-        default='@@pdf.footer',
+        default='pdf.footer',
         widget=atapi.StringWidget(
             label=_(u"Footer"),
             description=_(
                 u"A page template to be used for PDF Footer. "
                 u"Leave empty to disable it."
+            )
+        )
+    ),
+    atapi.IntegerField('offset',
+        schemata='default',
+        default=0,
+        widget=atapi.IntegerWidget(
+            label=_('Offset'),
+            description=_(
+                u"Page numbering offset within PDF Body"
             )
         )
     ),

@@ -38,7 +38,7 @@ setup(name=NAME,
           'setuptools',
           # -*- Extra requirements: -*-
           'collective.sendaspdf',
-          'eea.converter',
+          'eea.converter > 6.7',
       ],
       entry_points="""
       # -*- entry_points -*-
