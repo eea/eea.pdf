@@ -1,8 +1,7 @@
 """ XML Adapter
 """
 import logging
-from zope import schema
-from zope.component import queryMultiAdapter, queryAdapter
+from zope.component import queryMultiAdapter
 from Products.GenericSetup.utils import XMLAdapterBase
 from Products.GenericSetup.interfaces import IBody
 from eea.pdf.interfaces import IPDFTool

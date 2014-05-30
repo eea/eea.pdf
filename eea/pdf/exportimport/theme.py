@@ -2,8 +2,6 @@
 """
 from zope.event import notify
 from zope.lifecycleevent import ObjectModifiedEvent
-from zope.component import queryMultiAdapter
-from Products.GenericSetup.interfaces import IBody
 from Products.GenericSetup.utils import XMLAdapterBase
 from eea.pdf.interfaces import IPDFTheme
 from eea.pdf.content.theme import EditSchema
