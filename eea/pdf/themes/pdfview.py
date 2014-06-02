@@ -13,6 +13,8 @@ class Mixin(object):
     """
     @property
     def theme(self):
+        """ Get associated theme
+        """
         theme = getattr(self, '_theme', None)
         if theme is not None:
             return self._theme
@@ -56,6 +58,11 @@ class Mixin(object):
 class OptionsMaker(PDFOptionsMaker, Mixin):
     """ Custom PDF options maker
     """
+    def __init__(self, context):
+        super(OptionsMaker, self).__init__(context)
+        self._header = None
+        self._footer = None
+
     @property
     def header(self):
         """ Safely get pdf.header
@@ -99,6 +106,8 @@ class Download(PDFDownload, Mixin):
     """
     def __init__(self, context, request):
         super(Download, self).__init__(context, request)
+        self._cover = None
+        self._body = None
         self._backcover = None
 
     @property
