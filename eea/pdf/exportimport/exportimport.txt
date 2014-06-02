@@ -29,7 +29,14 @@ See default settings
 
     >>> print exporter.body
     <?xml version="1.0" encoding="utf-8"?>
-    <object name="portal_pdf" meta_type="PDFTool"/>
+    <object name="portal_pdf" meta_type="PDFTool">
+     <object name="classical" meta_type="PDFTheme">
+     ...
+     </object>
+     <object name="modern" meta_type="PDFTheme">
+     ...
+     </object>
+    </object>
 
 Import some data.
 
@@ -44,11 +51,24 @@ Import some data.
     ... </object>
     ... '''
 
+Update lists elements
+
+    >>> importer.body = '''<?xml version="1.0" encoding="utf-8"?>
+    ... <object name="portal_pdf">
+    ...  <object name="zu">
+    ...   <property name="types">
+    ...    <element value="Event" />
+    ...   </property>
+    ...  </object>
+    ... </object>
+    ... '''
+
 Export
 
     >>> print exporter.body
     <?xml version="1.0" encoding="utf-8"?>
     <object name="portal_pdf" meta_type="PDFTool">
+     ...
      <object name="zu" meta_type="PDFTheme">
       <property name="title">ZU Theme</property>
       <property name="cover">pdf.cover</property>
@@ -58,6 +78,7 @@ Export
       <property name="footer">pdf.footer</property>
       <property name="offset">0</property>
       <property name="types">
+       <element value="Event"/>
        <element value="Document"/>
       </property>
       <property name="image"></property>

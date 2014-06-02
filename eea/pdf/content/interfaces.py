@@ -23,7 +23,7 @@ class IPDFTool(Interface):
          Default theme is the first child of type PDFTheme
 
             >>> print ptool.default()
-            None
+            <PDFTheme at ...>
 
         """
 
@@ -40,13 +40,9 @@ class IPDFTheme(Interface):
     """
     Content-type
 
-        >>> cid = ptool.invokeFactory('PDFTheme', id='classical')
+        >>> cid = ptool.invokeFactory('PDFTheme', id='zu')
         >>> theme = ptool[cid]
         >>> theme
-        <PDFTheme at /plone/portal_pdf/classical>
-
-        >>> cid = ptool.invokeFactory('PDFTheme', id='modern')
-        >>> ptool.default()
-        <PDFTheme at /plone/portal_pdf/classical>
+        <PDFTheme at /plone/portal_pdf/zu>
 
     """

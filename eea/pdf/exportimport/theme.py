@@ -53,19 +53,26 @@ class PDFThemeXMLAdapter(XMLAdapterBase):
                 name = child.getAttribute('name')
                 purge = child.getAttribute('purge')
                 purge = self._convertToBoolean(purge)
+
                 elements = []
+                field = self.context.getField(name)
                 for element in child.childNodes:
                     if element.nodeName != 'element':
                         continue
                     elements.append(element.getAttribute('value'))
                 if elements:
-                    value = (not purge) and elements or []
+                    if not purge:
+                        value = elements
+                        oldValue = field.getAccessor(self.context)()
+                        value.extend(x for x in oldValue if x not in value)
+                    else:
+                        value = []
+
                 else:
                     value = self._getNodeText(child)
                     value = value.decode('utf-8')
                     value = (not purge) and value or u''
 
-                field = self.context.getField(name)
                 field.getMutator(self.context)(value)
                 notify(ObjectModifiedEvent(self.context))
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="portal_pdf" meta_type="PDFTool">
+ <object name="classical" meta_type="PDFTheme">
+  <property name="title">Classical</property>
+  <property name="cover">pdf.cover</property>
+  <property name="body">pdf.body</property>
+  <property name="backcover"></property>
+  <property name="header">pdf.header</property>
+  <property name="footer">pdf.footer</property>
+  <property name="offset">3</property>
+  <property name="types"/>
+  <property name="image"></property>
+ </object>
+ <object name="modern" meta_type="PDFTheme">
+  <property name="title">Modern</property>
+  <property name="cover">modern.pdf.cover</property>
+  <property name="body">modern.pdf.body</property>
+  <property name="backcover"></property>
+  <property name="header">pdf.header</property>
+  <property name="footer">pdf.footer</property>
+  <property name="offset">0</property>
+  <property name="types"/>
+  <property name="image"></property>
+ </object>
+</object>
