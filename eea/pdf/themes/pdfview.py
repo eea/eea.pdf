@@ -54,6 +54,8 @@ class Mixin(object):
         """ Get template by name
         """
         template = self.getValue(name)
+        if not template:
+            return default
         return self.context.restrictedTraverse(template, default)
 
 
