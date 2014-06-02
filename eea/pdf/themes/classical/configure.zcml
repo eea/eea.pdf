@@ -1,5 +1,21 @@
 <configure
-  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
   i18n_domain="eea">
+
+  <browser:page
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    name="pdf.cover"
+    template="cover.pt"
+    class=".cover.Cover"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    name="pdf.body"
+    template="body.pt"
+    class=".body.Body"
+    permission="zope2.View"
+    />
 
 </configure>

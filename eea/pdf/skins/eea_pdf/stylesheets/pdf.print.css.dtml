@@ -1,0 +1,226 @@
+/* Body
+------- */
+
+@font-face {
+  font-family: "Palatino Linotype";
+  src: local("TeX Gyre Pagella");
+}
+
+body {
+  font-family: "Palatino Linotype", Arial, sans-serif !important;
+  font-size: 10pt;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+.documentFirstHeading,
+.documentDescription,
+p.discreet,
+.cover-header,
+.cover-copyright
+{
+  font-family: Verdana, sans-serif !important;
+}
+
+img {
+  max-width: 100%;
+  page-break-inside: avoid;
+}
+
+.documentFirstHeading {
+  font-size: 18pt;
+  text-align: right;
+}
+
+.documentDescription {
+  font-size: 12pt;
+  text-align: right;
+  font-weight: normal;
+}
+
+
+/* hidden elements */
+.annotator-widget,
+#article-language,
+.eea-annotator,
+.eea-location-listing,
+.fiche-thumbnail,
+.figure-plus-container-wide,
+.figure-plus-wide,
+.figure-image,
+.geographical-coverage,
+iframe,
+#portal-footer,
+.portal-logo,
+.portlet.toc,
+#relatedItems .photoAlbumEntryWrapper,
+#relatedItems .photoAlbumEntryDescription,
+.temporal-coverage
+{
+  display: none;
+}
+
+
+/* Messages */
+
+.callout,
+.keyFact,
+.portalMessage,
+.system-message {
+  page-break-inside: avoid;
+}
+
+.warningMessage {
+  font-size: 10pt;
+}
+
+.warningMessage .qr {
+  float: right;
+}
+
+.warningMessage a, .warningMessage a:visited {
+  display: block;
+  color: #346F83 !important;
+}
+
+p.discreet {
+  border-bottom: 1px solid #333;
+  font-size: 9pt;
+  padding-bottom: 10pt;
+}
+
+/* Cover
+-------- */
+.cover-header {
+  text-align: right;
+  margin: 0 42pt;
+  font-size: 10pt;
+  color: #666;
+  padding-top: 24pt;
+}
+
+.cover-bellow-header {
+  min-height: 128pt;
+  overflow: hidden;
+}
+
+.cover-title {
+  text-align: right;
+  margin: 42pt 42pt 0;
+  font-size: 18pt;
+  font-weight: normal;
+  color: #333;
+}
+
+.cover-subtitle {
+  text-align: right;
+  margin: 0 42pt 10pt;
+  font-size: 12pt;
+  font-weight: normal;
+  color: #333;
+  overflow: hidden;
+}
+
+.cover-body {
+  background-color: #7ad2c4;
+  border-top: 7pt solid #7ad2c4;
+  border-bottom: 1pt solid #333;
+  height: 555pt;
+}
+
+.cover-image {
+  height: 393pt;
+  overflow: hidden;
+  margin: auto;
+  max-width: 100%;
+}
+
+.cover-image img {
+  width: 150%;
+  margin-left: -25%;
+  max-width: inherit;
+}
+
+.cover-logo {
+  text-align: right;
+  margin: 20pt 42pt 0;
+}
+
+.cover-logo img {
+  height: 42pt;
+}
+
+.cover-themes {
+  margin-right: 42pt;
+}
+
+.cover-themes div {
+  height: 115pt;
+  max-width: 115pt;
+  overflow: hidden;
+  float: right;
+  border: 3pt solid white;
+  margin: 17pt 0 0 17pt;
+}
+
+.cover-themes img {
+  width: 200%;
+  margin-left: -50%;
+  max-width: inherit;
+}
+
+.cover-copyright {
+  margin: 0 40pt 0 108pt;
+  font-weight: normal;
+  font-size: 8pt;
+  min-height: 690pt;
+  position: relative;
+  padding-top: 88pt;
+}
+
+.cover-copyright dt, .cover-copyright dd {
+  margin: 0;
+  padding: 0;
+}
+
+.cover-copyright dt {
+  font-weight: bold;
+  line-height: 0.1pt;
+}
+
+.cover-copyright-legal {
+  margin-top: 90pt;
+}
+
+.cover-copyright-notice {
+  margin-top: 17pt;
+}
+
+.cover-copyright-contact {
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* Overrides */
+
+/* portalMessage have too much padding which ends up clipping the portalMessage text
+   also font-size set to 100% to keep pages close in style to how they were when
+   portalMessage styles were added with background images
+*/
+div.attention, div.caution,
+div.danger, div.error, div.hint,
+div.important, div.note, div.tip,
+div.warning,
+#error-handling,
+.portalMessage,
+.system-message {
+  padding: 1em 1.5em 1em 3.5em;
+  font-size: 100%;
+}
+
+.portalMessage:before, .portalMessage .eea-icon:before {
+  margin-left: -1.5em;
+}

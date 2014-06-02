@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+
+    <object name="eeapdf_images" meta_type="Filesystem Directory View"
+            directory="eea.pdf:skins/eea_pdf/images" />
+
+    <object name="eeapdf_styles" meta_type="Filesystem Directory View"
+            directory="eea.pdf:skins/eea_pdf/stylesheets" />
+
+    <object name="eeapdf_templates" meta_type="Filesystem Directory View"
+            directory="eea.pdf:skins/eea_pdf/templates" />
+
+    <object name="eeapdf_javascripts" meta_type="Filesystem Directory View"
+            directory="eea.pdf:skins/eea_pdf/javascripts" />
+
+    <skin-path name="*">
+        <layer name="eeapdf_styles" insert-after="custom" />
+        <layer name="eeapdf_javascripts" insert-after="eeapdf_styles" />
+        <layer name="eeapdf_images" insert-after="eeapdf_javascripts" />
+        <layer name="eeapdf_templates" insert-before="eeapdf_images" />
+    </skin-path>
+
+</object>

@@ -37,6 +37,7 @@ setup(name=NAME,
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'beautifulsoup4',
           'collective.sendaspdf',
           'eea.converter > 6.7',
       ],
