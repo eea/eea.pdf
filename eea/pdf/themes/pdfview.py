@@ -21,14 +21,16 @@ class Mixin(object):
 
         ptool = queryUtility(IPDFTool)
         ptype = getattr(self.context, 'portal_type', '')
-        for theme in ptool.themes():
+        themes = getattr(ptool, 'themes', lambda: [])
+        for theme in themes():
             field = theme.getField('types')
             types = field.getAccessor(theme)()
             if ptype in types:
                 self._theme = theme
                 return self._theme
 
-        self._theme = ptool.default()
+        default = getattr(ptool, 'default', lambda: None)
+        self._theme = default()
         return self._theme
 
     def getValue(self, name, default=''):

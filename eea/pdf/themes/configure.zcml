@@ -9,8 +9,9 @@
     factory=".pdfview.OptionsMaker"/>
 
   <browser:page
-    for="Products.Archetypes.interfaces.base.IBaseObject"
     name="download.pdf"
+    layer="eea.pdf.interfaces.ILayer"
+    for="Products.Archetypes.interfaces.base.IBaseObject"
     class=".pdfview.Download"
     permission="zope2.View"
     />

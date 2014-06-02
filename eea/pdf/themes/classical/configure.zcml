@@ -3,16 +3,18 @@
   i18n_domain="eea">
 
   <browser:page
-    for="Products.Archetypes.interfaces.base.IBaseObject"
     name="pdf.cover"
+    layer="eea.pdf.interfaces.ILayer"
+    for="Products.Archetypes.interfaces.base.IBaseObject"
     template="cover.pt"
     class=".cover.Cover"
     permission="zope2.View"
     />
 
   <browser:page
-    for="Products.Archetypes.interfaces.base.IBaseObject"
     name="pdf.body"
+    layer="eea.pdf.interfaces.ILayer"
+    for="Products.Archetypes.interfaces.base.IBaseObject"
     template="body.pt"
     class=".body.Body"
     permission="zope2.View"
