@@ -113,6 +113,7 @@ class Download(PDFDownload, Mixin):
         self._cover = None
         self._body = None
         self._backcover = None
+        self._disclaimer = None
 
     @property
     def cover(self):
@@ -126,6 +127,17 @@ class Download(PDFDownload, Mixin):
             self.request.URL0 = self.getValue('cover')
             self._cover = self.getTemplate('cover')
         return self._cover
+
+    @property
+    def disclaimer(self):
+        """ PDF disclaimer
+        """
+        if not self.theme:
+            return super(Download, self).disclaimer
+
+        if not self._disclaimer:
+            self._disclaimer = self.getTemplate('disclaimer')
+        return self._disclaimer
 
     @property
     def body(self):

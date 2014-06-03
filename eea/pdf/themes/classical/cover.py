@@ -2,23 +2,14 @@
 """
 import logging
 from bs4 import BeautifulSoup
-from DateTime import DateTime
 from zope.component import queryMultiAdapter
 from eea.converter.browser.app.pdfview import Cover as PDFCover
 from eea.pdf.utils import getApplicationRoot
-logger = logging.getLogger('eea.design')
+logger = logging.getLogger('eea.pdf')
 
 class Cover(PDFCover):
     """ Custom PDF cover
     """
-
-    @property
-    def year(self):
-        """ Publication year
-        """
-        published = DateTime(self.context.Date())
-        return published.year()
-
     @property
     def header(self):
         """ Cover header

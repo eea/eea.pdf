@@ -1,0 +1,70 @@
+<tal:block tal:define="disabledLeft python:request.set('disable_plone.leftcolumn', 1)"/>
+<tal:block tal:define="disabledRight python:request.set('disable_plone.rightcolumn', 1)"/>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  lang="en"
+  metal:use-macro="context/main_template/macros/master"
+  i18n:domain="eea">
+
+<body>
+
+<metal:title fill-slot="content-title"></metal:title>
+<metal:description fill-slot="content-description"></metal:description>
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core">
+
+<div class="cover-copyright">
+
+  <dl class="cover-copyright-photo">
+    <dd i18n:translate="cover-design">Cover design: EEA</dd>
+    <dd i18n:translate="cover-photo">Cover photo: © <tal:image replace="python:getattr(context, 'imageCopyright', '') or 'EEA'" i18n:name="copyright-name"/></dd>
+    <dd i18n:translate="cover-layout">Layout: EEA</dd>
+  </dl>
+
+  <dl class="cover-copyright-legal">
+    <dt i18n:translate="copyright-legal-name">Legal notice</dt>
+    <dd i18n:translate="copyright-legal-description">
+      The contents of this publication do not necessarily reflect the official opinions of the European
+      Commission or other institutions of the European Union. Neither the European Environment Agency
+      nor any person or company acting on behalf of the Agency is responsible for the use that may be
+      made of the information contained in this report.
+    </dd>
+  </dl>
+
+  <dl class="cover-copyright-notice">
+    <dt i18n:translate="copyright-notice-name">Copyright notice</dt>
+    <dd i18n:translate="copyright-notice-eea">© European Environment Agency, <tal:year replace="view/year" i18n:name="copyright-notice-year">2013</tal:year></dd>
+    <dd i18n:translate="copyright-notice-desc1">Reproduction is authorised, provided the source is acknowledged, save where otherwise stated.</dd>
+    <br/>
+    <dd i18n:translate="copyright-notice-desc2">Information about the European Union is available on the Internet. It can be accessed through the Europa server (www.europa.eu).</dd>
+    <br/>
+    <dd i18n:translate="copyright-notice-desc3">Luxembourg: Publications Office of the European Union, <tal:year replace="view/year" i18n:name="copyright-notice-year">2013</tal:year></dd>
+  </dl>
+
+  <dl class="cover-copyright-book" i18n:domain="eea.notranslation">
+    <dd tal:condition="context/isbn|nothing">ISBN <tal:isbn tal:replace="context/isbn" /></dd>
+    <dd tal:condition="context/doi|nothing">doi:<tal:doi tal:replace="context/doi" /></dd>
+  </dl>
+
+  <dl class="cover-copyright-contact">
+    <dd i18n:translate="">European Environment Agency</dd>
+    <dd i18n:translate="copyright-address1">Kongens Nytorv 6</dd>
+    <dd i18n:translate="copyright-address2">1050 Copenhagen K</dd>
+    <dd i18n:translate="">Denmark</dd>
+    <dd i18n:translate="copyright-phone">Tel.: + 45 33 36 71 00</dd>
+    <dd i18n:translate="copyright-fax">Fax: + 45 33 36 71 99</dd>
+    <dd i18n:translate="copyright-web">Web: eea.europa.eu</dd>
+    <dd i18n:translate="copyright-enquiries">Enquiries: eea.europa.eu/enquiries</dd>
+  </dl>
+
+</div>
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

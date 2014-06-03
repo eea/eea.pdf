@@ -19,6 +19,18 @@ EditSchema = atapi.Schema((
             )
         )
     ),
+    atapi.StringField('disclaimer',
+        schemata='default',
+        default='pdf.disclaimer',
+        widget=atapi.StringWidget(
+            label=_(u"Disclaimer"),
+            description=_(
+                u"A page template to be used for PDF Disclaimer, "
+                u"the first page after PDF cover. "
+                u"Leave empty to disable it."
+            )
+        )
+    ),
     atapi.StringField('body',
         schemata='default',
         default='pdf.body',
