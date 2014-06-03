@@ -22,6 +22,7 @@ p.discreet,
 .cover-copyright
 {
   font-family: Verdana, sans-serif !important;
+  letter-spacing: 0;
 }
 
 img {
@@ -40,6 +41,13 @@ img {
   font-weight: normal;
 }
 
+.documentByLine {
+  display: none;
+}
+
+#portal-column-content {
+  width: auto;
+}
 
 /* hidden elements */
 .annotator-widget,

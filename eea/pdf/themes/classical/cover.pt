@@ -58,12 +58,19 @@
 
   </div>
 
-  <div class="cover-logo">
+  <div class="cover-logo"
+    tal:condition="exists:context/++resource++eea.translations.images/pdflogo-en.png">
     <img tal:define="
         lang  context/@@plone_portal_state/language;
         logo python:'++resource++eea.translations.images/pdflogo-%s.png' % lang"
       tal:attributes="src string:${portal_url}/${logo}" />
   </div>
+
+  <div class="cover-logo"
+    tal:condition="not:exists:context/++resource++eea.translations.images/pdflogo-en.png">
+    <img tal:attributes="src string:${portal_url}/++resource++plone-logo.png" />
+  </div>
+
 
 </div>
 
