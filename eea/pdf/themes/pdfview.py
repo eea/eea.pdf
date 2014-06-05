@@ -1,7 +1,6 @@
 """ PDF View
 """
 import logging
-from zope.component.hooks import getSite
 from zope.component import queryUtility
 from eea.converter.browser.app.download import Pdf as PDFDownload
 from eea.converter.pdf.adapters import OptionsMaker as PDFOptionsMaker
@@ -76,7 +75,7 @@ class OptionsMaker(PDFOptionsMaker, Mixin):
 
         if self._header is None:
             template = self.getValue('header')
-            self._header = ('/'.join((getSite().absolute_url(), template))
+            self._header = ('/'.join((self.context.absolute_url(), template))
                             if template else '')
         return self._header
 
@@ -89,7 +88,7 @@ class OptionsMaker(PDFOptionsMaker, Mixin):
 
         if self._footer is None:
             template = self.getValue('footer')
-            self._footer = ('/'.join((getSite().absolute_url(), template))
+            self._footer = ('/'.join((self.context.absolute_url(), template))
                             if template else '')
         return self._footer
 
