@@ -87,7 +87,7 @@ EditSchema = atapi.Schema((
     ),
     atapi.LinesField('types',
          schemata='default',
-         vocabulary_factory='plone.app.vocabularies.UserFriendlyTypes',
+         vocabulary_factory='plone.app.vocabularies.ReallyUserFriendlyTypes',
          multiValued=1,
          widget=atapi.MultiSelectionWidget(
              format='checkbox',
