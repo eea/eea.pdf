@@ -4,5 +4,16 @@
   i18n_domain="eea">
 
   <!-- Upgrades steps goes here -->
+    <genericsetup:upgradeSteps
+            source="1.0"
+            destination="1.1"
+            profile="eea.pdf:default">
+
+        <genericsetup:upgradeDepends
+                title="Import profile steps with changes: cssregistry"
+                import_steps="cssregistry"
+                />
+
+    </genericsetup:upgradeSteps>
 
 </configure>

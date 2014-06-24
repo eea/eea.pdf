@@ -3,6 +3,9 @@ Changelog
 
 1.1-dev - (unreleased)
 ----------------------
+* Bug fix: fixed condition for print css which failed when using
+  collective.sendaspdf to download a pdf
+  [ichimdav refs #19880]
 * Bug fix: use plone.app.vocabularies.ReallyUserFriendlyTypes for better
   portal types matching
   [ichim-david refs #19880]
