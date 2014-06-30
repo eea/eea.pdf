@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.1-dev - (unreleased)
-----------------------
+1.1 - (2014-06-30)
+------------------
 * Bug fix: fixed condition for print css which failed when using
   collective.sendaspdf to download a pdf
   [ichimdav refs #19880]
