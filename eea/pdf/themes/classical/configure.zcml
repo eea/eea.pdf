@@ -29,4 +29,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="pdf.body"
+    layer="eea.pdf.interfaces.ILayer"
+    for="plone.app.folder.folder.IATUnifiedFolder"
+    template="folder.body.pt"
+    class=".folder.Body"
+    permission="zope2.View"
+    />
+
 </configure>
