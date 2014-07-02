@@ -3,6 +3,9 @@ Changelog
 
 1.2-dev - (unreleased)
 ----------------------
+* Feature: Added custom pdf.body for Topic and Collection content-types that
+  is an aggregated page based on query results pdf.body
+  [voineali refs #20267]
 * Feature: Added custom pdf.body for Plone Folder ctype that is an aggregated
   page based on children pdf.body
   [voineali refs #20267]

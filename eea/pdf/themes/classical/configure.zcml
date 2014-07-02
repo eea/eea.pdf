@@ -1,5 +1,6 @@
 <configure
   xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
   i18n_domain="eea">
 
   <browser:page
@@ -35,6 +36,24 @@
     for="plone.app.folder.folder.IATUnifiedFolder"
     template="folder.body.pt"
     class=".folder.Body"
+    permission="zope2.View"
+    />
+
+  <browser:page zcml:condition="installed Products.ATContentTypes.content.topic"
+    name="pdf.body"
+    layer="eea.pdf.interfaces.ILayer"
+    for="Products.ATContentTypes.interfaces.IATTopic"
+    template="collection.body.pt"
+    class=".collection.Body"
+    permission="zope2.View"
+    />
+
+  <browser:page zcml:condition="installed plone.app.collection"
+    name="pdf.body"
+    layer="eea.pdf.interfaces.ILayer"
+    for="plone.app.collection.interfaces.ICollection"
+    template="collection.body.pt"
+    class=".collection.Body"
     permission="zope2.View"
     />
 
