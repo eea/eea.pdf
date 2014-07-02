@@ -34,7 +34,7 @@
     name="pdf.body"
     layer="eea.pdf.interfaces.ILayer"
     for="plone.app.folder.folder.IATUnifiedFolder"
-    template="folder.body.pt"
+    template="collection.body.pt"
     class=".folder.Body"
     permission="zope2.View"
     />

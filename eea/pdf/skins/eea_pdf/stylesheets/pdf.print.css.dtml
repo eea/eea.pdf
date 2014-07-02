@@ -233,3 +233,7 @@ div.warning,
 .portalMessage:before, .portalMessage .eea-icon:before {
   margin-left: -1.5em;
 }
+
+.pdf-collection-item {
+  page-break-after: always;
+}

@@ -8,12 +8,15 @@
 
 <body>
 
+<metal:title fill-slot="content-title"></metal:title>
+<metal:description fill-slot="content-description"></metal:description>
+
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core">
 
-  <tal:pdfs tal:repeat="pdf view/pdfs">
+  <div tal:repeat="pdf view/pdfs" class="pdf-collection-item">
     <tal:pdf tal:replace="structure pdf" />
-  </tal:pdfs>
+  </div>
 
 </metal:content-core>
 </metal:content-core>
