@@ -38,8 +38,7 @@ setup(name=NAME,
           'setuptools',
           # -*- Extra requirements: -*-
           'beautifulsoup4',
-          'collective.sendaspdf',
-          'eea.converter > 6.7',
+          'eea.converter > 6.8',
       ],
       entry_points="""
       # -*- entry_points -*-

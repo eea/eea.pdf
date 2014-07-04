@@ -3,8 +3,8 @@
 
  <configlet
   title="PDF Settings"
-  action_id="sendaspdf"
-  appId="collective.sendaspdf"
+  action_id="eea.pdf.settings"
+  appId="eea.pdf"
   category="Products"
   condition_expr=""
   icon_expr="string:$portal_url/++resource++eea.pdf.images/icon.png"

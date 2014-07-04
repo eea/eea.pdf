@@ -75,11 +75,21 @@ EditSchema = atapi.Schema((
             )
         )
     ),
+    atapi.BooleanField('toc',
+        schemata='default',
+        default=False,
+        widget=atapi.BooleanWidget(
+            label=_(u"Table of contents"),
+            description=_(
+                u"A table of contents will be prepended to the generated files."
+            )
+        )
+    ),
     atapi.IntegerField('offset',
         schemata='default',
         default=0,
         widget=atapi.IntegerWidget(
-            label=_('Offset'),
+            label=_(u"Offset"),
             description=_(
                 u"Page numbering offset within PDF Body"
             )

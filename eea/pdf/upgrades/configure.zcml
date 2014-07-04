@@ -5,6 +5,19 @@
 
   <!-- Upgrades steps goes here -->
     <genericsetup:upgradeSteps
+            source="1.1"
+            destination="2.0"
+            profile="eea.pdf:default">
+
+        <genericsetup:upgradeDepends
+                title="Cleanup collective.sendaspdf dependency"
+                import_steps="actions controlpanel propertiestool typeinfo"
+                />
+
+    </genericsetup:upgradeSteps>
+
+
+    <genericsetup:upgradeSteps
             source="1.0"
             destination="1.1"
             profile="eea.pdf:default">

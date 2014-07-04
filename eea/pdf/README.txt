@@ -1,7 +1,7 @@
 =======
 EEA PDF
 =======
-Extend collective.sendaspdf functionality
+Export HTML to PDF using wkhtmltopdf tool
 
 .. contents::
 

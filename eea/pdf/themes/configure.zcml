@@ -4,17 +4,10 @@
   i18n_domain="eea">
 
   <adapter
+    name="pdf.body"
     for="Products.Archetypes.interfaces.base.IBaseObject"
-    provides="collective.sendaspdf.interfaces.ISendAsPDFOptionsMaker"
-    factory=".pdfview.OptionsMaker"/>
-
-  <browser:page
-    name="download.pdf"
-    layer="eea.pdf.interfaces.ILayer"
-    for="Products.Archetypes.interfaces.base.IBaseObject"
-    class=".pdfview.Download"
-    permission="zope2.View"
-    />
+    provides="eea.converter.interfaces.IPDFOptionsMaker"
+    factory=".pdfview.BodyOptionsMaker"/>
 
   <!-- Themes -->
   <include package=".classical" />

@@ -31,9 +31,12 @@
     visible="True">
   <permission value="Manage portal"/>
  </action>
+
+ <!-- Cleanup -->
  <action title="Advanced settings" action_id="settings" category="object"
     condition_expr="python:True" url_expr="string:$portal_url/portal_sendaspdf/edit"
-    visible="True">
+    visible="False" remove="True">
   <permission value="Manage portal"/>
  </action>
+
 </object>

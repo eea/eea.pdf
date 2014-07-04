@@ -3,6 +3,10 @@ Changelog
 
 1.2-dev - (unreleased)
 ----------------------
+* Upgrade step: Within "Plone > Site setup > Add-ons" click on
+  upgrade button available for EEA PDF
+* Upgrade step: Within "Plone > Site setup > Add-ons" uninstall
+  collective.sendaspdf
 * Feature: Added custom pdf.body for Topic and Collection content-types that
   is an aggregated page based on query results pdf.body
   [voineali refs #20267]
