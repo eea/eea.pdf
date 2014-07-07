@@ -68,3 +68,7 @@ class Cover(PDFCover):
         except Exception, err:
             logger.exception(err)
         return html
+
+class BackCover(Cover):
+    """ PDF Back cover
+    """

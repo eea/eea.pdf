@@ -2,8 +2,14 @@
 """
 import logging
 from zope.component import queryUtility
-from eea.converter.browser.app.download import Pdf as PDFDownload
+from eea.converter.pdf.adapters import OptionsMaker as PDFOptionsMaker
 from eea.converter.pdf.adapters import BodyOptionsMaker as PDFBodyOptionsMaker
+from eea.converter.pdf.adapters import CoverOptionsMaker as PDFCoverOptionsMaker
+from eea.converter.pdf.adapters import \
+    BackCoverOptionsMaker as PDFBackCoverOptionsMaker
+from eea.converter.pdf.adapters import \
+    DisclaimerOptionsMaker as PDFDisclaimerOptionsMaker
+
 from eea.pdf.interfaces import IPDFTool
 logger = logging.getLogger('eea.pdf')
 
@@ -57,10 +63,51 @@ class Mixin(object):
             return default
         return self.context.restrictedTraverse(template, default)
 
+class OptionsMaker(PDFOptionsMaker, Mixin):
+    """ Global options maker
+    """
+    def __init__(self, context):
+        super(OptionsMaker, self).__init__(context)
+        self._options = None
+
+    @property
+    def options(self):
+        """ Get global options
+        """
+        if self._options is not None:
+            return self._options
+
+        options = super(OptionsMaker, self).options
+        if not self.theme:
+            return options
+
+        offset = self.getValue('offset')
+        index = 0
+        for idx, option in enumerate(options):
+            if option == '--page-offset':
+                index = idx + 1
+                break
+
+        if index:
+            options[index] = repr(offset)
+        else:
+            options.extend(
+                ['--page-offset', repr(offset)]
+            )
+        self._options = options
+        return self._options
 
 class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
     """ Custom PDF options maker
     """
+
+    def __init__(self, context):
+        super(BodyOptionsMaker, self).__init__(context)
+        self._body = None
+        self._header = None
+        self._footer = None
+        self._toc = None
+
     @property
     def body(self):
         """ Safely get pdf.body
@@ -71,7 +118,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         if self._body is None:
             template = self.getValue('body')
             self._body = ('/'.join((self.context.absolute_url(), template))
-                            if template else '')
+                          if template else '')
         return self._body
 
     @property
@@ -99,3 +146,75 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
             self._footer = ('/'.join((self.context.absolute_url(), template))
                             if template else '')
         return self._footer
+
+    @property
+    def toc(self):
+        """ Table of contents
+        """
+        if not self.theme:
+            return super(BodyOptionsMaker.self).toc
+
+        if self._toc is None:
+            toc = self.getValue('toc')
+            self._toc = bool(toc)
+        return self._toc
+
+class CoverOptionsMaker(PDFCoverOptionsMaker, Mixin):
+    """ Custom cover options maker
+    """
+    def __init__(self, context):
+        super(CoverOptionsMaker, self).__init__(context)
+        self._body = None
+
+    @property
+    def body(self):
+        """ Safely get pdf.cover
+        """
+        if not self.theme:
+            return super(CoverOptionsMaker, self).body
+
+        if self._body is None:
+            template = self.getValue('cover')
+            self._body = ('/'.join((self.context.absolute_url(), template))
+                          if template else '')
+        return self._body
+
+class BackCoverOptionsMaker(PDFBackCoverOptionsMaker, Mixin):
+    """ Custom back.cover options maker
+    """
+    def __init__(self, context):
+        super(BackCoverOptionsMaker, self).__init__(context)
+        self._body = None
+
+    @property
+    def body(self):
+        """ Safely get pdf.cover.back
+        """
+        if not self.theme:
+            return super(BackCoverOptionsMaker, self).body
+
+        if self._body is None:
+            template = self.getValue('backcover')
+            self._body = ('/'.join((self.context.absolute_url(), template))
+                          if template else '')
+        return self._body
+
+class DisclaimerOptionsMaker(PDFDisclaimerOptionsMaker, Mixin):
+    """ Custom pdf.disclaimer
+    """
+    def __init__(self, context):
+        super(DisclaimerOptionsMaker, self).__init__(context)
+        self._body = None
+
+    @property
+    def body(self):
+        """ Safely get disclaimer
+        """
+        if not self.theme:
+            return super(DisclaimerOptionsMaker, self).body
+
+        if self._body is None:
+            template = self.getValue('disclaimer')
+            self._body = ('/'.join((self.context.absolute_url(), template))
+                          if template else '')
+        return self._body

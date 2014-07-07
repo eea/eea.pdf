@@ -7,12 +7,16 @@ Changelog
   upgrade button available for EEA PDF
 * Upgrade step: Within "Plone > Site setup > Add-ons" uninstall
   collective.sendaspdf
+* Feature: Added table of contents support
+  [voineali refs #20268]
 * Feature: Added custom pdf.body for Topic and Collection content-types that
   is an aggregated page based on query results pdf.body
   [voineali refs #20267]
 * Feature: Added custom pdf.body for Plone Folder ctype that is an aggregated
   page based on children pdf.body
   [voineali refs #20267]
+* Cleanup: Remove collective.sendaspdf dependency
+  [voineali refs #20268]
 
 1.1 - (2014-06-30)
 ------------------

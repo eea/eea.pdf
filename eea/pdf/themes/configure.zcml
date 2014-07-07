@@ -4,10 +4,33 @@
   i18n_domain="eea">
 
   <adapter
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    provides="eea.converter.interfaces.IPDFOptionsMaker"
+    factory=".pdfview.OptionsMaker" />
+
+  <adapter
+    name="pdf.cover"
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    provides="eea.converter.interfaces.IPDFOptionsMaker"
+    factory=".pdfview.CoverOptionsMaker"/>
+
+  <adapter
+    name="pdf.disclaimer"
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    provides="eea.converter.interfaces.IPDFOptionsMaker"
+    factory=".pdfview.DisclaimerOptionsMaker"/>
+
+  <adapter
     name="pdf.body"
     for="Products.Archetypes.interfaces.base.IBaseObject"
     provides="eea.converter.interfaces.IPDFOptionsMaker"
     factory=".pdfview.BodyOptionsMaker"/>
+
+  <adapter
+    name="pdf.cover.back"
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    provides="eea.converter.interfaces.IPDFOptionsMaker"
+    factory=".pdfview.BackCoverOptionsMaker"/>
 
   <!-- Themes -->
   <include package=".classical" />

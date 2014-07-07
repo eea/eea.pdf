@@ -13,6 +13,15 @@
     />
 
   <browser:page
+    name="pdf.cover.back"
+    layer="eea.pdf.interfaces.ILayer"
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    template="cover.back.pt"
+    class=".cover.BackCover"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="pdf.disclaimer"
     layer="eea.pdf.interfaces.ILayer"
     for="Products.Archetypes.interfaces.base.IBaseObject"
