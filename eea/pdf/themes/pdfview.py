@@ -1,6 +1,7 @@
 """ PDF View
 """
 import logging
+import tempfile
 from zope.component import queryUtility
 from eea.converter.pdf.adapters import OptionsMaker as PDFOptionsMaker
 from eea.converter.pdf.adapters import BodyOptionsMaker as PDFBodyOptionsMaker
@@ -167,8 +168,29 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
             return super(BodyOptionsMaker.self).toc
 
         if self._toc is None:
-            toc = self.getValue('toc')
-            self._toc = bool(toc)
+            template = self.getValue('toc')
+
+            # self._toc = ('/'.join((self.context.absolute_url(), template))
+            #                 if template else '')
+
+            ## XXX wkhtmltopdf doesn't support URLs for TOC xsl
+            ## To be replaced with previous commented one when fixed by wkhtml
+
+            if not template:
+                self._toc = ''
+                return self._toc
+
+            try:
+                body = self.context.restrictedTraverse(template)
+            except Exception:
+                self._toc = ''
+            else:
+                output = tempfile.mkstemp('.xsl')[1]
+                open(output, 'w').write(body())
+                self._toc = output
+
+            ## End patch
+
         return self._toc
 
 class CoverOptionsMaker(PDFCoverOptionsMaker, Mixin):

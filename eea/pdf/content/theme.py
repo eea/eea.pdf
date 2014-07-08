@@ -75,13 +75,14 @@ EditSchema = atapi.Schema((
             )
         )
     ),
-    atapi.BooleanField('toc',
+    atapi.StringField('toc',
         schemata='default',
-        default=False,
-        widget=atapi.BooleanWidget(
+        default='pdf.toc',
+        widget=atapi.StringWidget(
             label=_(u"Table of contents"),
             description=_(
-                u"A table of contents will be prepended to the generated files."
+                u"An XSL page template to be used for PDF Table of contents. "
+                u"Leave empty to disable it."
             )
         )
     ),
