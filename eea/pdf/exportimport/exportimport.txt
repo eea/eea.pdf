@@ -78,6 +78,7 @@ Export
       <property name="header">pdf.header</property>
       <property name="footer">pdf.footer</property>
       <property name="toc">False</property>
+      <property name="timeout">60</property>
       <property name="offset">0</property>
       <property name="types">
        <element value="Event"/>
