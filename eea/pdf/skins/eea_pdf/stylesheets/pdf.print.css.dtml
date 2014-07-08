@@ -215,17 +215,23 @@ p.discreet {
 .back-cover {
   background-color: #7ad2c4;
   border-bottom: 1pt solid #333;
-  height: 731pt;
+  height: 725pt;
+}
+
+.template-pdf-cover-back {
+    background-color: #f3f3f3;
 }
 
 .template-pdf-cover-back .qrbox {
   min-height: 50pt;
   display: block;
   padding: 20pt;
+  margin: 0;
 }
 
 .template-pdf-cover-back .qrbox img {
   padding: 0;
+  width: inherit;
 }
 
 /* Overrides */

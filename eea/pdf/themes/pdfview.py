@@ -71,6 +71,17 @@ class OptionsMaker(PDFOptionsMaker, Mixin):
         self._options = None
 
     @property
+    def timeout(self):
+        """ Get timout from theme
+        """
+        if not self.theme:
+            return super(OptionsMaker, self).timeout
+
+        if self._timeout is None:
+            self._timeout = self.getValue('timeout', 10)
+        return self._timeout
+
+    @property
     def options(self):
         """ Get global options
         """

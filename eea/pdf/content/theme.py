@@ -85,6 +85,17 @@ EditSchema = atapi.Schema((
             )
         )
     ),
+    atapi.IntegerField('timeout',
+        schemata='default',
+        default=60,
+        widget=atapi.IntegerWidget(
+            label=_(u"Timeout"),
+            description=_(
+                u"Abort PDF export after specified number of seconds. "
+                u"Use zero to disable it."
+            )
+        )
+    ),
     atapi.IntegerField('offset',
         schemata='default',
         default=0,
