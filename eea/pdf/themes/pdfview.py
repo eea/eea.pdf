@@ -69,6 +69,7 @@ class OptionsMaker(PDFOptionsMaker, Mixin):
     def __init__(self, context):
         super(OptionsMaker, self).__init__(context)
         self._options = None
+        self._timeout = None
 
     @property
     def timeout(self):
