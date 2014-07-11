@@ -65,8 +65,8 @@ iframe,
 .portlet.toc,
 #relatedItems .photoAlbumEntryWrapper,
 #relatedItems .photoAlbumEntryDescription,
-.temporal-coverage
-.markHidePrintText
+.temporal-coverage,
+.excludeFromPDF
 {
   display: none;
 }

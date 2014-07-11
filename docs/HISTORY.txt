@@ -3,6 +3,8 @@ Changelog
 
 2.0-dev - (unreleased)
 ----------------------
+* Feature: added style for excluding certain parts from PDF.
+  [demarant #20255]
 * Upgrade step: Within "Plone > Site setup > Add-ons" click on
   upgrade button available for EEA PDF
 * Upgrade step: Within "Plone > Site setup > Add-ons" uninstall
