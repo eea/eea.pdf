@@ -44,7 +44,7 @@
     />
 
   <browser:page
-    name="pdf.body"
+    name="collection.pdf.body"
     layer="eea.pdf.interfaces.ILayer"
     for="plone.app.folder.folder.IATUnifiedFolder"
     class=".folder.Body"
@@ -52,7 +52,7 @@
     />
 
   <browser:page zcml:condition="installed Products.ATContentTypes.content.topic"
-    name="pdf.body"
+    name="collection.pdf.body"
     layer="eea.pdf.interfaces.ILayer"
     for="Products.ATContentTypes.interfaces.IATTopic"
     class=".collection.Body"
@@ -60,7 +60,7 @@
     />
 
   <browser:page zcml:condition="installed plone.app.collection"
-    name="pdf.body"
+    name="collection.pdf.body"
     layer="eea.pdf.interfaces.ILayer"
     for="plone.app.collection.interfaces.ICollection"
     class=".collection.Body"

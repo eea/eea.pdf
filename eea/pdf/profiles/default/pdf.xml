@@ -24,4 +24,20 @@
   <property name="types"/>
   <property name="image"></property>
  </object>
+ <object name="collection" meta_type="PDFTheme">
+  <property name="title">Collection</property>
+  <property name="cover">pdf.cover</property>
+  <property name="disclaimer">pdf.disclaimer</property>
+  <property name="body">collection.pdf.body</property>
+  <property name="backcover">pdf.back.cover</property>
+  <property name="header">pdf.header</property>
+  <property name="footer">pdf.footer</property>
+  <property name="offset">3</property>
+  <property name="types">
+   <element value="Folder" />
+   <element value="Collection" />
+   <element value="Topic" />
+  </property>
+  <property name="image"></property>
+ </object>
 </object>

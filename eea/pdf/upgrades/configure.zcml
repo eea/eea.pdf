@@ -11,7 +11,7 @@
 
         <genericsetup:upgradeDepends
                 title="Cleanup collective.sendaspdf dependency"
-                import_steps="actions controlpanel propertiestool typeinfo"
+                import_steps="actions controlpanel propertiestool typeinfo pdf.xml"
                 />
 
     </genericsetup:upgradeSteps>
