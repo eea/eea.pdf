@@ -7,7 +7,6 @@
     name="pdf.cover"
     layer="eea.pdf.interfaces.ILayer"
     for="Products.Archetypes.interfaces.base.IBaseObject"
-    template="cover.pt"
     class=".cover.Cover"
     permission="zope2.View"
     />
@@ -16,7 +15,6 @@
     name="pdf.cover.back"
     layer="eea.pdf.interfaces.ILayer"
     for="Products.Archetypes.interfaces.base.IBaseObject"
-    template="cover.back.pt"
     class=".cover.BackCover"
     permission="zope2.View"
     />
@@ -25,8 +23,15 @@
     name="pdf.disclaimer"
     layer="eea.pdf.interfaces.ILayer"
     for="Products.Archetypes.interfaces.base.IBaseObject"
-    template="disclaimer.pt"
     class=".disclaimer.Disclaimer"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="pdf.toc"
+    layer="eea.pdf.interfaces.ILayer"
+    for="Products.Archetypes.interfaces.base.IBaseObject"
+    class=".toc.Toc"
     permission="zope2.View"
     />
 
@@ -34,7 +39,6 @@
     name="pdf.body"
     layer="eea.pdf.interfaces.ILayer"
     for="Products.Archetypes.interfaces.base.IBaseObject"
-    template="body.pt"
     class=".body.Body"
     permission="zope2.View"
     />
@@ -43,7 +47,6 @@
     name="pdf.body"
     layer="eea.pdf.interfaces.ILayer"
     for="plone.app.folder.folder.IATUnifiedFolder"
-    template="collection.body.pt"
     class=".folder.Body"
     permission="zope2.View"
     />
@@ -52,7 +55,6 @@
     name="pdf.body"
     layer="eea.pdf.interfaces.ILayer"
     for="Products.ATContentTypes.interfaces.IATTopic"
-    template="collection.body.pt"
     class=".collection.Body"
     permission="zope2.View"
     />
@@ -61,7 +63,6 @@
     name="pdf.body"
     layer="eea.pdf.interfaces.ILayer"
     for="plone.app.collection.interfaces.ICollection"
-    template="collection.body.pt"
     class=".collection.Body"
     permission="zope2.View"
     />

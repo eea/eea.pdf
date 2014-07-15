@@ -120,6 +120,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         self._header = None
         self._footer = None
         self._toc = None
+        self._toc_links = None
 
     @property
     def body(self):
@@ -192,6 +193,18 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
             ## End patch
 
         return self._toc
+
+    @property
+    def toc_links(self):
+        """ Enable/Disable Table of contents links
+        """
+        if not self.theme:
+            return super(BodyOptionsMaker.self).toc_links
+
+        if self._toc_links is None:
+            self._toc_links = self.getValue('toclinks', None)
+        return self._toc_links
+
 
 class CoverOptionsMaker(PDFCoverOptionsMaker, Mixin):
     """ Custom cover options maker

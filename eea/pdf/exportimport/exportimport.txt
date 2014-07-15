@@ -78,6 +78,7 @@ Export
       <property name="header">pdf.header</property>
       <property name="footer">pdf.footer</property>
       <property name="toc">pdf.toc</property>
+      <property name="toclinks">False</property>
       <property name="timeout">60</property>
       <property name="offset">0</property>
       <property name="types">

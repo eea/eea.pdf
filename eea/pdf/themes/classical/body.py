@@ -7,6 +7,7 @@ import urlparse
 import contextlib
 import logging
 from bs4 import BeautifulSoup
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from eea.converter.browser.app.pdfview import Body as PDFBody
 from eea.converter.utils import absolute_url
 logger = logging.getLogger('eea.pdf')
@@ -14,6 +15,7 @@ logger = logging.getLogger('eea.pdf')
 class Body(PDFBody):
     """ Custom PDF body
     """
+    template = ViewPageTemplateFile('body.pt')
 
     def fix_daviz(self, html):
         """ Replace daviz iframes with fallback images

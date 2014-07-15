@@ -1,11 +1,14 @@
 """ PDF View
 """
 from zope.component import queryMultiAdapter
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.Five.browser import BrowserView
 
 class Body(BrowserView):
     """ Custom PDF body
     """
+    template = ViewPageTemplateFile("collection.body.pt")
+
     @property
     def pdfs(self):
         """ Folder children
@@ -20,3 +23,6 @@ class Body(BrowserView):
             yield pdf()
 
         self.request.form['ajax_load'] = ajax_load
+
+    def __call__(self, **kwargs):
+        return self.template()

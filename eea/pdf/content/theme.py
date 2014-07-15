@@ -86,6 +86,14 @@ EditSchema = atapi.Schema((
             )
         )
     ),
+    atapi.BooleanField('toclinks',
+       schemata='default',
+       default=False,
+       widget=atapi.BooleanWidget(
+           label=_(u"Table of contents links"),
+           description=_(u"Enable table of contents links")
+       )
+    ),
     atapi.IntegerField('timeout',
         schemata='default',
         default=60,

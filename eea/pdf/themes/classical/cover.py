@@ -3,13 +3,17 @@
 import logging
 from bs4 import BeautifulSoup
 from zope.component import queryMultiAdapter
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from eea.converter.browser.app.pdfview import Cover as PDFCover
+from eea.converter.browser.app.pdfview import BackCover as PDFBackCover
 from eea.pdf.utils import getApplicationRoot
 logger = logging.getLogger('eea.pdf')
 
 class Cover(PDFCover):
     """ Custom PDF cover
     """
+    template = ViewPageTemplateFile('cover.pt')
+
     @property
     def header(self):
         """ Cover header
@@ -69,6 +73,6 @@ class Cover(PDFCover):
             logger.exception(err)
         return html
 
-class BackCover(Cover):
+class BackCover(PDFBackCover):
     """ PDF Back cover
     """

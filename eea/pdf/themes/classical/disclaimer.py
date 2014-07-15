@@ -3,12 +3,14 @@
 import logging
 from bs4 import BeautifulSoup
 from DateTime import DateTime
-from eea.converter.browser.app.pdfview import Cover as PDFCover
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from eea.converter.browser.app.pdfview import Disclaimer as PDFDisclaimer
 logger = logging.getLogger('eea.pdf')
 
-class Disclaimer(PDFCover):
+class Disclaimer(PDFDisclaimer):
     """ Custom PDF cover
     """
+    template = ViewPageTemplateFile('disclaimer.pt')
 
     @property
     def year(self):
