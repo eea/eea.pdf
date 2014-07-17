@@ -1,8 +1,17 @@
 Changelog
 =========
 
-2.1-dev - (unreleased)
+3.0-dev - (unreleased)
 ----------------------
+* Feature: Added IPDFAware marker interface in order to easily support
+  PDF export. Added Dexterity support, also.
+  [voineali refs #20436]
+* Feature: Added "Can download PDF" and "Can customize PDF" permissions
+  [voineali refs #20436]
+* Change: Removed default PDF theme concept. If there is no PDF Theme assigned
+  for a content-type, PDF can't be downloaded
+  [voineali refs #20436]
+
 
 2.0 - (2014-07-16)
 ------------------

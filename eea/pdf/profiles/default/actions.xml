@@ -6,8 +6,9 @@
    <property name="title" i18n:translate="">Download as PDF</property>
    <property name="icon_expr">string:$portal_url/++resource++eea.pdf.images/download-pdf.png</property>
    <property name="url_expr">string:$object_url/download.pdf</property>
+   <property name="available_expr">object/@@pdf.support/can_download</property>
    <property name="permissions">
-    <element value="Modify portal content"/>
+    <element value="Can download PDF"/>
    </property>
    <property name="visible">True</property>
   </object>

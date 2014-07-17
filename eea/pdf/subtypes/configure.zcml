@@ -1,0 +1,59 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="eea">
+
+  <!-- Plone Site -->
+  <class class="Products.CMFPlone.Portal.PloneSite"
+         zcml:condition="installed Products.CMFPlone">
+    <implements interface="eea.pdf.interfaces.IPDFAware" />
+  </class>
+
+  <!-- Archetypes -->
+  <class class="Products.Archetypes.BaseObject.BaseObject"
+         zcml:condition="installed Products.Archetypes">
+    <implements interface="eea.pdf.interfaces.IPDFAware" />
+  </class>
+
+  <!-- Dexterity -->
+  <class class="plone.dexterity.content.Container"
+         zcml:condition="installed plone.app.dexterity">
+    <implements interface="eea.pdf.interfaces.IPDFAware" />
+  </class>
+
+  <!-- Old style collection -->
+  <class class="Products.ATContentTypes.content.topic.ATTopic"
+         zcml:condition="installed Products.ATContentTypes.content.topic">
+    <implements interface="eea.pdf.interfaces.IPDFAware" />
+  </class>
+
+  <!-- Collection -->
+  <class class="plone.app.collection.collection.Collection"
+         zcml:condition="installed plone.app.collection">
+    <implements interface="eea.pdf.interfaces.IPDFAware" />
+  </class>
+
+  <!-- AT Folder -->
+  <class class="Products.ATContentTypes.content.folder.ATFolder"
+         zcml:condition="installed Products.ATContentTypes.content.folder">
+    <implements interface="eea.pdf.interfaces.IPDFAware" />
+  </class>
+
+  <!-- Folder -->
+  <class class="plone.app.folder.folder.ATFolder"
+         zcml:condition="installed plone.app.folder">
+    <implements interface="eea.pdf.interfaces.IPDFAware" />
+  </class>
+
+
+  <browser:page
+    name="pdf.support"
+    for="zope.interface.Interface"
+    layer="eea.pdf.interfaces.ILayer"
+    class=".support.Support"
+    permission="zope.Public"
+    allowed_interface="eea.converter.interfaces.ISupport"
+    />
+
+</configure>

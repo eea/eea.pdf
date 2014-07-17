@@ -7,8 +7,12 @@ from eea.pdf.browser.interfaces import ILayer
 from eea.pdf.content.interfaces import IPDFTheme
 from eea.pdf.content.interfaces import IPDFTool
 
+# Subtypes
+from eea.pdf.subtypes.interfaces import IPDFAware
+
 __all__ = [
     ILayer.__name__,
     IPDFTheme.__name__,
     IPDFTool.__name__,
+    IPDFAware.__name__
 ]

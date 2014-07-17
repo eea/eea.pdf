@@ -6,7 +6,7 @@
   <browser:page
     name="pdf.cover"
     layer="eea.pdf.interfaces.ILayer"
-    for="Products.Archetypes.interfaces.base.IBaseObject"
+    for="eea.pdf.interfaces.IPDFAware"
     class=".cover.Cover"
     permission="zope2.View"
     />
@@ -14,7 +14,7 @@
   <browser:page
     name="pdf.cover.back"
     layer="eea.pdf.interfaces.ILayer"
-    for="Products.Archetypes.interfaces.base.IBaseObject"
+    for="eea.pdf.interfaces.IPDFAware"
     class=".cover.BackCover"
     permission="zope2.View"
     />
@@ -22,7 +22,7 @@
   <browser:page
     name="pdf.disclaimer"
     layer="eea.pdf.interfaces.ILayer"
-    for="Products.Archetypes.interfaces.base.IBaseObject"
+    for="eea.pdf.interfaces.IPDFAware"
     class=".disclaimer.Disclaimer"
     permission="zope2.View"
     />
@@ -30,7 +30,7 @@
   <browser:page
     name="pdf.toc"
     layer="eea.pdf.interfaces.ILayer"
-    for="Products.Archetypes.interfaces.base.IBaseObject"
+    for="eea.pdf.interfaces.IPDFAware"
     class=".toc.Toc"
     permission="zope2.View"
     />
@@ -38,7 +38,7 @@
   <browser:page
     name="pdf.body"
     layer="eea.pdf.interfaces.ILayer"
-    for="Products.Archetypes.interfaces.base.IBaseObject"
+    for="eea.pdf.interfaces.IPDFAware"
     class=".body.Body"
     permission="zope2.View"
     />

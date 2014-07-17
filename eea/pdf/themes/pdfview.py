@@ -21,22 +21,15 @@ class Mixin(object):
     def theme(self):
         """ Get associated theme
         """
-        theme = getattr(self, '_theme', None)
-        if theme is not None:
+        theme = getattr(self, '_theme', '')
+        if theme is not '':
             return self._theme
 
         ptool = queryUtility(IPDFTool)
-        ptype = getattr(self.context, 'portal_type', '')
-        themes = getattr(ptool, 'themes', lambda: [])
-        for theme in themes():
-            field = theme.getField('types')
-            types = field.getAccessor(theme)()
-            if ptype in types:
-                self._theme = theme
-                return self._theme
-
-        default = getattr(ptool, 'default', lambda: None)
-        self._theme = default()
+        if ptool:
+            self._theme = ptool.theme(self.context)
+        else:
+            self._theme = None
         return self._theme
 
     def getValue(self, name, default=''):
@@ -127,7 +120,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         """ Safely get pdf.body
         """
         if not self.theme:
-            return super(BodyOptionsMaker, self).body
+            self._body = ''
 
         if self._body is None:
             template = self.getValue('body')
@@ -140,7 +133,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         """ Safely get pdf.header
         """
         if not self.theme:
-            return super(BodyOptionsMaker, self).header
+            self._header = ''
 
         if self._header is None:
             template = self.getValue('header')
@@ -153,7 +146,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         """ Safely get pdf.footer
         """
         if not self.theme:
-            return super(BodyOptionsMaker, self).footer
+            self._footer = ''
 
         if self._footer is None:
             template = self.getValue('footer')
@@ -166,7 +159,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         """ Table of contents
         """
         if not self.theme:
-            return super(BodyOptionsMaker.self).toc
+            self._toc = ''
 
         if self._toc is None:
             template = self.getValue('toc')
@@ -199,7 +192,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         """ Enable/Disable Table of contents links
         """
         if not self.theme:
-            return super(BodyOptionsMaker.self).toc_links
+            self._toc_links = False
 
         if self._toc_links is None:
             self._toc_links = self.getValue('toclinks', None)
@@ -218,7 +211,7 @@ class CoverOptionsMaker(PDFCoverOptionsMaker, Mixin):
         """ Safely get pdf.cover
         """
         if not self.theme:
-            return super(CoverOptionsMaker, self).body
+            self._body = ''
 
         if self._body is None:
             template = self.getValue('cover')
@@ -238,7 +231,7 @@ class BackCoverOptionsMaker(PDFBackCoverOptionsMaker, Mixin):
         """ Safely get pdf.cover.back
         """
         if not self.theme:
-            return super(BackCoverOptionsMaker, self).body
+            self._body = ''
 
         if self._body is None:
             template = self.getValue('backcover')
@@ -258,7 +251,7 @@ class DisclaimerOptionsMaker(PDFDisclaimerOptionsMaker, Mixin):
         """ Safely get disclaimer
         """
         if not self.theme:
-            return super(DisclaimerOptionsMaker, self).body
+            self._body = ''
 
         if self._body is None:
             template = self.getValue('disclaimer')

@@ -2,4 +2,16 @@
   xmlns="http://namespaces.zope.org/zope"
   i18n_domain="eea">
 
+  <permission
+    id="eea.pdf.customize"
+    title="Can customize PDF"
+    description="Can customize PDF export"
+    />
+
+  <permission
+    id="eea.pdf.download"
+    title="Can download PDF"
+    description="Can download PDF"
+    />
+
 </configure>

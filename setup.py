@@ -38,7 +38,7 @@ setup(name=NAME,
           'setuptools',
           # -*- Extra requirements: -*-
           'beautifulsoup4',
-          'eea.converter > 6.8',
+          'eea.converter > 7.0',
       ],
       entry_points="""
       # -*- entry_points -*-

@@ -18,15 +18,6 @@ class IPDFTool(Interface):
 
     """
 
-    def default():
-        """
-         Default theme is the first child of type PDFTheme
-
-            >>> print ptool.default()
-            <PDFTheme at ...>
-
-        """
-
     def themes():
         """ Available themes
 

@@ -1,6 +1,6 @@
 """ EEA Relations Content Type
 """
-from zope.interface import implements
+from zope.interface import implementer
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content.folder import ATFolder
 
@@ -137,10 +137,10 @@ EditSchema = atapi.Schema((
     ),
 ))
 
+@implementer(IPDFTheme)
 class PDFTheme(ATFolder):
     """ PDF Theme
     """
-    implements(IPDFTheme)
     portal_type = meta_type = 'PDFTheme'
     archetypes_name = 'EEA PDF Theme'
     _at_rename_after_creation = True

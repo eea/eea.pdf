@@ -3,7 +3,18 @@
   xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
   i18n_domain="eea">
 
-  <!-- Upgrades steps goes here -->
+    <genericsetup:upgradeSteps
+            source="2.0"
+            destination="3.0"
+            profile="eea.pdf:default">
+
+        <genericsetup:upgradeDepends
+                title="Import steps with changes: rolemap, actions"
+                import_steps="actions rolemap"
+                />
+
+    </genericsetup:upgradeSteps>
+
     <genericsetup:upgradeSteps
             source="1.1"
             destination="2.0"
