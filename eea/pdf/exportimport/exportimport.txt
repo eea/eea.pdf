@@ -81,6 +81,9 @@ Export
       <property name="toclinks">False</property>
       <property name="timeout">60</property>
       <property name="offset">0</property>
+      <property name="maxdepth">100</property>
+      <property name="maxbreadth">100</property>
+      <property name="maxitems">1000</property>
       <property name="types">
        <element value="Event"/>
        <element value="Document"/>

@@ -3,6 +3,14 @@ Changelog
 
 3.0-dev - (unreleased)
 ----------------------
+* Feature: Added global and local PDF settings for collection and folderish
+  content-types: Max depth, Max breadth and Total Max Items
+  [voineali refs #20436]
+* Feature: Added possibility to locally override PDF Theme to use
+  within PDF export
+  [voineali refs #20436]
+* Feature: Added possibility to locally disable PDF export
+  [voineali refs #20436]
 * Feature: Added IPDFAware marker interface in order to easily support
   PDF export. Added Dexterity support, also.
   [voineali refs #20436]

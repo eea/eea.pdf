@@ -15,5 +15,6 @@
   <include package=".subtypes" />
   <include package=".themes" />
   <include package=".upgrades" />
+  <include package=".vocabulary" />
 
 </configure>

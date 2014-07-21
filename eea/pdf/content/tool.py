@@ -21,16 +21,60 @@ class PDFTool(UniqueObject, ATFolder):
         for theme in self.objectValues('PDFTheme'):
             yield theme
 
-    def theme(self, obj, default=None):
-        """ Get associated theme
+    def globalTheme(self, obj):
+        """
+         Get global associated theme
+
+        :param obj: Plone object
+        :return: PDFTheme object or None
+
         """
         ptype = getattr(obj, 'portal_type', '')
         if not ptype:
-            return default
+            return None
 
         for theme in self.themes():
             field = theme.getField('types')
             types = field.getAccessor(theme)()
             if ptype in types:
                 return theme
-        return default
+        return None
+
+    def localTheme(self, obj):
+        """
+         Get locally defined theme
+
+        :param obj: Plone object
+        :return: PDFTheme object or None
+
+        """
+        getField = getattr(obj, 'getField', lambda name: None)
+        field = getField('pdfTheme')
+        if not field:
+            return self.globalTheme(obj)
+
+        themeName = field.getAccessor(obj)()
+
+        # Disabled
+        if themeName == '-':
+            return None
+
+        # Global defined settings
+        if themeName == '':
+            return self.globalTheme(obj)
+
+        # Custom theme
+        for theme in self.themes():
+            if theme.getId() == themeName:
+                return theme
+        return self.globalTheme(obj)
+
+    def theme(self, obj, default=None):
+        """ Get defined theme for given object
+
+        :param obj: Plone object
+        :param default: return value if we can't find a theme
+        :return: PDFTheme object or default
+
+        """
+        return self.localTheme(obj) or default

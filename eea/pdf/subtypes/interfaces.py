@@ -3,9 +3,9 @@
 from zope.interface import Interface
 
 class IPDFAware(Interface):
-    """ Objects which can downloaded as PDF.
+    """ Objects which can be downloaded as PDF.
     """
 
-__all__ = [
-    IPDFAware.__name__,
-]
+class ICollectionPDFAware(IPDFAware):
+    """ Collections of objects which can be downloaded as PDF.
+    """

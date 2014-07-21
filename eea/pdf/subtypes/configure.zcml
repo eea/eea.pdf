@@ -25,25 +25,25 @@
   <!-- Old style collection -->
   <class class="Products.ATContentTypes.content.topic.ATTopic"
          zcml:condition="installed Products.ATContentTypes.content.topic">
-    <implements interface="eea.pdf.interfaces.IPDFAware" />
+    <implements interface="eea.pdf.interfaces.ICollectionPDFAware" />
   </class>
 
   <!-- Collection -->
   <class class="plone.app.collection.collection.Collection"
          zcml:condition="installed plone.app.collection">
-    <implements interface="eea.pdf.interfaces.IPDFAware" />
+    <implements interface="eea.pdf.interfaces.ICollectionPDFAware" />
   </class>
 
   <!-- AT Folder -->
   <class class="Products.ATContentTypes.content.folder.ATFolder"
          zcml:condition="installed Products.ATContentTypes.content.folder">
-    <implements interface="eea.pdf.interfaces.IPDFAware" />
+    <implements interface="eea.pdf.interfaces.ICollectionPDFAware" />
   </class>
 
   <!-- Folder -->
   <class class="plone.app.folder.folder.ATFolder"
          zcml:condition="installed plone.app.folder">
-    <implements interface="eea.pdf.interfaces.IPDFAware" />
+    <implements interface="eea.pdf.interfaces.ICollectionPDFAware" />
   </class>
 
 
@@ -54,6 +54,18 @@
     class=".support.Support"
     permission="zope.Public"
     allowed_interface="eea.converter.interfaces.ISupport"
+    />
+
+  <adapter name="eea.pdf"
+    for="eea.pdf.interfaces.IPDFAware"
+    provides="archetypes.schemaextender.interfaces.ISchemaExtender"
+    factory=".schema.PDFSchemaExtender"
+    />
+
+  <adapter name="eea.pdf.collection"
+    for="eea.pdf.interfaces.ICollectionPDFAware"
+    provides="archetypes.schemaextender.interfaces.ISchemaExtender"
+    factory=".schema.CollectionSchemaExtender"
     />
 
 </configure>

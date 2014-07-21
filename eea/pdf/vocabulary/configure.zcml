@@ -1,0 +1,7 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <utility
+    factory=".themes.Themes"
+    name="eea.pdf.vocabulary.Themes" />
+
+</configure>

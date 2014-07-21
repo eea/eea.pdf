@@ -111,7 +111,43 @@ EditSchema = atapi.Schema((
         widget=atapi.IntegerWidget(
             label=_(u"Offset"),
             description=_(
-                u"Page numbering offset within PDF Body"
+                u"Page numbering offset within PDF Body."
+            )
+        )
+    ),
+    atapi.IntegerField('maxdepth',
+        schemata='default',
+        default=100,
+        widget=atapi.IntegerWidget(
+            label=_(u"Maximum depth"),
+            description=_(
+                u"Maximum depth to recursively include children items "
+                u"while generating PDF for collection "
+                u"or folderish content-types."
+            )
+        )
+    ),
+    atapi.IntegerField('maxbreadth',
+        schemata='default',
+        default=100,
+        widget=atapi.IntegerWidget(
+            label=_(u"Maximum breadth"),
+            description=_(
+                u"Maximum breadth to include children items "
+                u"while generating PDF for collection "
+                u"or folderish content-types."
+            )
+        )
+    ),
+    atapi.IntegerField('maxitems',
+        schemata='default',
+        default=1000,
+        widget=atapi.IntegerWidget(
+            label=_(u"Maximum items"),
+            description=_(
+                u"Total maximum children items to be included "
+                u"while generating PDF for collection "
+                u"or folderish content-types."
             )
         )
     ),
@@ -123,7 +159,7 @@ EditSchema = atapi.Schema((
              format='checkbox',
              label=_(u'Portal types'),
              description=_(
-                 u"Use this PDF Theme for the following Portal-Types"
+                 u"Use this PDF Theme for the following Portal-Types."
              )
          )
     ),
@@ -131,11 +167,23 @@ EditSchema = atapi.Schema((
         schemata="default",
         sizes=None,
         widget=atapi.ImageWidget(
-            label=_("Preview"),
-            description=_("Upload a preview image for this theme")
+            label=_(u"Preview"),
+            description=_(u"Upload a preview image for this theme")
         )
     ),
 ))
+
+THEME_SCHEMA = ATFolder.schema.copy() + EditSchema.copy()
+
+def finalize_schema(schema=THEME_SCHEMA):
+    """ Update schema
+    """
+    for field in schema.fields():
+        if field.schemata != 'default':
+            field.required = False
+            field.widget.condition = 'python:False'
+
+finalize_schema()
 
 @implementer(IPDFTheme)
 class PDFTheme(ATFolder):
@@ -144,5 +192,5 @@ class PDFTheme(ATFolder):
     portal_type = meta_type = 'PDFTheme'
     archetypes_name = 'EEA PDF Theme'
     _at_rename_after_creation = True
-    schema = ATFolder.schema.copy() + EditSchema.copy()
+    schema = THEME_SCHEMA
     schema['description'].widget.modes = ()
