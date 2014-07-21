@@ -117,7 +117,7 @@ EditSchema = atapi.Schema((
     ),
     atapi.IntegerField('maxdepth',
         schemata='default',
-        default=100,
+        default=1,
         widget=atapi.IntegerWidget(
             label=_(u"Maximum depth"),
             description=_(

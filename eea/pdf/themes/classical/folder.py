@@ -1,28 +1,15 @@
 """ PDF View
 """
-from zope.component import queryMultiAdapter
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.Five.browser import BrowserView
+from eea.pdf.themes.classical.collection import Body as PDFBody
 
-class Body(BrowserView):
+class Body(PDFBody):
     """ Custom PDF body
     """
     template = ViewPageTemplateFile("collection.body.pt")
 
     @property
-    def pdfs(self):
-        """ Folder children
+    def brains(self):
+        """ Brains
         """
-        brains = self.context.getFolderContents()
-        ajax_load = self.request.get('ajax_load', False)
-        self.request.form['ajax_load'] = True
-
-        for brain in brains:
-            doc = brain.getObject()
-            pdf = queryMultiAdapter((doc, self.request), name='pdf.body')
-            yield pdf()
-
-        self.request.form['ajax_load'] = ajax_load
-
-    def __call__(self, **kwargs):
-        return self.template()
+        return self.context.getFolderContents()[:self.maxbreadth]
