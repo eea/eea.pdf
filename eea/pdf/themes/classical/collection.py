@@ -117,7 +117,6 @@ class Body(BrowserView):
                 body = body.encode('utf-8')
 
             try:
-                print doc.absolute_url()
                 pdf = doc.restrictedTraverse(body)
                 self._count += 1
                 html = pdf(
