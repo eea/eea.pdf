@@ -41,12 +41,99 @@ Getting started
 3. Go to Home page and click on download as pdf icon at the bottom of the page
    or directly access http://localhost:8080/Plone/front-page/download.pdf
 
+PDF Theme options
+=================
+For more information about wkhtmltopdf options like Table of contents XSL file,
+header and footer parameters, etc. see `wkhtmltopdf`_ documentation.
+
+Cover
+-----
+A page template to be used for PDF Cover. Leave empty to disable it.
+Default: pdf.body
+
+Disclaimer
+----------
+A page template containing copyright and author information. This page will be
+placed between cover and PDF body. Leave empty to skip it.
+Default: pdf.disclaimer
+
+Body
+----
+A page template to be used for PDF body. An empty value will skip PDF body.
+Default: pdf.body
+
+Back Cover
+----------
+A page template to be used for back cover. Leave empty to disable back cover.
+Default: pdf.cover.back
+
+Header
+------
+A page template to be used as PDF body header. This will not appear on cover,
+disclaimer or back cover. Leave empty for no header.
+Default: pdf.header
+
+Footer
+------
+A page template to be used as PDF body footer. This will not appear on cover,
+disclaimer or back.cover. Leave empty for no footer.
+Default: pdf.footer
+
+Table of contents
+-----------------
+An XSL page template to be used for PDF Table of contents. See `wkhtmltopdf`_
+documentation for more information about XSL format. Leave empty to disable
+Table of contents.
+Default: pdf.toc
+
+Table of contents links
+-----------------------
+Enable or disable Table of Contents internal links and also
+PDF bookmarks (outline)
+Default: False
+
+Timeout
+-------
+Abort PDF conversion after this number of seconds
+Default: 60
+
+Offset
+------
+Start counting pages within PDF Body from this number. Usefull when cover and/or
+disclaimer are enabled.
+Default: 0
+
+Maximum depth
+-------------
+This option defines the maximum depth a folderish item can go while recursively
+includes it's children within PDF.
+Default: 1 (include only direct children, non-folderish ones)
+
+Maximum breadth
+---------------
+This options limit the number of direct children a folderish item can include
+within PDF.
+Default: 100
+
+Maximum items
+-------------
+The total items to be included within PDF export for a folderish item, including
+depth and breadth.
+Default: 1000
+
+Portal types
+------------
+Apply this theme to selected portal types.
+Default:
+
+
 Dependencies
 ============
 
-1. `eea.converter`_
-2. `wkhtmltopdf`_
-3. `pdftk`_
+1. `beautifulsoup4`_
+2. `eea.converter`_
+3. `wkhtmltopdf`_
+4. `pdftk`_
 
 Source code
 ===========
@@ -78,3 +165,4 @@ EEA_ - European Environment Agency (EU)
 .. _eea.converter: http://eea.github.com/docs/eea.converter
 .. _wkhtmltopdf: http://wkhtmltopdf.org
 .. _pdftk: http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
+.. _beautifulsoup4: https://pypi.python.org/pypi/beautifulsoup4
