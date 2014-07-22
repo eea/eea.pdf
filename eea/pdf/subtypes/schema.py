@@ -5,7 +5,7 @@ from Products.Archetypes import public
 from archetypes.schemaextender.interfaces import ISchemaExtender
 from archetypes.schemaextender.interfaces import IBrowserLayerAwareExtender
 from archetypes.schemaextender.field import ExtensionField
-from eea.progressbar.config import EEAMessageFactory as _
+from eea.pdf.config import EEAMessageFactory as _
 from eea.pdf.interfaces import ILayer, IPDFTool, IPDFTheme
 
 class ExtendedIntegerField(ExtensionField, public.IntegerField):
