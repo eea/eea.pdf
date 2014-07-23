@@ -92,6 +92,12 @@ Enable or disable Table of Contents internal links and also
 PDF bookmarks (outline)
 Default: False
 
+JavaScript
+----------
+Enable or disable javascript.
+Default: True
+
+
 Timeout
 -------
 Abort PDF conversion after this number of seconds
@@ -130,10 +136,9 @@ Default:
 Dependencies
 ============
 
-1. `beautifulsoup4`_
-2. `eea.converter`_
-3. `wkhtmltopdf`_
-4. `pdftk`_
+1. `eea.converter`_
+2. `wkhtmltopdf`_
+3. `pdftk`_
 
 Source code
 ===========
@@ -165,4 +170,3 @@ EEA_ - European Environment Agency (EU)
 .. _eea.converter: http://eea.github.com/docs/eea.converter
 .. _wkhtmltopdf: http://wkhtmltopdf.org
 .. _pdftk: http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
-.. _beautifulsoup4: https://pypi.python.org/pypi/beautifulsoup4

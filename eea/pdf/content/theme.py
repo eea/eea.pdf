@@ -94,6 +94,14 @@ EditSchema = atapi.Schema((
            description=_(u"Enable table of contents links")
        )
     ),
+    atapi.BooleanField('javascript',
+       schemata='default',
+       default=True,
+       widget=atapi.BooleanWidget(
+           label=_(u"JavaScript"),
+           description=_(u"Enable or disable javascript")
+       )
+    ),
     atapi.IntegerField('timeout',
         schemata='default',
         default=60,

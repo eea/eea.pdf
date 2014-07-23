@@ -100,6 +100,10 @@ class OptionsMaker(PDFOptionsMaker, Mixin):
             options.extend(
                 ['--page-offset', repr(offset)]
             )
+
+        javascript = self.getValue('javascript', True)
+        if not javascript:
+            options.append('--disable-javascript')
         self._options = options
         return self._options
 

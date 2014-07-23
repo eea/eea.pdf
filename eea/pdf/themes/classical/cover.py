@@ -1,7 +1,6 @@
 """ PDF View
 """
 import logging
-from bs4 import BeautifulSoup
 from zope.component import queryMultiAdapter
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from eea.converter.browser.app.pdfview import Cover as PDFCover
@@ -37,22 +36,6 @@ class Cover(PDFCover):
             theme['image'] = image.replace('/image_icon', '/image_preview')
             yield theme
 
-    def fix_relatedItems(self, html):
-        """ Remove relatedItems
-        """
-        soup = BeautifulSoup(html)
-        for relatedItems in soup.find_all(id='relatedItems'):
-            relatedItems.extract()
-        return soup.find_all('html')[0].decode()
-
-    def fix_portalMessages(self, html):
-        """ Remove portal messages
-        """
-        soup = BeautifulSoup(html)
-        for portalMessage in soup.find_all('p', {'class': 'portalMessage'}):
-            portalMessage.extract()
-        return soup.find_all('html')[0].decode()
-
     def truncate(self, text, length=300, orphans=10, suffix=u".", end=u"."):
         """ Custom truncate
         """
@@ -63,15 +46,6 @@ class Cover(PDFCover):
         length = length - rowLength * rows
 
         return super(Cover, self).truncate(text, length, orphans, suffix, end)
-
-    def __call__(self, **kwargs):
-        html = super(Cover, self).__call__(**kwargs)
-        try:
-            html = self.fix_relatedItems(html)
-            html = self.fix_portalMessages(html)
-        except Exception, err:
-            logger.exception(err)
-        return html
 
 class BackCover(PDFBackCover):
     """ PDF Back cover

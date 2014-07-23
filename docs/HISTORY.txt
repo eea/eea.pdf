@@ -3,6 +3,12 @@ Changelog
 
 3.0-dev - (unreleased)
 ----------------------
+* Feature: Include iframes and interpret javascript. Also added option to
+  disable javascript per theme.
+  [voineali refs #20459]
+* Cleanup: Removed beautifulsoup4 dependency and cleanup all fixes made with
+  this tool
+  [voineali refs #20459]
 * Feature: Added global and local PDF settings for collection and folderish
   content-types: Max depth, Max breadth and Total Max Items
   [voineali refs #20436]
