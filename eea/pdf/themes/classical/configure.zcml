@@ -8,7 +8,7 @@
     layer="eea.pdf.interfaces.ILayer"
     for="eea.pdf.interfaces.IPDFAware"
     class=".cover.Cover"
-    permission="zope2.View"
+    permission="eea.pdf.download"
     />
 
   <browser:page
@@ -16,7 +16,7 @@
     layer="eea.pdf.interfaces.ILayer"
     for="eea.pdf.interfaces.IPDFAware"
     class=".cover.BackCover"
-    permission="zope2.View"
+    permission="eea.pdf.download"
     />
 
   <browser:page
@@ -24,7 +24,7 @@
     layer="eea.pdf.interfaces.ILayer"
     for="eea.pdf.interfaces.IPDFAware"
     class=".disclaimer.Disclaimer"
-    permission="zope2.View"
+    permission="eea.pdf.download"
     />
 
   <browser:page
@@ -32,7 +32,7 @@
     layer="eea.pdf.interfaces.ILayer"
     for="eea.pdf.interfaces.IPDFAware"
     class=".toc.Toc"
-    permission="zope2.View"
+    permission="eea.pdf.download"
     />
 
   <browser:page
@@ -40,7 +40,7 @@
     layer="eea.pdf.interfaces.ILayer"
     for="eea.pdf.interfaces.IPDFAware"
     class=".body.Body"
-    permission="zope2.View"
+    permission="eea.pdf.download"
     />
 
   <browser:page
@@ -48,7 +48,7 @@
     layer="eea.pdf.interfaces.ILayer"
     for="plone.app.folder.folder.IATUnifiedFolder"
     class=".folder.Body"
-    permission="zope2.View"
+    permission="eea.pdf.download"
     />
 
   <browser:page zcml:condition="installed Products.ATContentTypes.content.topic"
@@ -56,7 +56,7 @@
     layer="eea.pdf.interfaces.ILayer"
     for="Products.ATContentTypes.interfaces.IATTopic"
     class=".collection.Body"
-    permission="zope2.View"
+    permission="eea.pdf.download"
     />
 
   <browser:page zcml:condition="installed plone.app.collection"
@@ -64,7 +64,7 @@
     layer="eea.pdf.interfaces.ILayer"
     for="plone.app.collection.interfaces.ICollection"
     class=".collection.Body"
-    permission="zope2.View"
+    permission="eea.pdf.download"
     />
 
 </configure>

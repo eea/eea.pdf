@@ -3,13 +3,15 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="eea">
 
+  <include package="Products.CMFCore" file="permissions.zcml"/>
+
   <browser:page
     for="eea.pdf.interfaces.IPDFTool"
     layer="eea.pdf.interfaces.ILayer"
     name="view"
     template="zpt/tool.pt"
     class=".app.tool.Tool"
-    permission="zope2.View"
+    permission="cmf.ManagePortal"
     />
 
   <browser:page
@@ -18,7 +20,7 @@
     name="view"
     template="zpt/theme.pt"
     class=".app.theme.Theme"
-    permission="zope2.View"
+    permission="cmf.ManagePortal"
     />
 
   <browser:resource

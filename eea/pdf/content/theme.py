@@ -182,6 +182,8 @@ def finalize_schema(schema=THEME_SCHEMA):
         if field.schemata != 'default':
             field.required = False
             field.widget.condition = 'python:False'
+        else:
+            field.write_permission = 'Manage portal'
 
 finalize_schema()
 
