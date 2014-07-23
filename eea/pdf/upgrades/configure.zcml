@@ -21,7 +21,7 @@
             profile="eea.pdf:default">
 
         <genericsetup:upgradeDepends
-                title="Cleanup collective.sendaspdf dependency"
+                title="Import steps with changes: actions controlpanel propertiestool typeinfo pdf.xml"
                 import_steps="actions controlpanel propertiestool typeinfo pdf.xml"
                 />
 
