@@ -71,7 +71,13 @@ img {
 }
 
 .template-pdf-cover #relatedItems, .template-pdf-cover .relatedItems,
+.template-pdf-cover-back #relatedItems, .template-pdf-cover-back .relatedItems,
 .template-pdf-disclaimer #relatedItems, .template-pdf-disclaimer .relatedItems {
+  display: none;
+}
+
+.template-pdf-cover .portalMessage, .template-pdf-cover-back .portalMessage,
+.template-pdf-disclaimer .portalMessage {
   display: none;
 }
 
@@ -230,10 +236,17 @@ p.discreet {
     background-color: #f3f3f3;
 }
 
+.template-pdf-cover div#portal-column-content ,
+.template-pdf-cover-back div#portal-column-content {
+  padding: 0;
+  margin 0;
+}
+
 .template-pdf-cover-back .qrbox {
   min-height: 50pt;
   display: block;
   padding: 20pt;
+  padding-bottom: 0;
   margin: 0;
 }
 
