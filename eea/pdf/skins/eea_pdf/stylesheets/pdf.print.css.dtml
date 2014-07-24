@@ -233,7 +233,7 @@ p.discreet {
 }
 
 .template-pdf-cover-back {
-    background-color: #f3f3f3;
+    background-color: #fff;
 }
 
 .template-pdf-cover div#portal-column-content ,
