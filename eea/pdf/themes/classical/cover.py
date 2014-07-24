@@ -36,16 +36,12 @@ class Cover(PDFCover):
             theme['image'] = image.replace('/image_icon', '/image_preview')
             yield theme
 
-    def truncate(self, text, length=300, orphans=10, suffix=u".", end=u"."):
+    def truncate(self, text, length=70, orphans=10,
+                 suffix=u".", end=u".", cut=False):
         """ Custom truncate
         """
-        title = self.context.Title()
-        rows = len(title) / 65
-
-        rowLength = length / 4
-        length = length - rowLength * rows
-
-        return super(Cover, self).truncate(text, length, orphans, suffix, end)
+        return super(Cover, self).truncate(text, length, orphans,
+                                           suffix, end, cut)
 
 class BackCover(PDFBackCover):
     """ PDF Back cover

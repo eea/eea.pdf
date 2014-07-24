@@ -3,6 +3,9 @@ Changelog
 
 3.0-dev - (unreleased)
 ----------------------
+* Change: Skip description within PDF cover if length of first sentence is
+  greather that 80 characters
+  [voineali refs #20456]
 * Feature: Include iframes and interpret javascript. Also added option to
   disable javascript per theme.
   [voineali refs #20459]

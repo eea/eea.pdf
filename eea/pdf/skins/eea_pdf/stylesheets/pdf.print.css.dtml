@@ -236,6 +236,10 @@ p.discreet {
     background-color: #fff;
 }
 
+.template-pdf-cover-back .featured, .portlet {
+    background-color: #fff;
+}
+
 .template-pdf-cover div#portal-column-content ,
 .template-pdf-cover-back div#portal-column-content {
   padding: 0;
