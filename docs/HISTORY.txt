@@ -3,6 +3,8 @@ Changelog
 
 3.0-dev - (unreleased)
 ----------------------
+* Bug fix: Fixed CSS used for tables within PDF export
+  [voineali refs #20462]
 * Change: Skip description within PDF cover if length of first sentence is
   greather that 80 characters
   [voineali refs #20456]

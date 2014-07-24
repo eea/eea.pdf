@@ -25,6 +25,27 @@ p.discreet,
   letter-spacing: 0;
 }
 
+#content table {
+  max-width: 100%;
+  display: block;
+  overflow: auto;
+}
+
+#content table {
+  text-align: left;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+table.plain th, table.plain td {
+  border: 1px solid #ddd;
+}
+
+table.invisible td, table.invisible th, table.plain td, table.plain th, table.listing td, table.listing th {
+  padding: 0.5em 1em;
+  vertical-align: top;
+}
+
 img {
   max-width: 100%;
   page-break-inside: avoid;
