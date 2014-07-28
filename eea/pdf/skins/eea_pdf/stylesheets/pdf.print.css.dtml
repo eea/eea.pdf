@@ -97,6 +97,11 @@ img {
   display: none;
 }
 
+#relatedItems .photoAlbumEntry {
+  padding: 0;
+  margin: 5pt 0;
+}
+
 .template-pdf-cover .portalMessage, .template-pdf-cover-back .portalMessage,
 .template-pdf-disclaimer .portalMessage {
   display: none;
@@ -114,6 +119,10 @@ iframe {
 .portalMessage,
 .system-message {
   page-break-inside: avoid;
+}
+
+.keyFact {
+  padding: 2pt;
 }
 
 .warningMessage {
