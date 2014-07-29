@@ -3,6 +3,8 @@ Changelog
 
 3.0-dev - (unreleased)
 ----------------------
+* Bug fix: Hide some indicators boxes within PDF export
+  [voineali refs #20454]
 * Bug fix: Fixed spacing for key messages and related items
   [voineali refs #20457]
 * Bug fix: Fixed CSS used for tables within PDF export

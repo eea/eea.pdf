@@ -317,3 +317,16 @@ p.portalMessage {
 .pdf-collection-item {
   page-break-after: always;
 }
+
+/* Indicators */
+#readiness-status {
+  display: none;
+}
+
+#document-toc {
+  display: none !important;
+}
+
+#box-classification {
+  display: none;
+}
