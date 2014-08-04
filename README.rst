@@ -145,7 +145,7 @@ Default: Owner, Manager, Editor
 Can customize PDF (eea.pdf.customize)
 -------------------------------------
 Assign this permission to roles that you want to be able to contextually customize
-how the output PDF look and feel
+the output PDF look and feel
 Default: Manager, Site Administrator
 
 Dependencies
