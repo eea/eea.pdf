@@ -3,6 +3,10 @@ Changelog
 
 3.0-dev - (unreleased)
 ----------------------
+* Upgrade step: Assign "Can download PDF" permission to
+  CommonEditor
+* Upgrade step: Within "Plone > Site setup > Add-ons" click on
+  upgrade button available for EEA PDF
 * Bug fix: Hide some indicators boxes within PDF export
   [voineali refs #20454]
 * Bug fix: Fixed spacing for key messages and related items
