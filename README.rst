@@ -133,6 +133,21 @@ Apply this theme to selected portal types.
 Default:
 
 
+Custom permissions
+==================
+Custom permissions added by this package
+
+Can download PDF (eea.pdf.download)
+-----------------------------------
+Assign this permission to roles that you want to be able to download content as PDF
+Default: Owner, Manager, Editor
+
+Can customize PDF (eea.pdf.customize)
+-------------------------------------
+Assign this permission to roles that you want to be able to contextually customize
+how the output PDF look and feel
+Default: Manager, Site Administrator
+
 Dependencies
 ============
 
