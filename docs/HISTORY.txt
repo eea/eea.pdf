@@ -7,6 +7,8 @@ Changelog
   CommonEditor
 * Upgrade step: Within "Plone > Site setup > Add-ons" click on
   upgrade button available for EEA PDF
+* Change: Added i18n translations
+  [voineali refs #20431]
 * Bug fix: Hide some indicators boxes within PDF export
   [voineali refs #20454]
 * Bug fix: Fixed spacing for key messages and related items

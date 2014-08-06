@@ -1,0 +1,273 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-08-06 14:12+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../../pdf/content/theme.py:50
+msgid "A page template to be used for PDF Back Cover. Leave empty to disable it."
+msgstr ""
+
+#: ../../pdf/content/theme.py:39
+msgid "A page template to be used for PDF Body. Leave empty to disable it."
+msgstr ""
+
+#: ../../pdf/content/theme.py:16
+msgid "A page template to be used for PDF Cover. Leave empty to disable it."
+msgstr ""
+
+#: ../../pdf/content/theme.py:27
+msgid "A page template to be used for PDF Disclaimer, the first page after PDF cover. Leave empty to disable it."
+msgstr ""
+
+#: ../../pdf/content/theme.py:72
+msgid "A page template to be used for PDF Footer. Leave empty to disable it."
+msgstr ""
+
+#: ../../pdf/content/theme.py:61
+msgid "A page template to be used for PDF Header. Leave empty to disable it."
+msgstr ""
+
+#: ../../pdf/content/theme.py:110
+msgid "Abort PDF export after specified number of seconds. Use zero to disable it."
+msgstr ""
+
+#: ../../pdf/content/theme.py:83
+msgid "An XSL page template to be used for PDF Table of contents. Leave empty to disable it."
+msgstr ""
+
+#: ../../pdf/content/theme.py:49
+msgid "Back Cover"
+msgstr ""
+
+#: ../../pdf/content/theme.py:38
+msgid "Body"
+msgstr ""
+
+#: ../../pdf/content/theme.py:15
+msgid "Cover"
+msgstr ""
+
+#: ../../pdf/themes/classical/disclaimer.pt:57
+msgid "Denmark"
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:34
+msgid "Disable PDF export or override theme used to export this content as PDF."
+msgstr ""
+
+#: ../../pdf/content/theme.py:26
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../pdf/profiles/default/actions.xml
+msgid "Download as PDF"
+msgstr ""
+
+#: ../../pdf/content/theme.py:102
+msgid "Enable or disable javascript"
+msgstr ""
+
+#: ../../pdf/content/theme.py:94
+msgid "Enable table of contents links"
+msgstr ""
+
+#: ../../pdf/themes/classical/disclaimer.pt:54
+msgid "European Environment Agency"
+msgstr ""
+
+#: ../../pdf/content/theme.py:71
+msgid "Footer"
+msgstr ""
+
+#: ../../pdf/content/theme.py:60
+msgid "Header"
+msgstr ""
+
+#: ../../pdf/content/theme.py:101
+msgid "JavaScript"
+msgstr ""
+
+#: ../../pdf/content/theme.py:142
+msgid "Maximum breadth"
+msgstr ""
+
+#: ../../pdf/content/theme.py:143
+msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types."
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:81
+msgid "Maximum breadth to include children items while generating PDF. Leave it empty to use the portal global defined value."
+msgstr ""
+
+#: ../../pdf/content/theme.py:130
+msgid "Maximum depth"
+msgstr ""
+
+#: ../../pdf/content/theme.py:131
+msgid "Maximum depth to recursively include children items while generating PDF for collection or folderish content-types."
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:68
+msgid "Maximum depth to recursively include children items while generating PDF. Leave it empty to use the portal global defined value."
+msgstr ""
+
+#: ../../pdf/content/theme.py:154
+msgid "Maximum items"
+msgstr ""
+
+#: ../../pdf/content/theme.py:120
+msgid "Offset"
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:80
+msgid "PDF Maximum breadth"
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:67
+msgid "PDF Maximum depth"
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:93
+msgid "PDF Maximum items"
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:33
+msgid "PDF Theme"
+msgstr ""
+
+#: ../../pdf/content/theme.py:121
+msgid "Page numbering offset within PDF Body."
+msgstr ""
+
+#: ../../pdf/content/theme.py:168
+msgid "Portal types"
+msgstr ""
+
+#: ../../pdf/content/theme.py:178
+msgid "Preview"
+msgstr ""
+
+#: ../../pdf/content/theme.py:82
+msgid "Table of contents"
+msgstr ""
+
+#: ../../pdf/content/theme.py:93
+msgid "Table of contents links"
+msgstr ""
+
+#: ../../pdf/content/theme.py:109
+msgid "Timeout"
+msgstr ""
+
+#: ../../pdf/content/theme.py:155
+msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:94
+msgid "Total maximum children items to be includedwhile generating PDF. Leave it empty to use the portal global defined value."
+msgstr ""
+
+#: ../../pdf/content/theme.py:179
+msgid "Upload a preview image for this theme"
+msgstr ""
+
+#: ../../pdf/content/theme.py:169
+msgid "Use this PDF Theme for the following Portal-Types."
+msgstr ""
+
+#: ../../pdf/browser/zpt/theme.pt:13
+#: ../../pdf/browser/zpt/tool.pt:33
+msgid "Used for:"
+msgstr ""
+
+#. Default: "Kongens Nytorv 6"
+#: ../../pdf/themes/classical/disclaimer.pt:55
+msgid "copyright-address1"
+msgstr ""
+
+#. Default: "1050 Copenhagen K"
+#: ../../pdf/themes/classical/disclaimer.pt:56
+msgid "copyright-address2"
+msgstr ""
+
+#. Default: "Enquiries: eea.europa.eu/enquiries"
+#: ../../pdf/themes/classical/disclaimer.pt:61
+msgid "copyright-enquiries"
+msgstr ""
+
+#. Default: "Fax: + 45 33 36 71 99"
+#: ../../pdf/themes/classical/disclaimer.pt:59
+msgid "copyright-fax"
+msgstr ""
+
+#. Default: "The contents of this publication do not necessarily reflect the official opinions of the European Commission or other institutions of the European Union. Neither the European Environment Agency nor any person or company acting on behalf of the Agency is responsible for the use that may be made of the information contained in this report."
+#: ../../pdf/themes/classical/disclaimer.pt:30
+msgid "copyright-legal-description"
+msgstr ""
+
+#. Default: "Legal notice"
+#: ../../pdf/themes/classical/disclaimer.pt:29
+msgid "copyright-legal-name"
+msgstr ""
+
+#. Default: "Reproduction is authorised, provided the source is acknowledged, save where otherwise stated."
+#: ../../pdf/themes/classical/disclaimer.pt:41
+msgid "copyright-notice-desc1"
+msgstr ""
+
+#. Default: "Information about the European Union is available on the Internet. It can be accessed through the Europa server (www.europa.eu)."
+#: ../../pdf/themes/classical/disclaimer.pt:43
+msgid "copyright-notice-desc2"
+msgstr ""
+
+#. Default: "Luxembourg: Publications Office of the European Union, ${copyright-notice-year}"
+#: ../../pdf/themes/classical/disclaimer.pt:45
+msgid "copyright-notice-desc3"
+msgstr ""
+
+#. Default: "© European Environment Agency, ${copyright-notice-year}"
+#: ../../pdf/themes/classical/disclaimer.pt:40
+msgid "copyright-notice-eea"
+msgstr ""
+
+#. Default: "Copyright notice"
+#: ../../pdf/themes/classical/disclaimer.pt:39
+msgid "copyright-notice-name"
+msgstr ""
+
+#. Default: "Tel.: + 45 33 36 71 00"
+#: ../../pdf/themes/classical/disclaimer.pt:58
+msgid "copyright-phone"
+msgstr ""
+
+#. Default: "Web: eea.europa.eu"
+#: ../../pdf/themes/classical/disclaimer.pt:60
+msgid "copyright-web"
+msgstr ""
+
+#. Default: "Cover design: EEA"
+#: ../../pdf/themes/classical/disclaimer.pt:23
+msgid "cover-design"
+msgstr ""
+
+#. Default: "Layout: EEA"
+#: ../../pdf/themes/classical/disclaimer.pt:25
+msgid "cover-layout"
+msgstr ""
+
+#. Default: "Cover photo: © ${copyright-name}"
+#: ../../pdf/themes/classical/disclaimer.pt:24
+msgid "cover-photo"
+msgstr ""
+
