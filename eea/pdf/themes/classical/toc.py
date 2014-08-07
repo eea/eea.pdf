@@ -20,3 +20,13 @@ class Toc(PDFToc, Mixin):
         if self._toc_links is None:
             self._toc_links = self.getValue('toclinks', None)
         return self._toc_links
+
+    @property
+    def header(self):
+        """ i18n header
+        """
+        isAnon = getattr(self.request, '_isAnon', None)
+        self.request._isAnon = True
+        text = self.context.translate(u"Contents", domain="eea")
+        self.request._isAnon = isAnon
+        return text
