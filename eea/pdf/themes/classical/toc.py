@@ -25,8 +25,6 @@ class Toc(PDFToc, Mixin):
     def header(self):
         """ i18n header
         """
-        isAnon = getattr(self.request, '_isAnon', None)
-        self.request._isAnon = True
+        self.request.alwaysTranslate = True
         text = self.context.translate(u"Contents", domain="eea")
-        self.request._isAnon = isAnon
         return text

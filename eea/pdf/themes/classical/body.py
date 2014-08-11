@@ -14,5 +14,6 @@ class Body(PDFBody):
     def __call__(self, **kwargs):
         # Cheat condition @@plone_context_state/is_view_template
         self.request['ACTUAL_URL'] = self.context.absolute_url()
+        self.request.alwaysTranslate = True
         html = super(Body, self).__call__(**kwargs)
         return html
