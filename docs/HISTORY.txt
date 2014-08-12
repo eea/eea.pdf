@@ -1,6 +1,9 @@
 Changelog
 =========
 
+3.1-dev - (unreleased)
+----------------------
+
 3.0 - (2014-08-12)
 ------------------
 * Upgrade step: Assign "Can download PDF" permission to
