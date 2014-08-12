@@ -1,8 +1,8 @@
 Changelog
 =========
 
-3.0-dev - (unreleased)
-----------------------
+3.0 - (2014-08-12)
+------------------
 * Upgrade step: Assign "Can download PDF" permission to
   CommonEditor
 * Upgrade step: Within "Plone > Site setup > Add-ons" click on
@@ -40,7 +40,6 @@ Changelog
 * Change: Removed default PDF theme concept. If there is no PDF Theme assigned
   for a content-type, PDF can't be downloaded
   [voineali refs #20436]
-
 
 2.0 - (2014-07-16)
 ------------------
