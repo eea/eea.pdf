@@ -330,3 +330,16 @@ p.portalMessage {
 #box-classification {
   display: none;
 }
+
+/* Daviz */
+#content-core ul.formTabs {
+  display: none;
+}
+
+.standardButton {
+  display: none;
+}
+
+.googlechart_filters {
+  display: none;
+}

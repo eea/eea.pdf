@@ -3,6 +3,9 @@ Changelog
 
 3.1-dev - (unreleased)
 ----------------------
+* Feature: Added print CSS for embeded daviz charts
+  [voineali refs #20523]
+
 
 3.0 - (2014-08-12)
 ------------------
