@@ -10,6 +10,7 @@
   <include file="skins.zcml" />
 
   <include package=".browser" />
+  <include package=".cache" />
   <include package=".content" />
   <include package=".exportimport" />
   <include package=".subtypes" />

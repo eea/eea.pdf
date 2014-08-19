@@ -3,6 +3,8 @@ Changelog
 
 3.1-dev - (unreleased)
 ----------------------
+* Feature: Use memcache for pdf.body and download.pdf methods if eea.cache is present
+  [voineali refs #20678]
 * Feature: Added print CSS for embeded daviz charts
   [voineali refs #20523]
 

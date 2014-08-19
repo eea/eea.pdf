@@ -154,6 +154,7 @@ Dependencies
 1. `eea.converter`_
 2. `wkhtmltopdf`_
 3. `pdftk`_
+4. `eea.cache`_ (optional)
 
 Source code
 ===========
@@ -185,3 +186,4 @@ EEA_ - European Environment Agency (EU)
 .. _eea.converter: http://eea.github.com/docs/eea.converter
 .. _wkhtmltopdf: http://wkhtmltopdf.org
 .. _pdftk: http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
+.. _eea.cache: http://eea.github.com/docs/eea.cache

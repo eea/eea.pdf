@@ -32,6 +32,14 @@
     provides="eea.converter.interfaces.IPDFOptionsMaker"
     factory=".pdfview.BackCoverOptionsMaker"/>
 
+  <browser:page
+    name="download.pdf"
+    layer="eea.pdf.interfaces.ILayer"
+    for="eea.pdf.interfaces.IPDFAware"
+    class=".download.Download"
+    permission="eea.pdf.download"
+    />
+
   <!-- Themes -->
   <include package=".classical" />
   <include package=".modern" />
