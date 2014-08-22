@@ -18,3 +18,12 @@ class InvalidateCacheEvent(object):
     """
     def __init__(self, *args, **kwargs):
         pass
+
+
+def flush(*args, **kwargs):
+    """ Flush cache
+    """
+    return
+
+flushRelatedItems = flush
+flushBackRefs = flush

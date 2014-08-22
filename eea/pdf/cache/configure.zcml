@@ -1,17 +1,14 @@
 <configure xmlns="http://namespaces.zope.org/zope"
-  xmlns:browser="http://namespaces.zope.org/browser"
   i18n_domain="eea">
-
-  <browser:page
-    name="pdf.memcache.invalidate"
-    layer="eea.pdf.interfaces.ILayer"
-    for="eea.pdf.interfaces.IPDFAware"
-    class=".browser.InvalidateMemCache"
-    permission="eea.pdf.customize" />
 
   <subscriber
     for="eea.pdf.interfaces.IPDFAware
          zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-    handler=".browser.purgeOnModified" />
+    handler=".flushRelatedItems" />
+
+  <subscriber
+    for="eea.pdf.interfaces.IPDFAware
+         zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler=".flushBackRefs" />
 
 </configure>

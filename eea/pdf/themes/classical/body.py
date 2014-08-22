@@ -13,8 +13,6 @@ class Body(PDFBody):
     """
     template = ViewPageTemplateFile('body.pt')
 
-
-
     @ramcache(cacheKey, dependencies=['eea.pdf'])
     def render(self, **kwargs):
         """ Cached output
