@@ -23,6 +23,14 @@
     permission="cmf.ManagePortal"
     />
 
+  <browser:page
+    name="download.pdf"
+    layer="eea.pdf.interfaces.ILayer"
+    for="eea.pdf.interfaces.IPDFAware"
+    class=".app.download.Download"
+    permission="eea.pdf.download"
+    />
+
   <browser:resource
     name="eea.pdf.css"
     file="./css/view.css"

@@ -1,6 +1,8 @@
 """ Subtyping interfaces
 """
+from zope import schema
 from zope.interface import Interface
+from eea.converter.interfaces import ISupport
 
 class IPDFAware(Interface):
     """ Objects which can be downloaded as PDF.
@@ -9,3 +11,14 @@ class IPDFAware(Interface):
 class ICollectionPDFAware(IPDFAware):
     """ Collections of objects which can be downloaded as PDF.
     """
+
+class IPDFSupport(ISupport):
+    """ Custom PDF Support
+    """
+    def can_download():
+        """ Can download PDF
+        """
+
+    def email():
+        """ Current user email
+        """

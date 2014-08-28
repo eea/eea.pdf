@@ -53,7 +53,7 @@
     layer="eea.pdf.interfaces.ILayer"
     class=".support.Support"
     permission="zope.Public"
-    allowed_interface="eea.converter.interfaces.ISupport"
+    allowed_interface="eea.pdf.subtypes.interfaces.IPDFSupport"
     />
 
   <adapter name="eea.pdf"

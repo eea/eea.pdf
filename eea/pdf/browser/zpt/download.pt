@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+  metal:use-macro="here/main_template/macros/master"
+  i18n:domain="eea">
+
+<body>
+
+<h1 metal:fill-slot="content-title">Download as PDF</h1>
+<metal:description fill-slot="content-description">
+  <span i18n:translate="">
+    Please tell us your email and we will notify you when the PDF is ready. Otherwise please check
+    <a href="#" i18n:name="url">this link</a>
+    in about 30 minutes.
+  </span>
+</metal:description>
+
+<div metal:fill-slot="content-core" >
+  <form tal:attributes="action string:${context/absolute_url}/${view/__name__}" method="post">
+    <div class="field eea-pdf-email">
+      <label class="formQuestion" for="email" i18n:translate="">Email</label>
+      <input type="email" name="email" id="email" />
+      <input type="text" name="body" value="" />
+    </div>
+    <div class="formControls">
+      <input class="context" type="submit" name="form.button.download" value="Download" i18n:attributes="value">
+      <input class="standalone" type="submit" name="form.button.cancel" value="Cancel" i18n:attributes="value">
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

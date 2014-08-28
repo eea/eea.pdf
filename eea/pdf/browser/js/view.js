@@ -36,12 +36,11 @@ jQuery.fn.EEAPdf = function(options){
 
 jQuery(document).ready(function(){
 
-  var items = jQuery(".eea-pdf");
+  var items = jQuery('.documentActions').find('a[href$=".pdf"]');
   if(!items.length){
     return;
   }
 
-  var settings = {};
-  items.EEAPdf(settings);
+  items.EEAPdf();
 
 });

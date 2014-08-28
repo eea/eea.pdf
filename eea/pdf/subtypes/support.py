@@ -1,5 +1,6 @@
 """ PDF Support
 """
+from AccessControl import getSecurityManager
 from zope.interface import implementer
 from zope.component import queryUtility
 from zope.security import checkPermission
@@ -11,7 +12,6 @@ from eea.pdf.interfaces import IPDFTool, IPDFAware
 class Support(BrowserView):
     """ PDF Support
     """
-    @property
     def can_download(self):
         """ Can download context as PDF
         """
@@ -29,3 +29,10 @@ class Support(BrowserView):
             return False
 
         return True
+
+    def email(self):
+        """ User has email
+        """
+        user = getSecurityManager().getUser()
+        getProperty = getattr(user, 'getProperty', lambda name: '')
+        return getProperty('email')

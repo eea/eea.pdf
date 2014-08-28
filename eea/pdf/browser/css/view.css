@@ -18,3 +18,7 @@
 .portaltype-pdftool .documentActions {
   display: none;
 }
+
+.eea-pdf-email input[name=body] {
+  visibility: hidden;
+}

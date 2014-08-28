@@ -3,6 +3,10 @@ Changelog
 
 3.2-dev - (unreleased)
 ----------------------
+* WIP
+* Feature: Ask for email when user tries to download page as PDF if the
+  system can't get it from current user's profile
+  [voineali refs #20846]
 
 3.1 - (2014-08-27)
 ------------------
