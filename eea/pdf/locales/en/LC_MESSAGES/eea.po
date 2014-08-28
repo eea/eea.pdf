@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-06 14:12+0000\n"
+"POT-Creation-Date: 2014-08-28 16:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,6 +54,10 @@ msgstr ""
 msgid "Body"
 msgstr ""
 
+#: ../../pdf/browser/zpt/download.pt:25
+msgid "Cancel"
+msgstr ""
+
 #: ../../pdf/content/theme.py:15
 msgid "Cover"
 msgstr ""
@@ -70,8 +74,20 @@ msgstr ""
 msgid "Disclaimer"
 msgstr ""
 
+#: ../../pdf/browser/zpt/download.pt:24
+msgid "Download"
+msgstr ""
+
 #: ../../pdf/profiles/default/actions.xml
 msgid "Download as PDF"
+msgstr ""
+
+#: ../../pdf/browser/app/download.py:27
+msgid "Download canceled"
+msgstr ""
+
+#: ../../pdf/browser/zpt/download.pt:19
+msgid "Email"
 msgstr ""
 
 #: ../../pdf/content/theme.py:102
@@ -150,6 +166,10 @@ msgstr ""
 msgid "Page numbering offset within PDF Body."
 msgstr ""
 
+#: ../../pdf/browser/zpt/download.pt:11
+msgid "Please tell us your email and we will notify you when the PDF is ready. Otherwise please check ${url} in about 30 minutes."
+msgstr ""
+
 #: ../../pdf/content/theme.py:168
 msgid "Portal types"
 msgstr ""
@@ -164,6 +184,10 @@ msgstr ""
 
 #: ../../pdf/content/theme.py:93
 msgid "Table of contents links"
+msgstr ""
+
+#: ../../pdf/browser/app/download.py:32
+msgid "The PDF is being generated. An email will be sent to you when the PDF is ready."
 msgstr ""
 
 #: ../../pdf/content/theme.py:109
