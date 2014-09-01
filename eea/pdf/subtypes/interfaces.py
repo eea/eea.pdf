@@ -1,6 +1,5 @@
 """ Subtyping interfaces
 """
-from zope import schema
 from zope.interface import Interface
 from eea.converter.interfaces import ISupport
 

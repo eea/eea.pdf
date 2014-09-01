@@ -52,6 +52,8 @@ class Download(Pdf):
 
 
     def post(self, **kwargs):
+        """ POST
+        """
         if self.request.get('form.button.cancel'):
             return self.cancel()
         elif self.request.get('form.button.download'):
