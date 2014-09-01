@@ -1,7 +1,7 @@
 Changelog
 =========
 
-3.2-dev - (unreleased)
+4.0-dev - (unreleased)
 ----------------------
 * WIP
 * Feature: Ask for email when user tries to download page as PDF if the

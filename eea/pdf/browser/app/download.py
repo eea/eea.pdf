@@ -5,6 +5,7 @@ from zope.component import queryMultiAdapter
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
 from eea.converter.browser.app.download import Pdf
+from eea.downloads.interfaces import IStorage
 from eea.pdf.config import EEAMessageFactory as _
 logger = logging.getLogger('eea.pdf')
 
@@ -20,6 +21,12 @@ class Download(Pdf):
         if msg:
             IStatusMessage(self.request).addStatusMessage(msg, 'info')
         return self.request.response.redirect(self.context.absolute_url())
+
+    def link(self):
+        """ Download link
+        """
+        storage = IStorage(self.context).of('pdf')
+        return storage.absolute_url()
 
     def cancel(self):
         """ Cancer

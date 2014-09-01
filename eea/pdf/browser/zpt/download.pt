@@ -8,7 +8,7 @@
 <metal:description fill-slot="content-description">
   <span i18n:translate="">
     Please tell us your email and we will notify you when the PDF is ready. Otherwise please check
-    <a href="#" i18n:name="url">this link</a>
+    <a tal:attributes=" href view/link" i18n:name="url">this link</a>
     in about 30 minutes.
   </span>
 </metal:description>

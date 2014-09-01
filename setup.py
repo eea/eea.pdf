@@ -38,6 +38,7 @@ setup(name=NAME,
           'setuptools',
           # -*- Extra requirements: -*-
           'eea.converter > 7.0',
+          'eea.downloads',
       ],
       entry_points="""
       # -*- entry_points -*-
