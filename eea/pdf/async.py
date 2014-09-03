@@ -7,10 +7,6 @@ logger = logging.getLogger('eea.pdf')
 class PDFConversionError(IOError):
     """ PDF conversion error
     """
-    def __init__(self, *args, **kwargs):
-        super(PDFConversionError, self).__init__(*args, **kwargs)
-        for key, value in kwargs.items():
-            setattr(self, key, value)
 
 def make_async_pdf(context, converter, **kwargs):
     """ Async job
@@ -19,12 +15,17 @@ def make_async_pdf(context, converter, **kwargs):
     filepath = kwargs.get('filepath', '')
 
     if not filepath:
-        raise PDFConversionError('Invalid filepath for output PDF', email=email)
+        converter.cleanup()
+        raise PDFConversionError(2, 'Invalid filepath for output PDF', email)
+
+    # Maybe a previous async job already generated our PDF
+    if file_exists(filepath):
+        return kwargs
 
     converter.run()
-
     if not converter.path:
-        raise PDFConversionError('Invalid output PDF', email=email)
+        converter.cleanup()
+        raise PDFConversionError(2, 'Invalid output PDF', email)
 
     converter.copy(converter.path, filepath)
     converter.cleanup()
@@ -35,7 +36,7 @@ def job_failure_callback(failure, **kwargs):
     """ Async job failed
     """
     error = getattr(failure, 'value', None)
-    email = getattr(error, 'email', kwargs.get('email', ''))
+    email = getattr(error, 'filename', kwargs.get('email', ''))
     logger.warn("Failure %s", email)
 
 def job_success_callback(result):
