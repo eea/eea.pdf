@@ -103,6 +103,11 @@ Timeout
 Abort PDF conversion after this number of seconds
 Default: 60
 
+Asynchronous
+------------
+Generate PDF asynchronously and send an email to the user when it's done
+Default: True
+
 Offset
 ------
 Start counting pages within PDF Body from this number. Usefull when cover and/or

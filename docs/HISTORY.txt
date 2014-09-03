@@ -4,6 +4,10 @@ Changelog
 4.0-dev - (unreleased)
 ----------------------
 * WIP
+* Feature: Added possibility to generate PDFs asynchronously with
+  plone.app.async. Enabled by default with this version. It can be manually
+  disabled from Site Setup > PDF Settings > Theme
+  [voineali refs #20843]
 * Feature: Ask for email when user tries to download page as PDF if the
   system can't get it from current user's profile
   [voineali refs #20846]

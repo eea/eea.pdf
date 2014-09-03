@@ -113,6 +113,17 @@ EditSchema = atapi.Schema((
             )
         )
     ),
+    atapi.BooleanField('async',
+        schemata='default',
+        default=True,
+        widget=atapi.BooleanWidget(
+            label=_(u"Asynchronous"),
+            description=_(
+                u"Generate PDF asynchronously and send an email to the user "
+                u"when it's done."
+            )
+        )
+    ),
     atapi.IntegerField('offset',
         schemata='default',
         default=0,

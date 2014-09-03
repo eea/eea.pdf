@@ -18,6 +18,10 @@ class IPDFSupport(ISupport):
         """ Can download PDF
         """
 
+    def async():
+        """ Download PDF asynchronously or not.
+        """
+
     def email():
         """ Current user email
         """

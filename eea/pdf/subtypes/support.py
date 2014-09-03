@@ -30,6 +30,20 @@ class Support(BrowserView):
 
         return True
 
+    def async(self):
+        """ Download PDF asynchronously? True by default
+        """
+        tool = queryUtility(IPDFTool)
+        if not tool:
+            return True
+
+        theme = tool.theme(self.context)
+
+        if not theme:
+            return True
+
+        return theme.getField('async').getAccessor(theme)()
+
     def email(self):
         """ User has email
         """
