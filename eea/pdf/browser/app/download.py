@@ -1,6 +1,5 @@
 """ Download PDF
 """
-import os
 import logging
 from zope.publisher.interfaces import NotFound
 from zope.component import queryMultiAdapter, queryUtility
