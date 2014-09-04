@@ -1,6 +1,7 @@
 """ Download PDF
 """
 import logging
+from zope import event
 from zope.publisher.interfaces import NotFound
 from zope.component import queryMultiAdapter, queryUtility
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -9,6 +10,8 @@ from plone.app.async.interfaces import IAsyncService
 from eea.converter.browser.app.download import Pdf
 from eea.downloads.interfaces import IStorage
 from eea.pdf.config import EEAMessageFactory as _
+from eea.pdf.events.sync import PDFExportFail, PDFExportSuccess
+from eea.pdf.events.async import AsyncPDFExportSuccess
 from eea.pdf import async
 logger = logging.getLogger('eea.pdf')
 
@@ -16,6 +19,22 @@ class Download(Pdf):
     """ Download PDF
     """
     template = ViewPageTemplateFile('../zpt/download.pt')
+
+    def make_pdf(self, dry_run=False, **kwargs):
+        """ Compute pdf
+        """
+        data = super(Download, self).make_pdf(dry_run=dry_run, **kwargs)
+
+        # Async
+        if dry_run:
+            return data
+
+        # Sync events
+        if not data:
+            event.notify(PDFExportFail(self.context))
+        event.notify(PDFExportSuccess(self.context))
+
+        return data
 
     def _redirect(self, msg=''):
         """ Redirect
@@ -52,10 +71,12 @@ class Download(Pdf):
         fileurl = storage.absolute_url()
 
         if async.file_exists(filepath):
-            async.job_success_callback(dict(
+            event.notify(AsyncPDFExportSuccess(
+                self.context,
                 fileurl=fileurl,
                 filepath=filepath,
-                email=email
+                email=email,
+                url=self.context.absolute_url()
             ))
             return self.finish()
 
@@ -65,17 +86,15 @@ class Download(Pdf):
         # Async generate PDF
         converter = self.make_pdf(dry_run=True)
         worker = queryUtility(IAsyncService)
-        job = worker.queueJob(
+        worker.queueJob(
             async.make_async_pdf,
             self.context, converter,
             email=email,
             filepath=filepath,
-            fileurl=fileurl
+            fileurl=fileurl,
+            url=self.context.absolute_url(),
+            # environ=getattr(self.request, 'environ', {})
         )
-
-        # Callbacks and return
-        job.addCallback(async.job_success_callback)
-        job.addCallbacks(failure=async.job_failure_callback)
 
         return self.finish()
 

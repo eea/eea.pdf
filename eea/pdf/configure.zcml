@@ -12,7 +12,9 @@
   <include package=".browser" />
   <include package=".cache" />
   <include package=".content" />
+  <include package=".events" />s
   <include package=".exportimport" />
+  <include package=".rules" />
   <include package=".subtypes" />
   <include package=".themes" />
   <include package=".upgrades" />

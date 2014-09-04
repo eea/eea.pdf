@@ -1,7 +1,10 @@
 """ Async jobs
 """
+import errno
 import os
 import logging
+from zope import event
+from eea.pdf.events.async import AsyncPDFExportFail, AsyncPDFExportSuccess
 logger = logging.getLogger('eea.pdf')
 
 class PDFConversionError(IOError):
@@ -11,43 +14,35 @@ class PDFConversionError(IOError):
 def make_async_pdf(context, converter, **kwargs):
     """ Async job
     """
-    email = kwargs.get('email', '')
     filepath = kwargs.get('filepath', '')
+    url = kwargs.get('url', '')
 
     if not filepath:
         converter.cleanup()
-        raise PDFConversionError(2, 'Invalid filepath for output PDF', email)
+        event.notify(AsyncPDFExportFail(context, **kwargs))
+        raise PDFConversionError(2, 'Invalid filepath for output PDF', url)
 
     # Maybe a previous async job already generated our PDF
     if file_exists(filepath):
-        return kwargs
+        event.notify(AsyncPDFExportSuccess(context, **kwargs))
+        return
 
-    converter.run()
+    try:
+        converter.run(safe=False)
+    except Exception, err:
+        event.notify(AsyncPDFExportFail(context, **kwargs))
+        errno = getattr(err, 'errno', 2)
+        raise PDFConversionError(errno, err, url)
+
     if not converter.path:
         converter.cleanup()
-        raise PDFConversionError(2, 'Invalid output PDF', email)
+        event.notify(AsyncPDFExportFail(context, **kwargs))
+        raise PDFConversionError(2, 'Invalid output PDF', url)
 
     converter.copy(converter.path, filepath)
     converter.cleanup()
 
-    return kwargs
-
-def job_failure_callback(failure, **kwargs):
-    """ Async job failed
-    """
-    error = getattr(failure, 'value', None)
-    email = getattr(error, 'filename', kwargs.get('email', ''))
-    logger.warn("Failure %s", email)
-
-def job_success_callback(result):
-    """ Async job succeeded
-    """
-    # Avoid false success
-    if not isinstance(result, dict):
-        return
-
-    # Handle success
-    logger.info("Success %s", result)
+    event.notify(AsyncPDFExportSuccess(context, **kwargs))
 
 def file_exists(path):
     """ File on disk and is non-empty

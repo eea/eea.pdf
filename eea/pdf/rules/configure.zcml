@@ -1,0 +1,32 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone">
+
+  <include package="plone.app.contentrules" />
+
+  <interface
+    interface="eea.pdf.events.interfaces.IAsyncPDFExportFail"
+    type="plone.contentrules.rule.interfaces.IRuleEventType"
+    name="Async PDF Export (fail)"
+    />
+
+  <interface
+    interface="eea.pdf.events.interfaces.IAsyncPDFExportSuccess"
+    type="plone.contentrules.rule.interfaces.IRuleEventType"
+    name="Async PDF Export (success)"
+    />
+
+  <!-- Content rules subscribers -->
+  <subscriber
+    for="eea.pdf.events.interfaces.IAsyncPDFExportFail"
+    handler=".handlers.execute_event"
+    />
+
+  <subscriber
+    for="eea.pdf.events.interfaces.IAsyncPDFExportSuccess"
+    handler=".handlers.execute_event"
+    />
+
+
+</configure>
