@@ -101,7 +101,7 @@ Default: True
 Timeout
 -------
 Abort PDF conversion after this number of seconds
-Default: 60
+Default: 3600
 
 Asynchronous
 ------------
@@ -152,6 +152,35 @@ Can customize PDF (eea.pdf.customize)
 Assign this permission to roles that you want to be able to contextually customize
 the output PDF look and feel
 Default: Manager, Site Administrator
+
+Content rules
+=============
+This package uses Plone Content-rules to notify users by email when an asynchronous
+PDF job is done. Thus 3 custom content-rules will be added within
+Plone > Site Setup > Content-rules
+
+.. warning ::
+
+  As these content-rules are triggered by an asynchronous job, while
+  you customize the email template for these content-rules,
+  please **DO NOT USE OTHER** string substitutions **that the ones** that start
+  with **$download_** as you'll break the download chain.
+  Also if you disable these content-rules the users will never know when the
+  PDF is ready and what is the link where they can download the output PDF.
+
+PDF export succeeded
+--------------------
+Notify the person who requested a PDF export that the PDF successfully exported
+and provide a link to the downloadable PDF
+
+PDF export failed
+-----------------
+Notify the person who requested a PDF export that the PDF export failed.
+
+PDF export failed (admin)
+-------------------------
+Notify admin that there were issues while exporting PDF
+
 
 Dependencies
 ============

@@ -1,6 +1,6 @@
 """ Events
 """
-
+from zope.interface import Interface
 from zope.component.interfaces import IObjectEvent
 
 class IPDFEvent(IObjectEvent):
@@ -25,4 +25,8 @@ class IAsyncPDFExportSuccess(IAsyncPDFEvent):
 
 class IAsyncPDFExportFail(IAsyncPDFEvent):
     """ Async job for PDF export failed
+    """
+
+class IPDFContextWrapper(Interface):
+    """ Context wrapper used by async events
     """

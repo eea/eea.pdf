@@ -71,13 +71,14 @@ class Download(Pdf):
         fileurl = storage.absolute_url()
 
         if async.file_exists(filepath):
-            event.notify(AsyncPDFExportSuccess(
-                self.context,
+            wrapper = async.ContextWrapper(self.context)(
                 fileurl=fileurl,
                 filepath=filepath,
                 email=email,
                 url=self.context.absolute_url()
-            ))
+            )
+
+            event.notify(AsyncPDFExportSuccess(wrapper))
             return self.finish()
 
         # Cheat condition @@plone_context_state/is_view_template

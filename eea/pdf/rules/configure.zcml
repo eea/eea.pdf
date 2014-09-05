@@ -28,5 +28,37 @@
     handler=".handlers.execute_event"
     />
 
+  <class class="eea.pdf.async.ContextWrapper">
+    <implements interface="plone.contentrules.engine.interfaces.IRuleAssignable" />
+  </class>
+
+  <!-- Content rules substitutions -->
+  <adapter
+    for="eea.pdf.events.interfaces.IPDFContextWrapper"
+    provides="plone.stringinterp.interfaces.IStringSubstitution"
+    factory=".adapters.DownloadEmail"
+    name="download_email"
+    />
+
+  <adapter
+    for="eea.pdf.events.interfaces.IPDFContextWrapper"
+    provides="plone.stringinterp.interfaces.IStringSubstitution"
+    factory=".adapters.DownloadUrl"
+    name="download_url"
+    />
+
+  <adapter
+    for="eea.pdf.events.interfaces.IPDFContextWrapper"
+    provides="plone.stringinterp.interfaces.IStringSubstitution"
+    factory=".adapters.DownloadCameFromUrl"
+    name="download_came_from_url"
+    />
+
+  <adapter
+    for="eea.pdf.events.interfaces.IPDFContextWrapper"
+    provides="plone.stringinterp.interfaces.IStringSubstitution"
+    factory=".adapters.DownloadError"
+    name="download_error"
+    />
 
 </configure>

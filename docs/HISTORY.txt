@@ -3,14 +3,23 @@ Changelog
 
 4.0-dev - (unreleased)
 ----------------------
-* WIP
-* Feature: Added possibility to generate PDFs asynchronously with
-  plone.app.async. Enabled by default with this version. It can be manually
-  disabled from Site Setup > PDF Settings > Theme
-  [voineali refs #20843]
-* Feature: Ask for email when user tries to download page as PDF if the
+* Upgrade step: (optional) Within Plone > Site setup > PDF Settings ensure that
+  all PDF themes have Asynchronous property checked and increase timeout to 3600
+  [voineali refs #20845]
+* Upgrade step: (optional) Within Plone > Site setup > Content-rules review all
+  PDF related content-rules.
+  As these rules are triggered by an async job **DO NOT USE** other string
+  substitutions while sending emails than the ones the start with **$download_**
+  [voineali refs #20845]
+* Upgrade step: Within "Plone > Site setup > Add-ons" click on
+  upgrade button available for EEA PDF
+* Feature: Ask for email when user tries to asynchronously export PDF if the
   system can't get it from current user's profile
   [voineali refs #20846]
+* Feature: Generate PDFs asynchronously with plone.app.async.
+  Enabled by default with this version. It can be manually disabled from
+  Site Setup > PDF Settings > Theme
+  [voineali refs #20843]
 
 3.2 - (2014-09-07)
 ------------------

@@ -104,7 +104,7 @@ EditSchema = atapi.Schema((
     ),
     atapi.IntegerField('timeout',
         schemata='default',
-        default=60,
+        default=3600,
         widget=atapi.IntegerWidget(
             label=_(u"Timeout"),
             description=_(
