@@ -12,6 +12,11 @@ Changelog
   system can't get it from current user's profile
   [voineali refs #20846]
 
+3.2 - (2014-09-07)
+------------------
+* Bug fix: Re-release broken version 3.1
+  [avoinea]
+
 3.1 - (2014-08-27)
 ------------------
 * Feature: Speed-up PDF export by caching pdf.body method using memcached
