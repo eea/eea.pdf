@@ -1,6 +1,5 @@
 """ Async jobs
 """
-import errno
 import os
 import logging
 from Acquisition import Implicit

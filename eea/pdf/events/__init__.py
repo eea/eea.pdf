@@ -1,9 +1,6 @@
 """ Events
 """
-import sys
 from zope.interface import implementer
-from ZPublisher.HTTPResponse import HTTPResponse
-from ZPublisher.HTTPRequest import HTTPRequest
 from eea.pdf.events.interfaces import IPDFEvent, IAsyncPDFEvent
 
 @implementer(IPDFEvent)
