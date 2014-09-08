@@ -19,6 +19,18 @@
   display: none;
 }
 
-.eea-pdf-email input[name=body] {
+.eea-pdf-email input[type=email] {
+  min-width: 90%;
+  height: 30px;
+}
+
+.eea-pdf-email .formHelp {
+}
+
+.eea-pdf-email textarea[name=body] {
   visibility: hidden;
+}
+
+.eea-pdf-email .context {
+  min-height: 30px;
 }
