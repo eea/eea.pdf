@@ -9,6 +9,9 @@
   <property name="header">pdf.header</property>
   <property name="footer">pdf.footer</property>
   <property name="offset">3</property>
+  <property name="types">
+   <element value="Document" />
+  </property>
  </object>
  <object name="modern" meta_type="PDFTheme">
   <property name="title">Modern</property>
@@ -19,6 +22,9 @@
   <property name="header">pdf.header</property>
   <property name="footer">pdf.footer</property>
   <property name="offset">0</property>
+  <property name="types">
+   <element value="News Item" />
+  </property>
  </object>
  <object name="collection" meta_type="PDFTheme">
   <property name="title">Collection</property>

@@ -24,6 +24,7 @@ Main features
 
 1. Adds download as PDF action at the bottom of the page
 2. Possibility to define custom PDF themes per content-type
+3. Asynchronously generate PDF files and notify users by email when PDF is ready
 
 Install
 =======
