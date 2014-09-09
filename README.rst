@@ -182,6 +182,40 @@ PDF export failed (admin)
 Notify admin that there were issues while exporting PDF
 
 
+Content rules email string substitution
+=======================================
+In order to be able to easily customize emails sent by this package the following
+custom email template string substitutions can be made
+
+
+${download_came_from_url}
+-------------------------
+The absolute URL of the Plone object which is downloaded as PDF
+
+${download_email}
+-----------------
+Email address of the user that triggered the download as PDF action
+
+${download_error}
+-----------------
+Error traceback when download as PDF job fails
+
+${download_from_email}
+----------------------
+Site Admin email address customizable via Plone > Site Setup > Mail
+
+${download_from_name}
+---------------------
+Site Admin name customizable via Plone > Site Setup > Mail
+
+${download_title}
+-----------------
+Title of the Plone object which is downloaded as PDF
+
+${download_url}
+---------------
+The absolute URL where the generated output PDF can be downloaded
+
 Dependencies
 ============
 
