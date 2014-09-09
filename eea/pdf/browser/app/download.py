@@ -49,6 +49,14 @@ class Download(Pdf):
         storage = IStorage(self.context).of('pdf')
         return storage.absolute_url()
 
+    def period(self):
+        """ Wait period
+        """
+        ptype = getattr(self.context, 'portal_type', '')
+        if ptype.lower() in ('collection', 'topic', 'folder', 'atfolder'):
+            return _(u"minutes")
+        return _(u"seconds")
+
     def cancel(self):
         """ Cancer
         """
@@ -59,7 +67,12 @@ class Download(Pdf):
         """
         return self._redirect(_(
             u"The PDF is being generated. "
-            u"An email will be sent to you when the PDF is ready."
+            u"An email will be sent to you when the PDF is ready. "
+            u"If you don't have access to your email address "
+            u"check this link in a few ${period}: ${link} ", mapping={
+                "link": self.link(),
+                "period": self.period()
+            }
         ))
 
     def download(self, email='', **kwargs):

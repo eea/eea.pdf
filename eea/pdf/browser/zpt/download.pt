@@ -4,15 +4,14 @@
 
 <body>
 
-<h1 metal:fill-slot="content-title" i18n:translate="">
-  Download "<tal:title i18n:name="title" tal:replace="context/title_or_id" />" as PDF
-</h1>
-<metal:description fill-slot="content-description" />
+<div metal:fill-slot="content" >
+  <h1 i18n:translate="">
+    Download "<tal:title i18n:name="title" tal:replace="context/title_or_id" />" as PDF
+  </h1>
 
-<div metal:fill-slot="content-core" >
   <form tal:attributes="action string:${context/absolute_url}/${view/__name__}" method="post">
     <div class="field eea-pdf-email">
-      <input type="email" name="email" id="email" placeholder="Send the PDF to this email" i18n:attributes="placeholder"/>
+      <input type="email" name="email" id="email" placeholder="Enter your email address where to send the PDF when ready" i18n:attributes="placeholder"/>
       <input class="context" type="submit" name="form.button.download" value="Send" i18n:attributes="value">
       <span class="formHelp" i18n:translate="">* The email is only used for the purpose of sending the PDF. We do not store it for any other use.</span>
       <textarea name="body" id="body"></textarea>
