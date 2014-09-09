@@ -106,8 +106,7 @@ class Download(Pdf):
             email=email,
             filepath=filepath,
             fileurl=fileurl,
-            url=self.context.absolute_url(),
-            # environ=getattr(self.request, 'environ', {})
+            url=self.context.absolute_url()
         )
 
         return self.finish()

@@ -36,6 +36,13 @@
   <adapter
     for="eea.pdf.events.interfaces.IPDFContextWrapper"
     provides="plone.stringinterp.interfaces.IStringSubstitution"
+    factory=".adapters.DownloadTitle"
+    name="download_title"
+    />
+
+  <adapter
+    for="eea.pdf.events.interfaces.IPDFContextWrapper"
+    provides="plone.stringinterp.interfaces.IStringSubstitution"
     factory=".adapters.DownloadEmail"
     name="download_email"
     />

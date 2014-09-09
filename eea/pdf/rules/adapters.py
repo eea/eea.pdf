@@ -3,6 +3,17 @@
 from plone.stringinterp.adapters import BaseSubstitution
 from eea.pdf.config import EEAMessageFactory as _
 
+class DownloadTitle(BaseSubstitution):
+    """ Download title substitution
+    """
+    category = _(u'Download')
+    description = _(u'Download title')
+
+    def safe_call(self):
+        """ Safe call
+        """
+        return getattr(self.context, 'title_or_id', lambda: '')()
+
 class DownloadEmail(BaseSubstitution):
     """ Download email substitution
     """

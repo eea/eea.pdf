@@ -11,6 +11,9 @@ Changelog
   As these rules are triggered by an async job **DO NOT USE** other string
   substitutions while sending emails than the ones the start with **$download_**
   [voineali refs #20845]
+* Upgrade step: (optional) On server machine add a cleanup cron to remove generated
+  PDF files older than 7 days (or more, depending on your storage size)
+  [voineali refs #20845]
 * Upgrade step: Within "Plone > Site setup > Add-ons" click on
   upgrade button available for EEA PDF
 * Feature: Ask for email when user tries to asynchronously export PDF if the
