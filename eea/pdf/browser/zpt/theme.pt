@@ -9,10 +9,17 @@
           <img tal:define="url context/absolute_url" tal:attributes="src string:$url/image_preview" />
         </div>
 
-        <div class="eea-pdf-body">
-          <strong i18n:translate="">Used for:</strong>
-          <span tal:define="types view/types" tal:content="python:', '.join(types)">Portal types</span>
-        </div>
+        <dl class="eea-pdf-body" tal:define="item_object nocall:view/context">
+          <dt i18n:translate="">Used for:</dt>
+          <dd tal:content="python:', '.join(view.types)">Portal types</dd>
+          <dt i18n:translate="">Asynchronous</dt>
+          <dd tal:content="item_object/async">async</dd>
+          <dt i18n:translate="">Timeout</dt>
+          <dd>
+            <tal:timeout content="item_object/timeout" />
+            <tal:seconds i18n:translate="">seconds</tal:seconds>
+          </dd>
+        </dl>
       </div>
     </div>
   </body>

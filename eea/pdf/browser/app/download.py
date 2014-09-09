@@ -4,6 +4,7 @@ import logging
 from zope import event
 from zope.publisher.interfaces import NotFound
 from zope.component import queryMultiAdapter, queryUtility
+from zope.component.hooks import getSite
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
 from plone.app.async.interfaces import IAsyncService
@@ -83,12 +84,18 @@ class Download(Pdf):
         filepath = storage.filepath()
         fileurl = storage.absolute_url()
 
+        portal = getSite()
+        from_name = portal.getProperty('email_from_name')
+        from_email = portal.getProperty('email_from_address')
+
         if async.file_exists(filepath):
             wrapper = async.ContextWrapper(self.context)(
                 fileurl=fileurl,
                 filepath=filepath,
                 email=email,
-                url=self.context.absolute_url()
+                url=self.context.absolute_url(),
+                from_name=from_name,
+                from_email=from_email
             )
 
             event.notify(AsyncPDFExportSuccess(wrapper))
@@ -106,7 +113,9 @@ class Download(Pdf):
             email=email,
             filepath=filepath,
             fileurl=fileurl,
-            url=self.context.absolute_url()
+            url=self.context.absolute_url(),
+            from_name=from_name,
+            from_email=from_email
         )
 
         return self.finish()

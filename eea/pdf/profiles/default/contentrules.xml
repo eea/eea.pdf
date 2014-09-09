@@ -63,7 +63,7 @@ ${download_error}
 This email is auto-generated and delivered to you because a PDF export was requested for ${download_came_from_url}.
 ----------</property>
     <property name="subject">[${download_title}] PDF export failed</property>
-    <property name="recipients"></property>
+    <property name="recipients">${download_from_email}</property>
     <property name="exclude_actor">False</property>
    </action>
   </actions>

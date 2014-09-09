@@ -68,4 +68,18 @@
     name="download_error"
     />
 
+  <adapter
+    for="eea.pdf.events.interfaces.IPDFContextWrapper"
+    provides="plone.stringinterp.interfaces.IStringSubstitution"
+    factory=".adapters.DownloadFromName"
+    name="download_from_name"
+    />
+
+  <adapter
+    for="eea.pdf.events.interfaces.IPDFContextWrapper"
+    provides="plone.stringinterp.interfaces.IStringSubstitution"
+    factory=".adapters.DownloadFromEmail"
+    name="download_from_email"
+    />
+
 </configure>

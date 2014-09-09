@@ -57,3 +57,25 @@ class DownloadError(BaseSubstitution):
         """ Safe call
         """
         return getattr(self.context, 'error', '')
+
+class DownloadFromName(BaseSubstitution):
+    """ Download from name
+    """
+    category = _(u'Download')
+    description = _(u'Download from name')
+
+    def safe_call(self):
+        """ Safe call
+        """
+        return getattr(self.context, 'from_name', '')
+
+class DownloadFromEmail(BaseSubstitution):
+    """ Download from name
+    """
+    category = _(u'Download')
+    description = _(u'Download from email')
+
+    def safe_call(self):
+        """ Safe call
+        """
+        return getattr(self.context, 'from_email', '')

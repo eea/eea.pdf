@@ -62,3 +62,19 @@
 .eea-pdf-message a {
   margin: 0 0.5em;
 }
+
+#content-core .eea-pdf-body dt,
+.eea-pdf-body dt {
+  display: inline;
+}
+
+.eea-pdf-body dt:before {
+  content: '';
+  display: block;
+}
+
+#content-core .eea-pdf-body dd,
+.eea-pdf-body dd {
+  display: inline;
+  margin: 0;
+}
