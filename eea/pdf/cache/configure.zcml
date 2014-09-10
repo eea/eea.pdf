@@ -1,4 +1,12 @@
-<configure xmlns="http://namespaces.zope.org/zope"
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
   i18n_domain="eea">
+
+  <subscriber
+    zcml:condition="installed eea.app.visualization"
+    for="eea.app.visualization.interfaces.IVisualizationEnabled
+         zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler=".updateBackRefs" />
 
 </configure>

@@ -16,7 +16,7 @@ except ImportError:
     from eea.pdf.cache.nocache import InvalidateCacheEvent
     from eea.pdf.cache.nocache import flush, flushBackRefs, flushRelatedItems
 
-from eea.pdf.cache.cache import cacheKey
+from eea.pdf.cache.cache import cacheKey, updateBackRefs
 
 __all__ = [
     ramcache.__name__,
@@ -24,5 +24,6 @@ __all__ = [
     cacheKey.__name__,
     flush.__name__,
     flushBackRefs.__name__,
-    flushRelatedItems.__name__
+    flushRelatedItems.__name__,
+    updateBackRefs.__name__,
 ]
