@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.1-dev - (unreleased)
+----------------------
+
 4.0 - (2014-09-15)
 ------------------
 * Upgrade step: (optional) Within Plone > Site setup > PDF Settings ensure that
