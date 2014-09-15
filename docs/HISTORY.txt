@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.0-dev - (unreleased)
-----------------------
+4.0 - (2014-09-15)
+------------------
 * Upgrade step: (optional) Within Plone > Site setup > PDF Settings ensure that
   all PDF themes have Asynchronous property checked and increase timeout to 3600
   [voineali refs #20845]
