@@ -63,6 +63,11 @@
   margin: 0 0.5em;
 }
 
+.eea-pdf-message .link-pdf {
+  overflow: hidden;
+  display: block;
+}
+
 #content-core .eea-pdf-body dt,
 .eea-pdf-body dt {
   display: inline;
