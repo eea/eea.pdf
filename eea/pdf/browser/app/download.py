@@ -83,6 +83,8 @@ class Download(Pdf):
         storage = IStorage(self.context).of('pdf')
         filepath = storage.filepath()
         fileurl = storage.absolute_url()
+        url = self.context.absolute_url()
+        title = self.context.title_or_id()
 
         portal = getSite()
         from_name = portal.getProperty('email_from_name')
@@ -93,9 +95,10 @@ class Download(Pdf):
                 fileurl=fileurl,
                 filepath=filepath,
                 email=email,
-                url=self.context.absolute_url(),
+                url=url,
                 from_name=from_name,
-                from_email=from_email
+                from_email=from_email,
+                title=title
             )
 
             event.notify(AsyncPDFExportSuccess(wrapper))
@@ -113,9 +116,10 @@ class Download(Pdf):
             email=email,
             filepath=filepath,
             fileurl=fileurl,
-            url=self.context.absolute_url(),
+            url=url,
             from_name=from_name,
-            from_email=from_email
+            from_email=from_email,
+            title=title
         )
 
         return self.finish()

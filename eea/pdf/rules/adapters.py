@@ -12,7 +12,7 @@ class DownloadTitle(BaseSubstitution):
     def safe_call(self):
         """ Safe call
         """
-        return getattr(self.context, 'title_or_id', lambda: '')()
+        return getattr(self.context, 'title', '')
 
 class DownloadEmail(BaseSubstitution):
     """ Download email substitution

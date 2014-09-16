@@ -3,6 +3,8 @@ Changelog
 
 4.2-dev - (unreleased)
 ----------------------
+* Bug fix: Safely get title_or_id with PDF content-rules
+  [voineali refs #21068]
 
 4.1 - (2014-09-16)
 ------------------
