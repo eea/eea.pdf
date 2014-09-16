@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.1-dev - (unreleased)
-----------------------
+4.1 - (2014-09-16)
+------------------
 * Bug fix: Fixed 'AttributeError: async' within PDF Settings control panel
   [avoinea]
 
