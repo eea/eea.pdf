@@ -6,7 +6,6 @@ from zope.publisher.interfaces import NotFound
 from zope.component import queryMultiAdapter, queryUtility
 from zope.component.hooks import getSite
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.statusmessages.interfaces import IStatusMessage
 from plone.app.async.interfaces import IAsyncService
 from eea.converter.browser.app.download import Pdf
 from eea.downloads.interfaces import IStorage
