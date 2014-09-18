@@ -20,9 +20,9 @@
 }
 
 .eea-pdf-email input[type=email] {
-  width: 100%;
+  min-width: 500px;
+  max-width: 85%;
   height: 30px;
-  max-width: 520px;
 }
 
 .eea-pdf-email ::-webkit-input-placeholder {
@@ -44,7 +44,6 @@
   text-align: right;
 }
 
-
 .eea-pdf-email .formHelp {
   font-size: 90%;
   color: #808285;
@@ -59,15 +58,8 @@
   padding: 7px 11px;
 }
 
-.eea-pdf-message a {
-  margin: 0 0.5em;
-}
-
-.eea-pdf-message .link-pdf {
-  overflow: hidden;
-  display: block;
-}
-
+/* PDF Tool
+*/
 #content-core .eea-pdf-body dt,
 .eea-pdf-body dt {
   display: inline;

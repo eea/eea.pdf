@@ -31,6 +31,14 @@
     permission="eea.pdf.download"
     />
 
+  <browser:viewlet
+    name="eea.annotator"
+    layer="eea.pdf.interfaces.ILayer"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+    class=".app.viewlet.Pdf"
+    permission="zope2.View"
+    />
+
   <browser:resource
     name="eea.pdf.css"
     file="./css/view.css"

@@ -1,0 +1,4 @@
+<div class="eea-pdf-viewlet" tal:attributes="
+  data-async view/async"
+  tal:condition="view/available">
+</div>

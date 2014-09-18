@@ -26,17 +26,11 @@ class ContextWrapper(Implicit):
             setattr(self, key, value)
         return self.__of__(self.context)
 
-def make_tmp_file():
-    """ Create a temporary file to mark the begining of the convertion
-    """
-    _, temp_path = mkstemp()
-    return temp_path
-
 def make_async_pdf(context, converter, **kwargs):
     """ Async job
     """
     filepath = kwargs.get('filepath', '')
-    filepath_tmp = kwargs.get('filepath', '') + '.tmp'
+    filepath_lock = filepath + '.lock'
     url = kwargs.get('url', '')
 
     wrapper = ContextWrapper(context)(**kwargs)
@@ -53,8 +47,10 @@ def make_async_pdf(context, converter, **kwargs):
         return
 
     # Mark the begining of the convertion
-    converter.copy(make_tmp_file(), filepath_tmp)
-    converter.toclean.add(filepath_tmp)
+    _, lock = mkstemp(suffix='.lock')
+    converter.copy(lock, filepath_lock)
+    converter.toclean.add(filepath_lock)
+    converter.toclean.add(lock)
 
     try:
         converter.run(safe=False)

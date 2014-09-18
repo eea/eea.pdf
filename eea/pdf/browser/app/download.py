@@ -20,6 +20,8 @@ class Download(Pdf):
     """ Download PDF
     """
     template = ViewPageTemplateFile('../zpt/download.pt')
+    _message = ''
+    _email = ''
 
     def make_pdf(self, dry_run=False, **kwargs):
         """ Compute pdf
@@ -37,12 +39,26 @@ class Download(Pdf):
 
         return data
 
+    @property
+    def message(self):
+        """ Message
+        """
+        return self._message
+
+    @property
+    def email(self):
+        """ User email
+        """
+        return self._email
+
     def _redirect(self, msg=''):
         """ Redirect
         """
-        if msg:
-            IStatusMessage(self.request).addStatusMessage(msg, 'info')
-        return self.request.response.redirect(self.context.absolute_url())
+        self.request.set('disable_border', 1)
+        self.request.set('disable_plone.leftcolumn', 1)
+        self.request.set('disable_plone.rightcolumn', 1)
+        self._message = msg
+        return self.template()
 
     def link(self):
         """ Download link
@@ -58,19 +74,16 @@ class Download(Pdf):
             return _(u"minutes")
         return _(u"seconds")
 
-    def cancel(self):
-        """ Cancer
-        """
-        return self._redirect(_(u'Download canceled'))
-
-    def finish(self):
+    def finish(self, email=''):
         """ Finish download
         """
+        self._email = email
         return self._redirect(_(
             u"The PDF is being generated. "
             u"An email will be sent to you when the PDF is ready. "
             u"If you don't have access to your email address "
-            u"check this link in a few ${period}: ${link} ", mapping={
+            u"check <a href='${link}'>this link</a> in a few ${period}.",
+            mapping={
                 "link": self.link(),
                 "period": self.period()
             }
@@ -102,7 +115,7 @@ class Download(Pdf):
             )
 
             event.notify(AsyncPDFExportSuccess(wrapper))
-            return self.finish()
+            return self.finish(email=email)
 
         # Cheat condition @@plone_context_state/is_view_template
         self.request['ACTUAL_URL'] = self.context.absolute_url()
@@ -122,23 +135,24 @@ class Download(Pdf):
             title=title
         )
 
-        return self.finish()
+        return self.finish(email=email)
 
     def post(self, **kwargs):
         """ POST
         """
-        if self.request.get('form.button.cancel'):
-            return self.cancel()
-        elif self.request.get('form.button.download'):
+        if not self.request.get('form.button.download'):
+            return self._redirect('Invalid form')
 
-            # Filter bots
-            if self.request.get('body'):
-                return self.finish()
+        email = self.request.get('email')
 
-            email = self.request.get('email')
-            return self.download(email, **kwargs)
+        # Filter bots
+        if self.request.get('body'):
+            return self.finish(email=email)
 
-        return self._redirect('Invalid form')
+        if not email:
+            return self.finish(email=email)
+
+        return self.download(email, **kwargs)
 
     def __call__(self, **kwargs):
         support = queryMultiAdapter((self.context, self.request),
@@ -162,4 +176,4 @@ class Download(Pdf):
             return self.post(**kwargs)
 
         # Ask for email
-        return self.template()
+        return self._redirect()

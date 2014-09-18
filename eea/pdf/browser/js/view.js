@@ -22,27 +22,24 @@ EEA.Pdf = function(context, options){
 EEA.Pdf.prototype = {
   initialize: function(){
     var self = this;
-    self.message = self.context.find('.portalMessage.info dd');
-    self.message.addClass('eea-pdf-message');
+    self.async = self.context.data('async');
 
-    self.add_links();
-  },
-
-  add_links: function(){
-    var self = this;
-    if(!self.message.length){
-      return;
+    if(self.async){
+      self.init_async();
     }
 
-    var text = self.replaceURL(self.message.text());
-    self.message.html(text);
   },
 
-  replaceURL: function(inputText) {
-    var replacePattern = /(\b(https?|ftp):\/\/[\-A-Z0-9+&@#\/%?=~_|!:,.;]*[\-A-Z0-9+&@#\/%=~_|])/gim;
-    return inputText.replace(replacePattern, '<a href="$1" target="_blank">$1</a>');
-  }
+  init_async: function(){
+    var self = this;
+    self.links = jQuery('body').find('a[href$="download.pdf"]');
 
+    self.links.prepOverlay({
+      subtype: 'ajax',
+      formselector: 'form',
+      filter: '.eea-pdf-download'
+    });
+  }
 };
 
 
@@ -56,7 +53,7 @@ jQuery.fn.EEAPdf = function(options){
 
 jQuery(document).ready(function(){
 
-  var items = jQuery('body');
+  var items = jQuery('.eea-pdf-viewlet');
   items.EEAPdf();
 
 });
