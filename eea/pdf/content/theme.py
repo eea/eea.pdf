@@ -102,6 +102,14 @@ EditSchema = atapi.Schema((
            description=_(u"Enable or disable javascript")
        )
     ),
+    atapi.IntegerField('javascriptdelay',
+       schemata='default',
+       default=0,
+       widget=atapi.IntegerWidget(
+           label=_(u"JavaScript delay"),
+           description=_(u"Wait some seconds for javascript to finish")
+       )
+    ),
     atapi.IntegerField('timeout',
         schemata='default',
         default=3600,

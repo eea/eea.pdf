@@ -14,6 +14,13 @@
           <dd tal:content="python:', '.join(view.types)">Portal types</dd>
           <dt i18n:translate="">Asynchronous</dt>
           <dd tal:content="item_object/async|string:">async</dd>
+          <dt i18n:translate="">Javascript</dt>
+          <dd tal:content="item_object/javascript|string:">javascript</dd>
+          <dt i18n:translate="">Javascript delay</dt>
+          <dd>
+            <tal:timeout content="item_object/javascriptdelay|string:" />
+            <tal:seconds i18n:translate="">seconds</tal:seconds>
+          </dd>
           <dt i18n:translate="">Timeout</dt>
           <dd>
             <tal:timeout content="item_object/timeout" />

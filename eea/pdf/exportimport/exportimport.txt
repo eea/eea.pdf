@@ -80,6 +80,7 @@ Export
       <property name="toc">pdf.toc</property>
       <property name="toclinks">False</property>
       <property name="javascript">True</property>
+      <property name="javascriptdelay">0</property>
       <property name="timeout">3600</property>
       <property name="async">True</property>
       <property name="offset">0</property>

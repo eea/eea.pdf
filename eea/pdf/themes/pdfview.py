@@ -104,6 +104,15 @@ class OptionsMaker(PDFOptionsMaker, Mixin):
         javascript = self.getValue('javascript', True)
         if not javascript:
             options.append('--disable-javascript')
+
+        # Wait for javascript in milliseconds (200 ms is default)
+        delay = self.getValue('javascriptdelay', 0.2)
+        delay = max(0.2, delay)
+        timeout = self.timeout or 9999
+        if 0.2 < delay < timeout:
+            delay *= 1000
+            options.extend(['--javascript-delay', repr(delay)])
+
         self._options = options
         return self._options
 

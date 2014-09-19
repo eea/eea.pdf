@@ -98,6 +98,10 @@ JavaScript
 Enable or disable javascript.
 Default: True
 
+JavaScript Delay
+----------------
+Wait some seconds for javascript to finish
+Default: 0
 
 Timeout
 -------
