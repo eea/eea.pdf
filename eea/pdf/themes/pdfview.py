@@ -192,7 +192,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
             except Exception:
                 self._toc = ''
             else:
-                output = tempfile.mkstemp('.xsl')[1]
+                _, output = tempfile.mkstemp(suffix='.xsl', prefix='eea.pdf.')
                 open(output, 'w').write(body())
                 self._toc = output
 
