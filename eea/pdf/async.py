@@ -2,6 +2,7 @@
 """
 import os
 import logging
+from kv import KV
 from tempfile import mkstemp
 from Acquisition import Implicit
 from zope import event
@@ -31,7 +32,7 @@ def make_async_pdf(context, converter, **kwargs):
     """
     filepath = kwargs.get('filepath', '')
     filepath_lock = filepath + '.lock'
-    filepath_emails = filepath + '.emails'
+    filepath_meta = filepath + '.meta'
 
     url = kwargs.get('url', '')
     email = kwargs.get('email', '')
@@ -39,16 +40,17 @@ def make_async_pdf(context, converter, **kwargs):
     wrapper = ContextWrapper(context)(**kwargs)
 
     if not filepath:
-        converter.cleanup()
         wrapper.error = 'Invalid filepath for output PDF'
+        converter.cleanup()
+
         event.notify(AsyncPDFExportFail(wrapper))
         raise PDFConversionError(2, 'Invalid filepath for output PDF', url)
 
     # Maybe another async worker is generating our PDF. If so, we update the
     # list of emails where to send a message when ready and free this worker.
     # The already running worker will do the job for us.
-    if os.path.exists(filepath_lock) and os.path.exists(filepath_emails):
-        update_emails(filepath_emails, email)
+    if os.path.exists(filepath_lock) and os.path.exists(filepath_meta):
+        update_emails(filepath_meta, email)
         converter.cleanup()
         return
 
@@ -65,36 +67,36 @@ def make_async_pdf(context, converter, **kwargs):
     converter.toclean.add(lock)
 
     # Share some metadata with other async workers
-    _, emails = mkstemp(suffix='.emails', prefix='eea.pdf.')
-    converter.copy(emails, filepath_emails)
-    converter.toclean.add(filepath_emails)
-    converter.toclean.add(emails)
+    _, meta = mkstemp(suffix='.meta', prefix='eea.pdf.')
+    converter.copy(meta, filepath_meta)
+    converter.toclean.add(filepath_meta)
+    converter.toclean.add(meta)
 
-    update_emails(filepath_emails, email)
+    update_emails(filepath_meta, email)
 
     try:
         converter.run(safe=False)
     except Exception, err:
         wrapper.error = err
-        wrapper.email = get_emails(filepath_emails, email)
-
+        wrapper.email = get_emails(filepath_meta, email)
         converter.cleanup()
+
         event.notify(AsyncPDFExportFail(wrapper))
         errno = getattr(err, 'errno', 2)
         raise PDFConversionError(errno, err, url)
 
     if not converter.path:
-        wrapper.email = get_emails(filepath_emails, email)
-
-        converter.cleanup()
         wrapper.error = "Invalid output PDF"
+        wrapper.email = get_emails(filepath_meta, email)
+        converter.cleanup()
+
         event.notify(AsyncPDFExportFail(wrapper))
         raise PDFConversionError(2, 'Invalid output PDF', url)
 
-    wrapper.email = get_emails(filepath_emails, email)
-
+    wrapper.email = get_emails(filepath_meta, email)
     converter.copy(converter.path, filepath)
     converter.cleanup()
+
     event.notify(AsyncPDFExportSuccess(wrapper))
 
 
@@ -106,8 +108,8 @@ def update_emails(filepath, email):
         return
 
     try:
-        with open(filepath, 'a') as emailsfile:
-            emailsfile.writelines([email, '\n'])
+        db = KV(filepath, 'emails')
+        db[email] = True
     except Exception, err:
         logger.exception(err)
 
@@ -116,8 +118,8 @@ def get_emails(filepath, default=''):
     """ Get emails from file comma separated if iterable is False
     """
     try:
-        with open(filepath) as emailsfile:
-            emails = set(email for email in emailsfile.readlines() if email)
+        db = KV(filepath, 'emails')
+        emails = db.keys()
     except Exception, err:
         logger.exception(err)
         return default
