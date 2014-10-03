@@ -7,21 +7,26 @@
 }
 
 body {
-  font-family: "Palatino Linotype", Arial, sans-serif !important;
-  font-size: 10pt;
   color: #333;
   margin: 0;
   padding: 0;
+  font-family: "Palatino Linotype", serif !important;
+  #font-family: Verdana, sans-serif !important;
+  #font-family: "Open Sans", sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6,
-.documentFirstHeading,
+h1, h2, h3, h4, h5, h6, 
+.documentFirstHeading, .cover-header {
+  font-family: "Open Sans", sans-serif !important;
+}
+
 .documentDescription,
-p.discreet,
-.cover-header,
+p,
 .cover-copyright
 {
-  font-family: Verdana, sans-serif !important;
+  font-family: "Palatino Linotype", serif !important;
+  #font-family: Verdana, sans-serif !important;
+  #font-family: "Open Sans", sans-serif !important;
   letter-spacing: 0;
 }
 
@@ -29,9 +34,6 @@ p.discreet,
   max-width: 100%;
   display: block;
   overflow: auto;
-}
-
-#content table {
   text-align: left;
   border-collapse: collapse;
   border-spacing: 0px;
@@ -122,7 +124,7 @@ iframe {
 }
 
 .keyFact {
-  padding: 2pt;
+  padding: 5pt 5pt 5pt 10pt;
 }
 
 .warningMessage {
@@ -276,12 +278,16 @@ p.discreet {
   margin 0;
 }
 
+.body-print .qrbox {
+  margin: 5pt 0 0 0;
+}
+
 .template-pdf-cover-back .qrbox {
   min-height: 50pt;
   display: block;
   padding: 20pt;
   padding-bottom: 0;
-  margin: 0;
+  margin: 5pt 0 0 0;
 }
 
 .template-pdf-cover-back .qrbox img {
@@ -331,15 +337,22 @@ p.portalMessage {
   display: none;
 }
 
-/* Daviz */
-#content-core ul.formTabs {
-  display: none;
-}
+/* fixes for boilerplate and fiche print layout #20756 */
 
-.standardButton {
-  display: none;
+.qrbox > img {
+  width: inherit;
+  float: right;
 }
+.qrbox-text {
+  float: left;
+  width: 80%;
+  padding-right: 0.5em; }
 
-.googlechart_filters {
-  display: none;
-}
+.qrbox-text strong, .qrbox-text a {
+  padding: 0 1pt; }
+
+
+#content .qrbox-text > p {
+  margin: 0 0 0.2em 0; }
+
+.fiche-summary { margin-top: 1em; } 
