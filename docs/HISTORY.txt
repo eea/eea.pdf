@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.3-dev - (unreleased)
-----------------------
+4.3 - (2014-10-15)
+------------------
 * Change: Bring several improvements to the PDF output from custom.
   use Palatino by default. better margins for certain elements.
   moved some css to standard print.css 
