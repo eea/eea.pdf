@@ -14,10 +14,12 @@ you can define specific PDF themes per content-type.
   Requires `wkhtmltopdf`_ and `pdftk`_ system-packages installed on your server.
   See `eea.converter`_ documentation for more details.
 
+
 Contents
 ========
 
 .. contents::
+
 
 Main features
 =============
@@ -25,6 +27,7 @@ Main features
 1. Adds download as PDF action at the bottom of the page
 2. Possibility to define custom PDF themes per content-type
 3. Asynchronously generate PDF files and notify users by email when PDF is ready
+
 
 Install
 =======
@@ -34,6 +37,76 @@ Install
   https://github.com/eea/eea.pdf/tree/master/buildouts/plone4
 - Install eea.pdf within Site Setup > Add-ons
 
+
+External PDF generator tools
+----------------------------
+Ensure that you have installed `wkhtmltopdf`_ and `pdftk`_ on your machine. You
+can also install `wkhtmltopdf`_ from buildout::
+
+    [buildout]
+
+    parts +=
+        wkhtmltopdf
+
+    [wkhtmltopdf]
+    recipe = hexagonit.recipe.download
+    url = http://eggrepo.eea.europa.eu/pypi/wkhtmltopdf/wkhtmltopdf-0.12.1.tgz
+
+    [instance]
+    environment-vars +=
+        WKHTMLTOPDF_PATH ${wkhtmltopdf:location}/wkhtmltopdf
+
+Asynchronous setup
+------------------
+By default all PDFs are generated asynchronous, therefore some extra config is
+needed within your buildout in order for this to work properly.
+
+First of all you'll need a folder were to store generated PDF files. For this
+you can create it manually within buildout:directory/var/ or you can let buildout
+handle it::
+
+    [buildout]
+
+    parts +=
+        media-downloads
+
+    media-downloads-path = ${buildout:directory}/var/downloads
+
+    [media-downloads]
+    recipe = ore.recipe.fs:mkdir
+    path = ${buildout:media-downloads-path}
+    mode = 0700
+    createpath = true
+
+This will create a folder named **downloads** within buildout:directory/var/
+
+Next, in order for this folder to be visible from your website and your users to
+be able to download generated PDFs you'll need to tell to your zope instances
+about it::
+
+    [buildout]
+
+    media-downloads-name = downloads
+    media-downloads-path = ${buildout:directory}/var/downloads
+
+    [instance]
+
+    environment-vars +=
+        EEADOWNLOADS_NAME ${buildout:media-downloads-name}
+        EEADOWNLOADS_PATH ${buildout:media-downloads-path}
+
+Also, don't forget to setup `plone.app.async`_
+
+::
+
+    [buildout]
+
+    [instance]
+    eggs +=
+        plone.app.async
+    zcml +=
+        plone.app.async-single_db_worker
+
 Getting started
 ===============
 
@@ -41,6 +114,7 @@ Getting started
 2. Customize an existing PDF theme or add a new one
 3. Go to Home page and click on download as pdf icon at the bottom of the page
    or directly access http://localhost:8080/Plone/front-page/download.pdf
+
 
 PDF Theme options
 =================
@@ -50,7 +124,7 @@ header and footer parameters, etc. see `wkhtmltopdf`_ documentation.
 Cover
 -----
 A page template to be used for PDF Cover. Leave empty to disable it.
-Default: pdf.body
+Default: pdf.cover
 
 Disclaimer
 ----------
@@ -227,13 +301,14 @@ Dependencies
 1. `eea.converter`_
 2. `wkhtmltopdf`_
 3. `pdftk`_
-4. `eea.cache`_ (optional)
+4. `plone.app.async`_
+5. `eea.cache`_ (optional)
 
 Source code
 ===========
 
 - Latest source code (Plone 4 compatible):
-  https://github.com/eea/eea.pdf
+  https://github.com/collective/eea.pdf
 
 
 Copyright and license
@@ -260,3 +335,4 @@ EEA_ - European Environment Agency (EU)
 .. _wkhtmltopdf: http://wkhtmltopdf.org
 .. _pdftk: http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 .. _eea.cache: http://eea.github.com/docs/eea.cache
+.. _plone.app.async: https://github.com/plone/plone.app.async#ploneappasync
