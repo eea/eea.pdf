@@ -1,0 +1,32 @@
+<configure
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="eea">
+
+  <browser:page
+    name="collection.pdf.body"
+    layer="eea.pdf.interfaces.ILayer"
+    for="plone.app.folder.folder.IATUnifiedFolder"
+    class=".folder.Body"
+    permission="eea.pdf.download"
+    />
+
+  <browser:page
+    zcml:condition="installed Products.ATContentTypes.content.topic"
+    name="collection.pdf.body"
+    layer="eea.pdf.interfaces.ILayer"
+    for="Products.ATContentTypes.interfaces.IATTopic"
+    class=".collection.Body"
+    permission="eea.pdf.download"
+    />
+
+  <browser:page
+    zcml:condition="installed plone.app.collection"
+    name="collection.pdf.body"
+    layer="eea.pdf.interfaces.ILayer"
+    for="plone.app.collection.interfaces.ICollection"
+    class=".collection.Body"
+    permission="eea.pdf.download"
+    />
+
+</configure>

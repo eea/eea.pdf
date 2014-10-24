@@ -1,7 +1,7 @@
 """ PDF View
 """
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from eea.pdf.themes.classical.collection import Body as PDFBody
+from eea.pdf.themes.book.collection import Body as PDFBody
 
 class Body(PDFBody):
     """ Custom PDF body

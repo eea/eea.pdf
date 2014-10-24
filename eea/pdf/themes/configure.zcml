@@ -33,7 +33,7 @@
     factory=".pdfview.BackCoverOptionsMaker"/>
 
   <!-- Themes -->
-  <include package=".classical" />
-  <include package=".modern" />
+  <include package=".page" />
+  <include package=".book" />
 
 </configure>

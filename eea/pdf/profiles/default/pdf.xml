@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object name="portal_pdf" meta_type="PDFTool">
- <object name="classical" meta_type="PDFTheme">
-  <property name="title">Classical</property>
+ <object name="page" meta_type="PDFTheme">
+  <property name="title">Page</property>
   <property name="cover">pdf.cover</property>
   <property name="disclaimer">pdf.disclaimer</property>
   <property name="body">pdf.body</property>
@@ -13,21 +13,8 @@
    <element value="Document" />
   </property>
  </object>
- <object name="modern" meta_type="PDFTheme">
-  <property name="title">Modern</property>
-  <property name="cover" />
-  <property name="disclaimer" />
-  <property name="body">pdf.body</property>
-  <property name="backcover" />
-  <property name="header">pdf.header</property>
-  <property name="footer">pdf.footer</property>
-  <property name="offset">0</property>
-  <property name="types">
-   <element value="News Item" />
-  </property>
- </object>
- <object name="collection" meta_type="PDFTheme">
-  <property name="title">Collection</property>
+ <object name="book" meta_type="PDFTheme">
+  <property name="title">Book</property>
   <property name="cover">pdf.cover</property>
   <property name="disclaimer">pdf.disclaimer</property>
   <property name="body">collection.pdf.body</property>

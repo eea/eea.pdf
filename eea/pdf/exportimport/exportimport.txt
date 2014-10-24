@@ -30,10 +30,10 @@ See default settings
     >>> print exporter.body
     <?xml version="1.0" encoding="utf-8"?>
     <object name="portal_pdf" meta_type="PDFTool">
-     <object name="classical" meta_type="PDFTheme">
+     <object name="page" meta_type="PDFTheme">
      ...
      </object>
-     <object name="modern" meta_type="PDFTheme">
+     <object name="book" meta_type="PDFTheme">
      ...
      </object>
     </object>
