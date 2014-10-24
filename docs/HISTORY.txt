@@ -3,6 +3,8 @@ Changelog
 
 4.4-dev - (unreleased)
 ----------------------
+* Bug fix: Fix letter spacing within headers
+  [avoinea]
 * Feature: Update documentation
   [avoinea]
 
