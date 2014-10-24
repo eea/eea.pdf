@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-28 16:51+0000\n"
+"POT-Creation-Date: 2014-10-24 14:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: eea\n"
+
+#: ../../pdf/browser/zpt/download.pt:18
+msgid "* The email is only used for the purpose of sending the PDF. We do not store it for any other use."
+msgstr ""
 
 #: ../../pdf/content/theme.py:50
 msgid "A page template to be used for PDF Back Cover. Leave empty to disable it."
@@ -41,12 +45,18 @@ msgstr ""
 msgid "A page template to be used for PDF Header. Leave empty to disable it."
 msgstr ""
 
-#: ../../pdf/content/theme.py:110
+#: ../../pdf/content/theme.py:118
 msgid "Abort PDF export after specified number of seconds. Use zero to disable it."
 msgstr ""
 
 #: ../../pdf/content/theme.py:83
 msgid "An XSL page template to be used for PDF Table of contents. Leave empty to disable it."
+msgstr ""
+
+#: ../../pdf/browser/zpt/theme.pt:15
+#: ../../pdf/browser/zpt/tool.pt:37
+#: ../../pdf/content/theme.py:128
+msgid "Asynchronous"
 msgstr ""
 
 #: ../../pdf/content/theme.py:49
@@ -57,15 +67,11 @@ msgstr ""
 msgid "Body"
 msgstr ""
 
-#: ../../pdf/browser/zpt/download.pt:25
-msgid "Cancel"
-msgstr ""
-
 #: ../../pdf/content/theme.py:15
 msgid "Cover"
 msgstr ""
 
-#: ../../pdf/themes/classical/disclaimer.pt:57
+#: ../../pdf/themes/page/disclaimer.pt:57
 msgid "Denmark"
 msgstr ""
 
@@ -77,20 +83,44 @@ msgstr ""
 msgid "Disclaimer"
 msgstr ""
 
-#: ../../pdf/browser/zpt/download.pt:24
+#: ../../pdf/rules/adapters.py:9
 msgid "Download"
+msgstr ""
+
+#: ../../pdf/browser/zpt/download.pt:9
+msgid "Download ${title} as PDF"
+msgstr ""
+
+#: ../../pdf/rules/adapters.py:32
+msgid "Download URL"
 msgstr ""
 
 #: ../../pdf/profiles/default/actions.xml
 msgid "Download as PDF"
 msgstr ""
 
-#: ../../pdf/browser/app/download.py:27
-msgid "Download canceled"
+#: ../../pdf/rules/adapters.py:43
+msgid "Download came from URL"
 msgstr ""
 
-#: ../../pdf/browser/zpt/download.pt:19
-msgid "Email"
+#: ../../pdf/rules/adapters.py:21
+msgid "Download e-mail"
+msgstr ""
+
+#: ../../pdf/rules/adapters.py:54
+msgid "Download error"
+msgstr ""
+
+#: ../../pdf/rules/adapters.py:76
+msgid "Download from email"
+msgstr ""
+
+#: ../../pdf/rules/adapters.py:65
+msgid "Download from name"
+msgstr ""
+
+#: ../../pdf/rules/adapters.py:10
+msgid "Download title"
 msgstr ""
 
 #: ../../pdf/content/theme.py:102
@@ -101,7 +131,11 @@ msgstr ""
 msgid "Enable table of contents links"
 msgstr ""
 
-#: ../../pdf/themes/classical/disclaimer.pt:54
+#: ../../pdf/browser/zpt/download.pt:16
+msgid "Enter your email address where to send the PDF when ready"
+msgstr ""
+
+#: ../../pdf/themes/page/disclaimer.pt:54
 msgid "European Environment Agency"
 msgstr ""
 
@@ -109,19 +143,37 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
+#: ../../pdf/content/theme.py:129
+msgid "Generate PDF asynchronously and send an email to the user when it's done."
+msgstr ""
+
 #: ../../pdf/content/theme.py:60
 msgid "Header"
 msgstr ""
 
+#: ../../pdf/browser/zpt/tool.pt:39
 #: ../../pdf/content/theme.py:101
 msgid "JavaScript"
 msgstr ""
 
-#: ../../pdf/content/theme.py:142
+#: ../../pdf/content/theme.py:109
+msgid "JavaScript delay"
+msgstr ""
+
+#: ../../pdf/browser/zpt/theme.pt:17
+msgid "Javascript"
+msgstr ""
+
+#: ../../pdf/browser/zpt/theme.pt:19
+#: ../../pdf/browser/zpt/tool.pt:41
+msgid "Javascript delay"
+msgstr ""
+
+#: ../../pdf/content/theme.py:161
 msgid "Maximum breadth"
 msgstr ""
 
-#: ../../pdf/content/theme.py:143
+#: ../../pdf/content/theme.py:162
 msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types."
 msgstr ""
 
@@ -129,11 +181,11 @@ msgstr ""
 msgid "Maximum breadth to include children items while generating PDF. Leave it empty to use the portal global defined value."
 msgstr ""
 
-#: ../../pdf/content/theme.py:130
+#: ../../pdf/content/theme.py:149
 msgid "Maximum depth"
 msgstr ""
 
-#: ../../pdf/content/theme.py:131
+#: ../../pdf/content/theme.py:150
 msgid "Maximum depth to recursively include children items while generating PDF for collection or folderish content-types."
 msgstr ""
 
@@ -141,11 +193,11 @@ msgstr ""
 msgid "Maximum depth to recursively include children items while generating PDF. Leave it empty to use the portal global defined value."
 msgstr ""
 
-#: ../../pdf/content/theme.py:154
+#: ../../pdf/content/theme.py:173
 msgid "Maximum items"
 msgstr ""
 
-#: ../../pdf/content/theme.py:120
+#: ../../pdf/content/theme.py:139
 msgid "Offset"
 msgstr ""
 
@@ -165,20 +217,20 @@ msgstr ""
 msgid "PDF Theme"
 msgstr ""
 
-#: ../../pdf/content/theme.py:121
+#: ../../pdf/content/theme.py:140
 msgid "Page numbering offset within PDF Body."
 msgstr ""
 
-#: ../../pdf/browser/zpt/download.pt:11
-msgid "Please tell us your email and we will notify you when the PDF is ready. Otherwise please check ${url} in about 30 minutes."
-msgstr ""
-
-#: ../../pdf/content/theme.py:168
+#: ../../pdf/content/theme.py:187
 msgid "Portal types"
 msgstr ""
 
-#: ../../pdf/content/theme.py:178
+#: ../../pdf/content/theme.py:197
 msgid "Preview"
+msgstr ""
+
+#: ../../pdf/browser/zpt/download.pt:17
+msgid "Send"
 msgstr ""
 
 #: ../../pdf/content/theme.py:82
@@ -189,15 +241,17 @@ msgstr ""
 msgid "Table of contents links"
 msgstr ""
 
-#: ../../pdf/browser/app/download.py:32
-msgid "The PDF is being generated. An email will be sent to you when the PDF is ready."
+#: ../../pdf/browser/app/download.py:80
+msgid "The PDF is being generated. An email will be sent to you when the PDF is ready. If you don't have access to your email address check <a href='${link}'>this link</a> in a few ${period}."
 msgstr ""
 
-#: ../../pdf/content/theme.py:109
+#: ../../pdf/browser/zpt/theme.pt:24
+#: ../../pdf/browser/zpt/tool.pt:46
+#: ../../pdf/content/theme.py:117
 msgid "Timeout"
 msgstr ""
 
-#: ../../pdf/content/theme.py:155
+#: ../../pdf/content/theme.py:174
 msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
 msgstr ""
 
@@ -205,96 +259,110 @@ msgstr ""
 msgid "Total maximum children items to be includedwhile generating PDF. Leave it empty to use the portal global defined value."
 msgstr ""
 
-#: ../../pdf/content/theme.py:179
+#: ../../pdf/content/theme.py:198
 msgid "Upload a preview image for this theme"
 msgstr ""
 
-#: ../../pdf/content/theme.py:169
+#: ../../pdf/content/theme.py:188
 msgid "Use this PDF Theme for the following Portal-Types."
 msgstr ""
 
 #: ../../pdf/browser/zpt/theme.pt:13
-#: ../../pdf/browser/zpt/tool.pt:33
+#: ../../pdf/browser/zpt/tool.pt:35
 msgid "Used for:"
 msgstr ""
 
+#: ../../pdf/content/theme.py:110
+msgid "Wait some seconds for javascript to finish"
+msgstr ""
+
 #. Default: "Kongens Nytorv 6"
-#: ../../pdf/themes/classical/disclaimer.pt:55
+#: ../../pdf/themes/page/disclaimer.pt:55
 msgid "copyright-address1"
 msgstr ""
 
 #. Default: "1050 Copenhagen K"
-#: ../../pdf/themes/classical/disclaimer.pt:56
+#: ../../pdf/themes/page/disclaimer.pt:56
 msgid "copyright-address2"
 msgstr ""
 
 #. Default: "Enquiries: eea.europa.eu/enquiries"
-#: ../../pdf/themes/classical/disclaimer.pt:61
+#: ../../pdf/themes/page/disclaimer.pt:61
 msgid "copyright-enquiries"
 msgstr ""
 
 #. Default: "Fax: + 45 33 36 71 99"
-#: ../../pdf/themes/classical/disclaimer.pt:59
+#: ../../pdf/themes/page/disclaimer.pt:59
 msgid "copyright-fax"
 msgstr ""
 
 #. Default: "The contents of this publication do not necessarily reflect the official opinions of the European Commission or other institutions of the European Union. Neither the European Environment Agency nor any person or company acting on behalf of the Agency is responsible for the use that may be made of the information contained in this report."
-#: ../../pdf/themes/classical/disclaimer.pt:30
+#: ../../pdf/themes/page/disclaimer.pt:30
 msgid "copyright-legal-description"
 msgstr ""
 
 #. Default: "Legal notice"
-#: ../../pdf/themes/classical/disclaimer.pt:29
+#: ../../pdf/themes/page/disclaimer.pt:29
 msgid "copyright-legal-name"
 msgstr ""
 
 #. Default: "Reproduction is authorised, provided the source is acknowledged, save where otherwise stated."
-#: ../../pdf/themes/classical/disclaimer.pt:41
+#: ../../pdf/themes/page/disclaimer.pt:41
 msgid "copyright-notice-desc1"
 msgstr ""
 
 #. Default: "Information about the European Union is available on the Internet. It can be accessed through the Europa server (www.europa.eu)."
-#: ../../pdf/themes/classical/disclaimer.pt:43
+#: ../../pdf/themes/page/disclaimer.pt:43
 msgid "copyright-notice-desc2"
 msgstr ""
 
 #. Default: "Luxembourg: Publications Office of the European Union, ${copyright-notice-year}"
-#: ../../pdf/themes/classical/disclaimer.pt:45
+#: ../../pdf/themes/page/disclaimer.pt:45
 msgid "copyright-notice-desc3"
 msgstr ""
 
 #. Default: "© European Environment Agency, ${copyright-notice-year}"
-#: ../../pdf/themes/classical/disclaimer.pt:40
+#: ../../pdf/themes/page/disclaimer.pt:40
 msgid "copyright-notice-eea"
 msgstr ""
 
 #. Default: "Copyright notice"
-#: ../../pdf/themes/classical/disclaimer.pt:39
+#: ../../pdf/themes/page/disclaimer.pt:39
 msgid "copyright-notice-name"
 msgstr ""
 
 #. Default: "Tel.: + 45 33 36 71 00"
-#: ../../pdf/themes/classical/disclaimer.pt:58
+#: ../../pdf/themes/page/disclaimer.pt:58
 msgid "copyright-phone"
 msgstr ""
 
 #. Default: "Web: eea.europa.eu"
-#: ../../pdf/themes/classical/disclaimer.pt:60
+#: ../../pdf/themes/page/disclaimer.pt:60
 msgid "copyright-web"
 msgstr ""
 
 #. Default: "Cover design: EEA"
-#: ../../pdf/themes/classical/disclaimer.pt:23
+#: ../../pdf/themes/page/disclaimer.pt:23
 msgid "cover-design"
 msgstr ""
 
 #. Default: "Layout: EEA"
-#: ../../pdf/themes/classical/disclaimer.pt:25
+#: ../../pdf/themes/page/disclaimer.pt:25
 msgid "cover-layout"
 msgstr ""
 
 #. Default: "Cover photo: © ${copyright-name}"
-#: ../../pdf/themes/classical/disclaimer.pt:24
+#: ../../pdf/themes/page/disclaimer.pt:24
 msgid "cover-photo"
+msgstr ""
+
+#: ../../pdf/browser/app/download.py:73
+msgid "minutes"
+msgstr ""
+
+#: ../../pdf/browser/app/download.py:74
+#: ../../pdf/browser/zpt/theme.pt:22
+#: ../../pdf/browser/zpt/tool.pt:44
+msgid "seconds"
 msgstr ""
 
