@@ -40,11 +40,17 @@
 
 
   <div class="cover-body">
-
-    <div class="cover-image" tal:condition="context/getImage|nothing">
+    <div class="cover-image" tal:define="has_cover_image exists:context/coverImage">
       <a tal:define="here_url context/@@plone_context_state/object_url"
-        tal:attributes="href string:$here_url/image/image_view_fullscreen">
-        <img tal:attributes="src string:$here_url/image" />
+        tal:attributes="href string:$here_url/image_view_fullscreen">
+          <tal:maincover tal:condition="has_cover_image">
+              <img tal:attributes="src string:$here_url/coverImage_large" />
+          </tal:maincover>
+          <tal:image tal:condition="not:has_cover_image">
+              <tal:depiction tal:condition="exists:context/image_large">
+                  <img tal:attributes="src string:$here_url/image_large" />
+              </tal:depiction>
+          </tal:image>
       </a>
     </div>
 

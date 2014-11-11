@@ -3,6 +3,13 @@ Changelog
 
 4.4-dev - (unreleased)
 ----------------------
+* Change: cover images are enhanced if eea.depiction is installed
+  by using the image named image within the folder instead of
+  needing to add the image to the coverImage field
+  [ichim-david refs #21637]
+* Feature: added coverImage field to folderish content which allows
+  you to set custom images for the cover page
+  [ichimd-david refs #21637]
 * Change: Refactoring default themes: page for simple items and
   book for collections and folderish items
   [avoinea]
