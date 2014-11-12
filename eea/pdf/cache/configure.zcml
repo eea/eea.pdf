@@ -9,4 +9,15 @@
          zope.lifecycleevent.interfaces.IObjectModifiedEvent"
     handler=".updateBackRefs" />
 
+  <adapter
+    zcml:condition="installed eea.cache"
+    factory=".behavior.ExtraBehavior"
+    />
+
+  <adapter
+    zcml:condition="installed eea.cache"
+    factory=".behavior.ExtraSettings"
+    name="eea.pdf.cache.extender"
+    />
+
 </configure>
