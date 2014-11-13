@@ -8,6 +8,9 @@ from plone.z3cform.fieldsets import extensible
 from eea.cache.browser.app.edit import SettingsForm
 from eea.pdf.interfaces import ILayer, IPDFAware
 from eea.pdf.config import EEAMessageFactory as _
+from eea.pdf.cache.cache import updateBackRefs
+from eea.pdf.cache.cache import updateContext
+from eea.pdf.cache.cache import updateRelatedItems
 
 
 class IExtraSettings(model.Schema):
@@ -15,13 +18,15 @@ class IExtraSettings(model.Schema):
     """
     pdf = schema.Bool(
         title=_(u"PDF"),
-        description=_(u"Invalidate generated PDF files"),
+        description=_(u"Invalidate latest generated PDF file"),
         required=False,
         default=False
     )
 
 
 class ExtraBehavior(object):
+    """ Cache Controller
+    """
     implements(IExtraSettings)
     adapts(IPDFAware)
 
@@ -38,10 +43,21 @@ class ExtraBehavior(object):
     def pdf(self, value):
         """ Invalidate last generated PDF?
         """
-        print "pdf %s" % value
+        if not value:
+            return
+
+        updateContext(self.context)
+
+        if value.get('relatedItems'):
+            updateRelatedItems(self.context)
+
+        if value.get('backRefs'):
+            updateBackRefs(self.context)
 
 
 class ExtraSettings(extensible.FormExtender):
+    """ Cache invalidation form extender
+    """
     adapts(IPDFAware, ILayer, SettingsForm)
 
     def __init__(self, context, request, form):

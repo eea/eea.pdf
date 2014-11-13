@@ -3,6 +3,9 @@ Changelog
 
 4.4-dev - (unreleased)
 ----------------------
+* Feature: Extend eea.cache invalidation form with PDF option in order to be
+  able to manually invalidate latest generated PDF within Cache tab
+  [voineali refs #21630]
 * Change: cover images are enhanced if eea.depiction is installed
   by using the image named image within the folder instead of
   needing to add the image to the coverImage field
