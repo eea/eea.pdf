@@ -3,6 +3,8 @@ Changelog
 
 4.5-dev - (unreleased)
 ----------------------
+* Change: new egg release to include documentation folder
+  [ghicaale refs #21453]
 
 4.4 - (2014-11-20)
 ------------------
