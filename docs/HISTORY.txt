@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.4-dev - (unreleased)
-----------------------
+4.4 - (2014-11-20)
+------------------
 * Feature: Extend eea.cache invalidation form with PDF option in order to be
   able to manually invalidate latest generated PDF within Cache tab
   [voineali refs #21630]
