@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.7-dev - (unreleased)
+----------------------
+
 4.6 - (2014-12-02)
 ------------------
 * Bug fix: Use shared temporary directory defined by eea.converter 8.5+
