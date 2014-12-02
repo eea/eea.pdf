@@ -9,6 +9,7 @@ from zope import event
 from zope.interface import implementer
 from eea.pdf.events.interfaces import IPDFContextWrapper
 from eea.pdf.events.async import AsyncPDFExportFail, AsyncPDFExportSuccess
+from eea.converter.config import TMPDIR
 logger = logging.getLogger('eea.pdf')
 
 class PDFConversionError(IOError):
@@ -61,13 +62,13 @@ def make_async_pdf(context, converter, **kwargs):
         return
 
     # Mark the begining of the convertion
-    _, lock = mkstemp(suffix='.lock', prefix='eea.pdf.')
+    _, lock = mkstemp(suffix='.lock', prefix='eea.pdf.', dir=TMPDIR())
     converter.copy(lock, filepath_lock)
     converter.toclean.add(filepath_lock)
     converter.toclean.add(lock)
 
     # Share some metadata with other async workers
-    _, meta = mkstemp(suffix='.meta', prefix='eea.pdf.')
+    _, meta = mkstemp(suffix='.meta', prefix='eea.pdf.', dir=TMPDIR())
     converter.copy(meta, filepath_meta)
     converter.toclean.add(filepath_meta)
     converter.toclean.add(meta)

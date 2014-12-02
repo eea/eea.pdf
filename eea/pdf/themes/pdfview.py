@@ -3,6 +3,7 @@
 import logging
 import tempfile
 from zope.component import queryUtility
+from eea.converter.config import TMPDIR
 from eea.converter.pdf.adapters import OptionsMaker as PDFOptionsMaker
 from eea.converter.pdf.adapters import BodyOptionsMaker as PDFBodyOptionsMaker
 from eea.converter.pdf.adapters import CoverOptionsMaker as PDFCoverOptionsMaker
@@ -192,7 +193,8 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
             except Exception:
                 self._toc = ''
             else:
-                _, output = tempfile.mkstemp(suffix='.xsl', prefix='eea.pdf.')
+                _, output = tempfile.mkstemp(suffix='.xsl', prefix='eea.pdf.',
+                                             dir=TMPDIR())
                 open(output, 'w').write(body())
                 self._toc = output
 

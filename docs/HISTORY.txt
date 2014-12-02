@@ -3,6 +3,9 @@ Changelog
 
 4.6-dev - (unreleased)
 ----------------------
+* Bug fix: Use shared temporary directory defined by eea.converter 8.5+
+  in order to avoid surprises while using together with zc.async
+  [voineali refs #21958]
 
 4.5 - (2014-11-20)
 ------------------
