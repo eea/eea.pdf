@@ -3,6 +3,9 @@ Changelog
 
 4.7-dev - (unreleased)
 ----------------------
+* Bug fix: Use *with* statement with temporary files in order to ensure that they
+  are safely closed before exit
+  [voineali refs #22080]
 
 4.6 - (2014-12-02)
 ------------------

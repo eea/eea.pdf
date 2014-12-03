@@ -193,10 +193,11 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
             except Exception:
                 self._toc = ''
             else:
-                _, output = tempfile.mkstemp(suffix='.xsl', prefix='eea.pdf.',
-                                             dir=TMPDIR())
-                open(output, 'w').write(body())
-                self._toc = output
+                with tempfile.NamedTemporaryFile(
+                        prefix='eea.pdf.', suffix='.xsl',
+                        dir=TMPDIR(), delete=False) as ofile:
+                    ofile.write(body())
+                    self._toc = ofile.name
 
             ## End patch
 
