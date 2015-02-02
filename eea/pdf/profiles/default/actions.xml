@@ -16,6 +16,7 @@
  <object name="export_actions" meta_type="CMF Action Category">
   <object name="download_pdf" meta_type="CMF Action" i18n:domain="eea">
    <property name="title" i18n:translate="">PDF</property>
+   <property name="description" i18n:translate="">Download as PDF</property>
    <property name="icon_expr">string:eea-icon eea-icon-3x eea-icon-file-pdf-o</property>
    <property name="url_expr">string:$object_url/download.pdf</property>
    <property name="available_expr">object/@@pdf.support/can_download</property>
