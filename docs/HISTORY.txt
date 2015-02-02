@@ -3,6 +3,8 @@ Changelog
 
 4.8-dev - (unreleased)
 ----------------------
+* Feature: Added "Download as PDF" action also within export_actions category
+  [voineali refs #22686]
 
 4.7 - (2014-12-23)
 ------------------

@@ -1,10 +1,22 @@
 <?xml version="1.0"?>
 <object name="portal_actions" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <action-provider name="portal_actions"/>
- <object name="document_actions">
+ <object name="document_actions"  meta_type="CMF Action Category">
   <object name="download_pdf" meta_type="CMF Action" i18n:domain="eea">
    <property name="title" i18n:translate="">Download as PDF</property>
    <property name="icon_expr">string:$portal_url/++resource++eea.pdf.images/download-pdf.png</property>
+   <property name="url_expr">string:$object_url/download.pdf</property>
+   <property name="available_expr">object/@@pdf.support/can_download</property>
+   <property name="permissions">
+    <element value="Can download PDF"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+ </object>
+ <object name="export_actions" meta_type="CMF Action Category">
+  <object name="download_pdf" meta_type="CMF Action" i18n:domain="eea">
+   <property name="title" i18n:translate="">PDF</property>
+   <property name="icon_expr">string:eea-icon eea-icon-3x eea-icon-file-pdf-o</property>
    <property name="url_expr">string:$object_url/download.pdf</property>
    <property name="available_expr">object/@@pdf.support/can_download</property>
    <property name="permissions">
