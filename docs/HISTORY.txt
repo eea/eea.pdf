@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.9.dev0 - (unreleased)
+-----------------------
+
 4.8 - (2015-02-03)
 ------------------
 * Feature: Added "Download as PDF" action also within export_actions category
