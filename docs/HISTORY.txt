@@ -3,6 +3,7 @@ Changelog
 
 4.9.dev0 - (unreleased)
 -----------------------
+* Add Italian translation [cekk]
 
 4.8 - (2015-02-03)
 ------------------
