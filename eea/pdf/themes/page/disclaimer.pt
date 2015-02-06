@@ -41,8 +41,6 @@
     <dd i18n:translate="copyright-notice-desc1">Reproduction is authorised, provided the source is acknowledged, save where otherwise stated.</dd>
     <br/>
     <dd i18n:translate="copyright-notice-desc2">Information about the European Union is available on the Internet. It can be accessed through the Europa server (www.europa.eu).</dd>
-    <br/>
-    <dd i18n:translate="copyright-notice-desc3">Luxembourg: Publications Office of the European Union, <tal:year replace="view/year" i18n:name="copyright-notice-year">2013</tal:year></dd>
   </dl>
 
   <dl class="cover-copyright-book" i18n:domain="eea.notranslation">
