@@ -38,7 +38,7 @@ setup(name=NAME,
           'setuptools',
           'kv',
           'plone.app.async',
-          'eea.converter > 8.4',
+          'eea.converter > 8.6',
           'eea.downloads',
       ],
       entry_points="""

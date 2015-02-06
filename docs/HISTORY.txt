@@ -3,7 +3,10 @@ Changelog
 
 4.9.dev0 - (unreleased)
 -----------------------
-* Add Italian translation [cekk]
+* Feature: Added possibility to use specific ZPT macro while exporting collection PDF body
+  [voineali refs #22686]
+* i18n: Add Italian translation
+  [cekk]
 
 4.8 - (2015-02-03)
 ------------------

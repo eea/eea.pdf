@@ -12,6 +12,7 @@ class Body(BrowserView):
 
     def __init__(self, context, request):
         super(Body, self).__init__(context, request)
+        self._macro = None
         self._theme = None
         self._maxdepth = None
         self._maxbreadth = None
@@ -46,6 +47,12 @@ class Body(BrowserView):
 
         value = field.getAccessor(context)()
         return value or default
+
+    @property
+    def macro(self):
+        """ ZPT macro to use while rendering PDF
+        """
+        return self._macro
 
     @property
     def maxdepth(self):
@@ -120,6 +127,7 @@ class Body(BrowserView):
                 pdf = doc.restrictedTraverse(body)
                 self._count += 1
                 html = pdf(
+                    macro=self.macro,
                     maxdepth=self.maxdepth,
                     maxbreadth=self.maxbreadth,
                     maxitems=self.maxitems,
@@ -137,6 +145,7 @@ class Body(BrowserView):
     def update(self, **kwargs):
         """ Update counters
         """
+        self._macro = kwargs.get('macro', self._macro)
         self._maxdepth = kwargs.get('maxdepth', None)
         self._maxbreadth = kwargs.get('maxbreadth', None)
         self._maxitems = kwargs.get('maxitems', None)
