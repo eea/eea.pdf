@@ -11,11 +11,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Palatino Linotype", serif !important;
-  #font-family: Verdana, sans-serif !important;
-  #font-family: "Open Sans", sans-serif !important;
+  /*#font-family: Verdana, sans-serif !important;*/
+  /*#font-family: "Open Sans", sans-serif !important;*/
 }
 
-h1, h2, h3, h4, h5, h6, 
+h1, h2, h3, h4, h5, h6,
 .documentFirstHeading, .cover-header {
   font-family: "Open Sans", sans-serif !important;
   letter-spacing: inherit;
@@ -26,8 +26,8 @@ p,
 .cover-copyright
 {
   font-family: "Palatino Linotype", serif !important;
-  #font-family: Verdana, sans-serif !important;
-  #font-family: "Open Sans", sans-serif !important;
+  /*#font-family: Verdana, sans-serif !important;*/
+  /*#font-family: "Open Sans", sans-serif !important;*/
   letter-spacing: 0;
 }
 
@@ -276,7 +276,7 @@ p.discreet {
 .template-pdf-cover div#portal-column-content ,
 .template-pdf-cover-back div#portal-column-content {
   padding: 0;
-  margin 0;
+  margin: 0;
 }
 
 .body-print .qrbox {
@@ -356,4 +356,4 @@ p.portalMessage {
 #content .qrbox-text > p {
   margin: 0 0 0.2em 0; }
 
-.fiche-summary { margin-top: 1em; } 
+.fiche-summary { margin-top: 1em; }
