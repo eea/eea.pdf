@@ -3,6 +3,8 @@ Changelog
 
 4.9.dev0 - (unreleased)
 -----------------------
+* Change: Do not merge pdf.print.css in order to easily reuse it within epub export
+  [voineali refs #22686]
 * Change: Added timestamp and print notice on pdf disclaimer page
   [ichimdav refs #22442]
 * Change: removed publishing house copyright notice from the pdf disclaimer page
