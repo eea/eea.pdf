@@ -43,9 +43,13 @@
     <dd i18n:translate="copyright-notice-desc2">Information about the European Union is available on the Internet. It can be accessed through the Europa server (www.europa.eu).</dd>
   </dl>
 
-  <dl class="cover-copyright-book" i18n:domain="eea.notranslation">
-    <dd tal:condition="context/isbn|nothing">ISBN <tal:isbn tal:replace="context/isbn" /></dd>
-    <dd tal:condition="context/doi|nothing">doi:<tal:doi tal:replace="context/doi" /></dd>
+  <dl class="cover-copyright-book" i18n:domain="eea.notranslation"
+    tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                DateTime python:modules['DateTime'].DateTime;
+                current_date python:toLocalizedTime(DateTime(), long_format=1)">
+      <dt>Print notice</dt>
+      <dd>This PDF has been generated automagically by the EEA Web content management system on <span class="discreet"><span tal:replace="python:current_date"></span>.</span></dd>
+      <dd>Please consider the environment before printing.</dd>
   </dl>
 
   <dl class="cover-copyright-contact">

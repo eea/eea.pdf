@@ -3,6 +3,8 @@ Changelog
 
 4.9.dev0 - (unreleased)
 -----------------------
+* Change: Added timestamp and print notice on pdf disclaimer page
+  [ichimdav refs #22442]
 * Change: removed publishing house copyright notice from the pdf disclaimer page
   [ichimdav refs #22442]
 * Feature: Added possibility to use specific ZPT macro while exporting collection PDF body
