@@ -27,6 +27,8 @@ Main features
 1. Adds download as PDF action at the bottom of the page
 2. Possibility to define custom PDF themes per content-type
 3. Asynchronously generate PDF files and notify users by email when PDF is ready
+4. Possibility to temporarily disable dynamic PDF creation by adding an item
+   called 'action-download-pdf' within context
 
 
 Install
@@ -294,6 +296,19 @@ Title of the Plone object which is downloaded as PDF
 ${download_url}
 ---------------
 The absolute URL where the generated output PDF can be downloaded
+
+Disable PDF export
+==================
+You have the possibility to temporarily disable dynamic PDF export contextually
+by adding a static PDF file (or a Python Script, Page Template, etc)
+within context called **action-download-pdf**. This way /download.pdf will
+return this file instead of generating one based on context data.
+
+.. note::
+
+  This works only with folderish items.
+
+
 
 Dependencies
 ============

@@ -3,6 +3,10 @@ Changelog
 
 4.9.dev0 - (unreleased)
 -----------------------
+* Feature: Added possibility to add a fallback PDF file within context called
+  **action-download-pdf** in order to temporarily stop dynamic PDF
+  generation and statically return this item.
+  [voineali refs #22970]
 * Change: Do not merge pdf.print.css in order to easily reuse it within epub export
   [voineali refs #22686]
 * Change: Added timestamp and print notice on pdf disclaimer page

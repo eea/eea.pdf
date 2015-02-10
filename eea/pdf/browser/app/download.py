@@ -21,6 +21,7 @@ class Download(Pdf):
     template = ViewPageTemplateFile('../zpt/download.pt')
     _message = ''
     _email = ''
+    _link = ''
 
     def make_pdf(self, dry_run=False, **kwargs):
         """ Compute pdf
@@ -62,8 +63,10 @@ class Download(Pdf):
     def link(self):
         """ Download link
         """
-        storage = IStorage(self.context).of('pdf')
-        return storage.absolute_url()
+        if not self._link:
+            storage = IStorage(self.context).of('pdf')
+            self._link = storage.absolute_url()
+        return self._link
 
     def period(self):
         """ Wait period
@@ -91,10 +94,16 @@ class Download(Pdf):
     def download(self, email='', **kwargs):
         """ Download
         """
+        # Fallback PDF provided
+        fallback = self.context.restrictedTraverse('action-download-pdf', None)
+        if fallback and fallback.absolute_url().startswith(
+                self.context.absolute_url()):
+            self._link = self.context.absolute_url() + '/action-download-pdf'
+
         # PDF already generated
         storage = IStorage(self.context).of('pdf')
         filepath = storage.filepath()
-        fileurl = storage.absolute_url()
+        fileurl = self.link()
         url = self.context.absolute_url()
         title = self.context.title_or_id()
 
@@ -102,7 +111,7 @@ class Download(Pdf):
         from_name = portal.getProperty('email_from_name')
         from_email = portal.getProperty('email_from_address')
 
-        if async.file_exists(filepath):
+        if fallback or async.file_exists(filepath):
             wrapper = async.ContextWrapper(self.context)(
                 fileurl=fileurl,
                 filepath=filepath,
