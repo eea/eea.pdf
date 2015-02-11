@@ -37,7 +37,8 @@ EEA.Pdf.prototype = {
     self.links.prepOverlay({
       subtype: 'ajax',
       formselector: 'form',
-      filter: '.eea-pdf-download'
+      filter: '.eea-pdf-download',
+      cssclass: 'eea-pdf-overlay'
     });
   }
 };

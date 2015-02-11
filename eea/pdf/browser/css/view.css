@@ -19,8 +19,21 @@
   display: none;
 }
 
+.eea-pdf-overlay {
+  min-width: 700px;
+  max-width: 720px;
+}
+
+.eea-pdf-overlay .pb-ajax > div {
+  width: auto;
+}
+
+.field.eea-pdf-email {
+  margin-bottom: 0;
+}
+
 .eea-pdf-email input[type=email] {
-  min-width: 500px;
+  min-width: 300px;
   max-width: 85%;
   height: 30px;
 }
@@ -47,10 +60,12 @@
 .eea-pdf-email .formHelp {
   font-size: 90%;
   color: #808285;
+  margin-top: 1em;
 }
 
 .eea-pdf-email textarea[name=body] {
   visibility: hidden;
+  position: absolute;
 }
 
 .eea-pdf-email .context {

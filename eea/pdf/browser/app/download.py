@@ -19,9 +19,16 @@ class Download(Pdf):
     """ Download PDF
     """
     template = ViewPageTemplateFile('../zpt/download.pt')
-    _message = ''
-    _email = ''
-    _link = ''
+
+    def __init__(self, context, request):
+        super(Download, self).__init__(context, request)
+        self._title = ''
+        self._message = _(
+            u"* The email is only used for the purpose of sending the PDF. "
+            u"We do not store it for any other use."
+        )
+        self._email = ''
+        self._link = ''
 
     def make_pdf(self, dry_run=False, **kwargs):
         """ Compute pdf
@@ -46,18 +53,35 @@ class Download(Pdf):
         return self._message
 
     @property
+    def title(self):
+        """ Title
+        """
+        if self._title:
+            return self._title
+
+        return _(
+          u'Enter your email address where to send "${title}" PDF when ready',
+            mapping={
+                'title': self.context.title_or_id()
+            }
+        )
+
+    @property
     def email(self):
         """ User email
         """
         return self._email
 
-    def _redirect(self, msg=''):
+    def _redirect(self, msg='', title=''):
         """ Redirect
         """
         self.request.set('disable_border', 1)
         self.request.set('disable_plone.leftcolumn', 1)
         self.request.set('disable_plone.rightcolumn', 1)
-        self._message = msg
+        if msg:
+            self._message = msg
+        if title:
+            self._title = title
         return self.template()
 
     def link(self):
@@ -80,16 +104,18 @@ class Download(Pdf):
         """ Finish download
         """
         self._email = email
-        return self._redirect(_(
-            u"The PDF is being generated. "
-            u"An email will be sent to you when the PDF is ready. "
-            u"If you don't have access to your email address "
-            u"check <a href='${link}'>this link</a> in a few ${period}.",
-            mapping={
-                "link": self.link(),
-                "period": self.period()
-            }
-        ))
+        return self._redirect(
+            title=_(
+                u"An email will be sent to you when the PDF is ready"
+            ),
+            msg=_(
+                u"If you don't have access to your email address "
+                u"check <a href='${link}'>this link</a> in a few ${period}.",
+                mapping={
+                    "link": self.link(),
+                    "period": self.period()
+                })
+        )
 
     def download(self, email='', **kwargs):
         """ Download
