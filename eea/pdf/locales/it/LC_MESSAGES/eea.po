@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-24 14:52+0000\n"
+"POT-Creation-Date: 2015-02-12 10:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../../pdf/browser/zpt/download.pt:18
+#: ../../pdf/browser/app/download.py:26
 msgid "* The email is only used for the purpose of sending the PDF. We do not store it for any other use."
 msgstr "* L'email è utilizzata solamente per spedire il PDF. Non la salviamo per altri utilizzi."
 
@@ -50,6 +50,10 @@ msgstr "Annulla l'export del PDF dopo uno specificato numero di secondi. Utilizz
 msgid "An XSL page template to be used for PDF Table of contents. Leave empty to disable it."
 msgstr "Un template XSL che verrà utilizzato come sommario del PDF. Lasciare vuoto per disabilitare."
 
+#: ../../pdf/browser/app/download.py:108
+msgid "An email will be sent to you when the PDF is ready"
+msgstr "Ti verrà spedita un'email quando il PDF è pronto."
+
 #: ../../pdf/browser/zpt/theme.pt:15
 #: ../../pdf/browser/zpt/tool.pt:37
 #: ../../pdf/content/theme.py:128
@@ -68,25 +72,21 @@ msgstr "Corpo"
 msgid "Cover"
 msgstr "Copertina"
 
-#: ../../pdf/themes/page/disclaimer.pt:57
+#: ../../pdf/themes/page/disclaimer.pt:59
 msgid "Denmark"
 msgstr "Danimarca"
 
-#: ../../pdf/subtypes/schema.py:34
+#: ../../pdf/subtypes/schema.py:43
 msgid "Disable PDF export or override theme used to export this content as PDF."
 msgstr "Disabilita l'export PDF o sovrascrivi il tema utilizzato per esportare questo contenuto come PDF."
 
 #: ../../pdf/content/theme.py:26
 msgid "Disclaimer"
-msgstr ""
+msgstr "Disclaimer"
 
 #: ../../pdf/rules/adapters.py:9
 msgid "Download"
 msgstr "Scarica"
-
-#: ../../pdf/browser/zpt/download.pt:9
-msgid "Download ${title} as PDF"
-msgstr "Scarica ${title} come PDF"
 
 #: ../../pdf/rules/adapters.py:32
 msgid "Download URL"
@@ -128,11 +128,11 @@ msgstr "Abilita o disabilita i javascript."
 msgid "Enable table of contents links"
 msgstr "Abilita i link nel sommario."
 
-#: ../../pdf/browser/zpt/download.pt:16
-msgid "Enter your email address where to send the PDF when ready"
-msgstr "Inserisci un indirizzo email a cui spedire il PDF una volta completato"
+#: ../../pdf/browser/app/download.py:62
+msgid "Enter your email address where to send '${title}' PDF when ready"
+msgstr "Inserisci un indirizzo email a cui spedire il '${title}' PDF una volta creato"
 
-#: ../../pdf/themes/page/disclaimer.pt:54
+#: ../../pdf/themes/page/disclaimer.pt:56
 msgid "European Environment Agency"
 msgstr ""
 
@@ -147,6 +147,14 @@ msgstr "Genera il PDF in modo asincrono e spedisci un'email all'utente quando è
 #: ../../pdf/content/theme.py:60
 msgid "Header"
 msgstr "Testata"
+
+#: ../../pdf/browser/app/download.py:111
+msgid "If you don't have access to your email address check <a href='${link}'>this link</a> in a few ${period}."
+msgstr "Se non puoi accedere al tuo indirizzo email, controlla <a href='${link}'>questo link</a> tra qualche istante."
+
+#: ../../pdf/cache/behavior.py:21
+msgid "Invalidate latest generated PDF file"
+msgstr ""
 
 #: ../../pdf/browser/zpt/tool.pt:39
 #: ../../pdf/content/theme.py:101
@@ -166,6 +174,10 @@ msgstr ""
 msgid "Javascript delay"
 msgstr "Ritardo dei Javascript"
 
+#: ../../pdf/subtypes/schema.py:116
+msgid "Main cover image that will show up on the pdf cover page"
+msgstr ""
+
 #: ../../pdf/content/theme.py:161
 msgid "Maximum breadth"
 msgstr "Massima profondità"
@@ -174,7 +186,7 @@ msgstr "Massima profondità"
 msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types."
 msgstr "Massima profondità di navigazione per includere gli elementi figli quando si genera il PDF da una collezione o un contenuto folderish."
 
-#: ../../pdf/subtypes/schema.py:81
+#: ../../pdf/subtypes/schema.py:90
 msgid "Maximum breadth to include children items while generating PDF. Leave it empty to use the portal global defined value."
 msgstr "Massima profondità di navigazione per includere gli elementi figli quando si genera un PDF. Lasciare vuoto per utilizzare il valore impostato globalmente nel sito."
 
@@ -186,7 +198,7 @@ msgstr "Massima profondità"
 msgid "Maximum depth to recursively include children items while generating PDF for collection or folderish content-types."
 msgstr "Massima profondita per includere ricorsivamente gli elementi figli quando si genera un PDF per una collezione o un contenuto folderish."
 
-#: ../../pdf/subtypes/schema.py:68
+#: ../../pdf/subtypes/schema.py:77
 msgid "Maximum depth to recursively include children items while generating PDF. Leave it empty to use the portal global defined value."
 msgstr "Massima profondità per includere ricorsivamente gli elementi figli quando si genera un PDF. Lasciare vuoto per utilizzare il valore impostato globalmente nel sito."
 
@@ -198,21 +210,30 @@ msgstr "Numero massimo di elementi"
 msgid "Offset"
 msgstr ""
 
-#: ../../pdf/subtypes/schema.py:80
+#: ../../pdf/cache/behavior.py:20
+#: ../../pdf/profiles/default/actions.xml
+msgid "PDF"
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:89
 msgid "PDF Maximum breadth"
 msgstr "Massima profondità PDF"
 
-#: ../../pdf/subtypes/schema.py:67
+#: ../../pdf/subtypes/schema.py:76
 msgid "PDF Maximum depth"
 msgstr "Massima profondità PDF"
 
-#: ../../pdf/subtypes/schema.py:93
+#: ../../pdf/subtypes/schema.py:102
 msgid "PDF Maximum items"
 msgstr "Numero massimo di elementi nel PDF"
 
-#: ../../pdf/subtypes/schema.py:33
+#: ../../pdf/subtypes/schema.py:42
 msgid "PDF Theme"
 msgstr "Tema PDF"
+
+#: ../../pdf/subtypes/schema.py:115
+msgid "PDF cover main image"
+msgstr ""
 
 #: ../../pdf/content/theme.py:140
 msgid "Page numbering offset within PDF Body."
@@ -226,7 +247,7 @@ msgstr "Tipi di contenuto"
 msgid "Preview"
 msgstr "Anteprima"
 
-#: ../../pdf/browser/zpt/download.pt:17
+#: ../../pdf/browser/zpt/download.pt:15
 msgid "Send"
 msgstr "Spedisci"
 
@@ -238,10 +259,6 @@ msgstr "Sommario"
 msgid "Table of contents links"
 msgstr "Link nel sommario"
 
-#: ../../pdf/browser/app/download.py:80
-msgid "The PDF is being generated. An email will be sent to you when the PDF is ready. If you don't have access to your email address check <a href='${link}'>this link</a> in a few ${period}."
-msgstr "Il PDF è in fase di creazione. Ti verrà spedita un'email quando il PDF è pronto. Se non puoi accedere al tuo indirizzo email, controlla <a href='${link}'>questo link</a> tra qualche istante."
-
 #: ../../pdf/browser/zpt/theme.pt:24
 #: ../../pdf/browser/zpt/tool.pt:46
 #: ../../pdf/content/theme.py:117
@@ -252,7 +269,7 @@ msgstr ""
 msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
 msgstr "Numero massimo di elementi figli da includere in fase di generazione del PDF per le collezioni e i tipi folderish."
 
-#: ../../pdf/subtypes/schema.py:94
+#: ../../pdf/subtypes/schema.py:103
 msgid "Total maximum children items to be includedwhile generating PDF. Leave it empty to use the portal global defined value."
 msgstr "Numero massimo di elementi figli da includere in fase di generazione del PDF. Lasciare vuoto per utilizzare il valore impostato globalmente nel sito."
 
@@ -274,22 +291,22 @@ msgid "Wait some seconds for javascript to finish"
 msgstr "Aspetta qualche secondo per il completamento dei javascript"
 
 #. Default: "Kongens Nytorv 6"
-#: ../../pdf/themes/page/disclaimer.pt:55
+#: ../../pdf/themes/page/disclaimer.pt:57
 msgid "copyright-address1"
 msgstr ""
 
 #. Default: "1050 Copenhagen K"
-#: ../../pdf/themes/page/disclaimer.pt:56
+#: ../../pdf/themes/page/disclaimer.pt:58
 msgid "copyright-address2"
 msgstr ""
 
 #. Default: "Enquiries: eea.europa.eu/enquiries"
-#: ../../pdf/themes/page/disclaimer.pt:61
+#: ../../pdf/themes/page/disclaimer.pt:63
 msgid "copyright-enquiries"
 msgstr ""
 
 #. Default: "Fax: + 45 33 36 71 99"
-#: ../../pdf/themes/page/disclaimer.pt:59
+#: ../../pdf/themes/page/disclaimer.pt:61
 msgid "copyright-fax"
 msgstr ""
 
@@ -313,11 +330,6 @@ msgstr ""
 msgid "copyright-notice-desc2"
 msgstr ""
 
-#. Default: "Luxembourg: Publications Office of the European Union, ${copyright-notice-year}"
-#: ../../pdf/themes/page/disclaimer.pt:45
-msgid "copyright-notice-desc3"
-msgstr ""
-
 #. Default: "© European Environment Agency, ${copyright-notice-year}"
 #: ../../pdf/themes/page/disclaimer.pt:40
 msgid "copyright-notice-eea"
@@ -329,12 +341,12 @@ msgid "copyright-notice-name"
 msgstr ""
 
 #. Default: "Tel.: + 45 33 36 71 00"
-#: ../../pdf/themes/page/disclaimer.pt:58
+#: ../../pdf/themes/page/disclaimer.pt:60
 msgid "copyright-phone"
 msgstr ""
 
 #. Default: "Web: eea.europa.eu"
-#: ../../pdf/themes/page/disclaimer.pt:60
+#: ../../pdf/themes/page/disclaimer.pt:62
 msgid "copyright-web"
 msgstr ""
 
@@ -353,11 +365,11 @@ msgstr ""
 msgid "cover-photo"
 msgstr ""
 
-#: ../../pdf/browser/app/download.py:73
+#: ../../pdf/browser/app/download.py:100
 msgid "minutes"
 msgstr "minuti"
 
-#: ../../pdf/browser/app/download.py:74
+#: ../../pdf/browser/app/download.py:101
 #: ../../pdf/browser/zpt/theme.pt:22
 #: ../../pdf/browser/zpt/tool.pt:44
 msgid "seconds"

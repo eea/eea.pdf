@@ -60,7 +60,7 @@ class Download(Pdf):
             return self._title
 
         return _(
-          u'Enter your email address where to send "${title}" PDF when ready',
+          u"Enter your email address where to send '${title}' PDF when ready",
             mapping={
                 'title': self.context.title_or_id()
             }
