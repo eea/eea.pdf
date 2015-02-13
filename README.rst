@@ -71,12 +71,21 @@ handle it::
 
     parts +=
         media-downloads
+        media-downloads-temp
 
-    media-downloads-path = ${buildout:directory}/var/downloads
+
+    media-downloads-path = ${buildout:directory}/var/downloads/pdf
+    media-downloads-tmp = ${buildout:directory}/var/downloads/tmp
 
     [media-downloads]
     recipe = ore.recipe.fs:mkdir
     path = ${buildout:media-downloads-path}
+    mode = 0700
+    createpath = true
+
+    [media-downloads-temp]
+    recipe = ore.recipe.fs:mkdir
+    path = ${buildout:media-downloads-temp}
     mode = 0700
     createpath = true
 
@@ -89,13 +98,15 @@ about it::
     [buildout]
 
     media-downloads-name = downloads
-    media-downloads-path = ${buildout:directory}/var/downloads
+    media-downloads-path = ${buildout:directory}/var/downloads/pdf
+    media-downloads-temp = ${buildout:directory}/var/downloads/tmp
 
     [instance]
 
     environment-vars +=
         EEADOWNLOADS_NAME ${buildout:media-downloads-name}
         EEADOWNLOADS_PATH ${buildout:media-downloads-path}
+        EEACONVERTER_TEMP ${buildout:media-downloads-temp}
 
 Also, don't forget to setup `plone.app.async`_
 
@@ -314,10 +325,11 @@ Dependencies
 ============
 
 1. `eea.converter`_
-2. `wkhtmltopdf`_
-3. `pdftk`_
-4. `plone.app.async`_
-5. `eea.cache`_ (optional)
+2. `eea.downloads`_
+3. `wkhtmltopdf`_
+4. `pdftk`_
+5. `plone.app.async`_
+6. `eea.cache`_ (optional)
 
 Source code
 ===========
@@ -347,6 +359,7 @@ EEA_ - European Environment Agency (EU)
 
 .. _EEA: http://www.eea.europa.eu/
 .. _eea.converter: http://eea.github.com/docs/eea.converter
+.. _eea.downloads: http://eea.github.com/docs/eea.downloads
 .. _wkhtmltopdf: http://wkhtmltopdf.org
 .. _pdftk: http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 .. _eea.cache: http://eea.github.com/docs/eea.cache
