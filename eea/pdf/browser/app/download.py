@@ -103,19 +103,19 @@ class Download(Pdf):
     def finish(self, email=''):
         """ Finish download
         """
-        self._email = email
-        return self._redirect(
-            title=_(
+        if email:
+            self._email = email
+            self._title = _(
                 u"An email will be sent to you when the PDF is ready"
-            ),
-            msg=_(
+            )
+            self._message = _(
                 u"If you don't have access to your email address "
                 u"check <a href='${link}'>this link</a> in a few ${period}.",
                 mapping={
                     "link": self.link(),
                     "period": self.period()
-                })
-        )
+            })
+        return self._redirect()
 
     def download(self, email='', **kwargs):
         """ Download
