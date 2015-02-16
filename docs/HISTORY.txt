@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.9.dev0 - (unreleased)
------------------------
+4.9 - (2015-02-16)
+------------------
 * Feature: Added possibility to add a fallback PDF file within context called
   **action-download-pdf** in order to temporarily stop dynamic PDF
   generation and statically return this item.
