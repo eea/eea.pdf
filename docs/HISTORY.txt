@@ -3,6 +3,8 @@ Changelog
 
 5.0.dev0 - (unreleased)
 -----------------------
+* Bug fix: Fixed viewlet name
+  [avoinea]
 
 4.9 - (2015-02-16)
 ------------------

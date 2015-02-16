@@ -32,7 +32,7 @@
     />
 
   <browser:viewlet
-    name="eea.annotator"
+    name="eea.pdf"
     layer="eea.pdf.interfaces.ILayer"
     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
     class=".app.viewlet.Pdf"
