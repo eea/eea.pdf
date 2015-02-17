@@ -3,6 +3,9 @@ Changelog
 
 5.0.dev0 - (unreleased)
 -----------------------
+* Change: Moved async API to eea.converter in order to reuse it for other
+  async jobs (e.g. eea.epub)
+  [voineali refs #22971]
 * Bug fix: Fixed download as PDF actions permissions
   [avoinea]
 * Bug fix: Fixed viewlet name

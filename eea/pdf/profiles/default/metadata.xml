@@ -2,6 +2,7 @@
 <metadata>
   <version>5.0</version>
   <dependencies>
+    <dependency>profile-eea.converter:default</dependency>
     <dependency>profile-eea.downloads:default</dependency>
   </dependencies>
 </metadata>

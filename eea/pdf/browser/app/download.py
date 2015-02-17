@@ -11,8 +11,8 @@ from eea.converter.browser.app.download import Pdf
 from eea.downloads.interfaces import IStorage
 from eea.pdf.config import EEAMessageFactory as _
 from eea.pdf.events.sync import PDFExportFail, PDFExportSuccess
-from eea.pdf.events.async import AsyncPDFExportSuccess
-from eea.pdf import async
+from eea.pdf.events.async import AsyncPDFExportSuccess, AsyncPDFExportFail
+from eea.converter import async
 logger = logging.getLogger('eea.pdf')
 
 class Download(Pdf):
@@ -158,15 +158,18 @@ class Download(Pdf):
         converter = self.make_pdf(dry_run=True)
         worker = queryUtility(IAsyncService)
         worker.queueJob(
-            async.make_async_pdf,
+            async.run_async_job,
             self.context, converter,
+            success_event=AsyncPDFExportSuccess,
+            fail_event=AsyncPDFExportFail,
             email=email,
             filepath=filepath,
             fileurl=fileurl,
             url=url,
             from_name=from_name,
             from_email=from_email,
-            title=title
+            title=title,
+            etype='pdf'
         )
 
         return self.finish(email=email)

@@ -1,32 +1,20 @@
 """ Events
 """
-from zope.interface import Interface
-from zope.component.interfaces import IObjectEvent
+from eea.converter.interfaces import IExportFail, IExportSuccess
+from eea.converter.interfaces import IAsyncExportFail, IAsyncExportSuccess
 
-class IPDFEvent(IObjectEvent):
-    """ Base Event Interface for all PDF events
-    """
-
-class IPDFExportSuccess(IPDFEvent):
+class IPDFExportSuccess(IExportSuccess):
     """ PDF export succeeded
     """
 
-class IPDFExportFail(IPDFEvent):
+class IPDFExportFail(IExportFail):
     """ PDF export failed
     """
 
-class IAsyncPDFEvent(IPDFEvent):
-    """ Base Event Interface for all Async PDF events
-    """
-
-class IAsyncPDFExportSuccess(IAsyncPDFEvent):
+class IAsyncPDFExportSuccess(IAsyncExportSuccess):
     """ Async job for PDF export succeeded
     """
 
-class IAsyncPDFExportFail(IAsyncPDFEvent):
+class IAsyncPDFExportFail(IAsyncExportFail):
     """ Async job for PDF export failed
-    """
-
-class IPDFContextWrapper(Interface):
-    """ Context wrapper used by async events
     """
