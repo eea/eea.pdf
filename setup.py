@@ -38,7 +38,7 @@ setup(name=NAME,
           'setuptools',
           'plone.app.async',
           'eea.converter > 8.9',
-          'eea.downloads',
+          'eea.downloads > 1.0',
       ],
       entry_points="""
       # -*- entry_points -*-
