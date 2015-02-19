@@ -3,6 +3,6 @@
   <stylesheet id="++resource++eea.pdf.css" />
   <stylesheet id="pdf.print.css"
     media="print" cookable="False"
-    expression="python:'pdf.' in request['URL0'] or '.pdf' in request['URL0'] or '.epub' in request['URL0']"
+    expression="python:'pdf.' in request['URL0'] or '.pdf' in request['URL0'] or 'epub.' in request['URL0'] or '.epub' in request['URL0']"
     />
 </object>
