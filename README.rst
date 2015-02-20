@@ -34,10 +34,22 @@ Main features
 Install
 =======
 
-- Add eea.pdf to your eggs section in your buildout and re-run buildout.
+- Add eea.pdf to your **eggs** and **zcml** section in your buildout
+  and re-run buildout.
   You can download a sample buildout from
   https://github.com/eea/eea.pdf/tree/master/buildouts/plone4
 - Install eea.pdf within Site Setup > Add-ons
+
+::
+
+    [instance]
+    eggs =
+        ...
+        eea.pdf
+
+    zcml =
+        ...
+        eea.pdf
 
 
 External PDF generator tools
@@ -260,17 +272,17 @@ Plone > Site Setup > Content-rules
   Also if you disable these content-rules the users will never know when the
   PDF is ready and what is the link where they can download the output PDF.
 
-PDF export succeeded
---------------------
+Export succeeded
+----------------
 Notify the person who requested a PDF export that the PDF successfully exported
 and provide a link to the downloadable PDF
 
-PDF export failed
------------------
+Export failed
+-------------
 Notify the person who requested a PDF export that the PDF export failed.
 
-PDF export failed (admin)
--------------------------
+Export failed (admin)
+---------------------
 Notify admin that there were issues while exporting PDF
 
 
@@ -307,6 +319,12 @@ Title of the Plone object which is downloaded as PDF
 ${download_url}
 ---------------
 The absolute URL where the generated output PDF can be downloaded
+
+${download_type}
+----------------
+Download type. Default to PDF for this package. It is package specific and it
+can be PDF, EPUB, etc.
+
 
 Disable PDF export
 ==================
