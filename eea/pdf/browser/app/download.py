@@ -125,6 +125,8 @@ class Download(Pdf):
         if fallback and fallback.absolute_url().startswith(
                 self.context.absolute_url()):
             self._link = self.context.absolute_url() + '/action-download-pdf'
+        else:
+            fallback = None
 
         # PDF already generated
         storage = IStorage(self.context).of('pdf')
