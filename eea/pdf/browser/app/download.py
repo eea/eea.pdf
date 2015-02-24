@@ -59,10 +59,14 @@ class Download(Pdf):
         if self._title:
             return self._title
 
+        title = self.context.title_or_id()
+        if isinstance(title, str):
+            title = title.decode('utf-8')
+
         return _(
           u"Enter your email address where to send '${title}' PDF when ready",
             mapping={
-                'title': self.context.title_or_id()
+                'title': title
             }
         )
 

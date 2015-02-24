@@ -3,6 +3,8 @@ Changelog
 
 5.0.dev0 - (unreleased)
 -----------------------
+* Bug fix: Fixed UnicodeDecodeError within download.pdf template
+  [voineali refs #23338]
 * Bug fix: Fixed download as PDF actions permissions
   [avoinea]
 * Bug fix: Fixed viewlet name
