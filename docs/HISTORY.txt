@@ -3,6 +3,8 @@ Changelog
 
 5.0.dev0 - (unreleased)
 -----------------------
+* Bug fix: Fixed PDF memcache when called with/without ajax_load
+  [voineali refs #23103]
 * Bug fix: Fixed UnicodeDecodeError within download.pdf template
   [voineali refs #23338]
 * Bug fix: Fixed download as PDF actions permissions

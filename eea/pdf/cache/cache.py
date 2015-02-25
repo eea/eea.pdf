@@ -8,6 +8,9 @@ def cacheKey(method, self, *args, **kwargs):
     """ Generate unique cache id
     """
     name = getattr(self, '__name__', '')
+    request = getattr(self, 'request', {})
+    if request.get('ajax_load'):
+        return ':'.join((self.context.absolute_url(1), name, 'ajax'))
     return ':'.join((self.context.absolute_url(1), name))
 #
 # Back references
