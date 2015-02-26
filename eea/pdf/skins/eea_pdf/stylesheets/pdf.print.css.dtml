@@ -30,7 +30,6 @@ p,
   /*#font-family: "Open Sans", sans-serif !important;*/
   letter-spacing: 0;
 }
-
 #content table {
   max-width: 100%;
   display: block;
@@ -243,14 +242,15 @@ p.discreet {
 
 .cover-copyright dt {
   font-weight: bold;
-  line-height: 0.1pt;
+  line-height: 1;
 }
 
 .cover-copyright-legal {
   margin-top: 90pt;
 }
 
-.cover-copyright-notice {
+.cover-copyright-notice,
+.cover-copyright-book {
   margin-top: 17pt;
 }
 
