@@ -1,0 +1,52 @@
+<metal:main metal:define-macro="content">
+    <div class="cover-copyright">
+
+        <dl class="cover-copyright-photo">
+            <dd i18n:translate="cover-design">Cover design: EEA</dd>
+            <dd i18n:translate="cover-photo">Cover photo: © <tal:image replace="python:getattr(context, 'imageCopyright', '') or 'EEA'" i18n:name="copyright-name"/></dd>
+            <dd i18n:translate="cover-layout">Layout: EEA</dd>
+        </dl>
+
+        <dl class="cover-copyright-legal">
+            <dt i18n:translate="copyright-legal-name">Legal notice</dt>
+            <dd i18n:translate="copyright-legal-description">
+                The contents of this publication do not necessarily reflect the official opinions of the European
+                Commission or other institutions of the European Union. Neither the European Environment Agency
+                nor any person or company acting on behalf of the Agency is responsible for the use that may be
+                made of the information contained in this report.
+            </dd>
+        </dl>
+
+        <dl class="cover-copyright-notice">
+            <dt i18n:translate="copyright-notice-name">Copyright notice</dt>
+            <dd i18n:translate="copyright-notice-eea">© European Environment Agency, <tal:year replace="view/year" i18n:name="copyright-notice-year">2013</tal:year></dd>
+            <dd i18n:translate="copyright-notice-desc1">Reproduction is authorised, provided the source is acknowledged, save where otherwise stated.</dd>
+            <br/>
+            <dd i18n:translate="copyright-notice-desc2">Information about the European Union is available on the Internet. It can be accessed through the Europa server (www.europa.eu).</dd>
+        </dl>
+
+        <dl class="cover-copyright-book" i18n:domain="eea.notranslation"
+                tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                DateTime python:modules['DateTime'].DateTime;
+                current_date python:toLocalizedTime(DateTime(), long_format=1);">
+
+            <dt>Electronic publication notice</dt>
+            <dd>This report has been generated automagically by the EEA Web content management system on <span class="discreet"><span tal:replace="python:current_date"></span>.</span></dd>
+            <dd>This report is available as a website at <a tal:attributes="href here_url" tal:content="python:here_url">URL</a>. Go online to get more interactive facts and figures.</dd>
+            <dd>On the report web page you may download the electronic publication (EPUB) for easy reading on your preferred eBook reader.</dd>
+            <dd>Please consider the environment before printing.</dd>
+        </dl>
+
+        <dl class="cover-copyright-contact">
+            <dd i18n:translate="">European Environment Agency</dd>
+            <dd i18n:translate="copyright-address1">Kongens Nytorv 6</dd>
+            <dd i18n:translate="copyright-address2">1050 Copenhagen K</dd>
+            <dd i18n:translate="">Denmark</dd>
+            <dd i18n:translate="copyright-phone">Tel.: + 45 33 36 71 00</dd>
+            <dd i18n:translate="copyright-fax">Fax: + 45 33 36 71 99</dd>
+            <dd i18n:translate="copyright-web">Web: eea.europa.eu</dd>
+            <dd i18n:translate="copyright-enquiries">Enquiries: eea.europa.eu/enquiries</dd>
+        </dl>
+
+    </div>
+</metal:main>

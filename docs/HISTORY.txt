@@ -3,6 +3,12 @@ Changelog
 
 5.1.dev0 - (unreleased)
 -----------------------
+* Change: removed icons from disclaimer added in previous egg release since
+  they didn't pdf print correctly
+  [ichimdav refs #23322]
+* Feature: added pdfdisclaimer.pt with logic that goes into the disclaimer
+  browser page in order for the contents of it to easily be modifiable
+  [ichimdav refs #23322]
 
 5.0 - (2015-02-25)
 ------------------
