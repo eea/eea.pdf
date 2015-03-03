@@ -3,6 +3,9 @@ Changelog
 
 5.2.dev0 - (unreleased)
 -----------------------
+* Bug fix: Added a way to know if the PDF is being generated even if the
+  async worker is down or the queue is too busy.
+  [voineali refs #23411]
 
 5.1 - (2015-02-26)
 ------------------

@@ -116,8 +116,8 @@ class Download(Pdf):
                 u"If you don't have access to your email address "
                 u"check <a href='${link}'>this link</a> in a few ${period}.",
                 mapping={
-                    "link": self.link(),
-                    "period": self.period()
+                    u"link": u"%s?direct=1" % self.link(),
+                    u"period": self.period()
             })
         return self._redirect()
 
