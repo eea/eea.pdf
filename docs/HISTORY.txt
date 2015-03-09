@@ -3,6 +3,11 @@ Changelog
 
 5.2.dev0 - (unreleased)
 -----------------------
+* Change: Switched to curl in the jenkins build install script
+  [olimpiurob refs #22402]
+* Change: Changed fetch url for jenkins build install script to the install 
+  script from the main EEA CPB repository
+  [olimpiurob refs #22402]
 * Bug fix: Added a way to know if the PDF is being generated even if the
   async worker is down or the queue is too busy.
   [voineali refs #23411]
