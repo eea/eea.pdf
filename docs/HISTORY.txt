@@ -1,8 +1,8 @@
 Changelog
 =========
 
-5.2.dev0 - (unreleased)
------------------------
+5.2 - (2015-03-17)
+------------------
 * Change: added archiveMessage class to the list of items to hide within print
   [ichim-david refs #23017]
 * Change: Switched to curl in the jenkins build install script
