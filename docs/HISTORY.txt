@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.3.dev0 - (unreleased)
+-----------------------
+
 5.2 - (2015-03-17)
 ------------------
 * Change: added archiveMessage class to the list of items to hide within print
