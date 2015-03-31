@@ -1,6 +1,7 @@
 """ Schema extender
 """
 from Products.Archetypes.Widget import ImageWidget
+from Products.Archetypes.utils import IntDisplayList
 from plone.app.blob.field import ImageField
 
 from zope.interface import implements
@@ -46,6 +47,22 @@ class PDFSchemaExtender(object):
                 )
             )
         ),
+
+        ExtendedIntegerField('tocdepth',
+           schemata='settings',
+           default=3,
+           write_permission="Can customize PDF",
+           widget=public.SelectionWidget(
+               label=_(u"Table of contents depth level"),
+               description=_(
+                   u"Which header tags should be taken into "
+                   u"consideration for the table of contents."
+               )
+           ),
+           vocabulary=IntDisplayList([(0, 'TOC Disabled'),
+                                      (1, 'H1'), (2, 'H1,H2'),
+                                      (3, 'H1,H2,H3,H4')])
+       ),
     )
 
     def __init__(self, context):
