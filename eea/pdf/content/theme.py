@@ -2,6 +2,8 @@
 """
 from zope.interface import implementer
 from Products.Archetypes import atapi
+
+from Products.Archetypes.utils import IntDisplayList
 from Products.ATContentTypes.content.folder import ATFolder
 
 from eea.pdf.content.interfaces import IPDFTheme
@@ -86,6 +88,23 @@ EditSchema = atapi.Schema((
             )
         )
     ),
+
+    atapi.IntegerField('tocdepth',
+        schemata='default',
+        default=4,
+        widget=atapi.SelectionWidget(
+          label=_(u"Table of contents depth level"),
+          description=_(
+              u"Which header tags should be taken into "
+              u"consideration for the table of contents."
+          )
+        ),
+        vocabulary=IntDisplayList([(0, 'TOC Disabled'),
+                                   (1, 'H1'), (2, 'H1,H2'),
+                                   (3, 'H1,H2,H3'),
+                                   (4, 'H1,H2,H3,H4')])
+    ),
+
     atapi.BooleanField('toclinks',
        schemata='default',
        default=False,
