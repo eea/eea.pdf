@@ -184,7 +184,8 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
             ## XXX wkhtmltopdf doesn't support URLs for TOC xsl
             ## To be replaced with previous commented one when fixed by wkhtml
 
-            if not template:
+            # 24351; disable toc if tocdepth attribute is found and is == 0
+            if not template or getattr(self.context, 'tocdepth') == 0:
                 self._toc = ''
                 return self._toc
 
