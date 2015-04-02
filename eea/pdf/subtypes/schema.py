@@ -61,7 +61,8 @@ class PDFSchemaExtender(object):
            ),
            vocabulary=IntDisplayList([(0, 'TOC Disabled'),
                                       (1, 'H1'), (2, 'H1,H2'),
-                                      (3, 'H1,H2,H3,H4')])
+                                      (3, 'H1,H2,H3'),
+                                      (4, 'H1,H2,H3,H4')])
        ),
     )
 
