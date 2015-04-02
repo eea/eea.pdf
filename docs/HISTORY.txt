@@ -1,8 +1,8 @@
 Changelog
 =========
 
-5.3.dev0 - (unreleased)
------------------------
+5.3 - (2015-04-02)
+------------------
 * Feature: added toc depth option which configures per context which header tags
   are found within the toc page, as well as having the ability to disable the toc
   per context
@@ -10,7 +10,6 @@ Changelog
 * Change: added change for disclaimer Browser View to use the macro from 
   pdfdisclaimer.pt
   [ichimdav refs #23322]
-
 
 5.2 - (2015-03-17)
 ------------------
