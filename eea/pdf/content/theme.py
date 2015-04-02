@@ -2,6 +2,7 @@
 """
 from zope.interface import implementer
 from Products.Archetypes import atapi
+
 from Products.ATContentTypes.content.folder import ATFolder
 
 from eea.pdf.content.interfaces import IPDFTheme
@@ -86,6 +87,7 @@ EditSchema = atapi.Schema((
             )
         )
     ),
+
     atapi.BooleanField('toclinks',
        schemata='default',
        default=False,
