@@ -185,7 +185,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
             ## To be replaced with previous commented one when fixed by wkhtml
 
             # 24351; disable toc if tocdepth attribute is found and is == 0
-            if not template or getattr(self.context, 'tocdepth') == 0:
+            if not template or getattr(self.context, 'tocdepth', -1) == 0:
                 self._toc = ''
                 return self._toc
 
