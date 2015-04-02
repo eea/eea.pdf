@@ -50,7 +50,7 @@ class PDFSchemaExtender(object):
 
         ExtendedIntegerField('tocdepth',
            schemata='settings',
-           default=3,
+           default=4,
            write_permission="Can customize PDF",
            widget=public.SelectionWidget(
                label=_(u"Table of contents depth level"),
