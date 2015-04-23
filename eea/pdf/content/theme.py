@@ -76,6 +76,19 @@ EditSchema = atapi.Schema((
             )
         )
     ),
+
+    atapi.BooleanField('staticFooterAndHeader',
+        schemata='default',
+        default=False,
+        widget=atapi.BooleanWidget(
+           label=_(u"Static Footer and Header"),
+           description=_(u"Enable static footer and header html pages. "
+                         u"Footer and header templates are evaluated once"
+                         u" and then served for every pdf page."
+            )
+       )
+    ),
+
     atapi.StringField('toc',
         schemata='default',
         default='pdf.toc',
