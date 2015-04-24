@@ -61,13 +61,13 @@ class Mixin(object):
     def staticfy(self, filename, body, suffix='.html'):
         """ Return file path served from a temporary location
         :param filename: Filename
-        :type filename: string
+        :type filename: str
         :param body: File content
-        :type body: string
+        :type body: str
         :param suffix: File prefix
-        :type suffix: string
+        :type suffix: str
         :return: File location
-        :rtype: string
+        :rtype: str
         """
         with tempfile.NamedTemporaryFile(
                 prefix=filename, suffix=suffix,
@@ -75,12 +75,16 @@ class Mixin(object):
             ofile.write(body)
             return ofile.name
 
-    def set_template(self, name):
+    def set_template(self, name, static=False, suffix='.html'):
         """ Set Templates
         :param name: Template name to retrieve
-        :type name: string
+        :type name: str
+        :param static: Boolean indicating whether the template url is static
+        :type static: bool
+        :param suffix: Template suffix
+        :type suffix: str
         :return: path to template, either locally from tmp or from site location
-        :rtype: string
+        :rtype: str
         """
         _name = "_" + name
         parent_attribute = getattr(self, _name, None)
@@ -90,7 +94,7 @@ class Mixin(object):
 
         if parent_attribute is None:
             template = self.getValue(name)
-            if not self.theme.staticFooterAndHeader:
+            if not self.theme.staticFooterAndHeader and not static:
                 setattr(self, _name, ('/'.join((self.context.absolute_url(),
                                                 template)) if template else ''))
             else:
@@ -105,7 +109,8 @@ class Mixin(object):
                 except Exception:
                     setattr(self, _name, '')
                 else:
-                    setattr(self, _name, self.staticfy(template or name, body))
+                    setattr(self, _name, self.staticfy(template or name, body,
+                                                       suffix=suffix))
         return getattr(self, _name)
 
 
@@ -211,40 +216,18 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
     def toc(self):
         """ Table of contents
         """
-        if not self.theme:
+        template = self.getValue('toc')
+        # self._toc = ('/'.join((self.context.absolute_url(), template))
+        #                 if template else '')
+
+        ## XXX wkhtmltopdf doesn't support URLs for TOC xsl
+        ## To be replaced with previous commented one when fixed by wkhtml
+
+        # 24351; disable toc if tocdepth attribute is found and is == 0
+        if not template or getattr(self.context, 'tocdepth', -1) == 0:
             self._toc = ''
-
-        if self._toc is None:
-            template = self.getValue('toc')
-
-            # self._toc = ('/'.join((self.context.absolute_url(), template))
-            #                 if template else '')
-
-            ## XXX wkhtmltopdf doesn't support URLs for TOC xsl
-            ## To be replaced with previous commented one when fixed by wkhtml
-
-            # 24351; disable toc if tocdepth attribute is found and is == 0
-            if not template or getattr(self.context, 'tocdepth', -1) == 0:
-                self._toc = ''
-                return self._toc
-
-            try:
-                body = self.context.restrictedTraverse(template)
-                body = body()
-                if isinstance(body, unicode):
-                    body = body.encode('utf-8')
-            except Exception:
-                self._toc = ''
-            else:
-                with tempfile.NamedTemporaryFile(
-                        prefix='eea.pdf.', suffix='.xsl',
-                        dir=TMPDIR(), delete=False) as ofile:
-                    ofile.write(body)
-                    self._toc = ofile.name
-
-            ## End patch
-
-        return self._toc
+            return self._toc
+        return self.set_template(template, static=True, suffix='.xsl')
 
     @property
     def toc_links(self):
