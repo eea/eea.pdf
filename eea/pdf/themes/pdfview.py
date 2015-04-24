@@ -59,6 +59,16 @@ class Mixin(object):
         return self.context.restrictedTraverse(template, default)
 
     def staticfy(self, filename, body, suffix='.html'):
+        """ Return file path served from a temporary location
+        :param filename: Filename
+        :type filename: string
+        :param body: File content
+        :type body: string
+        :param suffix: File prefix
+        :type suffix: string
+        :return: File location
+        :rtype: string
+        """
         with tempfile.NamedTemporaryFile(
                 prefix=filename, suffix=suffix,
                 dir=TMPDIR(), delete=False) as ofile:
