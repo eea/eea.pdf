@@ -58,6 +58,13 @@ class Mixin(object):
             return default
         return self.context.restrictedTraverse(template, default)
 
+    def staticfy(self, filename, body, suffix='.html'):
+        with tempfile.NamedTemporaryFile(
+                prefix=filename, suffix=suffix,
+                dir=TMPDIR(), delete=False) as ofile:
+            ofile.write(body)
+            return ofile.name
+
 class OptionsMaker(PDFOptionsMaker, Mixin):
     """ Global options maker
     """
@@ -129,6 +136,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         self._toc = None
         self._toc_links = None
 
+
     @property
     def body(self):
         """ Safely get pdf.body
@@ -159,13 +167,27 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
     def footer(self):
         """ Safely get pdf.footer
         """
+        self._footer = ''
         if not self.theme:
-            self._footer = ''
+            return self._footer
 
         if self._footer is None:
-            template = self.getValue('footer')
-            self._footer = ('/'.join((self.context.absolute_url(), template))
-                            if template else '')
+            if not self.theme.staticFooterAndHeader:
+                template = self.getValue('footer')
+                self._footer = ('/'.join((self.context.absolute_url(), template))
+                                if template else '')
+            else:
+                try:
+                    body = self.getTemplate('footer')
+                    if not body:
+                        return ''
+                    body = body()
+                    if isinstance(body, unicode):
+                        body = body.encode('utf-8')
+                except Exception:
+                    self._footer = ''
+                else:
+                    self._footer = self.staticfy('pdf.footer', body)
         return self._footer
 
     @property
