@@ -58,6 +58,62 @@ class Mixin(object):
             return default
         return self.context.restrictedTraverse(template, default)
 
+    def staticfy(self, filename, body, suffix='.html'):
+        """ Return file path served from a temporary location
+        :param filename: Filename
+        :type filename: str
+        :param body: File content
+        :type body: str
+        :param suffix: File prefix
+        :type suffix: str
+        :return: File location
+        :rtype: str
+        """
+        with tempfile.NamedTemporaryFile(
+                prefix=filename, suffix=suffix,
+                dir=TMPDIR(), delete=False) as ofile:
+            ofile.write(body)
+            return ofile.name
+
+    def set_template(self, name, static=False, suffix='.html'):
+        """ Set Templates
+        :param name: Template name to retrieve
+        :type name: str
+        :param static: Boolean indicating whether the template url is static
+        :type static: bool
+        :param suffix: Template suffix
+        :type suffix: str
+        :return: path to template, either locally from tmp or from site location
+        :rtype: str
+        """
+        _name = "_" + name
+        parent_attribute = getattr(self, _name, None)
+        if not self.theme:
+            setattr(self, _name, '')
+            return getattr(self, _name)
+
+        if parent_attribute is None:
+            template = self.getValue(name)
+            if not self.theme.staticFooterAndHeader and not static:
+                setattr(self, _name, ('/'.join((self.context.absolute_url(),
+                                                template)) if template else ''))
+            else:
+                try:
+                    body = self.getTemplate(name)
+                    if not body:
+                        setattr(self, _name, '')
+                        return ''
+                    body = body()
+                    if isinstance(body, unicode):
+                        body = body.encode('utf-8')
+                except Exception:
+                    setattr(self, _name, '')
+                else:
+                    setattr(self, _name, self.staticfy(template or name, body,
+                                                       suffix=suffix))
+        return getattr(self, _name)
+
+
 class OptionsMaker(PDFOptionsMaker, Mixin):
     """ Global options maker
     """
@@ -129,6 +185,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         self._toc = None
         self._toc_links = None
 
+
     @property
     def body(self):
         """ Safely get pdf.body
@@ -142,70 +199,35 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
                           if template else '')
         return self._body
 
+
     @property
     def header(self):
         """ Safely get pdf.header
         """
-        if not self.theme:
-            self._header = ''
-
-        if self._header is None:
-            template = self.getValue('header')
-            self._header = ('/'.join((self.context.absolute_url(), template))
-                            if template else '')
-        return self._header
+        return self.set_template('header')
 
     @property
     def footer(self):
         """ Safely get pdf.footer
         """
-        if not self.theme:
-            self._footer = ''
-
-        if self._footer is None:
-            template = self.getValue('footer')
-            self._footer = ('/'.join((self.context.absolute_url(), template))
-                            if template else '')
-        return self._footer
+        return self.set_template('footer')
 
     @property
     def toc(self):
         """ Table of contents
         """
-        if not self.theme:
+        template = self.getValue('toc')
+        # self._toc = ('/'.join((self.context.absolute_url(), template))
+        #                 if template else '')
+
+        ## XXX wkhtmltopdf doesn't support URLs for TOC xsl
+        ## To be replaced with previous commented one when fixed by wkhtml
+
+        # 24351; disable toc if tocdepth attribute is found and is == 0
+        if not template or getattr(self.context, 'tocdepth', -1) == 0:
             self._toc = ''
-
-        if self._toc is None:
-            template = self.getValue('toc')
-
-            # self._toc = ('/'.join((self.context.absolute_url(), template))
-            #                 if template else '')
-
-            ## XXX wkhtmltopdf doesn't support URLs for TOC xsl
-            ## To be replaced with previous commented one when fixed by wkhtml
-
-            # 24351; disable toc if tocdepth attribute is found and is == 0
-            if not template or getattr(self.context, 'tocdepth', -1) == 0:
-                self._toc = ''
-                return self._toc
-
-            try:
-                body = self.context.restrictedTraverse(template)
-                body = body()
-                if isinstance(body, unicode):
-                    body = body.encode('utf-8')
-            except Exception:
-                self._toc = ''
-            else:
-                with tempfile.NamedTemporaryFile(
-                        prefix='eea.pdf.', suffix='.xsl',
-                        dir=TMPDIR(), delete=False) as ofile:
-                    ofile.write(body)
-                    self._toc = ofile.name
-
-            ## End patch
-
-        return self._toc
+            return self._toc
+        return self.set_template(template, static=True, suffix='.xsl')
 
     @property
     def toc_links(self):
