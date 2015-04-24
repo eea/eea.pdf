@@ -150,45 +150,50 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
                           if template else '')
         return self._body
 
-    @property
-    def header(self):
-        """ Safely get pdf.header
+    def set_template(self, name):
         """
-        if not self.theme:
-            self._header = ''
-
-        if self._header is None:
-            template = self.getValue('header')
-            self._header = ('/'.join((self.context.absolute_url(), template))
-                            if template else '')
-        return self._header
-
-    @property
-    def footer(self):
-        """ Safely get pdf.footer
+        :param name: Template name to retrieve
+        :type name: string
+        :return: path to template, either locally from tmp or from site location
+        :rtype: string
         """
-        self._footer = ''
+        _name = "_" + name
+        parent_attribute = getattr(self, _name, None)
         if not self.theme:
-            return self._footer
+            setattr(self, _name, '')
+            return getattr(self, _name)
 
-        if self._footer is None:
+        if parent_attribute is None:
             if not self.theme.staticFooterAndHeader:
-                template = self.getValue('footer')
-                self._footer = ('/'.join((self.context.absolute_url(), template))
-                                if template else '')
+                template = self.getValue(name)
+                setattr(self, _name, ('/'.join((self.context.absolute_url(),
+                                                template)) if template else ''))
             else:
                 try:
-                    body = self.getTemplate('footer')
+                    body = self.getTemplate(name)
                     if not body:
+                        setattr(self, _name, '')
                         return ''
                     body = body()
                     if isinstance(body, unicode):
                         body = body.encode('utf-8')
                 except Exception:
-                    self._footer = ''
+                    setattr(self, _name, '')
                 else:
-                    self._footer = self.staticfy('pdf.footer', body)
-        return self._footer
+                    setattr(self, _name, self.staticfy('pdf.' + name, body))
+        return getattr(self, _name)
+
+    @property
+    def header(self):
+        """ Safely get pdf.header
+        """
+        return self.set_template('header')
+
+    @property
+    def footer(self):
+        """ Safely get pdf.footer
+        """
+        return self.set_template('footer')
 
     @property
     def toc(self):
