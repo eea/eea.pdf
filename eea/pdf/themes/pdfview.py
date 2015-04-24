@@ -65,6 +65,40 @@ class Mixin(object):
             ofile.write(body)
             return ofile.name
 
+    def set_template(self, name):
+        """ Set Templates
+        :param name: Template name to retrieve
+        :type name: string
+        :return: path to template, either locally from tmp or from site location
+        :rtype: string
+        """
+        _name = "_" + name
+        parent_attribute = getattr(self, _name, None)
+        if not self.theme:
+            setattr(self, _name, '')
+            return getattr(self, _name)
+
+        if parent_attribute is None:
+            template = self.getValue(name)
+            if not self.theme.staticFooterAndHeader:
+                setattr(self, _name, ('/'.join((self.context.absolute_url(),
+                                                template)) if template else ''))
+            else:
+                try:
+                    body = self.getTemplate(name)
+                    if not body:
+                        setattr(self, _name, '')
+                        return ''
+                    body = body()
+                    if isinstance(body, unicode):
+                        body = body.encode('utf-8')
+                except Exception:
+                    setattr(self, _name, '')
+                else:
+                    setattr(self, _name, self.staticfy(template or name, body))
+        return getattr(self, _name)
+
+
 class OptionsMaker(PDFOptionsMaker, Mixin):
     """ Global options maker
     """
@@ -150,38 +184,6 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
                           if template else '')
         return self._body
 
-    def set_template(self, name):
-        """
-        :param name: Template name to retrieve
-        :type name: string
-        :return: path to template, either locally from tmp or from site location
-        :rtype: string
-        """
-        _name = "_" + name
-        parent_attribute = getattr(self, _name, None)
-        if not self.theme:
-            setattr(self, _name, '')
-            return getattr(self, _name)
-
-        if parent_attribute is None:
-            if not self.theme.staticFooterAndHeader:
-                template = self.getValue(name)
-                setattr(self, _name, ('/'.join((self.context.absolute_url(),
-                                                template)) if template else ''))
-            else:
-                try:
-                    body = self.getTemplate(name)
-                    if not body:
-                        setattr(self, _name, '')
-                        return ''
-                    body = body()
-                    if isinstance(body, unicode):
-                        body = body.encode('utf-8')
-                except Exception:
-                    setattr(self, _name, '')
-                else:
-                    setattr(self, _name, self.staticfy('pdf.' + name, body))
-        return getattr(self, _name)
 
     @property
     def header(self):
