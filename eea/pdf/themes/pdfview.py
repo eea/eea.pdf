@@ -94,7 +94,8 @@ class Mixin(object):
 
         if parent_attribute is None:
             template = self.getValue(name)
-            if not self.theme.staticFooterAndHeader and not static:
+            if not getattr(self.theme, 'staticFooterAndHeader', False) \
+                    and not static:
                 setattr(self, _name, ('/'.join((self.context.absolute_url(),
                                                 template)) if template else ''))
             else:
@@ -204,6 +205,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
     def header(self):
         """ Safely get pdf.header
         """
+        import pdb; pdb.set_trace()
         return self.set_template('header')
 
     @property
