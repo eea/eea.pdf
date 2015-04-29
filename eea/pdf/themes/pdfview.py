@@ -205,7 +205,6 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
     def header(self):
         """ Safely get pdf.header
         """
-        import pdb; pdb.set_trace()
         return self.set_template('header')
 
     @property
