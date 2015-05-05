@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.5.dev0 - (unreleased)
+-----------------------
+
 5.4 - (2015-05-05)
 ------------------
 * Feature: added a new option to themes to allow the serving of static footer
