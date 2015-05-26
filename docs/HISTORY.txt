@@ -3,6 +3,8 @@ Changelog
 
 5.5.dev0 - (unreleased)
 -----------------------
+* Bug fix: Keep async.py module for backward compatibility
+  [voineali refs #25755]
 
 5.4 - (2015-05-05)
 ------------------
@@ -19,7 +21,7 @@ Changelog
   are found within the toc page, as well as having the ability to disable the toc
   per context
   [ichimdav refs #24351]
-* Change: added change for disclaimer Browser View to use the macro from 
+* Change: added change for disclaimer Browser View to use the macro from
   pdfdisclaimer.pt
   [ichimdav refs #23322]
 
@@ -29,7 +31,7 @@ Changelog
   [ichim-david refs #23017]
 * Change: Switched to curl in the jenkins build install script
   [olimpiurob refs #22402]
-* Change: Changed fetch url for jenkins build install script to the install 
+* Change: Changed fetch url for jenkins build install script to the install
   script from the main EEA CPB repository
   [olimpiurob refs #22402]
 * Bug fix: Added a way to know if the PDF is being generated even if the
