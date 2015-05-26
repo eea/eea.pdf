@@ -1,8 +1,8 @@
 Changelog
 =========
 
-5.5.dev0 - (unreleased)
------------------------
+5.5 - (2015-05-26)
+------------------
 * Bug fix: Keep async.py module for backward compatibility
   [voineali refs #25755]
 
