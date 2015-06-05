@@ -24,7 +24,7 @@ class Mixin(object):
         """
         theme = getattr(self, '_theme', '')
         if theme is not '':
-            return self._theme
+            return theme
 
         ptool = queryUtility(IPDFTool)
         if ptool:
