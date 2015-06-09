@@ -64,7 +64,7 @@ can also install `wkhtmltopdf`_ from buildout::
 
     [wkhtmltopdf]
     recipe = hexagonit.recipe.download
-    url = http://eggrepo.eea.europa.eu/pypi/wkhtmltopdf/wkhtmltopdf-0.12.1.tgz
+    url = http://eggrepo.apps.eea.europa.eu/pypi/wkhtmltopdf/wkhtmltopdf-0.12.1.tgz
 
     [instance]
     environment-vars +=
