@@ -87,7 +87,7 @@ handle it::
 
 
     media-downloads-path = ${buildout:directory}/var/downloads/pdf
-    media-downloads-tmp = ${buildout:directory}/var/downloads/tmp
+    media-downloads-temp = ${buildout:directory}/var/downloads/tmp
 
     [media-downloads]
     recipe = ore.recipe.fs:mkdir
