@@ -32,7 +32,7 @@
 
             <dt>Electronic publication notice</dt>
             <dd>This report has been generated automagically by the EEA Web content management system on <span class="discreet"><span tal:replace="python:current_date"></span>.</span></dd>
-            <dd>This report is available as a website at <a tal:attributes="href here_url" tal:content="python:here_url">URL</a>. Go online to get more interactive facts and figures.</dd>
+            <dd>This report is available as a website at <a tal:define="here_url context/@@plone_context_state/object_url" tal:attributes="href here_url" tal:content="python:here_url">URL</a>. Go online to get more interactive facts and figures.</dd>
             <dd>On the report web page you may download the electronic publication (EPUB) for easy reading on your preferred eBook reader.</dd>
             <dd>Please consider the environment before printing.</dd>
         </dl>
