@@ -3,6 +3,8 @@ Changelog
 
 5.6.dev0 - (unreleased)
 -----------------------
+* Bug fix: removed overblown cover image, span it 100% instead
+  [ichimdav refs #27479]
 
 5.5 - (2015-05-26)
 ------------------
