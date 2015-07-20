@@ -194,9 +194,7 @@ p.discreet {
 }
 
 .cover-image img {
-  width: 150%;
-  margin-left: -25%;
-  max-width: inherit;
+  width: 100%;
 }
 
 .cover-logo {
