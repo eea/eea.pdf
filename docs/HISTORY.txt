@@ -3,6 +3,8 @@ Changelog
 
 5.6.dev0 - (unreleased)
 -----------------------
+* Bug fix: fixed retrieval of toc when using the setTemplate method
+  [ichimdav refs #27475]
 * Bug fix: removed overblown cover image, span it 100% instead
   [ichimdav refs #27479]
 
