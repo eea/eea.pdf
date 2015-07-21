@@ -228,7 +228,7 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         if not template or getattr(self.context, 'tocdepth', -1) == 0:
             self._toc = ''
             return self._toc
-        return self.set_template(template, static=True, suffix='.xsl')
+        return self.set_template("toc", static=True, suffix='.xsl')
 
     @property
     def toc_links(self):
