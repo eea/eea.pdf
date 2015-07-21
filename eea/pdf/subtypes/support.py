@@ -25,8 +25,19 @@ class Support(BrowserView):
         if not tool:
             return False
 
-        if not tool.theme(self.context):
+        pdf_theme = tool.theme(self.context)
+        if not pdf_theme:
             return False
+        body_theme = pdf_theme.body
+        # #27539 do not show download pdf if children contain Folder and
+        # Collections, they will have the same template which will end
+        # up being empty and you will get a master template with empty pages
+        if body_theme == "collection.pdf.body":
+            context_has_folderish_children = self.context.getFolderContents(
+                contentFilter={
+                    'portal_type': ['Folder', 'Collection', 'ATTopic']
+                })
+            return True if not context_has_folderish_children else False
 
         return True
 
