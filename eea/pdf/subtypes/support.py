@@ -7,11 +7,14 @@ from zope.security import checkPermission
 from Products.Five.browser import BrowserView
 from eea.converter.interfaces import ISupport
 from eea.pdf.interfaces import IPDFTool, IPDFAware
+from plone.memoize.view import memoize
 
 @implementer(ISupport)
 class Support(BrowserView):
     """ PDF Support
     """
+
+    @memoize
     def can_download(self):
         """ Can download context as PDF
         """
