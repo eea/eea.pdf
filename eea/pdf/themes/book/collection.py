@@ -104,7 +104,19 @@ class Body(BrowserView):
         """ Folder children
         """
         self._depth += 1
+
+        if not self.request.get('pdf_last_brain_url'):
+            brains = self.context.getFolderContents(
+                contentFilter={
+                    'portal_type': ['Folder', 'Collection', 'ATTopic']
+                })
+            if brains:
+                self.request['pdf_last_brain_url'] = brains[-1].getURL()
         if self.depth > self.maxdepth:
+            if self.context.absolute_url() == \
+                    self.request['pdf_last_brain_url']:
+                pdf = self.context.restrictedTraverse("@@pdf.limit")
+                yield pdf()
             return
 
         ajax_load = self.request.get('ajax_load', False)
@@ -112,6 +124,10 @@ class Body(BrowserView):
 
         for brain in self.brains:
             if self.count > self.maxitems:
+                if not self.request.get('pdflimit'):
+                    self.request['pdflimit'] = "reached"
+                    pdf = self.context.restrictedTraverse("@@pdf.limit")
+                    yield pdf()
                 break
 
             doc = brain.getObject()

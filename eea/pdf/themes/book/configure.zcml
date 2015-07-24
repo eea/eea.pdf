@@ -11,6 +11,14 @@
     permission="eea.pdf.download"
     />
 
+    <browser:page
+        name="pdf.limit"
+        layer="eea.pdf.interfaces.ILayer"
+        for="*"
+        template="pdf.limit.pt"
+        permission="eea.pdf.download"
+        />
+
   <browser:page
     zcml:condition="installed Products.ATContentTypes.content.topic"
     name="collection.pdf.body"
