@@ -138,9 +138,8 @@ class Body(BrowserView):
 
             if isinstance(body, unicode):
                 body = body.encode('utf-8')
-
             try:
-                pdf = doc.restrictedTraverse(body)
+                pdf = doc.restrictedTraverse(body.split("?")[0])
                 self._count += 1
                 html = pdf(
                     macro=self.macro,
@@ -169,5 +168,6 @@ class Body(BrowserView):
         self._count = kwargs.get('count', self._count)
 
     def __call__(self, **kwargs):
+        kwargs.update(self.request.form)
         self.update(**kwargs)
         return self.template()
