@@ -122,7 +122,7 @@ class Body(BrowserView):
                 self.request['pdf_last_brain_url'] = brains[-1].getURL()
         if self.depth > self.maxdepth:
             if self.context.absolute_url() == \
-                    self.request['pdf_last_brain_url']:
+                    self.request.get('pdf_last_brain_url'):
                 yield self.show_limit_page()
             return
 
@@ -145,7 +145,7 @@ class Body(BrowserView):
             if isinstance(body, unicode):
                 body = body.encode('utf-8')
             if self.theme(self.context).id == theme.id and self.depth == 1:
-                if brain.getURL() == self.request['pdf_last_brain_url']:
+                if brain.getURL() == self.request.get('pdf_last_brain_url'):
                     if not self.request.get('pdflimit'):
                         self.request['pdflimit'] = "reached"
                         yield self.show_limit_page()
