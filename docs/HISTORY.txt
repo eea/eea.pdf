@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.7.dev0 - (unreleased)
+-----------------------
+
 5.6 - (2015-07-28)
 ------------------
 * Change: can_download now returns false when you have a folder with folder
