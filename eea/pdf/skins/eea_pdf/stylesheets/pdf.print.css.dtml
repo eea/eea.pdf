@@ -295,6 +295,18 @@ p.discreet {
   width: inherit;
 }
 
+.visualCenter {
+  height: 625pt;
+  position: relative;
+}
+.visualCentered {
+  position: absolute;
+  top: 50%;
+  height: 100px;
+  left: 15%;
+  text-align: center;
+}
+
 /* Overrides */
 
 /* portalMessage have too much padding which ends up clipping the portalMessage text

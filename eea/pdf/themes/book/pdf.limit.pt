@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+        metal:use-macro="context/main_template/macros/master"
+        i18n:domain="eea">
+
+<body>
+
+<metal:title fill-slot="content-title"></metal:title>
+<metal:description fill-slot="content-description"></metal:description>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+        <div class="visualCenter">
+            <div class="visualCentered">
+                <header>NOTE: Some content has been excluded from this generated PDF</header>
+                <p>We reached the limit of number of items that can be included in the PDF.</p>
+                <p>Please visit the online version in order to view more content or contact the author of this content.</p>
+            </div>
+        </div>
+
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

@@ -5,6 +5,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.Five.browser import BrowserView
 from eea.pdf.interfaces import IPDFTool
 
+
 class Body(BrowserView):
     """ Custom PDF body
     """
@@ -99,12 +100,30 @@ class Body(BrowserView):
         """
         return self.context.queryCatalog(batch=False)[:self.maxbreadth]
 
+    def show_limit_page(self):
+        """ Returns the pdf limit page
+        """
+        pdf = self.context.restrictedTraverse("@@pdf.limit")
+        return pdf()
+
+
     @property
     def pdfs(self):
         """ Folder children
         """
         self._depth += 1
+
+        if not self.request.get('pdf_last_brain_url'):
+            brains = self.context.getFolderContents(
+                contentFilter={
+                    'portal_type': ['Folder', 'Collection', 'ATTopic']
+                })
+            if brains:
+                self.request['pdf_last_brain_url'] = brains[-1].getURL()
         if self.depth > self.maxdepth:
+            if self.context.absolute_url() == \
+                    self.request.get('pdf_last_brain_url'):
+                yield self.show_limit_page()
             return
 
         ajax_load = self.request.get('ajax_load', False)
@@ -112,6 +131,9 @@ class Body(BrowserView):
 
         for brain in self.brains:
             if self.count > self.maxitems:
+                if not self.request.get('pdflimit'):
+                    self.request['pdflimit'] = "reached"
+                    yield self.show_limit_page()
                 break
 
             doc = brain.getObject()
@@ -122,9 +144,14 @@ class Body(BrowserView):
 
             if isinstance(body, unicode):
                 body = body.encode('utf-8')
-
+            if self.theme(self.context).id == theme.id and self.depth == 1:
+                if brain.getURL() == self.request.get('pdf_last_brain_url'):
+                    if not self.request.get('pdflimit'):
+                        self.request['pdflimit'] = "reached"
+                        yield self.show_limit_page()
+                continue
             try:
-                pdf = doc.restrictedTraverse(body)
+                pdf = doc.restrictedTraverse(body.split("?")[0])
                 self._count += 1
                 html = pdf(
                     macro=self.macro,
@@ -153,5 +180,6 @@ class Body(BrowserView):
         self._count = kwargs.get('count', self._count)
 
     def __call__(self, **kwargs):
+        kwargs.update(self.request.form)
         self.update(**kwargs)
-        return self.template()
+        return self.template(**kwargs)
