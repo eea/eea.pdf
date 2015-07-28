@@ -3,6 +3,12 @@ Changelog
 
 5.7.dev0 - (unreleased)
 -----------------------
+* Change: append a pdf limit page when a pdf limit is reached with the book
+  theme giving a visual warning on the missing pages
+  [ichimdav refs #27539]
+* Change: reverted change added in egg 5.6 regarding the can_download logic
+  [ichimdav refs #27539]
+
 
 5.6 - (2015-07-28)
 ------------------
