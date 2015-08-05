@@ -3,6 +3,8 @@ Changelog
 
 5.8.dev0 - (unreleased)
 -----------------------
+* Change: qrbox is now cleared avoiding the qrbox from being floated
+  [ichimdav refs #27537]
 
 5.7 - (2015-07-28)
 ------------------
