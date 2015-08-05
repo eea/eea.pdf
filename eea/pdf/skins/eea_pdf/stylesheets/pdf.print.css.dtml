@@ -280,6 +280,7 @@ p.discreet {
 
 .body-print .qrbox {
   margin: 5pt 0 0 0;
+  clear: both;
 }
 
 .template-pdf-cover-back .qrbox {
