@@ -369,3 +369,21 @@ p.portalMessage {
   margin: 0 0 0.2em 0; }
 
 .fiche-summary { margin-top: 1em; }
+
+/*
+FIX for How do I avoid a page break immediately after a header
+http://stackoverflow.com/questions/9238868/how-do-i-avoid-a-page-break-immediately-after-a-header
+*/
+
+.nobreak{ page-break-inside: avoid !important; }
+.nobreak.break{ page-break-before: always !important; }
+.indicator-figure-plus{
+  overflow: hidden;
+  text-align: center;
+}
+.indicator-figure-plus img {
+    float: none !important;
+    width: 85% !important;
+    display: block;
+    margin: 0 auto;
+}

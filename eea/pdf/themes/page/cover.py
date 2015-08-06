@@ -1,12 +1,17 @@
 """ PDF View
 """
 import logging
+import random
+from zope.component import queryUtility
 from zope.component import queryMultiAdapter
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone.app.folder.folder import IATUnifiedFolder
 from eea.converter.browser.app.pdfview import Cover as PDFCover
 from eea.converter.browser.app.pdfview import BackCover as PDFBackCover
+from eea.pdf.interfaces import IPDFTool
 from eea.pdf.utils import getApplicationRoot
 logger = logging.getLogger('eea.pdf')
+
 
 class Cover(PDFCover):
     """ Custom PDF cover
@@ -26,6 +31,7 @@ class Cover(PDFCover):
         """
         themes = queryMultiAdapter((self.context, self.request),
                                    name='themes-object')
+
         if not themes:
             return
         for theme in themes.items():
@@ -42,6 +48,55 @@ class Cover(PDFCover):
         """
         return super(Cover, self).truncate(text, length, orphans,
                                            suffix, end, cut)
+
+    def get_pdftheme(self):
+        """ PDF Theme
+        """
+        tool = queryUtility(IPDFTool)
+        theme = tool.theme(self.context)
+        if not theme:
+            theme = tool.globalTheme(self.context)
+
+        return theme
+
+    def get_coverimage(self):
+        """ if set imagescollection on PDF Theme, return a random image,
+            None otherwise
+        """
+
+        imgview = queryMultiAdapter(
+            (self.context, self.request), name='imgview')
+
+        if imgview and imgview.display():
+            obj = imgview('large')
+            return obj
+
+        theme = self.get_pdftheme()
+        if not theme:
+            return None
+
+        container = theme.getImagescollection()
+        if not container:
+            return None
+
+        results = None
+
+        if IATUnifiedFolder.providedBy(container):
+            # container is a folder
+            cur_path = '/'.join(container.getPhysicalPath())
+            path = {'query': cur_path, 'depth': 1 }
+            results = container.portal_catalog(
+                **{'portal_type': 'Image', 'path': path}
+            )
+        else:
+            # is a container
+            results = container.queryCatalog(sort_on=None, batch=False)
+
+        if results is None:
+            return None
+
+        return random.sample(results, 1)[0].getObject()
+
 
 class BackCover(PDFBackCover):
     """ PDF Back cover

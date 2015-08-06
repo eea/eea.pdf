@@ -7,6 +7,10 @@ Changelog
   [ichimdav refs #27537]
 * Change: Added themes for PloneHelpCenter Leaf page, Section, Manual.
   [ghitab refs #27615]
+* Bug fix: avoid a page break immediately after a header
+  [lucas refs #27657]
+* Feature: implement the random selection of the pdf cover image
+  [lucas refs #27603]
 
 5.7 - (2015-07-28)
 ------------------
