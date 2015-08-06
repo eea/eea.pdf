@@ -7,6 +7,8 @@ Changelog
   [ichimdav refs #27537]
 * Change: Added themes for PloneHelpCenter Leaf page, Section, Manual.
   [ghitab refs #27615]
+* Upgrade step: Within "Plone > Site setup > Add-ons" click on
+  upgrade button available for EEA PDF
 * Bug fix: avoid a page break immediately after a header
   [lucas refs #27657]
 * Feature: implement the random selection of the pdf cover image
