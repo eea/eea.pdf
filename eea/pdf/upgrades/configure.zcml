@@ -4,7 +4,7 @@
   i18n_domain="eea">
 
   <genericsetup:upgradeSteps
-            source="5.0"
+            source="5.1"
             destination="5.8"
             profile="eea.pdf:default">
 
