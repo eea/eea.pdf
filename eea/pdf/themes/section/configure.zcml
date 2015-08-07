@@ -1,0 +1,15 @@
+<configure
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="eea">
+
+  <browser:page
+    zcml:condition="installed Products.PloneHelpCenter"
+    name="section.pdf.body"
+    layer="eea.pdf.interfaces.ILayer"
+    for="Products.PloneHelpCenter.interfaces.IHelpCenterMultiPage"
+    class=".section.Body"
+    permission="eea.pdf.download"
+    />
+
+</configure>

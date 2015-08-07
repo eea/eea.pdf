@@ -35,5 +35,7 @@
   <!-- Themes -->
   <include package=".page" />
   <include package=".book" />
+  <include package=".section" />
+  <include package=".manual" />
 
 </configure>

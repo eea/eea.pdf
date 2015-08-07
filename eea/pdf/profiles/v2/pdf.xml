@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="portal_pdf" meta_type="PDFTool">
+ <object name="leafpage" meta_type="PDFTheme">
+  <property name="title">LeafPage</property>
+  <property name="cover">pdf.cover</property>
+  <property name="disclaimer">pdf.disclaimer</property>
+  <property name="body">pdf.body</property>
+  <property name="backcover">pdf.cover.back</property>
+  <property name="header">pdf.header</property>
+  <property name="footer">pdf.footer</property>
+  <property name="offset">3</property>
+  <property name="types">
+   <element value="HelpCenterLeafPage" />
+  </property>
+ </object>
+ <object name="section" meta_type="PDFTheme">
+  <property name="title">Section</property>
+  <property name="cover">pdf.cover</property>
+  <property name="disclaimer">pdf.disclaimer</property>
+  <property name="body">section.pdf.body</property>
+  <property name="backcover">pdf.cover.back</property>
+  <property name="header">pdf.header</property>
+  <property name="footer">pdf.footer</property>
+  <property name="offset">3</property>
+  <property name="types">
+   <element value="HelpCenterReferenceManualSection" />
+  </property>
+ </object>
+ <object name="manual" meta_type="PDFTheme">
+  <property name="title">Manual</property>
+  <property name="cover">pdf.cover</property>
+  <property name="disclaimer">pdf.disclaimer</property>
+  <property name="body">manual.pdf.body</property>
+  <property name="backcover">pdf.cover.back</property>
+  <property name="header">pdf.header</property>
+  <property name="footer">pdf.footer</property>
+  <property name="offset">3</property>
+  <property name="types">
+   <element value="HelpCenterReferenceManual" />
+  </property>
+ </object>
+</object>
