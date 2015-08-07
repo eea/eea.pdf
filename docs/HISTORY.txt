@@ -5,6 +5,8 @@ Changelog
 -----------------------
 * Change: qrbox is now cleared avoiding the qrbox from being floated
   [ichimdav refs #27537]
+* Change: Added themes for PloneHelpCenter Leaf page, Section, Manual.
+  [ghitab refs #27615]
 
 5.7 - (2015-07-28)
 ------------------

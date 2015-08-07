@@ -1,0 +1,2 @@
+""" Manual Theme - for PloneHelpCenter
+"""
