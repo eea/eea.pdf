@@ -28,13 +28,13 @@ class Body(BrowserView):
         res_theme = None
         try:
             res_theme = tool.theme(context)
-        except:
+        except Exception:
             pass
 
         if res_theme is None:
             try:
                 res_theme = tool.theme(self.context)
-            except:
+            except Exception:
                 pass
 
         return res_theme
