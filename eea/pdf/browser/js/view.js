@@ -1,7 +1,7 @@
 if(window.EEA === undefined){
   var EEA = {
     who: 'eea.pdf',
-    version: '1.0'
+    version: '1.1'
   };
 }
 
@@ -22,6 +22,7 @@ EEA.Pdf = function(context, options){
 EEA.Pdf.prototype = {
   initialize: function(){
     var self = this;
+    debugger;
     self.async = self.context.data('async');
 
     if(self.async){
@@ -52,9 +53,22 @@ jQuery.fn.EEAPdf = function(options){
   });
 };
 
-jQuery(document).ready(function(){
+jQuery(document).ready(function($){
 
   var items = jQuery('.eea-pdf-viewlet');
+
+  // #27958 take into consideration templates which fill main
+  // thus not rendering the async data but still have the pdf download
+  var $pdf_download_links, $body;
+  if (!items.length) {
+    $body = $('body');
+    $pdf_download_links = $body.find('a[href$="download.pdf"]');
+    if ($pdf_download_links.length) {
+      $body.data("async", "true");
+      items = $body;
+    }
+  }
+
   items.EEAPdf();
 
 });

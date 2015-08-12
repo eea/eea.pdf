@@ -3,6 +3,10 @@ Changelog
 
 5.8.dev0 - (unreleased)
 -----------------------
+* Bug fix: take into consideration that download.pdf could be found
+  even though the eea.pdf viewlet is missing because of templates
+  customizing main instead of content-core
+  [ichimdav refs #27958]
 * Change: qrbox is now cleared avoiding the qrbox from being floated
   [ichimdav refs #27537]
 * Change: Added themes for PloneHelpCenter Leaf page, Section, Manual.
