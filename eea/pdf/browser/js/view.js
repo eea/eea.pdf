@@ -22,7 +22,6 @@ EEA.Pdf = function(context, options){
 EEA.Pdf.prototype = {
   initialize: function(){
     var self = this;
-    debugger;
     self.async = self.context.data('async');
 
     if(self.async){
