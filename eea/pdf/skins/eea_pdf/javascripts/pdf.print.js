@@ -9,7 +9,7 @@ $(document).ready(function(){
       $('h2 + .indicator-figure-plus-container').closest('.nobreak').addClass('break');
     });
     $('#content-core h3').each(function(i, e){
-      if ($(e).closest('.nobreak').length == 0){
+      if (!$(e).closest('.nobreak').length){
         $(e).nextUntil('h3').andSelf().wrapAll('<div class="nobreak">');
       }
     });

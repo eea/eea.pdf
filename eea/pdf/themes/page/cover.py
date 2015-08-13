@@ -84,7 +84,7 @@ class Cover(PDFCover):
         if IATUnifiedFolder.providedBy(container):
             # container is a folder
             cur_path = '/'.join(container.getPhysicalPath())
-            path = {'query': cur_path, 'depth': 1 }
+            path = {'query': cur_path, 'depth': 1}
             results = container.portal_catalog(
                 **{'portal_type': 'Image', 'path': path}
             )
