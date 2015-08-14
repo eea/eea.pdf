@@ -13,7 +13,7 @@ def getMaximumThreads(queue):
     for da in queue.dispatchers.values():
         if not da.activated:
             continue
-        for agent in da.values():
+        for _agent in da.values():
             size += 3
     return size or 1
 
