@@ -337,6 +337,35 @@ return this file instead of generating one based on context data.
 
   This works only with folderish items.
 
+Troubleshooting
+===============
+PDFs are generated asynchronously using a parallel zc.async queue.quota.
+The number of workers that will generate PDFs in parallel is automatically
+calculated based on the number of zeo-clients registered with
+**plone.app.async-*_db_worker**.
+
+As every **db_worker** can handle simultaneously **maximum 3 jobs** (hard-coded in zc.async Agent),
+if you have **2 workers** then the maximum number of PDFs that will be generated
+at the same time will be **6** (2 workers * 3). Same if you have **5**, you'll get
+**15 PDFs** generated at the same time.
+
+If for any reason you don't want them to be generated simultaneously you can set
+environment variable **EEAPDF_ASYNC_THREADS** to **1** within buildout::
+
+    [buildout]
+
+    ...
+
+    [instance]
+
+    ...
+
+    environment-vars +=
+        EEAPDF_ASYNC_THREADS 1
+
+
+Also, if you experience issues by having too many simultaneously PDF jobs, you
+can limit them in the same way as above.
 
 
 Dependencies

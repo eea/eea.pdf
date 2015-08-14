@@ -163,7 +163,8 @@ class Download(Pdf):
         # Async generate PDF
         converter = self.make_pdf(dry_run=True)
         worker = queryUtility(IAsyncService)
-        worker.queueJob(
+        queue = worker.getQueues()['']
+        worker.queueJobInQueue(queue, ('pdf',),
             async.run_async_job,
             self.context, converter,
             success_event=AsyncPDFExportSuccess,

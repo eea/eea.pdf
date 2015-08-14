@@ -3,6 +3,10 @@ Changelog
 
 5.8.dev0 - (unreleased)
 -----------------------
+* Feature: Switched to dedicated zc.async queue quota for PDF jobs which allows
+  multiple jobs to run in parallel. This will speed up PDF generation by using
+  all plone.app.async worker instances at the same time.
+  [voineali refs #28019]
 * Bug fix: take into consideration that download.pdf could be found
   even though the eea.pdf viewlet is missing because of templates
   customizing main instead of content-core
