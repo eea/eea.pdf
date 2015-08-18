@@ -1,8 +1,8 @@
 Changelog
 =========
 
-5.8.dev0 - (unreleased)
------------------------
+5.8 - (2015-08-18)
+------------------
 * Feature: Switched to dedicated zc.async queue quota for PDF jobs which allows
   multiple jobs to run in parallel. This will speed up PDF generation by using
   all plone.app.async worker instances at the same time.
