@@ -3,6 +3,9 @@ Changelog
 
 5.9.dev0 - (unreleased)
 -----------------------
+* Change: removed indicator-figure styling for pdf.print.css, any fixes to the
+  indicator pdf sizes can be added in other eea packages
+  [ichimdav refs #28278]
 
 5.8 - (2015-08-18)
 ------------------
