@@ -1,6 +1,9 @@
 Changelog
 =========
 
+6.0.dev0 - (unreleased)
+-----------------------
+
 5.9 - (2015-09-04)
 ------------------
 * Change: removed indicator-figure styling for pdf.print.css, any fixes to the
