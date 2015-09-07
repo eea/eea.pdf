@@ -11,7 +11,7 @@ you can define specific PDF themes per content-type.
 
 .. note ::
 
-  Requires `wkhtmltopdf`_ and `pdftk`_ system-packages installed on your server.
+  Requires `wkhtmltopdf`_ system-package installed on your server.
   See `eea.converter`_ documentation for more details.
 
 
@@ -54,7 +54,7 @@ Install
 
 External PDF generator tools
 ----------------------------
-Ensure that you have installed `wkhtmltopdf`_ and `pdftk`_ on your machine. You
+Ensure that you have installed `wkhtmltopdf`_ on your machine. You
 can also install `wkhtmltopdf`_ from buildout::
 
     [buildout]
@@ -374,7 +374,6 @@ Dependencies
 1. `eea.converter`_
 2. `eea.downloads`_
 3. `wkhtmltopdf`_
-4. `pdftk`_
 5. `plone.app.async`_
 6. `eea.cache`_ (optional)
 
@@ -408,6 +407,5 @@ EEA_ - European Environment Agency (EU)
 .. _eea.converter: http://eea.github.com/docs/eea.converter
 .. _eea.downloads: http://eea.github.com/docs/eea.downloads
 .. _wkhtmltopdf: http://wkhtmltopdf.org
-.. _pdftk: http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 .. _eea.cache: http://eea.github.com/docs/eea.cache
 .. _plone.app.async: https://github.com/plone/plone.app.async#ploneappasync
