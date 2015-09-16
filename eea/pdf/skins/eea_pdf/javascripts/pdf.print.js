@@ -6,10 +6,12 @@ http://stackoverflow.com/questions/9238868/how-do-i-avoid-a-page-break-immediate
 $(document).ready(function(){
     var $content_core = $('#content-core');
     $content_core.find('h2').each(function(i, e){
-      $(e).nextUntil('h2').andSelf().wrapAll('<div class="nobreak">');
+      if (!$(e).closest('.cover').length){
+        $(e).nextUntil('h2').andSelf().wrapAll('<div class="nobreak">');
+      }
     });
     $content_core.find('h3').each(function(i, e){
-      if (!$(e).closest('.nobreak').length){
+      if (!$(e).closest('.nobreak, .keyMessage').length){
         $(e).nextUntil('h3').andSelf().wrapAll('<div class="nobreak">');
       }
     });

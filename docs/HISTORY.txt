@@ -3,6 +3,8 @@ Changelog
 
 6.1.dev0 - (unreleased)
 -----------------------
+* Bug fix: avoid a page break immediately after a header
+  [lucas refs #28588]
 
 6.0 - (2015-09-10)
 ------------------
