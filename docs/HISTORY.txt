@@ -3,6 +3,8 @@ Changelog
 
 6.2.dev0 - (unreleased)
 -----------------------
+* Bug fix: pdf segmentation fault
+  [lucas refs #28298]
 
 6.1 - (2015-10-05)
 ------------------

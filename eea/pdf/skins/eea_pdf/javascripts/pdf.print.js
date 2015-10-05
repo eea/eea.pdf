@@ -15,4 +15,8 @@ $(document).ready(function(){
         $(e).nextUntil('h3').andSelf().wrapAll('<div class="nobreak">');
       }
     });
+    $content_core.find('div.pageBreak').each(function(i, e){
+      $(e).html("&nbsp;");
+    });
+    
 });
