@@ -379,4 +379,3 @@ http://stackoverflow.com/questions/9238868/how-do-i-avoid-a-page-break-immediate
 .assessment_view .nobreak,
 .nobreak.break{ page-break-before: always !important; }
 .pageBreak{ height: 1px; }
-
