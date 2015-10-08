@@ -375,7 +375,7 @@ Dependencies
 2. `eea.downloads`_
 3. `wkhtmltopdf`_
 4. `plone.app.async`_
-5 `eea.cache`_ (optional)
+5. `eea.cache`_ (optional)
 
 Source code
 ===========
