@@ -24,6 +24,15 @@
     />
 
   <browser:page
+    for="eea.pdf.interfaces.IPDFTheme"
+    layer="eea.pdf.interfaces.ILayer"
+    name="flush_theme_pdfs_cache"
+    class=".app.theme.Theme"
+    permission="cmf.ManagePortal"
+    attribute="flushPDFsCache"
+    />
+
+  <browser:page
     name="download.pdf"
     layer="eea.pdf.interfaces.ILayer"
     for="eea.pdf.interfaces.IPDFAware"

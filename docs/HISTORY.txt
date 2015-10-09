@@ -5,6 +5,8 @@ Changelog
 -----------------------
 * Bug fix: pdf segmentation fault
   [lucas refs #28298]
+* Feature: Possibility to bulk invalidate PDFs per theme
+  [chiridra refs #28517]
 
 6.1 - (2015-10-05)
 ------------------

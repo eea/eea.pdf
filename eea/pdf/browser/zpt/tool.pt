@@ -49,6 +49,10 @@
                   <tal:seconds i18n:translate="">seconds</tal:seconds>
                 </dd>
               </dl>
+              <div class="eea-pdf-actions">
+                <strong i18n:translate="">Flush all PDFs cache for this theme</strong>:
+                <input class="context" type="button" value="Flush PDFs" i18n:attributes="value" tal:attributes="id string:button-$item_id; onclick string:javascript:EEAPdfFlushThemePdfsCache('$item_id');;" />
+              </div>
             </div>
           </div>
         </metal:entry>

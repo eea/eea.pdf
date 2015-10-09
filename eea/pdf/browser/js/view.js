@@ -71,3 +71,16 @@ jQuery(document).ready(function($){
   items.EEAPdf();
 
 });
+
+function EEAPdfFlushThemePdfsCache(id) {
+  var tool_url = $('head base').attr('href');
+  var btn = jQuery('#button-' + id);
+  var btn_value = btn.attr('value');
+  var btn_onclick = btn.attr('onclick');
+  btn.attr('value', 'Please wait ...');
+  btn.attr('onclick', 'javascript:void(0);');
+  jQuery.getJSON(tool_url + id + '/@@flush_theme_pdfs_cache', {}, function(data){
+    btn.attr('value', btn_value);
+    btn.attr('onclick', btn_onclick);
+  });
+}
