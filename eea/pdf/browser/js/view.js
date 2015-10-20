@@ -65,7 +65,7 @@ EEA.PdfTool.prototype = {
   flush: function (btn) {
     var url = btn.attr('href');
     var label_on = btn.data('on');
-    var label_off = btn.data('off')
+    var label_off = btn.data('off');
 
     btn.text(label_off);
     jQuery.getJSON(url, {}, function(data){
