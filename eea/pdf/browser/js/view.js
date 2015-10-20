@@ -8,9 +8,7 @@ if(window.EEA === undefined){
 EEA.Pdf = function(context, options){
  var self = this;
   self.context = context;
-
-  self.settings = {
-  };
+  self.settings = {};
 
   if(options){
     jQuery.extend(self.settings, options);
@@ -27,7 +25,6 @@ EEA.Pdf.prototype = {
     if(self.async){
       self.init_async();
     }
-
   },
 
   init_async: function(){
@@ -43,12 +40,53 @@ EEA.Pdf.prototype = {
   }
 };
 
+EEA.PdfTool = function(context, options){
+  var self = this;
+  self.context = context;
+  self.settings = {};
+
+  if(options){
+    jQuery.extend(self.settings, options);
+  }
+
+  self.initialize();
+};
+
+EEA.PdfTool.prototype = {
+  initialize: function () {
+    var self = this;
+
+    self.context.click(function(evt){
+      evt.preventDefault();
+      self.flush(jQuery(this));
+    });
+  },
+
+  flush: function (btn) {
+    var url = btn.attr('href');
+    var label_on = btn.data('on');
+    var label_off = btn.data('off')
+
+    btn.text(label_off);
+    jQuery.getJSON(url, {}, function(data){
+      btn.text(label_on);
+    });
+  }
+};
 
 jQuery.fn.EEAPdf = function(options){
   return this.each(function(){
     var context = jQuery(this);
     var adapter = new EEA.Pdf(context, options);
     context.data('EEAPdf', adapter);
+  });
+};
+
+jQuery.fn.EEAPdfTool = function(options){
+  return this.each(function(){
+    var context = jQuery(this);
+    var adapter = new EEA.PdfTool(context, options);
+    context.data('EEAPdfTool', adapter);
   });
 };
 
@@ -70,17 +108,10 @@ jQuery(document).ready(function($){
 
   items.EEAPdf();
 
-});
+  // Init EEAPdfTool within Control Panel
+  items = jQuery('.eea-pdf-body').find('.flush');
+  if(items.length){
+    items.EEAPdfTool();
+  }
 
-function EEAPdfFlushThemePdfsCache(id) {
-  var tool_url = jQuery('head base').attr('href');
-  var btn = jQuery('#button-' + id);
-  var btn_value = btn.attr('value');
-  var btn_onclick = btn.attr('onclick');
-  btn.attr('value', 'Please wait ...');
-  btn.attr('onclick', '');
-  jQuery.getJSON(tool_url + id + '/@@flush_theme_pdfs_cache', {}, function(data) {
-    btn.attr('value', btn_value);
-    btn.attr('onclick', btn_onclick);
-  });
-}
+});
