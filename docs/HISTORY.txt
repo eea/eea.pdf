@@ -1,8 +1,8 @@
 Changelog
 =========
 
-6.2.dev0 - (unreleased)
------------------------
+6.2 - (2015-10-22)
+------------------
 * Bug fix: pdf segmentation fault
   [lucas refs #28298]
 * Feature: Possibility to bulk invalidate PDFs per theme
