@@ -3,6 +3,8 @@ Changelog
 
 6.3.dev0 - (unreleased)
 -----------------------
+* Change: box-classification is now visible in the pdf output
+  [ichimdav refs #30421]
 
 6.2 - (2015-10-22)
 ------------------

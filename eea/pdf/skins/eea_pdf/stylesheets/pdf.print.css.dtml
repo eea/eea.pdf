@@ -346,10 +346,6 @@ p.portalMessage {
   display: none !important;
 }
 
-#box-classification {
-  display: none;
-}
-
 /* fixes for boilerplate and fiche print layout #20756 */
 
 .qrbox > img {
