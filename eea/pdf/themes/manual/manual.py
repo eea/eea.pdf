@@ -113,40 +113,14 @@ class Body(BrowserView):
         ajax_load = self.request.get('ajax_load', False)
         self.request.form['ajax_load'] = True
 
-        # manual title and description
+        node_objects = []
         parent_brains = self.context.aq_parent.getFolderContents()
         for brain in parent_brains:
             if brain.getObject() == self.context:
-                doc_obj = brain.getObject()
+                node_object = brain.getObject()
                 prefix = ""
-                html = self.get_manual_html(doc_obj=doc_obj, depth=1)
-                yield html
-
-        #
-        # get_children(parent_type = manual, section sau leaf page)
-        # ia info si merge la jos
-        # has_children()
-        # manual sections (and leaf pages added to manual)
-        for brain in self.brains:
-            doc_obj = brain.getObject()
-            doc_type = doc_obj.portal_type
-
-            if doc_type == 'HelpCenterReferenceManualSection':
-                # section title and description
-                html = self.get_section_html(doc_obj=doc_obj, depth=2)
-                yield html
-
-                # section leaf pages
-                for brain in doc_obj.getFolderContents():
-                    leaf_page_doc = brain.getObject()
-
-                    # leaf page title and text
-                    html = self.get_leaf_page_html(
-                        doc_obj=leaf_page_doc, depth=3)
-                    yield html
-
-            elif doc_type == 'HelpCenterLeafPage':
-                html = self.get_leaf_page_html(doc_obj=doc_obj, depth=2)
+                html = self.get_node_html(
+                    prefix=prefix, node_object=node_object, depth=1)
                 yield html
 
         self.request.form['ajax_load'] = ajax_load
@@ -162,11 +136,12 @@ class Body(BrowserView):
         self._depth = kwargs.get('depth', self._depth)
         self._count = kwargs.get('count', self._count)
 
-    def html_item(self, title=None, description=None, item_type=None, depth=1):
+    def html_item(self, prefix=None, title=None, description=None,
+                  item_type=None, depth=1):
         """ Returns html containing item title and description
         """
         html_title = "<h" + str(depth) + " class='" + item_type + \
-            "-title'>" + title + "</h" + str(depth) + ">"
+            "-title'>" + prefix + title + "</h" + str(depth) + ">"
 
         html_description = "<div class='" + item_type + "-description'>" + \
             description + "</div>"
@@ -174,43 +149,54 @@ class Body(BrowserView):
         html = html_title + html_description
         return html
 
-    def get_manual_html(self, doc_obj=None, depth=1):
+    def get_node_children(self, node_object=None):
+        """ Returns brains objects list with children of given node
+        """
+        node_title = node_object.Title()
+
+    def get_node_html(self, prefix=None, node_object=None, depth=1,
+                      parent_html=""):
         """ Returns html containing manual title and description
         """
-        manual_title = doc_obj.Title()
-        manual_description = doc_obj.Description()
-
-        html = self.html_item(
-            title=manual_title,
-            description=manual_description, item_type='manual',
+        node_title = node_object.Title()
+        print node_title
+        # node_description = node_object.Description()
+        node_description = "Description here"
+        node_html = self.html_item(
+            prefix="AA", title=node_title,
+            description=node_description, item_type='manual',
             depth=depth)
-        return html
 
-    def get_section_html(self, doc_obj=None, depth=1):
-        """ Returns html containing section title and description
-        """
-        section_title = doc_obj.Title()
-        section_description = doc_obj.Description()
+        node_children = node_object.getFolderContents()
 
-        html = self.html_item(
-            title=section_title,
-            description=section_description,
-            item_type='section', depth=depth)
-        return html
+        for node_child in node_children:
+            node_html = node_html + self.get_node_html(
+                node_object=node_child.getObject(),
+                parent_html=node_html)
+        return node_html
 
-    def get_leaf_page_html(self, doc_obj=None, depth=1):
-        """ Returns html containing leaf page title and content
-        """
-        try:
-            leaf_page_title = doc_obj.Title()
-            leaf_page_description = doc_obj.getText()
-            html = self.html_item(
-                title=leaf_page_title,
-                description=leaf_page_description,
-                item_type='leaf-page', depth=depth)
-        except:
-            html = ""
-        return html
+    # def get_section_html(self, prefix=None, node_object=None, depth=1):
+    #     """ Returns html containing section title and description
+    #     """
+    #     section_title = node_object.Title()
+    #     section_description = node_object.Description()
+
+    #     html = self.html_item(
+    #         prefix=prefix, title=section_title,
+    #         description=section_description,
+    #         item_type='section', depth=depth)
+    #     return html
+
+    # def get_leaf_page_html(self, prefix=None, node_object=None, depth=1):
+    #     """ Returns html containing leaf page title and content
+    #     """
+    #     leaf_page_title = node_object.Title()
+    #     leaf_page_description = node_object.getText()
+    #     html = self.html_item(
+    #         prefix=prefix, title=leaf_page_title,
+    #         description=leaf_page_description,
+    #         item_type='leaf-page', depth=depth)
+    #     return html
 
     def __call__(self, **kwargs):
         self.update(**kwargs)
