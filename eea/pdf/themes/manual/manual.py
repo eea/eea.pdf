@@ -30,6 +30,46 @@ NODE_TYPES = {
 }
 
 
+def html_item(title="", description="", item_type="", depth=1):
+    """ Returns html containing item title and description
+    """
+    html_title = "<h" + str(depth) + " class='" + item_type + \
+        "-title'>" + title + "</h" + str(depth) + ">"
+
+    html_description = "<div class='" + item_type + "-description'>" + \
+        description + "</div>"
+
+    html = html_title + html_description
+
+    return html
+
+
+def get_node_html(node_object=None, depth=1, parent_html=""):
+    """ Return html for a given node and its children
+    """
+    node_title = node_object.Title()
+    node_portal_type = node_object.portal_type
+    node_settings = NODE_TYPES.get(
+        node_portal_type, NODE_TYPES.get('DEFAULT'))
+    node_type = node_settings["name"]
+    node_depth = node_settings["depth"]
+    node_description = getattr(
+        node_object, node_settings["get_description_method"])()
+
+    node_html = html_item(
+        title=node_title, description=node_description,
+        item_type=node_type, depth=node_depth)
+
+    node_children = node_object.getFolderContents()
+
+    for node_child in node_children:
+        node_html = node_html + get_node_html(
+            node_object=node_child.getObject(),
+            parent_html=node_html)
+
+    return node_html
+
+
 class Body(BrowserView):
     """ Custom PDF body
     """
@@ -137,12 +177,11 @@ class Body(BrowserView):
         ajax_load = self.request.get('ajax_load', False)
         self.request.form['ajax_load'] = True
 
-        node_objects = []
         parent_brains = self.context.aq_parent.getFolderContents()
         for brain in parent_brains:
             if brain.getObject() == self.context:
                 node_object = brain.getObject()
-                html = self.get_node_html(node_object=node_object)
+                html = get_node_html(node_object=node_object)
                 yield html
 
         self.request.form['ajax_load'] = ajax_load
@@ -157,49 +196,6 @@ class Body(BrowserView):
         self._maxitems = kwargs.get('maxitems', None)
         self._depth = kwargs.get('depth', self._depth)
         self._count = kwargs.get('count', self._count)
-
-    def html_item(self, title="", description="", item_type="", depth=1):
-        """ Returns html containing item title and description
-        """
-        html_title = "<h" + str(depth) + " class='" + item_type + \
-            "-title'>" + title + "</h" + str(depth) + ">"
-
-        html_description = "<div class='" + item_type + "-description'>" + \
-            description + "</div>"
-
-        html = html_title + html_description
-
-        return html
-
-    def get_node_children(self, node_object=None):
-        """ Returns brains objects list with children of given node
-        """
-        node_title = node_object.Title()
-
-    def get_node_html(self, node_object=None, depth=1, parent_html=""):
-        """ Returns html containing manual title and description
-        """
-        node_title = node_object.Title()
-        node_portal_type = node_object.portal_type
-        node_settings = NODE_TYPES.get(
-            node_portal_type, NODE_TYPES.get('DEFAULT'))
-        node_type = node_settings["name"]
-        node_depth = node_settings["depth"]
-        node_description = getattr(
-            node_object, node_settings["get_description_method"])()
-
-        node_html = self.html_item(
-            title=node_title, description=node_description,
-            item_type=node_type, depth=node_depth)
-
-        node_children = node_object.getFolderContents()
-
-        for node_child in node_children:
-            node_html = node_html + self.get_node_html(
-                node_object=node_child.getObject(),
-                parent_html=node_html)
-
-        return node_html
 
     def __call__(self, **kwargs):
         self.update(**kwargs)
