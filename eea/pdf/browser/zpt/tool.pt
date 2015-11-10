@@ -29,7 +29,6 @@
 
             </h2>
 
-
             <div class="tileBody" tal:define="types python:item_object.getField('types').getAccessor(item_object)()">
               <dl class="eea-pdf-body">
                 <dt i18n:translate="">Used for:</dt>
@@ -47,6 +46,14 @@
                 <dd>
                   <tal:timeout content="item_object/timeout" />
                   <tal:seconds i18n:translate="">seconds</tal:seconds>
+                </dd>
+                <dt i18n:translate="">Flush all PDFs cache for this theme</dt>
+                <dd>
+                  <a class="context flush" data-on="Flush" data-off="Please wait..." tal:attributes="
+                    id string:button-$item_id;
+                    href string:$item_url/flush_theme_pdfs_cache;"
+                    i18n:attributes="data-on; data-off"
+                    i18n:translate="">Flush</a>
                 </dd>
               </dl>
             </div>

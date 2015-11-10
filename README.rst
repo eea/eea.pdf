@@ -11,7 +11,7 @@ you can define specific PDF themes per content-type.
 
 .. note ::
 
-  Requires `wkhtmltopdf`_ and `pdftk`_ system-packages installed on your server.
+  Requires `wkhtmltopdf`_ system-package installed on your server.
   See `eea.converter`_ documentation for more details.
 
 
@@ -54,7 +54,7 @@ Install
 
 External PDF generator tools
 ----------------------------
-Ensure that you have installed `wkhtmltopdf`_ and `pdftk`_ on your machine. You
+Ensure that you have installed `wkhtmltopdf`_ on your machine. You
 can also install `wkhtmltopdf`_ from buildout::
 
     [buildout]
@@ -337,6 +337,35 @@ return this file instead of generating one based on context data.
 
   This works only with folderish items.
 
+Troubleshooting
+===============
+PDFs are generated asynchronously using a parallel zc.async queue.quota.
+The number of workers that will generate PDFs in parallel is automatically
+calculated based on the number of zeo-clients registered with
+**plone.app.async-*_db_worker**.
+
+As every **db_worker** can handle simultaneously **maximum 3 jobs** (hard-coded in zc.async Agent),
+if you have **2 workers** then the maximum number of PDFs that will be generated
+at the same time will be **6** (2 workers * 3). Same if you have **5**, you'll get
+**15 PDFs** generated at the same time.
+
+If for any reason you don't want them to be generated simultaneously you can set
+environment variable **EEAPDF_ASYNC_THREADS** to **1** within buildout::
+
+    [buildout]
+
+    ...
+
+    [instance]
+
+    ...
+
+    environment-vars +=
+        EEAPDF_ASYNC_THREADS 1
+
+
+Also, if you experience issues by having too many simultaneously PDF jobs, you
+can limit them in the same way as above.
 
 
 Dependencies
@@ -345,9 +374,8 @@ Dependencies
 1. `eea.converter`_
 2. `eea.downloads`_
 3. `wkhtmltopdf`_
-4. `pdftk`_
-5. `plone.app.async`_
-6. `eea.cache`_ (optional)
+4. `plone.app.async`_
+5. `eea.cache`_ (optional)
 
 Source code
 ===========
@@ -379,6 +407,5 @@ EEA_ - European Environment Agency (EU)
 .. _eea.converter: http://eea.github.com/docs/eea.converter
 .. _eea.downloads: http://eea.github.com/docs/eea.downloads
 .. _wkhtmltopdf: http://wkhtmltopdf.org
-.. _pdftk: http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 .. _eea.cache: http://eea.github.com/docs/eea.cache
 .. _plone.app.async: https://github.com/plone/plone.app.async#ploneappasync

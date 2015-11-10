@@ -1,12 +1,54 @@
 Changelog
 =========
 
-5.8.dev0 - (unreleased)
+6.3.dev0 - (unreleased)
 -----------------------
+* Change: box-classification is now visible in the pdf output
+  [ichimdav refs #30421]
+
+6.2 - (2015-10-22)
+------------------
+* Bug fix: pdf segmentation fault
+  [lucas refs #28298]
+* Feature: Possibility to bulk invalidate PDFs per theme
+  [chiridra refs #28517]
+
+6.1 - (2015-10-05)
+------------------
+* Bug fix: avoid a page break immediately after a header
+  [lucas refs #28588]
+
+6.0 - (2015-09-10)
+------------------
+* Change: Drop pdftk dependency and use pure Python PyPDF2 package
+  [voineali refs #28522]
+
+5.9 - (2015-09-04)
+------------------
+* Change: removed indicator-figure styling for pdf.print.css, any fixes to the
+  indicator pdf sizes can be added in other eea packages
+  [ichimdav refs #28278]
+
+5.8 - (2015-08-18)
+------------------
+* Feature: Switched to dedicated zc.async queue quota for PDF jobs which allows
+  multiple jobs to run in parallel. This will speed up PDF generation by using
+  all plone.app.async worker instances at the same time.
+  [voineali refs #28019]
+* Bug fix: take into consideration that download.pdf could be found
+  even though the eea.pdf viewlet is missing because of templates
+  customizing main instead of content-core
+  [ichimdav refs #27958]
 * Change: qrbox is now cleared avoiding the qrbox from being floated
   [ichimdav refs #27537]
 * Change: Added themes for PloneHelpCenter Leaf page, Section, Manual.
   [ghitab refs #27615]
+* Upgrade step: Within "Plone > Site setup > Add-ons" click on
+  upgrade button available for EEA PDF
+* Bug fix: avoid a page break immediately after a header
+  [lucas refs #27657]
+* Feature: implement the random selection of the pdf cover image
+  [lucas refs #27603]
 
 5.7 - (2015-07-28)
 ------------------

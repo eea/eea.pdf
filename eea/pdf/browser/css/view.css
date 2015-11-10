@@ -90,3 +90,8 @@
   display: inline;
   margin: 0;
 }
+
+#content-core .eea-pdf-actions {
+  margin:0 0 1em 0;
+  clear:left;
+}

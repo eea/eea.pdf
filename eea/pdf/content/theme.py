@@ -7,6 +7,7 @@ from Products.ATContentTypes.content.folder import ATFolder
 
 from eea.pdf.content.interfaces import IPDFTheme
 from eea.pdf.config import EEAMessageFactory as _
+from archetypes.referencebrowserwidget import ReferenceBrowserWidget
 
 EditSchema = atapi.Schema((
     atapi.StringField('cover',
@@ -108,6 +109,20 @@ EditSchema = atapi.Schema((
            label=_(u"Table of contents links"),
            description=_(u"Enable table of contents links")
        )
+    ),
+    atapi.ReferenceField(
+        'imagescollection',
+        relationship='imagescollectionrel',
+        multiValued=0,
+        allowed_types=('Collection', 'ATTopic', 'Folder'),
+        widget=ReferenceBrowserWidget(
+            allow_search=True,
+            allow_browse=True,
+            force_close_on_insert=True,
+            label=_(u"Images cover collection"),
+            description=_(u"if cover image not present use "
+                           "a random cover from the collection."),
+        ),
     ),
     atapi.BooleanField('javascript',
        schemata='default',
