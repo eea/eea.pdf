@@ -6,6 +6,30 @@ from Products.Five.browser import BrowserView
 from eea.pdf.interfaces import IPDFTool
 
 
+NODE_TYPES = {
+    "HelpCenterReferenceManual": {
+        "name": "manual",
+        "depth": 1,
+        "get_description_method": "Description",
+    },
+    "HelpCenterReferenceManualSection": {
+        "name": "section",
+        "depth": 2,
+        "get_description_method": "Description",
+    },
+    "HelpCenterLeafPage": {
+        "name": "leaf-page",
+        "depth": 3,
+        "get_description_method": "getText",
+    },
+    "DEFAULT": {
+        "name": "leaf-page",
+        "depth": 3,
+        "get_description_method": "Description",
+    }
+}
+
+
 class Body(BrowserView):
     """ Custom PDF body
     """
@@ -144,6 +168,7 @@ class Body(BrowserView):
             description + "</div>"
 
         html = html_title + html_description
+
         return html
 
     def get_node_children(self, node_object=None):
@@ -155,19 +180,13 @@ class Body(BrowserView):
         """ Returns html containing manual title and description
         """
         node_title = node_object.Title()
-        node_type = "manual"  # or section, leaf-page, other
-        node_depth = 1
-
-        try:
-            # Leaf page
-            node_description = node_object.getText()
-        except Exception:
-            try:
-                # Section, Manual
-                node_description = node_object.Description()
-            except Exception:
-                # Other
-                node_description = ""
+        node_portal_type = node_object.portal_type
+        node_settings = NODE_TYPES.get(
+            node_portal_type, NODE_TYPES.get('DEFAULT'))
+        node_type = node_settings["name"]
+        node_depth = node_settings["depth"]
+        node_description = getattr(
+            node_object, node_settings["get_description_method"])()
 
         node_html = self.html_item(
             title=node_title, description=node_description,
