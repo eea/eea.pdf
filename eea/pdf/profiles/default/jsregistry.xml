@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
  <javascript authenticated="false" id="++resource++eea.pdf.js" />
+ <javascript authenticated="False" cacheable="False" compression="safe" cookable="False"
+             expression="python:'pdf.' in request['URL0'] or '.pdf' in request['URL0']"
+             id="pdf.print.js"/>
 </object>

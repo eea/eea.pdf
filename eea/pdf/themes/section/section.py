@@ -4,6 +4,8 @@ from zope.component import queryUtility
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.Five.browser import BrowserView
 from eea.pdf.interfaces import IPDFTool
+from eea.pdf.themes.manual.manual import NODE_TYPES
+from eea.pdf.themes.manual.manual import get_node_html
 
 
 class Body(BrowserView):
@@ -118,74 +120,11 @@ class Body(BrowserView):
         ajax_load = self.request.get('ajax_load', False)
         self.request.form['ajax_load'] = True
 
-        # Section info (title + description)
         parent_brains = self.context.aq_parent.getFolderContents()
         for brain in parent_brains:
             if brain.getObject() == self.context:
-                doc = brain.getObject()
-                theme = self.theme(doc)
-                body = getattr(theme, 'body', '')
-                if not body:
-                    continue
-                if isinstance(body, unicode):
-                    body = body.encode('utf-8')
-
-                try:
-                    pdf = doc.restrictedTraverse(body)
-                    self._count += 1
-
-                    section_title = self.context.Title()
-                    section_description = self.context.Description()
-
-                    html_title = "<h1 class='section-title'>" + \
-                        section_title + "</h1>"
-
-                    html_description = "<div class='section-description'>" + \
-                        section_description + "</div>"
-
-                    html = html_title + html_description
-
-                except Exception:
-                    continue
-                else:
-                    self._count = getattr(pdf, 'count', self._count)
-                    yield html
-
-        # Leaf pages (title + html)
-        for brain in self.brains:
-            if self.count > self.maxitems:
-                break
-
-            doc = brain.getObject()
-            theme = self.theme(doc)
-            body = getattr(theme, 'body', '')
-            if not body:
-                continue
-            if isinstance(body, unicode):
-                body = body.encode('utf-8')
-
-            try:
-                pdf = doc.restrictedTraverse(body)
-                self._count += 1
-
-                html = pdf(
-                    macro=self.macro,
-                    maxdepth=self.maxdepth,
-                    maxbreadth=self.maxbreadth,
-                    maxitems=self.maxitems,
-                    depth=self.depth,
-                    count=self.count
-                )
-
-                title = pdf.context.title
-                html_title = "<h1>" + title + "</h1>"
-
-                html = html_title + html
-
-            except Exception:
-                continue
-            else:
-                self._count = getattr(pdf, 'count', self._count)
+                node_object = brain.getObject()
+                html = get_node_html(node_object=node_object)
                 yield html
 
         self.request.form['ajax_load'] = ajax_load

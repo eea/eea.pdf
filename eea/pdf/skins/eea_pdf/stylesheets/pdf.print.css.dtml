@@ -346,10 +346,6 @@ p.portalMessage {
   display: none !important;
 }
 
-#box-classification {
-  display: none;
-}
-
 /* fixes for boilerplate and fiche print layout #20756 */
 
 .qrbox > img {
@@ -369,3 +365,13 @@ p.portalMessage {
   margin: 0 0 0.2em 0; }
 
 .fiche-summary { margin-top: 1em; }
+
+/*
+FIX for How do I avoid a page break immediately after a header
+http://stackoverflow.com/questions/9238868/how-do-i-avoid-a-page-break-immediately-after-a-header
+*/
+
+.nobreak{ page-break-inside: avoid !important; }
+.assessment_view .nobreak,
+.nobreak.break{ page-break-before: always !important; }
+.pageBreak{ height: 1px; }

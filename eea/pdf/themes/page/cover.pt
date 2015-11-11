@@ -46,11 +46,15 @@
           <tal:maincover tal:condition="has_cover_image">
               <img tal:attributes="src string:$here_url/coverImage_large" />
           </tal:maincover>
+
           <tal:image tal:condition="not:has_cover_image">
-              <tal:depiction tal:condition="exists:context/image_large">
-                  <img tal:attributes="src string:$here_url/image_large" />
-              </tal:depiction>
+            <tal:depiction tal:define="cover_image view/get_coverimage"
+                           tal:condition="cover_image">
+                <img tal:define="url cover_image/absolute_url; url python:'image_large' in url and url or url + '/image_large'"
+                     tal:attributes="src url" />
+            </tal:depiction>
           </tal:image>
+
       </a>
     </div>
 

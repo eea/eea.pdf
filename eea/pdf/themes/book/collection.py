@@ -126,8 +126,8 @@ class Body(BrowserView):
                 yield self.show_limit_page()
             return
 
-        ajax_load = self.request.get('ajax_load', False)
-        self.request.form['ajax_load'] = True
+        ajax_load = self.request.get('ajax_load', True)
+        self.request.form['ajax_load'] = ajax_load
 
         for brain in self.brains:
             if self.count > self.maxitems:
