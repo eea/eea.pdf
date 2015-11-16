@@ -1,6 +1,9 @@
 Changelog
 =========
 
+6.4.dev0 - (unreleased)
+-----------------------
+
 6.3 - (2015-11-16)
 ------------------
 * Change: box-classification is now visible in the pdf output
