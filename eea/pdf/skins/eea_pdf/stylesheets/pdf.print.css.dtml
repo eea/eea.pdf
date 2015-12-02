@@ -39,6 +39,12 @@ p,
   border-spacing: 0px;
 }
 
+#content tbody,
+#content thead {
+  display: table;
+  width: 100%;
+}
+
 table.plain th, table.plain td {
   border: 1px solid #ddd;
 }
