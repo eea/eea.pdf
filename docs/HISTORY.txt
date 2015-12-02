@@ -3,6 +3,9 @@ Changelog
 
 6.4.dev0 - (unreleased)
 -----------------------
+* Change: content table is now of display table instead of block
+  in order to strech tables to 100% of viewable space
+  [ichimdav refs #30473]
 
 6.3 - (2015-11-16)
 ------------------
