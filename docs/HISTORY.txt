@@ -3,6 +3,9 @@ Changelog
 
 6.4.dev0 - (unreleased)
 -----------------------
+* Change: tbody and thead now span 100% of the width in order to fill
+  the full width table styling
+  [ichimdav refs #30473]
 
 6.3 - (2015-11-16)
 ------------------
