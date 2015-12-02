@@ -32,7 +32,7 @@ p,
 }
 #content table {
   max-width: 100%;
-  display: block;
+  display: table;
   overflow: auto;
   text-align: left;
   border-collapse: collapse;
