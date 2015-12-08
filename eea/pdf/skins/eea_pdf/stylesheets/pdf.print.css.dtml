@@ -16,6 +16,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6,
+.figure-title,
+.googlechart-notes,
 .documentFirstHeading, .cover-header {
   font-family: "Open Sans", sans-serif !important;
   letter-spacing: inherit;
