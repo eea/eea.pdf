@@ -1,6 +1,9 @@
 Changelog
 =========
 
+6.6.dev0 - (unreleased)
+-----------------------
+
 6.5 - (2015-12-08)
 ------------------
 * Change: Use Open sans for figure titles and googlecharts-notes of
