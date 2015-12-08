@@ -1,8 +1,8 @@
 Changelog
 =========
 
-6.5.dev0 - (unreleased)
------------------------
+6.5 - (2015-12-08)
+------------------
 * Change: Use Open sans for figure titles and googlecharts-notes of
   inline charts that are part of indicators
   [ichimdav refs #30473]
