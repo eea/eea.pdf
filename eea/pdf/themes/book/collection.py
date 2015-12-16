@@ -112,7 +112,6 @@ class Body(BrowserView):
         """ Folder children
         """
         self._depth += 1
-
         if not self.request.get('pdf_last_brain_url'):
             brains = self.context.getFolderContents(
                 contentFilter={
@@ -120,6 +119,11 @@ class Body(BrowserView):
                 })
             if brains:
                 self.request['pdf_last_brain_url'] = brains[-1].getURL()
+                # 31424 in case there is only one result from the content
+                # filter then we need to reset the depth in order to
+                # get the content of the brain
+                if len(brains) == 1:
+                    self._depth -= 1
         if self.depth > self.maxdepth:
             if self.context.absolute_url() == \
                     self.request.get('pdf_last_brain_url'):
