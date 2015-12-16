@@ -116,7 +116,7 @@ class Body(BrowserView):
         if not self.request.get('pdf_last_brain_url'):
             brains = self.context.getFolderContents(
                 contentFilter={
-                    'portal_type': ['Folder', 'Collection', 'ATTopic']
+                    'portal_type': ['Folder', 'Collection', 'Topic']
                 })
             if brains:
                 self.request['pdf_last_brain_url'] = brains[-1].getURL()
