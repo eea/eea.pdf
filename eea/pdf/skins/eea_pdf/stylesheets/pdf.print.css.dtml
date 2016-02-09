@@ -285,6 +285,10 @@ p.discreet {
   clear: both;
 }
 
+.template-pdf-disclaimer .qrbox {
+  margin: 0 40pt 0 108pt;
+}
+
 .template-pdf-cover-back .qrbox {
   min-height: 50pt;
   display: block;
