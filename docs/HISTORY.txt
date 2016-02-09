@@ -3,6 +3,8 @@ Changelog
 
 6.6.dev0 - (unreleased)
 -----------------------
+* Change: fixed pdf disclaimer qrbox margins placement
+  [ichimdav refs #69095]
 
 6.5 - (2015-12-08)
 ------------------
