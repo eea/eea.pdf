@@ -381,3 +381,14 @@ http://stackoverflow.com/questions/9238868/how-do-i-avoid-a-page-break-immediate
 .assessment_view .nobreak,
 .nobreak.break{ page-break-before: always !important; }
 .pageBreak{ height: 1px; }
+
+div[id^="googlechart_table"] .googlechart,
+div[id^="googlechart_table"] .googlechart .google-visualization-table,
+div[id^="googlechart_table"] .googlechart .google-visualization-table div,
+div[id^="googlechart_table"] .googlechart .google-visualization-table table{
+  height: auto !important;
+}
+
+.google-visualization-table-th {
+  white-space: normal !important;
+}
