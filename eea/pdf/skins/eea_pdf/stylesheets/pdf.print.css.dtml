@@ -389,6 +389,14 @@ div[id^="googlechart_table"] .googlechart .google-visualization-table table{
   height: auto !important;
 }
 
+div[id^="googlechart_table"] .googlechart .google-visualization-table table{
+  width: 100% !important;
+}
+
 .google-visualization-table-th {
   white-space: normal !important;
+}
+div[id^="googlechart_table"] .googlechart .google-visualization-table table tr td,
+div[id^="googlechart_table"] .googlechart .google-visualization-table table tr th {
+  page-break-inside: avoid !important;
 }
