@@ -335,8 +335,9 @@ div.warning,
   margin-left: -1.5em;
 }
 
+#header-holder,
 p.portalMessage {
-  display: none;
+  display: none !important;
 }
 
 .pdf-collection-item {
