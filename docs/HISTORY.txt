@@ -3,6 +3,8 @@ Changelog
 
 6.7.dev0 - (unreleased)
 -----------------------
+* Change: PDFTheme now uses a blob image field
+  [ichim-david refs #75045]
 
 6.6 - (2016-02-15)
 ------------------

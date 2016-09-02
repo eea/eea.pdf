@@ -2,6 +2,7 @@
 """
 from zope.interface import implementer
 from Products.Archetypes import atapi
+from plone.app.blob.field import ImageField
 
 from Products.ATContentTypes.content.folder import ATFolder
 
@@ -220,7 +221,7 @@ EditSchema = atapi.Schema((
              )
          )
     ),
-    atapi.ImageField("image",
+    ImageField("image",
         schemata="default",
         sizes=None,
         widget=atapi.ImageWidget(
