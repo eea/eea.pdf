@@ -3,6 +3,8 @@ Changelog
 
 6.8.dev0 - (unreleased)
 -----------------------
+* Bug fix: include children of the folders when generate pdf
+  [catalin refs #75057]
 
 6.7 - (2016-09-05)
 ------------------
