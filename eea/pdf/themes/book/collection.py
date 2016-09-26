@@ -148,7 +148,7 @@ class Body(BrowserView):
 
             if isinstance(body, unicode):
                 body = body.encode('utf-8')
-            if self.theme(self.context).id == theme.id and self.depth == 1:
+            if self.theme(self.context).id == theme.id and self.depth == self.maxdepth:
                 if brain.getURL() == self.request.get('pdf_last_brain_url'):
                     if not self.request.get('pdflimit'):
                         self.request['pdflimit'] = "reached"
