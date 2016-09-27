@@ -12,6 +12,7 @@ from eea.downloads.interfaces import IStorage
 from eea.pdf.config import EEAMessageFactory as _
 from eea.pdf.events.sync import PDFExportFail, PDFExportSuccess
 from eea.pdf.events.async import AsyncPDFExportSuccess, AsyncPDFExportFail
+from eea.converter.interfaces import IContextWrapper
 from eea.converter import async
 logger = logging.getLogger('eea.pdf')
 
@@ -144,7 +145,7 @@ class Download(Pdf):
         from_email = portal.getProperty('email_from_address')
 
         if fallback or async.file_exists(filepath):
-            wrapper = async.ContextWrapper(self.context)(
+            wrapper = IContextWrapper(self.context)(
                 fileurl=fileurl,
                 filepath=filepath,
                 email=email,
