@@ -218,11 +218,11 @@ class BodyOptionsMaker(PDFBodyOptionsMaker, Mixin):
         """ Table of contents
         """
         template = self.getValue('toc')
+        
+        # wkhtmltopdf doesn't support URLs for TOC xsl
+        # To be un-commented when fixed by wkhtmltopdf
         # self._toc = ('/'.join((self.context.absolute_url(), template))
         #                 if template else '')
-
-        ## XXX wkhtmltopdf doesn't support URLs for TOC xsl
-        ## To be replaced with previous commented one when fixed by wkhtml
 
         # 24351; disable toc if tocdepth attribute is found and is == 0
         if not template or getattr(self.context, 'tocdepth', -1) == 0:

@@ -4,7 +4,6 @@ from zope.component import queryUtility
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.Five.browser import BrowserView
 from eea.pdf.interfaces import IPDFTool
-from eea.pdf.themes.manual.manual import NODE_TYPES
 from eea.pdf.themes.manual.manual import get_node_html
 
 
