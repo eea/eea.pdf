@@ -1,8 +1,8 @@
 Changelog
 =========
 
-6.8.dev0 - (unreleased)
------------------------
+6.8 - (2016-10-03)
+------------------
 * Change: Updated to use plone.stringinterp IContextWrapper adapter
   [avoinea]
 * Bug fix: include children of the folders when generate pdf
