@@ -1,6 +1,9 @@
 Changelog
 =========
 
+6.9.dev0 - (unreleased)
+-----------------------
+
 6.8 - (2016-10-03)
 ------------------
 * Change: Updated to use plone.stringinterp IContextWrapper adapter
