@@ -7,7 +7,7 @@ from eea.pdf.interfaces import IPDFTool
 
 import logging
 
-logger = logging.getLogger("collection")
+logger = logging.getLogger("pdf_collection")
 
 
 class Body(BrowserView):
@@ -171,13 +171,24 @@ class Body(BrowserView):
                     depth=self.depth,
                     count=self.count
                 )
-            except Exception:
+            except Exception, err:
+                logger.exception(err)
                 continue
             else:
                 self._count = getattr(pdf, 'count', self._count)
-                logger.info(doc.title)
-                title = doc.title if doc.portal_type in contentish else ''
-                yield (doc.title, html)
+                ptype = doc.portal_type
+                orig_title = doc.title
+                title = orig_title if ptype in contentish else ''
+                # 77476 exclude folder title if folder has child with the same
+                # title
+                if ptype == 'Folder':
+                    children = doc.getFolderContents()
+                    for child in children:
+                        child_title = child.Title
+                        if child_title == orig_title:
+                            title = ''
+                            break
+                yield (title, html)
 
         self.request.form['ajax_load'] = ajax_load
 
