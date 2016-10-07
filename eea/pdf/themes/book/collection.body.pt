@@ -14,8 +14,13 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core">
 
-  <div tal:repeat="pdf view/pdfs" class="pdf-collection-item">
-    <tal:pdf tal:replace="structure pdf" />
+  <div tal:repeat="pdf_tuple view/pdfs" class="pdf-collection-item">
+    <tal:defines define="
+    pdf python:pdf_tuple[1];
+    pdf_title python:pdf_tuple[0];">
+    <h1 tal:content="pdf_title">Title</h1>
+      <tal:pdf tal:replace="structure pdf" />
+    </tal:defines>
   </div>
 
 </metal:content-core>
