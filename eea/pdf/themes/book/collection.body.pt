@@ -18,7 +18,7 @@
     <tal:defines define="
     pdf_title python:pdf_tuple[0];
     pdf python:pdf_tuple[1];">
-    <h1 tal:content="pdf_title" tal:condition="pdf_title">Title</h1>
+    <h1 tal:content="pdf_title" tal:condition="pdf_title" class="pdf-folder-title">Title</h1>
       <tal:pdf tal:replace="structure pdf" />
     </tal:defines>
   </div>
