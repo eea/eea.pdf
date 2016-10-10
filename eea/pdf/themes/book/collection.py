@@ -183,11 +183,11 @@ class Body(BrowserView):
                 # title
                 if ptype == 'Folder':
                     children = doc.getFolderContents()
-                    for child in children:
-                        child_title = child.Title
+                    if len(children):
+                        first_child = children[0]
+                        child_title = first_child.Title
                         if child_title == orig_title:
                             title = ''
-                            break
                 yield (title, html)
 
         self.request.form['ajax_load'] = ajax_load
