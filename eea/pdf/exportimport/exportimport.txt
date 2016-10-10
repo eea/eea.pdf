@@ -93,6 +93,5 @@ Export
        <element value="Event"/>
        <element value="Document"/>
       </property>
-      <property name="image"></property>
      </object>
     </object>

@@ -5,6 +5,8 @@ Changelog
 -----------------------
 * Feature: book theme now shows folder title within toc and content
   [ichim-david refs #77476]
+* Bug fix: Remove image property from profile exporting
+  [ZuluPro refs #76260]
 
 6.8 - (2016-10-03)
 ------------------

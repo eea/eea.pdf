@@ -21,6 +21,8 @@ class PDFThemeXMLAdapter(XMLAdapterBase):
             child = self._doc.createElement('property')
             child.setAttribute('name', prop)
             field = self.context.getField(prop)
+            if field.type == 'image':
+                continue
             value = field.getAccessor(self.context)()
             if isinstance(value, (tuple, list)):
                 for item in value:
