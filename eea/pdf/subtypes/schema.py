@@ -106,8 +106,10 @@ class CollectionSchemaExtender(PDFSchemaExtender):
             widget=public.IntegerWidget(
                 label=_(u"PDF Maximum breadth"),
                 description=_(
-                    u"Maximum breadth to include children items "
-                    u"while generating PDF. Leave it empty to use the portal "
+                    u"Maximum children items to include "
+                    u"while generating PDF for collection "
+                    u"or folderish content-types where object is collection or " 
+                    u"folderish. Leave it empty to use the portal "
                     u"global defined value."
                 )
             )
@@ -119,7 +121,7 @@ class CollectionSchemaExtender(PDFSchemaExtender):
             widget=public.IntegerWidget(
                 label=_(u"PDF Maximum items"),
                 description=_(
-                    u"Total maximum children items to be included"
+                    u"Total maximum children items to be included "
                     u"while generating PDF. Leave it empty to use the portal "
                     u"global defined value."
                 )

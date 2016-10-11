@@ -5,6 +5,10 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.Five.browser import BrowserView
 from eea.pdf.interfaces import IPDFTool
 
+import logging
+
+logger = logging.getLogger("pdf_collection")
+
 
 class Body(BrowserView):
     """ Custom PDF body
@@ -112,10 +116,11 @@ class Body(BrowserView):
         """ Folder children
         """
         self._depth += 1
+        contentish = ['Folder', 'Collection', 'Topic']
         if not self.request.get('pdf_last_brain_url'):
             brains = self.context.getFolderContents(
                 contentFilter={
-                    'portal_type': ['Folder', 'Collection', 'Topic']
+                    'portal_type': contentish
                 })
             if brains:
                 self.request['pdf_last_brain_url'] = brains[-1].getURL()
@@ -166,11 +171,15 @@ class Body(BrowserView):
                     depth=self.depth,
                     count=self.count
                 )
-            except Exception:
+            except Exception, err:
+                logger.exception(err)
                 continue
             else:
                 self._count = getattr(pdf, 'count', self._count)
-                yield html
+                ptype = doc.portal_type
+                orig_title = doc.title
+                title = orig_title if ptype in contentish else ''
+                yield (title, html)
 
         self.request.form['ajax_load'] = ajax_load
 
