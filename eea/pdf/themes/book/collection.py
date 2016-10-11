@@ -1,11 +1,11 @@
 """ PDF View
 """
-from zope.component import queryUtility
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.Five.browser import BrowserView
-from eea.pdf.interfaces import IPDFTool
-
 import logging
+
+from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from eea.pdf.interfaces import IPDFTool
+from zope.component import queryUtility
 
 logger = logging.getLogger("pdf_collection")
 

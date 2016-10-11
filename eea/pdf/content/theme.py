@@ -193,7 +193,7 @@ EditSchema = atapi.Schema((
             description=_(
                 u"Maximum children items to include "
                 u"while generating PDF for collection "
-                u"or folderish content-types where object is collection or " 
+                u"or folderish content-types where object is collection or "
                 u"folderish."
             )
         )

@@ -24,12 +24,20 @@ jQuery(document).ready(function($){
     var $folder_titles = $(".pdf-folder-title");
     $folder_titles.each(function(idx, el) {
        var $el = $(el);
+       var content = el.textContent.trim().length;
+       if (!content) {
+           $el.remove();
+           return;
+       }
        var $parent = $el.parent();
        var $h1 = $parent.find('h1:not(.pdf-folder-title)');
        var $h2 = $parent.find('h2');
        var $h3 = $parent.find('h3');
        var $h4 = $parent.find('h4');
-       $($h1, $h2, $h3, $h4).each(function(idx, el) {
+       $h1 = $h1.add($h2);
+       $h1 = $h1.add($h3);
+       $h1 = $h1.add($h4);
+       $h1.each(function(idx, el) {
             var $el = $(el);
             var incremented_header = window.parseInt(el.tagName[1], 10);
             incremented_header += 1;
