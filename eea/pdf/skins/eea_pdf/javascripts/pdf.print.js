@@ -44,7 +44,7 @@ jQuery(document).ready(function($){
             var tagName = "<h" + incremented_header + " />";
             var $replacement = $(tagName, {"class": el.className,
                                             id: el.id,
-                                            text: el.innerHTML});
+                                            text: $el.text()});
             $el.replaceWith($replacement);
        });
     });
