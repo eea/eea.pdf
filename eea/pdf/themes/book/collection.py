@@ -179,15 +179,6 @@ class Body(BrowserView):
                 ptype = doc.portal_type
                 orig_title = doc.title
                 title = orig_title if ptype in contentish else ''
-                # 77476 exclude folder title if folder has child with the same
-                # title
-                if ptype == 'Folder':
-                    children = doc.getFolderContents()
-                    if len(children):
-                        first_child = children[0]
-                        child_title = first_child.Title
-                        if child_title == orig_title:
-                            title = ''
                 yield (title, html)
 
         self.request.form['ajax_load'] = ajax_load
