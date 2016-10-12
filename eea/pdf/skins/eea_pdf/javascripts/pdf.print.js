@@ -42,9 +42,7 @@ jQuery(document).ready(function($){
             var incremented_header = window.parseInt(el.tagName[1], 10);
             incremented_header += 1;
             var tagName = "<h" + incremented_header + " />";
-            var $replacement = $(tagName, {"class": el.className,
-                                            id: el.id,
-                                            text: $el.text()});
+            var $replacement = $(tagName, { text: $el.text() });
             $el.replaceWith($replacement);
        });
     });

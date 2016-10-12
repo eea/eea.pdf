@@ -57,12 +57,10 @@ img {
 
 .documentFirstHeading {
   font-size: 18pt;
-  text-align: right;
 }
 
 .documentDescription {
   font-size: 12pt;
-  text-align: right;
   font-weight: normal;
 }
 
@@ -400,4 +398,8 @@ div[id^="googlechart_table"] .googlechart .google-visualization-table table{
 div[id^="googlechart_table"] .googlechart .google-visualization-table table tr td,
 div[id^="googlechart_table"] .googlechart .google-visualization-table table tr th {
   page-break-inside: avoid !important;
+}
+
+.pdf-fiche-first-page {
+    overflow: hidden;
 }
