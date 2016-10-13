@@ -403,3 +403,7 @@ div[id^="googlechart_table"] .googlechart .google-visualization-table table tr t
 .pdf-fiche-first-page {
     overflow: hidden;
 }
+
+.pdf-collection-item .fiche-section {
+  display: none;
+}
