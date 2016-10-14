@@ -1,6 +1,9 @@
 Changelog
 =========
 
+7.0.dev0 - (unreleased)
+-----------------------
+
 6.9 - (2016-10-14)
 ------------------
 * Feature: book theme now shows folder title within toc and content
