@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
     $content_core.find('strong').each(function(i, e){
         var $ptag;
         if (e.innerHTML.indexOf('Figure') === 0) {
-            $ptag = $(e).closest('p')
+            $ptag = $(e).closest('p');
             $ptag.next().andSelf().wrapAll('<div class="nobreak">');
         }
     });
