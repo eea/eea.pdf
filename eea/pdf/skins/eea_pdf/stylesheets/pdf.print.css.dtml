@@ -400,8 +400,12 @@ div[id^="googlechart_table"] .googlechart .google-visualization-table table tr t
   page-break-inside: avoid !important;
 }
 
-.pdf-fiche-first-page {
-    overflow: hidden;
+/* fiche collection fixes */
+.pdf-collection-item .fiche-section {
+  display: none;
+}
+.cover-logo2 {
+  margin-bottom: 2em;
 }
 
 .pdf-collection-item .fiche-section {

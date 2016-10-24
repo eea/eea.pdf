@@ -3,6 +3,12 @@ Changelog
 
 7.0.dev0 - (unreleased)
 -----------------------
+* Bug fix: fixed pdf output of collection pdf theme where title
+  and page had a lot of empty space
+  [ichim-david refs #77970]
+* Bug fix: fixed figure heading from being disconnected from the
+  figure charts that follow them
+  [ichim-david refs #77970]
 
 6.9 - (2016-10-14)
 ------------------

@@ -15,6 +15,20 @@ jQuery(document).ready(function($){
         $(e).nextUntil('h3').andSelf().wrapAll('<div class="nobreak">');
       }
     });
+    
+    // #77970 workaround content where Figure header should be on the same
+    // page with the next figure iframe chart
+    $content_core.find('strong').each(function(i, e){
+        var $ptag;
+        if (e.innerHTML.indexOf('Figure') === 0) {
+            $ptag = $(e).closest('p')
+            $ptag.next().andSelf().wrapAll('<div class="nobreak">');
+        }
+    });
+    $content_core.find('.figureHeading').each(function(i, e){
+            $(e).next().andSelf().wrapAll('<div class="nobreak">');
+    });
+
     /* Fix #28298, empty div.pageBreak cause segmentation fault in wkhtmltopdf */
     $content_core.find('div.pageBreak').each(function(i, e){
       $(e).html("&nbsp;");
