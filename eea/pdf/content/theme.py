@@ -191,7 +191,7 @@ EditSchema = atapi.Schema((
         widget=atapi.IntegerWidget(
             label=_(u"Maximum breadth"),
             description=_(
-                u"Maximum children items to include "
+                u"Maximum breadth to include children items "
                 u"while generating PDF for collection "
                 u"or folderish content-types where object is collection or "
                 u"folderish."

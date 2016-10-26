@@ -116,11 +116,10 @@ class Body(BrowserView):
         """ Folder children
         """
         self._depth += 1
-        contentish = ['Folder', 'Collection', 'Topic']
         if not self.request.get('pdf_last_brain_url'):
             brains = self.context.getFolderContents(
                 contentFilter={
-                    'portal_type': contentish
+                    'portal_type': ['Folder', 'Collection', 'Topic']
                 })
             if brains:
                 self.request['pdf_last_brain_url'] = brains[-1].getURL()
@@ -171,15 +170,11 @@ class Body(BrowserView):
                     depth=self.depth,
                     count=self.count
                 )
-            except Exception, err:
-                logger.exception(err)
+            except Exception:
                 continue
             else:
                 self._count = getattr(pdf, 'count', self._count)
-                ptype = doc.portal_type
-                orig_title = doc.title
-                title = orig_title if ptype in contentish else ''
-                yield (title, html)
+                yield html
 
         self.request.form['ajax_load'] = ajax_load
 

@@ -3,7 +3,7 @@ FIX for How do I avoid a page break immediately after a header
 http://stackoverflow.com/questions/9238868/how-do-i-avoid-a-page-break-immediately-after-a-header
 */
 
-jQuery(document).ready(function($){
+$(document).ready(function(){
     var $content_core = $('#content-core');
     $content_core.find('h2').each(function(i, e){
       if (!$(e).closest('.cover').length){
@@ -15,7 +15,7 @@ jQuery(document).ready(function($){
         $(e).nextUntil('h3').andSelf().wrapAll('<div class="nobreak">');
       }
     });
-    
+
     // #77970 workaround content where Figure header should be on the same
     // page with the next figure iframe chart
     $content_core.find('strong').each(function(i, e){

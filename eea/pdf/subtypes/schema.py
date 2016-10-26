@@ -121,7 +121,7 @@ class CollectionSchemaExtender(PDFSchemaExtender):
             widget=public.IntegerWidget(
                 label=_(u"PDF Maximum items"),
                 description=_(
-                    u"Total maximum children items to be included "
+                    u"Total maximum children items to be included"
                     u"while generating PDF. Leave it empty to use the portal "
                     u"global defined value."
                 )
