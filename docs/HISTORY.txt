@@ -1,8 +1,8 @@
 Changelog
 =========
 
-7.0.dev0 - (unreleased)
------------------------
+7.0 - (2016-10-31)
+------------------
 * Bug fix: fixed pdf output of collection pdf theme where title
   and page had a lot of empty space
   [ichim-david refs #77970]
