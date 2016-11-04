@@ -26,7 +26,13 @@ $(document).ready(function(){
         }
     });
     $content_core.find('.figureHeading').each(function(i, e){
-            $(e).next().andSelf().wrapAll('<div class="nobreak">');
+        // remove empty paragraph that editors are adding in order
+        // to have space from heading to the next paragraph
+        var $next_el = $(e).next();
+        if (!$next_el.text().trim().length) {
+            $next_el.remove();
+        }
+        $(e).next().andSelf().wrapAll('<div class="nobreak">');
     });
 
     /* Fix #28298, empty div.pageBreak cause segmentation fault in wkhtmltopdf */
