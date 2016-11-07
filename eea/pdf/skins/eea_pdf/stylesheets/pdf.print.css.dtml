@@ -411,3 +411,7 @@ div[id^="googlechart_table"] .googlechart .google-visualization-table table tr t
 .pdf-collection-item .fiche-section {
   display: none;
 }
+
+h4.figureHeading {
+  margin: 0 0 1.5em 0;
+}

@@ -20,9 +20,9 @@
 <div class="cover">
 
   <div class="cover-header">
-    <span tal:content="context/Type">Content Type</span>
-    <span>|</span>
-    <span tal:content="view/header">Navigation Root Title</span>
+    <span tal:content="context/Type" class="cover-header-type">Content Type</span>
+    <span class="cover-header-separator">|</span>
+    <span tal:content="view/header" class="cover-header-root-title">Navigation Root Title</span>
   </div>
 
   <div class="cover-bellow-header">

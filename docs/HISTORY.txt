@@ -3,6 +3,10 @@ Changelog
 
 7.1.dev0 - (unreleased)
 -----------------------
+* Feature: added css classes for cover-header types
+  [ichim-david refs #78802]
+* Bug fix: fixed figures hidden when placed after featureHeading
+  [ichim-david refs #78802]
 
 7.0 - (2016-10-31)
 ------------------
