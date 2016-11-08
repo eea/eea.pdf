@@ -415,3 +415,8 @@ div[id^="googlechart_table"] .googlechart .google-visualization-table table tr t
 h4.figureHeading {
   margin: 0 0 1.5em 0;
 }
+
+/* avoid small pdf render for external links that might be too long */
+.link-external {
+  word-wrap: break-word;
+}

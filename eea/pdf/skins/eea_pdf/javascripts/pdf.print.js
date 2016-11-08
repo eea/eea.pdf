@@ -28,7 +28,7 @@ $(document).ready(function(){
 
     $content_core.find('.figureHeading').each(function(i, e){
         var $next_el = $(e).next();
-        if ($next_el[0].innerHTML !== "&nbsp;") {
+        if ($next_el.length && $next_el[0].innerHTML === "&nbsp;") {
             $next_el.remove();
         }
         $(e).next().andSelf().wrapAll('<div class="nobreak">');
