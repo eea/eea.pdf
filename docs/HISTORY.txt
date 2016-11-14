@@ -1,8 +1,8 @@
 Changelog
 =========
 
-7.2.dev0 - (unreleased)
------------------------
+7.2 - (2016-11-14)
+------------------
 * Change: word break external-link avoiding thus having a smaller
   pdf render
   [ichim-david refs #78802]
