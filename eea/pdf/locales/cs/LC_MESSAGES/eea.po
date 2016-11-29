@@ -16,283 +16,283 @@ msgstr ""
 
 #: ../../pdf/browser/app/download.py:26
 msgid "* The email is only used for the purpose of sending the PDF. We do not store it for any other use."
-msgstr ""
+msgstr "* E-mail je použit pouze pro účely odeslání PDF. Nechceme uložit ji pro jiné účely."
 
 #: ../../pdf/content/theme.py:52
 msgid "A page template to be used for PDF Back Cover. Leave empty to disable it."
-msgstr ""
+msgstr "Šablona stránky, které mají být použity pro PDF zadní stranu obálky. Nechte prázdné pro vypnutí."
 
 #: ../../pdf/content/theme.py:41
 msgid "A page template to be used for PDF Body. Leave empty to disable it."
-msgstr ""
+msgstr "Šablona stránky, které mají být použity pro PDF orgánu. Nechte prázdné pro vypnutí."
 
 #: ../../pdf/content/theme.py:18
 msgid "A page template to be used for PDF Cover. Leave empty to disable it."
-msgstr ""
+msgstr "Šablona stránky, které mají být použity pro PDF Cover. Nechte prázdné pro vypnutí."
 
 #: ../../pdf/content/theme.py:29
 msgid "A page template to be used for PDF Disclaimer, the first page after PDF cover. Leave empty to disable it."
-msgstr ""
+msgstr "Šablona stránky, které mají být použity pro PDF Disclaimer. Nechte prázdné pro vypnutí."
 
 #: ../../pdf/content/theme.py:74
 msgid "A page template to be used for PDF Footer. Leave empty to disable it."
-msgstr ""
+msgstr "Šablona stránky, které mají být použity pro PDF zápatí. Nechte prázdné pro vypnutí."
 
 #: ../../pdf/content/theme.py:63
 msgid "A page template to be used for PDF Header. Leave empty to disable it."
-msgstr ""
+msgstr "Šablona stránky, které mají být použity pro záhlaví PDF. Nechte prázdné pro vypnutí."
 
 #: ../../pdf/content/theme.py:148
 msgid "Abort PDF export after specified number of seconds. Use zero to disable it."
-msgstr ""
+msgstr "Přerušit exportovat do PDF po zadaném počtu sekund. Použít nula jej zakázat."
 
 #: ../../pdf/content/theme.py:98
 msgid "An XSL page template to be used for PDF Table of contents. Leave empty to disable it."
-msgstr ""
+msgstr "Šablona XSL stránky, které mají být použity pro PDF obsahu. Nechte prázdné pro vypnutí."
 
 #: ../../pdf/browser/app/download.py:112
 msgid "An email will be sent to you when the PDF is ready"
-msgstr ""
+msgstr "E-mail bude zaslán na vás, když je PDF připraven"
 
 #: ../../pdf/browser/zpt/theme.pt:15
 #: ../../pdf/browser/zpt/tool.pt:36
 #: ../../pdf/content/theme.py:158
 msgid "Asynchronous"
-msgstr ""
+msgstr "Asynchronní"
 
 #: ../../pdf/content/theme.py:51
 msgid "Back Cover"
-msgstr ""
+msgstr "Zadní kryt"
 
 #: ../../pdf/content/theme.py:40
 msgid "Body"
-msgstr ""
+msgstr "Tělo"
 
 #: ../../pdf/content/theme.py:17
 msgid "Cover"
-msgstr ""
+msgstr "Pokrýt"
 
 #: ../../pdf/subtypes/schema.py:44
 msgid "Disable PDF export or override theme used to export this content as PDF."
-msgstr ""
+msgstr "Zakázat exportovat do PDF nebo potlačení motiv použitý pro vývoz tohoto obsahu ve formátu PDF."
 
 #: ../../pdf/content/theme.py:28
 msgid "Disclaimer"
-msgstr ""
+msgstr "dementi"
 
 #: ../../pdf/profiles/default/actions.xml
 msgid "Download as PDF"
-msgstr ""
+msgstr "Ke stažení ve formátu PDF"
 
 #: ../../pdf/content/theme.py:132
 msgid "Enable or disable javascript"
-msgstr ""
+msgstr "Povolit nebo zakázat JavaScript"
 
 #: ../../pdf/content/theme.py:86
 msgid "Enable static footer and header html pages. Footer and header templates are evaluated once and then served for every pdf page."
-msgstr ""
+msgstr "Povolit statické zápatí a záhlaví HTML stránky. Zápatí a záhlaví šablony jsou vyhodnocovány jednou a pak sloužil pro každou stránku PDF."
 
 #: ../../pdf/content/theme.py:110
 msgid "Enable table of contents links"
-msgstr ""
+msgstr "Aktivovat Obsah vazeb"
 
 #: ../../pdf/browser/app/download.py:66
 msgid "Enter your email address where to send '${title}' PDF when ready"
-msgstr ""
+msgstr "Zadejte e-mailovou adresu, kam poslat '${title}' PDF, když je připraven"
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Flush"
-msgstr ""
+msgstr "Flush"
 
 #: ../../pdf/browser/zpt/tool.pt:50
 msgid "Flush all PDFs cache for this theme"
-msgstr ""
+msgstr "Flush všechny mezipaměť souborů PDF pro toto téma"
 
 #: ../../pdf/content/theme.py:73
 msgid "Footer"
-msgstr ""
+msgstr "Zápatí"
 
 #: ../../pdf/content/theme.py:159
 msgid "Generate PDF asynchronously and send an email to the user when it's done."
-msgstr ""
+msgstr "Generování PDF asynchronně a poslat e-mail uživateli, když se to dělá."
 
 #: ../../pdf/content/theme.py:62
 msgid "Header"
-msgstr ""
+msgstr "hlavička"
 
 #: ../../pdf/browser/app/download.py:115
 msgid "If you don't have access to your email address check <a href='${link}'>this link</a> in a few ${period}."
-msgstr ""
+msgstr "Pokud nemáte přístup ke svému e-mailová adresa odjezdu <a href='${link}'> tento odkaz </a> v několika ${period}."
 
 #: ../../pdf/content/theme.py:122
 msgid "Images cover collection"
-msgstr ""
+msgstr "Snímky zahrnují sbírku"
 
 #: ../../pdf/cache/behavior.py:21
 msgid "Invalidate latest generated PDF file"
-msgstr ""
+msgstr "Znehodnotit nejnovější vygenerovaný soubor ve formátu PDF"
 
 #: ../../pdf/browser/zpt/tool.pt:38
 #: ../../pdf/content/theme.py:131
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: ../../pdf/content/theme.py:139
 msgid "JavaScript delay"
-msgstr ""
+msgstr "JavaScript zpoždění"
 
 #: ../../pdf/browser/zpt/theme.pt:17
 msgid "Javascript"
-msgstr ""
+msgstr "Javascript"
 
 #: ../../pdf/browser/zpt/theme.pt:19
 #: ../../pdf/browser/zpt/tool.pt:40
 msgid "Javascript delay"
-msgstr ""
+msgstr "Javascript zpoždění"
 
 #: ../../pdf/subtypes/schema.py:134
 msgid "Main cover image that will show up on the pdf cover page"
-msgstr ""
+msgstr "Hlavní kryt obraz, který se objeví na titulní straně pdf"
 
 #: ../../pdf/content/theme.py:191
 msgid "Maximum breadth"
-msgstr ""
+msgstr "Maximální šířka"
 
 #: ../../pdf/content/theme.py:192
 msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Maximální šířka zahrnout děti předměty při generování PDF pro shromažďování nebo folderish obsahových typů."
 
 #: ../../pdf/subtypes/schema.py:108
 msgid "Maximum breadth to include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Maximální šířka zahrnout děti předměty při generování PDF. Ponechte prázdné použít portál globální definovanou hodnotu."
 
 #: ../../pdf/content/theme.py:179
 msgid "Maximum depth"
-msgstr ""
+msgstr "Maximální hloubka"
 
 #: ../../pdf/content/theme.py:180
 msgid "Maximum depth to recursively include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Maximální hloubka rekurzivně obsahovat děti předměty při generování PDF pro shromažďování nebo folderish obsahových typů."
 
 #: ../../pdf/subtypes/schema.py:95
 msgid "Maximum depth to recursively include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Maximální hloubka rekurzivně obsahovat děti předměty při generování PDF. Ponechte prázdné použít portál globální definovanou hodnotu."
 
 #: ../../pdf/content/theme.py:203
 msgid "Maximum items"
-msgstr ""
+msgstr "maximální počet položek"
 
 #: ../../pdf/content/theme.py:169
 msgid "Offset"
-msgstr ""
+msgstr "ofset"
 
 #: ../../pdf/cache/behavior.py:20
 #: ../../pdf/profiles/default/actions.xml
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: ../../pdf/subtypes/schema.py:107
 msgid "PDF Maximum breadth"
-msgstr ""
+msgstr "PDF Maximální šířka"
 
 #: ../../pdf/subtypes/schema.py:94
 msgid "PDF Maximum depth"
-msgstr ""
+msgstr "PDF Maximální hloubka"
 
 #: ../../pdf/subtypes/schema.py:120
 msgid "PDF Maximum items"
-msgstr ""
+msgstr "PDF Maximální počet položek"
 
 #: ../../pdf/subtypes/schema.py:43
 msgid "PDF Theme"
-msgstr ""
+msgstr "PDF Téma"
 
 #: ../../pdf/subtypes/schema.py:133
 msgid "PDF cover main image"
-msgstr ""
+msgstr "PDF cover main image"
 
 #: ../../pdf/content/theme.py:170
 msgid "Page numbering offset within PDF Body."
-msgstr ""
+msgstr "Číslování stránek offset v PDF orgánu."
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Please wait..."
-msgstr ""
+msgstr "Prosím, čekejte..."
 
 #: ../../pdf/content/theme.py:217
 msgid "Portal types"
-msgstr ""
+msgstr "Portál typy"
 
 #: ../../pdf/content/theme.py:227
 msgid "Preview"
-msgstr ""
+msgstr "Náhled"
 
 #: ../../pdf/browser/zpt/download.pt:15
 msgid "Send"
-msgstr ""
+msgstr "Poslat"
 
 #: ../../pdf/content/theme.py:85
 msgid "Static Footer and Header"
-msgstr ""
+msgstr "Statická zápatí a záhlaví"
 
 #: ../../pdf/content/theme.py:97
 msgid "Table of contents"
-msgstr ""
+msgstr "Obsah"
 
 #: ../../pdf/subtypes/schema.py:56
 msgid "Table of contents depth level"
-msgstr ""
+msgstr "Obsah úroveň hloubka"
 
 #: ../../pdf/content/theme.py:109
 msgid "Table of contents links"
-msgstr ""
+msgstr "Obsah odkazy"
 
 #: ../../pdf/browser/zpt/theme.pt:24
 #: ../../pdf/browser/zpt/tool.pt:45
 #: ../../pdf/content/theme.py:147
 msgid "Timeout"
-msgstr ""
+msgstr "Časový limit"
 
 #: ../../pdf/content/theme.py:204
 msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Celková maximální děti položky, které mají být zahrnuty při generování PDF pro shromažďování nebo folderish obsahových typů."
 
 #: ../../pdf/subtypes/schema.py:121
 msgid "Total maximum children items to be includedwhile generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Celková maximální děti položky, které mají být includedwhile vytváření PDF. Ponechte prázdné použít portál globální definovanou hodnotu."
 
 #: ../../pdf/content/theme.py:228
 msgid "Upload a preview image for this theme"
-msgstr ""
+msgstr "Nahrát obrázek náhledu pro toto téma"
 
 #: ../../pdf/content/theme.py:218
 msgid "Use this PDF Theme for the following Portal-Types."
-msgstr ""
+msgstr "Použijte tento PDF téma pro následujících portálového typů."
 
 #: ../../pdf/browser/zpt/theme.pt:13
 #: ../../pdf/browser/zpt/tool.pt:34
 msgid "Used for:"
-msgstr ""
+msgstr "Používá:"
 
 #: ../../pdf/content/theme.py:140
 msgid "Wait some seconds for javascript to finish"
-msgstr ""
+msgstr "Počkejte několik sekund pro javascript až do konce"
 
 #: ../../pdf/subtypes/schema.py:57
 msgid "Which header tags should be taken into consideration for the table of contents."
-msgstr ""
+msgstr "Které záhlaví značky by měly být vzaty v úvahu při obsahu."
 
 #: ../../pdf/content/theme.py:123
 msgid "if cover image not present use a random cover from the collection."
-msgstr ""
+msgstr "pokud Obálka není přítomen použití náhodný kryt z kolekce."
 
 #: ../../pdf/browser/app/download.py:104
 msgid "minutes"
-msgstr ""
+msgstr "zápis"
 
 #: ../../pdf/browser/app/download.py:105
 #: ../../pdf/browser/zpt/theme.pt:22
 #: ../../pdf/browser/zpt/tool.pt:43
 msgid "seconds"
-msgstr ""
+msgstr "sekundy"
 
