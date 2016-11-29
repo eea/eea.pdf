@@ -52,7 +52,7 @@ msgstr ""
 
 #: ../../pdf/browser/app/download.py:112
 msgid "An email will be sent to you when the PDF is ready"
-msgstr ""
+msgstr "Wenn das PDF fertig ist, wird Ihnen eine E-Mail gesendet"
 
 #: ../../pdf/browser/zpt/theme.pt:15
 #: ../../pdf/browser/zpt/tool.pt:36
