@@ -16,283 +16,283 @@ msgstr ""
 
 #: ../../pdf/browser/app/download.py:26
 msgid "* The email is only used for the purpose of sending the PDF. We do not store it for any other use."
-msgstr ""
+msgstr "* Le courrier électronique n'est utilisé que dans le but d 'envoyer le PDF."
 
 #: ../../pdf/content/theme.py:52
 msgid "A page template to be used for PDF Back Cover. Leave empty to disable it."
-msgstr ""
+msgstr "Un modèle de page à utiliser pour la couverture arrière PDF."
 
 #: ../../pdf/content/theme.py:41
 msgid "A page template to be used for PDF Body. Leave empty to disable it."
-msgstr ""
+msgstr "Un modèle de page à utiliser pour le corps du PDF."
 
 #: ../../pdf/content/theme.py:18
 msgid "A page template to be used for PDF Cover. Leave empty to disable it."
-msgstr ""
+msgstr "Un modèle de page à utiliser pour PDF Cover. Laissez vide pour le désactiver."
 
 #: ../../pdf/content/theme.py:29
 msgid "A page template to be used for PDF Disclaimer, the first page after PDF cover. Leave empty to disable it."
-msgstr ""
+msgstr "Un modèle de page à utiliser pour la clause de non - responsabilité PDF, la première page après la."
 
 #: ../../pdf/content/theme.py:74
 msgid "A page template to be used for PDF Footer. Leave empty to disable it."
-msgstr ""
+msgstr "Un modèle de page à utiliser pour PDF Footer. Laissez vide pour le désactiver."
 
 #: ../../pdf/content/theme.py:63
 msgid "A page template to be used for PDF Header. Leave empty to disable it."
-msgstr ""
+msgstr "Un modèle de page à utiliser pour l 'en - tête PDF."
 
 #: ../../pdf/content/theme.py:148
 msgid "Abort PDF export after specified number of seconds. Use zero to disable it."
-msgstr ""
+msgstr "Annuler l 'exportation de PDF après le nombre spécifié de secondes."
 
 #: ../../pdf/content/theme.py:98
 msgid "An XSL page template to be used for PDF Table of contents. Leave empty to disable it."
-msgstr ""
+msgstr "Un modèle de page XSL à utiliser pour la table des matières PDF."
 
 #: ../../pdf/browser/app/download.py:112
 msgid "An email will be sent to you when the PDF is ready"
-msgstr ""
+msgstr "Un email vous sera envoyé lorsque le PDF sera prêt"
 
 #: ../../pdf/browser/zpt/theme.pt:15
 #: ../../pdf/browser/zpt/tool.pt:36
 #: ../../pdf/content/theme.py:158
 msgid "Asynchronous"
-msgstr ""
+msgstr "Asynchrone"
 
 #: ../../pdf/content/theme.py:51
 msgid "Back Cover"
-msgstr ""
+msgstr "Couverture arrière"
 
 #: ../../pdf/content/theme.py:40
 msgid "Body"
-msgstr ""
+msgstr "Corps"
 
 #: ../../pdf/content/theme.py:17
 msgid "Cover"
-msgstr ""
+msgstr "Couverture"
 
 #: ../../pdf/subtypes/schema.py:44
 msgid "Disable PDF export or override theme used to export this content as PDF."
-msgstr ""
+msgstr "Désactiver le thème d 'exportation ou de remplacement de PDF utilisé pour exporter ce contenu en."
 
 #: ../../pdf/content/theme.py:28
 msgid "Disclaimer"
-msgstr ""
+msgstr "Disclaimer"
 
 #: ../../pdf/profiles/default/actions.xml
 msgid "Download as PDF"
-msgstr ""
+msgstr "Télécharger en PDF"
 
 #: ../../pdf/content/theme.py:132
 msgid "Enable or disable javascript"
-msgstr ""
+msgstr "Activer ou désactiver javascript"
 
 #: ../../pdf/content/theme.py:86
 msgid "Enable static footer and header html pages. Footer and header templates are evaluated once and then served for every pdf page."
-msgstr ""
+msgstr "Les pages de bas de page statiques et d 'en - tête sont évaluées une fois, puis servies pour chaque page pdf."
 
 #: ../../pdf/content/theme.py:110
 msgid "Enable table of contents links"
-msgstr ""
+msgstr "Activer les liens de la table des matières"
 
 #: ../../pdf/browser/app/download.py:66
 msgid "Enter your email address where to send '${title}' PDF when ready"
-msgstr ""
+msgstr "Entrez votre adresse de courriel où envoyer '${title}' PDF quand vous êtes prêt"
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Flush"
-msgstr ""
+msgstr "Flush"
 
 #: ../../pdf/browser/zpt/tool.pt:50
 msgid "Flush all PDFs cache for this theme"
-msgstr ""
+msgstr "Effacer tous les fichiers PDF cache pour ce thème"
 
 #: ../../pdf/content/theme.py:73
 msgid "Footer"
-msgstr ""
+msgstr "Pied de page"
 
 #: ../../pdf/content/theme.py:159
 msgid "Generate PDF asynchronously and send an email to the user when it's done."
-msgstr ""
+msgstr "Générer PDF asynchrone et envoyer un email à l 'utilisateur quand il est fait."
 
 #: ../../pdf/content/theme.py:62
 msgid "Header"
-msgstr ""
+msgstr "En - tête"
 
 #: ../../pdf/browser/app/download.py:115
 msgid "If you don't have access to your email address check <a href='${link}'>this link</a> in a few ${period}."
-msgstr ""
+msgstr "Si vous n'avez pas accès à votre adresse email, cochez <a href='${link}'> ce lien </a> dans quelques ${period}."
 
 #: ../../pdf/content/theme.py:122
 msgid "Images cover collection"
-msgstr ""
+msgstr "Capture d 'images"
 
 #: ../../pdf/cache/behavior.py:21
 msgid "Invalidate latest generated PDF file"
-msgstr ""
+msgstr "Invalider le dernier fichier PDF généré"
 
 #: ../../pdf/browser/zpt/tool.pt:38
 #: ../../pdf/content/theme.py:131
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: ../../pdf/content/theme.py:139
 msgid "JavaScript delay"
-msgstr ""
+msgstr "Retard de JavaScript"
 
 #: ../../pdf/browser/zpt/theme.pt:17
 msgid "Javascript"
-msgstr ""
+msgstr "Javascript"
 
 #: ../../pdf/browser/zpt/theme.pt:19
 #: ../../pdf/browser/zpt/tool.pt:40
 msgid "Javascript delay"
-msgstr ""
+msgstr "Retard de Javascript"
 
 #: ../../pdf/subtypes/schema.py:134
 msgid "Main cover image that will show up on the pdf cover page"
-msgstr ""
+msgstr "Image de couverture principale qui apparaîtra sur la page de couverture du pdf"
 
 #: ../../pdf/content/theme.py:191
 msgid "Maximum breadth"
-msgstr ""
+msgstr "Largeur maximale"
 
 #: ../../pdf/content/theme.py:192
 msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Largeur maximale pour inclure des éléments enfants tout en générant du PDF pour la collection ou les types de contenu folderish."
 
 #: ../../pdf/subtypes/schema.py:108
 msgid "Maximum breadth to include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Largeur maximale pour inclure des éléments enfants tout en générant du PDF. Laissez - le vide pour utiliser la valeur définie globale du portail."
 
 #: ../../pdf/content/theme.py:179
 msgid "Maximum depth"
-msgstr ""
+msgstr "Profondeur maximale"
 
 #: ../../pdf/content/theme.py:180
 msgid "Maximum depth to recursively include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Profondeur maximale pour inclure récursivement des éléments enfants tout en générant des fichiers PDF pour la collection ou des types de contenu folderish."
 
 #: ../../pdf/subtypes/schema.py:95
 msgid "Maximum depth to recursively include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "La profondeur maximale pour inclure récursivement les éléments enfants tout en générant PDF. Laissez vide pour utiliser la valeur définie globale du portail."
 
 #: ../../pdf/content/theme.py:203
 msgid "Maximum items"
-msgstr ""
+msgstr "Maximum d 'éléments"
 
 #: ../../pdf/content/theme.py:169
 msgid "Offset"
-msgstr ""
+msgstr "Offset"
 
 #: ../../pdf/cache/behavior.py:20
 #: ../../pdf/profiles/default/actions.xml
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: ../../pdf/subtypes/schema.py:107
 msgid "PDF Maximum breadth"
-msgstr ""
+msgstr "Largeur maximale du PDF"
 
 #: ../../pdf/subtypes/schema.py:94
 msgid "PDF Maximum depth"
-msgstr ""
+msgstr "Profondeur maximale du PDF"
 
 #: ../../pdf/subtypes/schema.py:120
 msgid "PDF Maximum items"
-msgstr ""
+msgstr "Articles maximum PDF"
 
 #: ../../pdf/subtypes/schema.py:43
 msgid "PDF Theme"
-msgstr ""
+msgstr "Thème PDF"
 
 #: ../../pdf/subtypes/schema.py:133
 msgid "PDF cover main image"
-msgstr ""
+msgstr "Image principale de la couverture PDF"
 
 #: ../../pdf/content/theme.py:170
 msgid "Page numbering offset within PDF Body."
-msgstr ""
+msgstr "Décalage de numérotation de page dans le corps du PDF."
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Please wait..."
-msgstr ""
+msgstr "Veuillez patienter..."
 
 #: ../../pdf/content/theme.py:217
 msgid "Portal types"
-msgstr ""
+msgstr "Types de portail"
 
 #: ../../pdf/content/theme.py:227
 msgid "Preview"
-msgstr ""
+msgstr "Aperçu"
 
 #: ../../pdf/browser/zpt/download.pt:15
 msgid "Send"
-msgstr ""
+msgstr "Envoyer"
 
 #: ../../pdf/content/theme.py:85
 msgid "Static Footer and Header"
-msgstr ""
+msgstr "Pied de page statique et en - tête"
 
 #: ../../pdf/content/theme.py:97
 msgid "Table of contents"
-msgstr ""
+msgstr "Table des matières"
 
 #: ../../pdf/subtypes/schema.py:56
 msgid "Table of contents depth level"
-msgstr ""
+msgstr "Niveau de profondeur de la table des matières"
 
 #: ../../pdf/content/theme.py:109
 msgid "Table of contents links"
-msgstr ""
+msgstr "Liens de la table des matières"
 
 #: ../../pdf/browser/zpt/theme.pt:24
 #: ../../pdf/browser/zpt/tool.pt:45
 #: ../../pdf/content/theme.py:147
 msgid "Timeout"
-msgstr ""
+msgstr "Temps d 'attente"
 
 #: ../../pdf/content/theme.py:204
 msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Total maximum d 'éléments enfants à inclure lors de la génération de PDF pour la collection ou les types de contenu folderish."
 
 #: ../../pdf/subtypes/schema.py:121
 msgid "Total maximum children items to be includedwhile generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Total maximum d 'éléments enfants à inclure pendant la génération de PDF. Laisser vide pour utiliser la valeur définie globale du portail."
 
 #: ../../pdf/content/theme.py:228
 msgid "Upload a preview image for this theme"
-msgstr ""
+msgstr "Importer une image de prévisualisation pour ce thème"
 
 #: ../../pdf/content/theme.py:218
 msgid "Use this PDF Theme for the following Portal-Types."
-msgstr ""
+msgstr "Utiliser ce thème PDF pour les types de portail suivants"
 
 #: ../../pdf/browser/zpt/theme.pt:13
 #: ../../pdf/browser/zpt/tool.pt:34
 msgid "Used for:"
-msgstr ""
+msgstr "Utilisé pour:"
 
 #: ../../pdf/content/theme.py:140
 msgid "Wait some seconds for javascript to finish"
-msgstr ""
+msgstr "Attendre quelques secondes pour que javascript finisse"
 
 #: ../../pdf/subtypes/schema.py:57
 msgid "Which header tags should be taken into consideration for the table of contents."
-msgstr ""
+msgstr "Quelles balises d 'en - tête doivent être prises en compte pour la table des matières."
 
 #: ../../pdf/content/theme.py:123
 msgid "if cover image not present use a random cover from the collection."
-msgstr ""
+msgstr "si l 'image de couverture n'est pas présente, utilisez une couverture aléatoire de la collection."
 
 #: ../../pdf/browser/app/download.py:104
 msgid "minutes"
-msgstr ""
+msgstr "minutes"
 
 #: ../../pdf/browser/app/download.py:105
 #: ../../pdf/browser/zpt/theme.pt:22
 #: ../../pdf/browser/zpt/tool.pt:43
 msgid "seconds"
-msgstr ""
+msgstr "secondes"
 
