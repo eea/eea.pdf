@@ -16,43 +16,43 @@ msgstr ""
 
 #: ../../pdf/browser/app/download.py:26
 msgid "* The email is only used for the purpose of sending the PDF. We do not store it for any other use."
-msgstr ""
+msgstr "* ePosta PDF igortzeko helburuarekin erabiliko da. Guk ez dugu gordetzeko beste edozein erabilpenerako."
 
 #: ../../pdf/content/theme.py:52
 msgid "A page template to be used for PDF Back Cover. Leave empty to disable it."
-msgstr ""
+msgstr "Orri template A to Utzi hutsik desgaitzeko PDF Back Cover erabiliko da.."
 
 #: ../../pdf/content/theme.py:41
 msgid "A page template to be used for PDF Body. Leave empty to disable it."
-msgstr ""
+msgstr "Orri template A to Utzi hutsik desgaitzeko PDF Body erabiliko da.."
 
 #: ../../pdf/content/theme.py:18
 msgid "A page template to be used for PDF Cover. Leave empty to disable it."
-msgstr ""
+msgstr "Orri template A to Utzi hutsik desgaitzeko PDF Azal erabiliko da.."
 
 #: ../../pdf/content/theme.py:29
 msgid "A page template to be used for PDF Disclaimer, the first page after PDF cover. Leave empty to disable it."
-msgstr ""
+msgstr "Orri template A to Utzi hutsik desgaitzeko PDF Ezespena, PDF estalkia ondoren lehenengo orrialdean erabiliko da.."
 
 #: ../../pdf/content/theme.py:74
 msgid "A page template to be used for PDF Footer. Leave empty to disable it."
-msgstr ""
+msgstr "Orri template A to Utzi hutsik desgaitzeko PDF Orri oina erabiliko da.."
 
 #: ../../pdf/content/theme.py:63
 msgid "A page template to be used for PDF Header. Leave empty to disable it."
-msgstr ""
+msgstr "Orri template A to Utzi hutsik desgaitzeko PDF Goiburuko erabiliko da.."
 
 #: ../../pdf/content/theme.py:148
 msgid "Abort PDF export after specified number of seconds. Use zero to disable it."
-msgstr ""
+msgstr "Abortatu PDF export segundo kopurua zehaztu ondoren. Erabili zero desgaitzeko."
 
 #: ../../pdf/content/theme.py:98
 msgid "An XSL page template to be used for PDF Table of contents. Leave empty to disable it."
-msgstr ""
+msgstr "XSL orri txantiloi batera Utzi hutsik desgaitzeko PDF Edukien taula erabili behar den.."
 
 #: ../../pdf/browser/app/download.py:112
 msgid "An email will be sent to you when the PDF is ready"
-msgstr ""
+msgstr "mezu elektronikoa bidaliko den PDF prest dago"
 
 #: ../../pdf/browser/zpt/theme.pt:15
 #: ../../pdf/browser/zpt/tool.pt:36
@@ -62,237 +62,237 @@ msgstr ""
 
 #: ../../pdf/content/theme.py:51
 msgid "Back Cover"
-msgstr ""
+msgstr "Back Cover"
 
 #: ../../pdf/content/theme.py:40
 msgid "Body"
-msgstr ""
+msgstr "Gorputza"
 
 #: ../../pdf/content/theme.py:17
 msgid "Cover"
-msgstr ""
+msgstr "azaleko"
 
 #: ../../pdf/subtypes/schema.py:44
 msgid "Disable PDF export or override theme used to export this content as PDF."
-msgstr ""
+msgstr "Disable PDF esportatzeko edo jaramonik edukia PDF gisa esportatzeko erabiltzen den gaia."
 
 #: ../../pdf/content/theme.py:28
 msgid "Disclaimer"
-msgstr ""
+msgstr "Lege-oharra"
 
 #: ../../pdf/profiles/default/actions.xml
 msgid "Download as PDF"
-msgstr ""
+msgstr "Deskarga PDF gisa"
 
 #: ../../pdf/content/theme.py:132
 msgid "Enable or disable javascript"
-msgstr ""
+msgstr "Gaitu edo desgaitu javascript"
 
 #: ../../pdf/content/theme.py:86
 msgid "Enable static footer and header html pages. Footer and header templates are evaluated once and then served for every pdf page."
-msgstr ""
+msgstr "Gaitu estatiko footer eta goiburua html orriak oina. eta goiburua templates behin ebaluatuko dira eta, ondoren, pdf orri guztietan zerbitzatzen."
 
 #: ../../pdf/content/theme.py:110
 msgid "Enable table of contents links"
-msgstr ""
+msgstr "Gaitu edukiak estekak taula"
 
 #: ../../pdf/browser/app/download.py:66
 msgid "Enter your email address where to send '${title}' PDF when ready"
-msgstr ""
+msgstr "Sartu zure posta elektronikoaren helbidea non bidaltzeko '${title}' PDF, prest"
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Flush"
-msgstr ""
+msgstr "Hustu"
 
 #: ../../pdf/browser/zpt/tool.pt:50
 msgid "Flush all PDFs cache for this theme"
-msgstr ""
+msgstr "Hustu PDFei guztiak itxura horren cache"
 
 #: ../../pdf/content/theme.py:73
 msgid "Footer"
-msgstr ""
+msgstr "Orri-oina"
 
 #: ../../pdf/content/theme.py:159
 msgid "Generate PDF asynchronously and send an email to the user when it's done."
-msgstr ""
+msgstr "Sortu PDF asinkronikoki eta bidali mezu bat erabiltzailearen denean egiten da."
 
 #: ../../pdf/content/theme.py:62
 msgid "Header"
-msgstr ""
+msgstr "Goiburuko"
 
 #: ../../pdf/browser/app/download.py:115
 msgid "If you don't have access to your email address check <a href='${link}'>this link</a> in a few ${period}."
-msgstr ""
+msgstr "Ez baduzu, zure helbide elektronikoa check <a href='${link}'> esteka batzuk $ a} {epea ere </a> hori dutenak."
 
 #: ../../pdf/content/theme.py:122
 msgid "Images cover collection"
-msgstr ""
+msgstr "Irudiak estaltzeko bilduma"
 
 #: ../../pdf/cache/behavior.py:21
 msgid "Invalidate latest generated PDF file"
-msgstr ""
+msgstr "baliogabetzeko azken sortutako PDF fitxategia"
 
 #: ../../pdf/browser/zpt/tool.pt:38
 #: ../../pdf/content/theme.py:131
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: ../../pdf/content/theme.py:139
 msgid "JavaScript delay"
-msgstr ""
+msgstr "JavaScript atzerapena"
 
 #: ../../pdf/browser/zpt/theme.pt:17
 msgid "Javascript"
-msgstr ""
+msgstr "Javascript"
 
 #: ../../pdf/browser/zpt/theme.pt:19
 #: ../../pdf/browser/zpt/tool.pt:40
 msgid "Javascript delay"
-msgstr ""
+msgstr "Javascript atzerapena"
 
 #: ../../pdf/subtypes/schema.py:134
 msgid "Main cover image that will show up on the pdf cover page"
-msgstr ""
+msgstr "Main azaleko irudi hori agertuko da pdf cover orrian"
 
 #: ../../pdf/content/theme.py:191
 msgid "Maximum breadth"
-msgstr ""
+msgstr "Main azaleko irudi hori agertuko da pdf cover orrian"
 
 #: ../../pdf/content/theme.py:192
 msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Gehienezko zabalera haurrak elementuak, besteak beste, berriz, bilketa edo folderish eduki-mota for PDF sortuz."
 
 #: ../../pdf/subtypes/schema.py:108
 msgid "Maximum breadth to include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Gehienezko zabalera haurrentzako besteak beste elementuak PDF sortuz bitartean. Utzi portaleko definitutako balioa erabili hutsa da."
 
 #: ../../pdf/content/theme.py:179
 msgid "Maximum depth"
-msgstr ""
+msgstr "Gehienezko sakonera"
 
 #: ../../pdf/content/theme.py:180
 msgid "Maximum depth to recursively include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Gehienezko sakonera errekurtsiboki besteak beste, haur elementuak, berriz, bilketa edo folderish eduki-mota for PDF sortuz."
 
 #: ../../pdf/subtypes/schema.py:95
 msgid "Maximum depth to recursively include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Gehienezko sakonera errekurtsiboki besteak beste, haur elementuak berriz PDF sortuz. Utzi portaleko definitutako balioa erabili hutsa da."
 
 #: ../../pdf/content/theme.py:203
 msgid "Maximum items"
-msgstr ""
+msgstr "Gehienezko Elementu"
 
 #: ../../pdf/content/theme.py:169
 msgid "Offset"
-msgstr ""
+msgstr "Desplazamendua"
 
 #: ../../pdf/cache/behavior.py:20
 #: ../../pdf/profiles/default/actions.xml
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: ../../pdf/subtypes/schema.py:107
 msgid "PDF Maximum breadth"
-msgstr ""
+msgstr "PDF Gehienezko zabalera"
 
 #: ../../pdf/subtypes/schema.py:94
 msgid "PDF Maximum depth"
-msgstr ""
+msgstr "PDF Gehienezko sakonera"
 
 #: ../../pdf/subtypes/schema.py:120
 msgid "PDF Maximum items"
-msgstr ""
+msgstr "Gehienezko PDF elementuak"
 
 #: ../../pdf/subtypes/schema.py:43
 msgid "PDF Theme"
-msgstr ""
+msgstr "PDF Theme"
 
 #: ../../pdf/subtypes/schema.py:133
 msgid "PDF cover main image"
-msgstr ""
+msgstr "PDF estaltzeko irudi nagusia"
 
 #: ../../pdf/content/theme.py:170
 msgid "Page numbering offset within PDF Body."
-msgstr ""
+msgstr "Page zenbakitze PDF Body barruan konpentsatzeko."
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Please wait..."
-msgstr ""
+msgstr "Mesedez itxaron..."
 
 #: ../../pdf/content/theme.py:217
 msgid "Portal types"
-msgstr ""
+msgstr "Portal mota"
 
 #: ../../pdf/content/theme.py:227
 msgid "Preview"
-msgstr ""
+msgstr "Aurrebista"
 
 #: ../../pdf/browser/zpt/download.pt:15
 msgid "Send"
-msgstr ""
+msgstr "Bidali"
 
 #: ../../pdf/content/theme.py:85
 msgid "Static Footer and Header"
-msgstr ""
+msgstr "Orri-oina estatikoa eta Header"
 
 #: ../../pdf/content/theme.py:97
 msgid "Table of contents"
-msgstr ""
+msgstr "Edukien taula"
 
 #: ../../pdf/subtypes/schema.py:56
 msgid "Table of contents depth level"
-msgstr ""
+msgstr "edukiak sakonera maila aurkibidea"
 
 #: ../../pdf/content/theme.py:109
 msgid "Table of contents links"
-msgstr ""
+msgstr "edukien loturen Table"
 
 #: ../../pdf/browser/zpt/theme.pt:24
 #: ../../pdf/browser/zpt/tool.pt:45
 #: ../../pdf/content/theme.py:147
 msgid "Timeout"
-msgstr ""
+msgstr "Timeout"
 
 #: ../../pdf/content/theme.py:204
 msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Guztira gehienez haurrak elementuak sartuko den bitartean bilketa edo folderish eduki-mota for PDF sortuz"
 
 #: ../../pdf/subtypes/schema.py:121
 msgid "Total maximum children items to be includedwhile generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Guztira gehienez haurrak elementuak PDF sortzen includedwhile izan. Utzi portaleko definitutako balioa erabili hutsa da."
 
 #: ../../pdf/content/theme.py:228
 msgid "Upload a preview image for this theme"
-msgstr ""
+msgstr "Igo Aurreikuspen irudi bat gai honetan"
 
 #: ../../pdf/content/theme.py:218
 msgid "Use this PDF Theme for the following Portal-Types."
-msgstr ""
+msgstr "Erabili PDF Theme honek jarraian Portal-motak da."
 
 #: ../../pdf/browser/zpt/theme.pt:13
 #: ../../pdf/browser/zpt/tool.pt:34
 msgid "Used for:"
-msgstr ""
+msgstr "erabiltzen da:"
 
 #: ../../pdf/content/theme.py:140
 msgid "Wait some seconds for javascript to finish"
-msgstr ""
+msgstr "Itxaron segundo batzuk javascript amaitzeko"
 
 #: ../../pdf/subtypes/schema.py:57
 msgid "Which header tags should be taken into consideration for the table of contents."
-msgstr ""
+msgstr "Zein goiburua tags behar dira kontuan eduki-taula da."
 
 #: ../../pdf/content/theme.py:123
 msgid "if cover image not present use a random cover from the collection."
-msgstr ""
+msgstr "Azaleko irudia ez dauden erabilera bildumako ausazko estalki bat bada."
 
 #: ../../pdf/browser/app/download.py:104
 msgid "minutes"
-msgstr ""
+msgstr "minutu"
 
 #: ../../pdf/browser/app/download.py:105
 #: ../../pdf/browser/zpt/theme.pt:22
 #: ../../pdf/browser/zpt/tool.pt:43
 msgid "seconds"
-msgstr ""
+msgstr "segundotan"
 
