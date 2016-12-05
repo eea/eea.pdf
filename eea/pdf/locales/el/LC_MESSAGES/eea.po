@@ -280,8 +280,7 @@ msgstr "Περιμένετε μερικά δευτερόλεπτα για τη j
 
 #: ../../pdf/subtypes/schema.py:57
 msgid "Which header tags should be taken into consideration for the table of contents."
-msgstr "θα πρέπει να ληφθεί υπόψη ποιες ετικέτες κεφαλίδα για τον πίνακα περιεχομένων.
-"
+msgstr "θα πρέπει να ληφθεί υπόψη ποιες ετικέτες κεφαλίδα για τον πίνακα περιεχομένων."
 
 #: ../../pdf/content/theme.py:123
 msgid "if cover image not present use a random cover from the collection."
@@ -296,4 +295,3 @@ msgstr "λεπτά"
 #: ../../pdf/browser/zpt/tool.pt:43
 msgid "seconds"
 msgstr "δευτερόλεπτα"
-
