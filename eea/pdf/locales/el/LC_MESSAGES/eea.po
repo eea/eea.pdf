@@ -16,283 +16,284 @@ msgstr ""
 
 #: ../../pdf/browser/app/download.py:26
 msgid "* The email is only used for the purpose of sending the PDF. We do not store it for any other use."
-msgstr ""
+msgstr "* Το email χρησιμοποιείται μόνο για το σκοπό της αποστολής του PDF. Εμείς δεν πρέπει να φυλάσσεται για οποιαδήποτε άλλη χρήση."
 
 #: ../../pdf/content/theme.py:52
 msgid "A page template to be used for PDF Back Cover. Leave empty to disable it."
-msgstr ""
+msgstr "Ένα πρότυπο σελίδας που θα χρησιμοποιηθεί για PDF Back Cover. Αφήστε το κενό για να το απενεργοποιήσετε."
 
 #: ../../pdf/content/theme.py:41
 msgid "A page template to be used for PDF Body. Leave empty to disable it."
-msgstr ""
+msgstr "Ένα πρότυπο σελίδας που θα χρησιμοποιηθεί για PDF σώματος. Αφήστε το κενό για να το απενεργοποιήσετε."
 
 #: ../../pdf/content/theme.py:18
 msgid "A page template to be used for PDF Cover. Leave empty to disable it."
-msgstr ""
+msgstr "Ένα πρότυπο σελίδας που θα χρησιμοποιηθεί για την κάλυψη PDF. Αφήστε το κενό για να το απενεργοποιήσετε."
 
 #: ../../pdf/content/theme.py:29
 msgid "A page template to be used for PDF Disclaimer, the first page after PDF cover. Leave empty to disable it."
-msgstr ""
+msgstr "Ένα πρότυπο σελίδας που θα χρησιμοποιηθεί για PDF Αποποίηση. Αφήστε το κενό για να το απενεργοποιήσετε."
 
 #: ../../pdf/content/theme.py:74
 msgid "A page template to be used for PDF Footer. Leave empty to disable it."
-msgstr ""
+msgstr "Ένα πρότυπο σελίδας που θα χρησιμοποιηθεί για PDF Υποσέλιδο. Αφήστε το κενό για να το απενεργοποιήσετε."
 
 #: ../../pdf/content/theme.py:63
 msgid "A page template to be used for PDF Header. Leave empty to disable it."
-msgstr ""
+msgstr "Ένα πρότυπο σελίδας που θα χρησιμοποιηθεί για Header PDF. Αφήστε το κενό για να το απενεργοποιήσετε."
 
 #: ../../pdf/content/theme.py:148
 msgid "Abort PDF export after specified number of seconds. Use zero to disable it."
-msgstr ""
+msgstr "Ματαίωση εξαγωγή PDF μετά από καθορισμένο αριθμό δευτερολέπτων. Χρησιμοποιήστε μηδέν για να την απενεργοποιήσετε."
 
 #: ../../pdf/content/theme.py:98
 msgid "An XSL page template to be used for PDF Table of contents. Leave empty to disable it."
-msgstr ""
+msgstr "Ένα πρότυπο σελίδας XSL που θα χρησιμοποιηθούν για PDF Πίνακας περιεχομένων. Αφήστε το κενό για να το απενεργοποιήσετε."
 
 #: ../../pdf/browser/app/download.py:112
 msgid "An email will be sent to you when the PDF is ready"
-msgstr ""
+msgstr "Ένα μήνυμα ηλεκτρονικού ταχυδρομείου θα σταλεί σε σας όταν το PDF είναι έτοιμο"
 
 #: ../../pdf/browser/zpt/theme.pt:15
 #: ../../pdf/browser/zpt/tool.pt:36
 #: ../../pdf/content/theme.py:158
 msgid "Asynchronous"
-msgstr ""
+msgstr "ασύγχρονη"
 
 #: ../../pdf/content/theme.py:51
 msgid "Back Cover"
-msgstr ""
+msgstr "Πίσω κάλυμμα"
 
 #: ../../pdf/content/theme.py:40
 msgid "Body"
-msgstr ""
+msgstr "Σώμα"
 
 #: ../../pdf/content/theme.py:17
 msgid "Cover"
-msgstr ""
+msgstr "Κάλυμμα"
 
 #: ../../pdf/subtypes/schema.py:44
 msgid "Disable PDF export or override theme used to export this content as PDF."
-msgstr ""
+msgstr "Απενεργοποίηση PDF εξαγωγή ή θέμα παράκαμψης χρησιμοποιούνται για την εξαγωγή αυτού του περιεχομένου σε μορφή PDF."
 
 #: ../../pdf/content/theme.py:28
 msgid "Disclaimer"
-msgstr ""
+msgstr "Αποποίηση ευθυνών"
 
 #: ../../pdf/profiles/default/actions.xml
 msgid "Download as PDF"
-msgstr ""
+msgstr "Λήψη ως PDF"
 
 #: ../../pdf/content/theme.py:132
 msgid "Enable or disable javascript"
-msgstr ""
+msgstr "Ενεργοποίηση ή απενεργοποίηση javascript"
 
 #: ../../pdf/content/theme.py:86
 msgid "Enable static footer and header html pages. Footer and header templates are evaluated once and then served for every pdf page."
-msgstr ""
+msgstr "Ενεργοποίηση στατικές σελίδες footer και HTML κεφαλίδα. Οι Τελικοί και κεφαλίδα πρότυπα αξιολογούνται μια φορά και στη συνέχεια υπηρέτησε για κάθε σελίδα pdf."
 
 #: ../../pdf/content/theme.py:110
 msgid "Enable table of contents links"
-msgstr ""
+msgstr "Ενεργοποίηση πίνακα περιεχομένων συνδέσεις"
 
 #: ../../pdf/browser/app/download.py:66
 msgid "Enter your email address where to send '${title}' PDF when ready"
-msgstr ""
+msgstr "Εισάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας, όπου για να στείλετε '${title}' PDF όταν είναι έτοιμο"
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Flush"
-msgstr ""
+msgstr "Ξεπλύνετε"
 
 #: ../../pdf/browser/zpt/tool.pt:50
 msgid "Flush all PDFs cache for this theme"
-msgstr ""
+msgstr "Ξεπλύνετε όλα τα αρχεία PDF cache για αυτό το θέμα"
 
 #: ../../pdf/content/theme.py:73
 msgid "Footer"
-msgstr ""
+msgstr "υποσέλιδο"
 
 #: ../../pdf/content/theme.py:159
 msgid "Generate PDF asynchronously and send an email to the user when it's done."
-msgstr ""
+msgstr "Δημιουργήστε PDF ασύγχρονα και να στείλετε ένα e-mail στον χρήστη όταν το κάνει."
 
 #: ../../pdf/content/theme.py:62
 msgid "Header"
-msgstr ""
+msgstr "Επί κεφαλής"
 
 #: ../../pdf/browser/app/download.py:115
 msgid "If you don't have access to your email address check <a href='${link}'>this link</a> in a few ${period}."
-msgstr ""
+msgstr "Αν δεν έχετε πρόσβαση στη διεύθυνση ηλεκτρονικού ταχυδρομείου <a επιταγή σας href='${link}'> αυτό το σύνδεσμο </a> σε λίγες ${period}."
 
 #: ../../pdf/content/theme.py:122
 msgid "Images cover collection"
-msgstr ""
+msgstr "Εικόνες κάλυψη των δαπανών είσπραξης"
 
 #: ../../pdf/cache/behavior.py:21
 msgid "Invalidate latest generated PDF file"
-msgstr ""
+msgstr "Ακυρώνει τελευταία παραγόμενο αρχείο PDF"
 
 #: ../../pdf/browser/zpt/tool.pt:38
 #: ../../pdf/content/theme.py:131
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: ../../pdf/content/theme.py:139
 msgid "JavaScript delay"
-msgstr ""
+msgstr "JavaScript καθυστέρηση"
 
 #: ../../pdf/browser/zpt/theme.pt:17
 msgid "Javascript"
-msgstr ""
+msgstr "Javascript"
 
 #: ../../pdf/browser/zpt/theme.pt:19
 #: ../../pdf/browser/zpt/tool.pt:40
 msgid "Javascript delay"
-msgstr ""
+msgstr "Javascript καθυστέρηση"
 
 #: ../../pdf/subtypes/schema.py:134
 msgid "Main cover image that will show up on the pdf cover page"
-msgstr ""
+msgstr "Κύριο κάλυμμα εικόνα που θα εμφανίζεται στο εξώφυλλο pdf"
 
 #: ../../pdf/content/theme.py:191
 msgid "Maximum breadth"
-msgstr ""
+msgstr "μέγιστο πλάτος"
 
 #: ../../pdf/content/theme.py:192
 msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Μέγιστο πλάτος ώστε να συμπεριλάβει τα παιδιά αντικείμενα κατά τη δημιουργία PDF για τη συλλογή ή folderish περιεχόμενο τύπους."
 
 #: ../../pdf/subtypes/schema.py:108
 msgid "Maximum breadth to include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Μέγιστο πλάτος ώστε να συμπεριλάβει τα παιδιά αντικείμενα κατά τη δημιουργία PDF. Αφήστε το κενό για να χρησιμοποιήσετε την πύλη της παγκόσμιας καθορισμένη τιμή."
 
 #: ../../pdf/content/theme.py:179
 msgid "Maximum depth"
-msgstr ""
+msgstr "μέγιστο βάθος"
 
 #: ../../pdf/content/theme.py:180
 msgid "Maximum depth to recursively include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Μέγιστο βάθος για να συμπεριλάβει αναδρομικά τα παιδιά αντικείμενα κατά τη δημιουργία PDF για τη συλλογή ή folderish περιεχόμενο τύπους."
 
 #: ../../pdf/subtypes/schema.py:95
 msgid "Maximum depth to recursively include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Μέγιστο βάθος για να συμπεριλάβει αναδρομικά τα παιδιά αντικείμενα κατά τη δημιουργία PDF. Αφήστε το κενό για να χρησιμοποιήσετε την πύλη της παγκόσμιας καθορισμένη τιμή."
 
 #: ../../pdf/content/theme.py:203
 msgid "Maximum items"
-msgstr ""
+msgstr "μέγιστη στοιχεία"
 
 #: ../../pdf/content/theme.py:169
 msgid "Offset"
-msgstr ""
+msgstr "Όφσετ"
 
 #: ../../pdf/cache/behavior.py:20
 #: ../../pdf/profiles/default/actions.xml
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: ../../pdf/subtypes/schema.py:107
 msgid "PDF Maximum breadth"
-msgstr ""
+msgstr "PDF μέγιστο πλάτος"
 
 #: ../../pdf/subtypes/schema.py:94
 msgid "PDF Maximum depth"
-msgstr ""
+msgstr "PDF Μέγιστο βάθος"
 
 #: ../../pdf/subtypes/schema.py:120
 msgid "PDF Maximum items"
-msgstr ""
+msgstr "στοιχεία PDF Μέγιστη"
 
 #: ../../pdf/subtypes/schema.py:43
 msgid "PDF Theme"
-msgstr ""
+msgstr "PDF Θέμα"
 
 #: ../../pdf/subtypes/schema.py:133
 msgid "PDF cover main image"
-msgstr ""
+msgstr "PDF κάλυμμα κύρια εικόνα"
 
 #: ../../pdf/content/theme.py:170
 msgid "Page numbering offset within PDF Body."
-msgstr ""
+msgstr "αρίθμηση των σελίδων offset μέσα PDF σώματος."
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Please wait..."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε..."
 
 #: ../../pdf/content/theme.py:217
 msgid "Portal types"
-msgstr ""
+msgstr "portal τύπους"
 
 #: ../../pdf/content/theme.py:227
 msgid "Preview"
-msgstr ""
+msgstr "Προεπισκόπηση"
 
 #: ../../pdf/browser/zpt/download.pt:15
 msgid "Send"
-msgstr ""
+msgstr "Στείλετε"
 
 #: ../../pdf/content/theme.py:85
 msgid "Static Footer and Header"
-msgstr ""
+msgstr "Στατική Υποσέλιδο και Header"
 
 #: ../../pdf/content/theme.py:97
 msgid "Table of contents"
-msgstr ""
+msgstr "Πίνακας περιεχομένων"
 
 #: ../../pdf/subtypes/schema.py:56
 msgid "Table of contents depth level"
-msgstr ""
+msgstr "Πίνακας περιεχομένων επίπεδο βάθους"
 
 #: ../../pdf/content/theme.py:109
 msgid "Table of contents links"
-msgstr ""
+msgstr "Πίνακας περιεχομένων έδαφος διά παιγνίδι γκολφ"
 
 #: ../../pdf/browser/zpt/theme.pt:24
 #: ../../pdf/browser/zpt/tool.pt:45
 #: ../../pdf/content/theme.py:147
 msgid "Timeout"
-msgstr ""
+msgstr "Τέλος χρόνου"
 
 #: ../../pdf/content/theme.py:204
 msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Συνολική μέγιστη παιδιά στοιχείων που πρέπει να συμπεριληφθούν κατά τη δημιουργία PDF για τη συλλογή ή folderish περιεχόμενο τύπους."
 
 #: ../../pdf/subtypes/schema.py:121
 msgid "Total maximum children items to be includedwhile generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Συνολική μέγιστη παιδιά τα στοιχεία για να είναι includedwhile δημιουργία PDF. Αφήστε το κενό για να χρησιμοποιήσετε την πύλη της παγκόσμιας καθορισμένη τιμή."
 
 #: ../../pdf/content/theme.py:228
 msgid "Upload a preview image for this theme"
-msgstr ""
+msgstr "Ανεβάστε μια εικόνα προεπισκόπησης για αυτό το θέμα"
 
 #: ../../pdf/content/theme.py:218
 msgid "Use this PDF Theme for the following Portal-Types."
-msgstr ""
+msgstr "Χρησιμοποιήστε αυτό το PDF θέμα για τα ακόλουθα Portal τύπους."
 
 #: ../../pdf/browser/zpt/theme.pt:13
 #: ../../pdf/browser/zpt/tool.pt:34
 msgid "Used for:"
-msgstr ""
+msgstr "Που χρησιμοποιείται για:"
 
 #: ../../pdf/content/theme.py:140
 msgid "Wait some seconds for javascript to finish"
-msgstr ""
+msgstr "Περιμένετε μερικά δευτερόλεπτα για τη javascript για να ολοκληρωθεί"
 
 #: ../../pdf/subtypes/schema.py:57
 msgid "Which header tags should be taken into consideration for the table of contents."
-msgstr ""
+msgstr "θα πρέπει να ληφθεί υπόψη ποιες ετικέτες κεφαλίδα για τον πίνακα περιεχομένων.
+"
 
 #: ../../pdf/content/theme.py:123
 msgid "if cover image not present use a random cover from the collection."
-msgstr ""
+msgstr "εάν το κάλυμμα της εικόνας δεν είναι παρούσα χρήση μια τυχαία κάλυμμα από τη συλλογή."
 
 #: ../../pdf/browser/app/download.py:104
 msgid "minutes"
-msgstr ""
+msgstr "λεπτά"
 
 #: ../../pdf/browser/app/download.py:105
 #: ../../pdf/browser/zpt/theme.pt:22
 #: ../../pdf/browser/zpt/tool.pt:43
 msgid "seconds"
-msgstr ""
+msgstr "δευτερόλεπτα"
 
