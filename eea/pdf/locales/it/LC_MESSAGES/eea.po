@@ -90,7 +90,7 @@ msgstr "Abilita o disabilita i javascript."
 
 #: ../../pdf/content/theme.py:86
 msgid "Enable static footer and header html pages. Footer and header templates are evaluated once and then served for every pdf page."
-msgstr ""
+msgstr "Abilita pagine piè di pagina e intestazione html statico. Piè di pagina e intestazione modelli vengono valutate una volta e poi serviti per ogni pagina pdf."
 
 #: ../../pdf/content/theme.py:110
 msgid "Enable table of contents links"
@@ -102,15 +102,15 @@ msgstr "Inserisci un indirizzo email a cui spedire il '${title}' PDF una volta c
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Flush"
-msgstr ""
+msgstr "a filo"
 
 #: ../../pdf/browser/zpt/tool.pt:50
 msgid "Flush all PDFs cache for this theme"
-msgstr ""
+msgstr "a filo tutti i PDF cache per questo tema"
 
 #: ../../pdf/content/theme.py:73
 msgid "Footer"
-msgstr ""
+msgstr "piè di pagina"
 
 #: ../../pdf/content/theme.py:159
 msgid "Generate PDF asynchronously and send an email to the user when it's done."
@@ -126,16 +126,16 @@ msgstr "Se non puoi accedere al tuo indirizzo email, controlla <a href='${link}'
 
 #: ../../pdf/content/theme.py:122
 msgid "Images cover collection"
-msgstr ""
+msgstr "immagini di copertina collezione"
 
 #: ../../pdf/cache/behavior.py:21
 msgid "Invalidate latest generated PDF file"
-msgstr ""
+msgstr "Invalidate ultimo file PDF generato"
 
 #: ../../pdf/browser/zpt/tool.pt:38
 #: ../../pdf/content/theme.py:131
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: ../../pdf/content/theme.py:139
 msgid "JavaScript delay"
@@ -143,7 +143,7 @@ msgstr "Ritardo dei Javascript"
 
 #: ../../pdf/browser/zpt/theme.pt:17
 msgid "Javascript"
-msgstr ""
+msgstr "Javascript"
 
 #: ../../pdf/browser/zpt/theme.pt:19
 #: ../../pdf/browser/zpt/tool.pt:40
@@ -152,7 +152,7 @@ msgstr "Ritardo dei Javascript"
 
 #: ../../pdf/subtypes/schema.py:134
 msgid "Main cover image that will show up on the pdf cover page"
-msgstr ""
+msgstr "immagine di copertina principale che verrà visualizzato sulla pagina di copertina pdf"
 
 #: ../../pdf/content/theme.py:191
 msgid "Maximum breadth"
@@ -184,12 +184,12 @@ msgstr "Numero massimo di elementi"
 
 #: ../../pdf/content/theme.py:169
 msgid "Offset"
-msgstr ""
+msgstr "Compensare"
 
 #: ../../pdf/cache/behavior.py:20
 #: ../../pdf/profiles/default/actions.xml
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: ../../pdf/subtypes/schema.py:107
 msgid "PDF Maximum breadth"
@@ -209,7 +209,7 @@ msgstr "Tema PDF"
 
 #: ../../pdf/subtypes/schema.py:133
 msgid "PDF cover main image"
-msgstr ""
+msgstr "copertura PDF Immagine principale"
 
 #: ../../pdf/content/theme.py:170
 msgid "Page numbering offset within PDF Body."
@@ -217,7 +217,7 @@ msgstr "Offset per la numerazione delle pagine all'interno del corpo del PDF."
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Please wait..."
-msgstr ""
+msgstr "attendere prego..."
 
 #: ../../pdf/content/theme.py:217
 msgid "Portal types"
@@ -233,7 +233,7 @@ msgstr "Spedisci"
 
 #: ../../pdf/content/theme.py:85
 msgid "Static Footer and Header"
-msgstr ""
+msgstr "Static piè di pagina e intestazione"
 
 #: ../../pdf/content/theme.py:97
 msgid "Table of contents"
@@ -241,7 +241,7 @@ msgstr "Sommario"
 
 #: ../../pdf/subtypes/schema.py:56
 msgid "Table of contents depth level"
-msgstr ""
+msgstr "Indice livello di profondità"
 
 #: ../../pdf/content/theme.py:109
 msgid "Table of contents links"
@@ -251,7 +251,7 @@ msgstr "Link nel sommario"
 #: ../../pdf/browser/zpt/tool.pt:45
 #: ../../pdf/content/theme.py:147
 msgid "Timeout"
-msgstr ""
+msgstr "Tempo scaduto"
 
 #: ../../pdf/content/theme.py:204
 msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
@@ -280,11 +280,11 @@ msgstr "Aspetta qualche secondo per il completamento dei javascript"
 
 #: ../../pdf/subtypes/schema.py:57
 msgid "Which header tags should be taken into consideration for the table of contents."
-msgstr ""
+msgstr "Quali tag di intestazione devono essere presi in considerazione per il sommario."
 
 #: ../../pdf/content/theme.py:123
 msgid "if cover image not present use a random cover from the collection."
-msgstr ""
+msgstr "se immagine della copertina non è presente l'uso di una copertura a caso dalla raccolta."
 
 #: ../../pdf/browser/app/download.py:104
 msgid "minutes"
