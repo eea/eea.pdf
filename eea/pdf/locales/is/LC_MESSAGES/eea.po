@@ -16,283 +16,283 @@ msgstr ""
 
 #: ../../pdf/browser/app/download.py:26
 msgid "* The email is only used for the purpose of sending the PDF. We do not store it for any other use."
-msgstr ""
+msgstr "* Netfangið er einungis notað í þeim tilgangi að senda PDF. Við geyma það ekki til neinnar annarrar notkunar."
 
 #: ../../pdf/content/theme.py:52
 msgid "A page template to be used for PDF Back Cover. Leave empty to disable it."
-msgstr ""
+msgstr "A síðu sniðmát til að nota fyrir PDF bakhliðina. Leyfi tómur að gera það."
 
 #: ../../pdf/content/theme.py:41
 msgid "A page template to be used for PDF Body. Leave empty to disable it."
-msgstr ""
+msgstr "A síðu sniðmát til að nota fyrir PDF ráði. Leyfi tómur að gera það."
 
 #: ../../pdf/content/theme.py:18
 msgid "A page template to be used for PDF Cover. Leave empty to disable it."
-msgstr ""
+msgstr "A síðu sniðmát til að nota fyrir PDF Cover. Leyfi tómur að gera það."
 
 #: ../../pdf/content/theme.py:29
 msgid "A page template to be used for PDF Disclaimer, the first page after PDF cover. Leave empty to disable it."
-msgstr ""
+msgstr "A síðu sniðmát til að nota fyrir PDF fyrirvari, fyrstu blaðsíðu eftir PDF kápa. Leyfi tómur að gera það."
 
 #: ../../pdf/content/theme.py:74
 msgid "A page template to be used for PDF Footer. Leave empty to disable it."
-msgstr ""
+msgstr "A síðu sniðmát til að nota fyrir PDF Footer. Leyfi tómur að gera það."
 
 #: ../../pdf/content/theme.py:63
 msgid "A page template to be used for PDF Header. Leave empty to disable it."
-msgstr ""
+msgstr "A síðu sniðmát til að nota fyrir PDF haus. Leyfi tómur að gera það."
 
 #: ../../pdf/content/theme.py:148
 msgid "Abort PDF export after specified number of seconds. Use zero to disable it."
-msgstr ""
+msgstr "Hætta PDF útflutning eftir tiltekinn fjölda sekúndna. Notaðu núll að gera það."
 
 #: ../../pdf/content/theme.py:98
 msgid "An XSL page template to be used for PDF Table of contents. Leave empty to disable it."
-msgstr ""
+msgstr "An XSL síðu sniðmát til að nota til PDF töflu innihaldslýsingu. Leyfi tómur að gera það."
 
 #: ../../pdf/browser/app/download.py:112
 msgid "An email will be sent to you when the PDF is ready"
-msgstr ""
+msgstr "Tölvupóstur verður sendur til þín þegar PDF er tilbúinn"
 
 #: ../../pdf/browser/zpt/theme.pt:15
 #: ../../pdf/browser/zpt/tool.pt:36
 #: ../../pdf/content/theme.py:158
 msgid "Asynchronous"
-msgstr ""
+msgstr "ósamstilltur"
 
 #: ../../pdf/content/theme.py:51
 msgid "Back Cover"
-msgstr ""
+msgstr "Baksíða"
 
 #: ../../pdf/content/theme.py:40
 msgid "Body"
-msgstr ""
+msgstr "Body"
 
 #: ../../pdf/content/theme.py:17
 msgid "Cover"
-msgstr ""
+msgstr "Cover"
 
 #: ../../pdf/subtypes/schema.py:44
 msgid "Disable PDF export or override theme used to export this content as PDF."
-msgstr ""
+msgstr "Slökkva PDF útflutning eða hunsa þemanu til að flytja þetta efni sem PDF."
 
 #: ../../pdf/content/theme.py:28
 msgid "Disclaimer"
-msgstr ""
+msgstr "Fyrirvari"
 
 #: ../../pdf/profiles/default/actions.xml
 msgid "Download as PDF"
-msgstr ""
+msgstr "Sækja sem PDF"
 
 #: ../../pdf/content/theme.py:132
 msgid "Enable or disable javascript"
-msgstr ""
+msgstr "Virkja eða slökkva javascript"
 
 #: ../../pdf/content/theme.py:86
 msgid "Enable static footer and header html pages. Footer and header templates are evaluated once and then served for every pdf page."
-msgstr ""
+msgstr "Virkja truflanir fót og haus HTML síður. Footer og haus sniðmát eru metin einu sinni og þá þjónaði fyrir hvert pdf síðu."
 
 #: ../../pdf/content/theme.py:110
 msgid "Enable table of contents links"
-msgstr ""
+msgstr "Virkja efnisyfirlit tenglum"
 
 #: ../../pdf/browser/app/download.py:66
 msgid "Enter your email address where to send '${title}' PDF when ready"
-msgstr ""
+msgstr "Sláðu inn netfangið þitt hvar á að senda '${title}' PDF þegar tilbúið"
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Flush"
-msgstr ""
+msgstr "Flush"
 
 #: ../../pdf/browser/zpt/tool.pt:50
 msgid "Flush all PDFs cache for this theme"
-msgstr ""
+msgstr "Flush allt PDFs skyndiminni fyrir þetta þema"
 
 #: ../../pdf/content/theme.py:73
 msgid "Footer"
-msgstr ""
+msgstr "Footer"
 
 #: ../../pdf/content/theme.py:159
 msgid "Generate PDF asynchronously and send an email to the user when it's done."
-msgstr ""
+msgstr "Mynda PDF asynchronously og senda tölvupóst til notanda þegar það er gert."
 
 #: ../../pdf/content/theme.py:62
 msgid "Header"
-msgstr ""
+msgstr "Header"
 
 #: ../../pdf/browser/app/download.py:115
 msgid "If you don't have access to your email address check <a href='${link}'>this link</a> in a few ${period}."
-msgstr ""
+msgstr "Ef þú hefur ekki aðgang að netfanginu athuga <a href='${link}'> þinn hlekk </a> í nokkrum ${period}."
 
 #: ../../pdf/content/theme.py:122
 msgid "Images cover collection"
-msgstr ""
+msgstr "Images ná safn"
 
 #: ../../pdf/cache/behavior.py:21
 msgid "Invalidate latest generated PDF file"
-msgstr ""
+msgstr "gildiÃ nýjustu mynda PDF-skrá"
 
 #: ../../pdf/browser/zpt/tool.pt:38
 #: ../../pdf/content/theme.py:131
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: ../../pdf/content/theme.py:139
 msgid "JavaScript delay"
-msgstr ""
+msgstr "JavaScript töf"
 
 #: ../../pdf/browser/zpt/theme.pt:17
 msgid "Javascript"
-msgstr ""
+msgstr "Javascript"
 
 #: ../../pdf/browser/zpt/theme.pt:19
 #: ../../pdf/browser/zpt/tool.pt:40
 msgid "Javascript delay"
-msgstr ""
+msgstr "Javascript töf"
 
 #: ../../pdf/subtypes/schema.py:134
 msgid "Main cover image that will show up on the pdf cover page"
-msgstr ""
+msgstr "Main ná mynd sem mun mæta á pdf forsíðu"
 
 #: ../../pdf/content/theme.py:191
 msgid "Maximum breadth"
-msgstr ""
+msgstr "Hámarks breidd"
 
 #: ../../pdf/content/theme.py:192
 msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Hámarks breidd að fela börnum atriði á meðan að búa PDF fyrir söfnun eða folderish efni-gerðir."
 
 #: ../../pdf/subtypes/schema.py:108
 msgid "Maximum breadth to include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Hámarks breidd að fela börnum atriði á meðan að búa PDF. Hafðu tómt, að nota gáttina heimsvísu skilgreinda gildi."
 
 #: ../../pdf/content/theme.py:179
 msgid "Maximum depth"
-msgstr ""
+msgstr "Hámarks dýpt"
 
 #: ../../pdf/content/theme.py:180
 msgid "Maximum depth to recursively include children items while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Hámarks dýpt að endurkvæmt fela börnum atriði á meðan að búa PDF fyrir söfnun eða folderish efni-gerðir."
 
 #: ../../pdf/subtypes/schema.py:95
 msgid "Maximum depth to recursively include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Hámarks dýpt að endurkvæmt fela börnum atriði á meðan að búa PDF. Hafðu tómt, að nota gáttina heimsvísu skilgreinda gildi."
 
 #: ../../pdf/content/theme.py:203
 msgid "Maximum items"
-msgstr ""
+msgstr "Maximum atriði"
 
 #: ../../pdf/content/theme.py:169
 msgid "Offset"
-msgstr ""
+msgstr "Offset"
 
 #: ../../pdf/cache/behavior.py:20
 #: ../../pdf/profiles/default/actions.xml
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: ../../pdf/subtypes/schema.py:107
 msgid "PDF Maximum breadth"
-msgstr ""
+msgstr "PDF Hámarks breidd"
 
 #: ../../pdf/subtypes/schema.py:94
 msgid "PDF Maximum depth"
-msgstr ""
+msgstr "PDF Hámarks dýpt"
 
 #: ../../pdf/subtypes/schema.py:120
 msgid "PDF Maximum items"
-msgstr ""
+msgstr "PDF Maximum atriði"
 
 #: ../../pdf/subtypes/schema.py:43
 msgid "PDF Theme"
-msgstr ""
+msgstr "PDF Þema"
 
 #: ../../pdf/subtypes/schema.py:133
 msgid "PDF cover main image"
-msgstr ""
+msgstr "PDF ná helstu myndina"
 
 #: ../../pdf/content/theme.py:170
 msgid "Page numbering offset within PDF Body."
-msgstr ""
+msgstr "Page númeri móti innan PDF Body."
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Please wait..."
-msgstr ""
+msgstr "Vinsamlega bíðið..."
 
 #: ../../pdf/content/theme.py:217
 msgid "Portal types"
-msgstr ""
+msgstr "Portal tegundir"
 
 #: ../../pdf/content/theme.py:227
 msgid "Preview"
-msgstr ""
+msgstr "Forskoða"
 
 #: ../../pdf/browser/zpt/download.pt:15
 msgid "Send"
-msgstr ""
+msgstr "Senda"
 
 #: ../../pdf/content/theme.py:85
 msgid "Static Footer and Header"
-msgstr ""
+msgstr "Static Footer og haus"
 
 #: ../../pdf/content/theme.py:97
 msgid "Table of contents"
-msgstr ""
+msgstr "Efnisyfirlit"
 
 #: ../../pdf/subtypes/schema.py:56
 msgid "Table of contents depth level"
-msgstr ""
+msgstr "Table of Contents dýpt stigi"
 
 #: ../../pdf/content/theme.py:109
 msgid "Table of contents links"
-msgstr ""
+msgstr "Table of Contents tenglum"
 
 #: ../../pdf/browser/zpt/theme.pt:24
 #: ../../pdf/browser/zpt/tool.pt:45
 #: ../../pdf/content/theme.py:147
 msgid "Timeout"
-msgstr ""
+msgstr "Tími"
 
 #: ../../pdf/content/theme.py:204
 msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
-msgstr ""
+msgstr "Samtals hámarks börn atriði til að vera með á meðan að búa PDF fyrir söfnun eða folderish efni-gerðir."
 
 #: ../../pdf/subtypes/schema.py:121
 msgid "Total maximum children items to be includedwhile generating PDF. Leave it empty to use the portal global defined value."
-msgstr ""
+msgstr "Samtals hámarks börn atriði til að vera includedwhile búa PDF. Hafðu tómt, að nota gáttina heimsvísu skilgreinda gildi."
 
 #: ../../pdf/content/theme.py:228
 msgid "Upload a preview image for this theme"
-msgstr ""
+msgstr "Hlaða sýnishorn mynd fyrir þetta þema"
 
 #: ../../pdf/content/theme.py:218
 msgid "Use this PDF Theme for the following Portal-Types."
-msgstr ""
+msgstr "Nota þetta PDF Þema fyrir eftirfarandi Portal-Types"
 
 #: ../../pdf/browser/zpt/theme.pt:13
 #: ../../pdf/browser/zpt/tool.pt:34
 msgid "Used for:"
-msgstr ""
+msgstr "Notað fyrir:"
 
 #: ../../pdf/content/theme.py:140
 msgid "Wait some seconds for javascript to finish"
-msgstr ""
+msgstr "Bíddu nokkrar sekúndur fyrir JavaScript til að klára"
 
 #: ../../pdf/subtypes/schema.py:57
 msgid "Which header tags should be taken into consideration for the table of contents."
-msgstr ""
+msgstr "Hvaða haus tags ætti að taka tillit til efnisyfirliti."
 
 #: ../../pdf/content/theme.py:123
 msgid "if cover image not present use a random cover from the collection."
-msgstr ""
+msgstr "ef ná mynd ekki nota staðar af handahófi kápa úr safni."
 
 #: ../../pdf/browser/app/download.py:104
 msgid "minutes"
-msgstr ""
+msgstr "mínútur"
 
 #: ../../pdf/browser/app/download.py:105
 #: ../../pdf/browser/zpt/theme.pt:22
 #: ../../pdf/browser/zpt/tool.pt:43
 msgid "seconds"
-msgstr ""
+msgstr "sekúndur"
 
