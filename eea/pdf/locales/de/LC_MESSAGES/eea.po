@@ -98,7 +98,7 @@ msgstr "Aktivieren Sie Inhaltsverknüpfungen"
 
 #: ../../pdf/browser/app/download.py:66
 msgid "Enter your email address where to send '${title}' PDF when ready"
-msgstr "Geben Sie Ihre E-Mail-Adresse ein, an die Sie '$ {title}' als PDF senden können"
+msgstr "Geben Sie Ihre E-Mail-Adresse ein, an die Sie '${title}' als PDF senden können"
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Flush"
