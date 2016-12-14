@@ -420,3 +420,12 @@ h4.figureHeading {
 .link-external {
   word-wrap: break-word;
 }
+
+/* 79936 utility classes to show and hide content when pdf printing */
+.showOnPrint {
+   display: block !important;
+}
+.hideOnPrint,
+.showOnPrint + iframe {
+  display: none !important;
+}
