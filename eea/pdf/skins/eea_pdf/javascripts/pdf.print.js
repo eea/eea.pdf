@@ -11,28 +11,29 @@ $(document).ready(function(){
         }
     });
     $content_core.find('h3').each(function(i, e){
-        if (!$(e).closest('.nobreak, .keyMessage').length){
-            $(e).nextUntil('h3').andSelf().wrapAll('<div class="nobreak">');
-        }
+       if (!$(e).closest('.nobreak, .keyMessage').length){
+         $(e).nextUntil('h3').andSelf().wrapAll('<div class="nobreak">');
+       }
     });
 
     // #77970 workaround content where Figure header should be on the same
     // page with the next figure iframe chart
-    $content_core.find('strong').each(function(i, e){
-        var $ptag;
+   $content_core.find('strong').each(function(i, e){
+       var $ptag;
         if (e.innerHTML.indexOf('Figure') === 0) {
-            $ptag = $(e).closest('p');
-            $ptag.next().andSelf().wrapAll('<div class="nobreak">');
-        }
-    });
+           $ptag = $(e).closest('p');
+           $ptag.next().andSelf().wrapAll('<div class="nobreak">');
+       }
+   });
 
-    $content_core.find('.figureHeading').each(function(i, e){
+      $content_core.find('.figureHeading').each(function(i, e){
         var $next_el = $(e).next();
         if ($next_el.length && $next_el[0].innerHTML === "&nbsp;") {
             $next_el.remove();
         }
         $(e).next().andSelf().wrapAll('<div class="nobreak">');
     });
+
 
 
     /* Fix #28298, empty div.pageBreak cause segmentation fault in wkhtmltopdf */
@@ -67,4 +68,3 @@ $(document).ready(function(){
         });
     });
 });
-

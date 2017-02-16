@@ -13,6 +13,15 @@ body {
   font-family: "Palatino Linotype", serif !important;
   /*#font-family: Verdana, sans-serif !important;*/
   /*#font-family: "Open Sans", sans-serif !important;*/
+  font-size: 11pt;
+}
+
+/* due to 4 pages restriction size soer pdf has font-size smaller */
+body.section-soer-2015 {
+  font-size: 9pt;
+}
+.section-soer-2015 .cover-logo2 {
+   margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -39,6 +48,7 @@ p,
   text-align: left;
   border-collapse: collapse;
   border-spacing: 0px;
+  font-size: 0.8em;
 }
 
 table.plain th, table.plain td {
@@ -87,6 +97,8 @@ img {
 .portlet.toc,
 #relatedItems .photoAlbumEntryWrapper,
 #relatedItems .photoAlbumEntryDescription,
+#eea-versions-portlet,
+#keywords-tags,
 .temporal-coverage,
 .excludeFromPDF,
 .archiveMessage
@@ -408,23 +420,32 @@ div[id^="googlechart_table"] .googlechart .google-visualization-table table tr t
   margin-bottom: 2em;
 }
 
-.pdf-collection-item .fiche-section {
-  display: none;
-}
 
 h4.figureHeading {
   margin: 0 0 1.5em 0;
 }
 
-/* avoid small pdf render for external links that might be too long */
-.link-external {
-  word-wrap: break-word;
+.subsection-climate-trends-and-projections-in-europe .cover-header > span {
+   display: none;
 }
 
-/* 79936 utility classes to show and hide content when pdf printing */
+.subsection-climate-trends-and-projections-in-europe .cover-header > span:last-child {
+   display: block;
+}
+.link-external,
+.link-https {
+    word-wrap: break-word;
+}
+
+
+.section-airs .pdf-fiche-header {
+   width: 730px;
+}
+
 .showOnPrint {
    display: block !important;
 }
+
 .hideOnPrint,
 .showOnPrint + iframe {
   display: none !important;

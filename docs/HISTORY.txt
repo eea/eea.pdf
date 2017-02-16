@@ -3,6 +3,8 @@ Changelog
 
 7.4.dev0 - (unreleased)
 -----------------------
+* Change: Update pdf.print CSS and JS with more elements to be hidden
+  [avoinea refs #81054]
 
 7.3 - (2016-12-05)
 ------------------
