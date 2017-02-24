@@ -63,6 +63,7 @@ table.invisible td, table.invisible th, table.plain td, table.plain th, table.li
 img {
   max-width: 100%;
   page-break-inside: avoid;
+  height: 100%; /* #80861 avoid wkhtmltopdf segmentation fault for page-break-avoid rules */
 }
 
 .documentFirstHeading {
