@@ -1,6 +1,9 @@
 Changelog
 =========
 
+7.6.dev0 - (unreleased)
+-----------------------
+
 7.5 - (2017-03-02)
 ------------------
 * Bugfix: fix wkhtmltopdf segmentation fault by setting 100% height
