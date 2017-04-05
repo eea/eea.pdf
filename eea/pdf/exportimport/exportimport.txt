@@ -72,6 +72,7 @@ Export
      <object name="zu" meta_type="PDFTheme">
       <property name="title">ZU Theme</property>
       <property name="cover">pdf.cover</property>
+      <property name="coverSubtitle">True</property>
       <property name="disclaimer">pdf.disclaimer</property>
       <property name="body">pdf.body</property>
       <property name="backcover">pdf.cover.back</property>
