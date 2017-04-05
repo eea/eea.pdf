@@ -132,6 +132,9 @@ class Download(Pdf):
             self._link = self.context.absolute_url() + '/action-download-pdf'
         else:
             fallback = None
+        if getattr(self.context, 'pdfStatic'):
+            self._link = self.context.absolute_url() 
+            fallback = True
 
         # PDF already generated
         storage = IStorage(self.context).of('pdf')
