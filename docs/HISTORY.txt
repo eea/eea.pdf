@@ -3,6 +3,8 @@ Changelog
 
 7.6.dev0 - (unreleased)
 -----------------------
+* Feature: added ability to disable cover subtitle per theme
+  [ichim-david refs #83520]
 
 7.5 - (2017-03-02)
 ------------------

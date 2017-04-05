@@ -22,6 +22,18 @@ EditSchema = atapi.Schema((
             )
         )
     ),
+    atapi.BooleanField('coverSubtitle',
+        schemata='default',
+        default=True,
+        widget=atapi.BooleanWidget(
+           label=_(u"Cover subtitle"),
+           description=_(u"Enable display on subtitle on cover page."
+                         u" Subtitle is created from content description"
+                         u" truncated to 70 characters"
+            )
+       )
+    ),
+
     atapi.StringField('disclaimer',
         schemata='default',
         default='pdf.disclaimer',

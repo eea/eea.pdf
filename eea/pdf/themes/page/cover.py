@@ -97,6 +97,12 @@ class Cover(PDFCover):
 
         return random.sample(results, 1)[0].getObject()
 
+    def display_subtitle(self):
+        """ Check if cover should be displayed for the current theme
+        """
+        theme = self.get_pdftheme()
+        return theme.coverSubtitle
+
 
 class BackCover(PDFBackCover):
     """ PDF Back cover
