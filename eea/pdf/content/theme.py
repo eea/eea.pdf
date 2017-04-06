@@ -27,9 +27,9 @@ EditSchema = atapi.Schema((
         default=True,
         widget=atapi.BooleanWidget(
            label=_(u"Cover subtitle"),
-           description=_(u"Enable display on subtitle on cover page."
-                         u" Subtitle is created from content description"
-                         u" truncated to 70 characters"
+           description=_(u"Enable display of subtitle within cover page."
+                         u" By default subtitle is created from content"
+                         u" description truncated to first 70 characters"
             )
        )
     ),
