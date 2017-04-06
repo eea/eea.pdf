@@ -137,9 +137,11 @@ class Download(Pdf):
             fallback = None
         wrapped_field = getattr(context, 'getWrappedField')
         if wrapped_field:
-            fallback = context.getWrappedField('pdfStatic')
-            if fallback and fallback.get_size(context) != 0:
+            static = context.getWrappedField('pdfStatic')
+            if static and static.get_size(context) != 0:
                 self._link = context.absolute_url() + '/download.pdf.static'
+                fallback = True
+
         # PDF already generated
         storage = IStorage(context).of('pdf')
         filepath = storage.filepath()
