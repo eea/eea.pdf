@@ -101,7 +101,7 @@ class Cover(PDFCover):
         """ Check if cover should be displayed for the current theme
         """
         theme = self.get_pdftheme()
-        return theme.coverSubtitle
+        return getattr(theme, 'coverSubtitle', True)
 
 
 class BackCover(PDFBackCover):
