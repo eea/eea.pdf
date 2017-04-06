@@ -40,6 +40,14 @@
     permission="eea.pdf.download"
     />
 
+  <browser:page
+    name="download.pdf.static"
+    layer="eea.pdf.interfaces.ILayer"
+    for="eea.pdf.interfaces.IPDFAware"
+    class=".app.download.DownloadStaticPdf"
+    permission="eea.pdf.download"
+  />
+
   <browser:viewlet
     name="eea.pdf"
     layer="eea.pdf.interfaces.ILayer"

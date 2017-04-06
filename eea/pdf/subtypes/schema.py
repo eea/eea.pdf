@@ -1,6 +1,7 @@
 """ Schema extender
 """
 from Products.Archetypes.Widget import ImageWidget
+from Products.Archetypes.Widget import FileWidget
 from Products.Archetypes.utils import IntDisplayList
 from plone.app.blob.field import ImageField
 from plone.app.blob.field import FileField
@@ -98,7 +99,7 @@ class CollectionSchemaExtender(PDFSchemaExtender):
             name='pdfStatic',
             schemata='settings',
             write_permission="Can customize PDF",
-            widget=ImageWidget(
+            widget=FileWidget(
                 label=_(u"PDF static"),
                 description=_(
                     u"Upload custom pdf bypassing the dynamically generated pdf"
