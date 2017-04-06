@@ -39,7 +39,10 @@ class PDFTool(UniqueObject, ATFolder):
 
         for theme in self.themes():
             field = theme.getField('types')
-            types = field.getAccessor(theme)()
+            types = field.getAccessor(theme)
+            if not types:
+                return None
+            types = types()
             if ptype in types:
                 return theme
         return None
