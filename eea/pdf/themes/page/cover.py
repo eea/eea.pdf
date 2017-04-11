@@ -63,12 +63,14 @@ class Cover(PDFCover):
         """ if set imagescollection on PDF Theme, return a random image,
             None otherwise
         """
-
         imgview = queryMultiAdapter(
             (self.context, self.request), name='imgview')
 
         if imgview and imgview.display():
             obj = imgview('large')
+            # 83520 cover should be an object not image string data
+            if isinstance(obj, str):
+                return getattr(imgview, 'context', None)
             return obj
 
         theme = self.get_pdftheme()
