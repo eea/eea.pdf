@@ -138,7 +138,7 @@ class Download(Pdf):
         wrapped_field = getattr(context, 'getWrappedField')
         if wrapped_field:
             static = context.getWrappedField('pdfStatic')
-            if static and static.getFilename(context):
+            if static and getattr(static, 'getFilename', lambda x: '')(context):
                 self._link = context.absolute_url() + '/download.pdf.static'
                 fallback = True
 
@@ -240,6 +240,7 @@ class DownloadStaticPdf(BrowserView):
     def __call__(self, *args, **kwargs):
         context = self.context
         field = context.getWrappedField('pdfStatic')
-        if field is None or field.getFilename(context):
+        if field is None or not getattr(field, 'getFilename',
+            lambda x: '')(context):
             raise NotFound(context, self.__name__, self.context.REQUEST)
         return field.download(context)
