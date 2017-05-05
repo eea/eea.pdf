@@ -3,7 +3,7 @@
  http://stackoverflow.com/questions/9238868/how-do-i-avoid-a-page-break-immediately-after-a-header
  */
 
-$(document).ready(function(){
+jQuery(document).ready(function($){
     var $content_core = $('#content-core');
     $content_core.find('h2').each(function(i, e){
         if (!$(e).closest('.cover').length){
@@ -34,8 +34,6 @@ $(document).ready(function(){
         $(e).next().andSelf().wrapAll('<div class="nobreak">');
     });
 
-
-
     /* Fix #28298, empty div.pageBreak cause segmentation fault in wkhtmltopdf */
     $content_core.find('div.pageBreak').each(function(i, e){
         $(e).html("&nbsp;");
@@ -46,24 +44,26 @@ $(document).ready(function(){
     $folder_titles.each(function(idx, el) {
         var $el = $(el);
         var content = el.textContent.trim().length;
-        if (!content) {
-            $el.remove();
-            return;
-        }
         var $parent = $el.parent();
         var $h1 = $parent.find('h1:not(.pdf-folder-title)');
         var $h2 = $parent.find('h2');
         var $h3 = $parent.find('h3');
         var $h4 = $parent.find('h4');
+
+        if (!content) {
+            $el.remove();
+        }
         $h1 = $h1.add($h2);
         $h1 = $h1.add($h3);
         $h1 = $h1.add($h4);
         $h1.each(function(idx, el) {
+            el.innerHTML = el.innerHTML + ' ' + el.tagName;
             var $el = $(el);
+
             var incremented_header = window.parseInt(el.tagName[1], 10);
             incremented_header += 1;
             var tagName = "<h" + incremented_header + " />";
-            var $replacement = $(tagName, { text: $el.text() });
+            var $replacement = $(tagName, { text: $el.text()  });
             $el.replaceWith($replacement);
         });
     });
