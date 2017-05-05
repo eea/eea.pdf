@@ -1,11 +1,11 @@
 """ PDF View
 """
-import logging
-
-from Products.Five.browser import BrowserView
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from eea.pdf.interfaces import IPDFTool
 from zope.component import queryUtility
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from Products.Five.browser import BrowserView
+from eea.pdf.interfaces import IPDFTool
+
+import logging
 
 logger = logging.getLogger("pdf_collection")
 
@@ -65,7 +65,7 @@ class Body(BrowserView):
         """
         if self._maxdepth is None:
             self._maxdepth = self.getValue('pdfMaxDepth',
-                   default=self.getValue('maxdepth', self.theme(), default=0))
+                                           default=self.getValue('maxdepth', self.theme(), default=0))
         return self._maxdepth
 
     @property
@@ -74,7 +74,7 @@ class Body(BrowserView):
         """
         if self._maxbreadth is None:
             self._maxbreadth = self.getValue('pdfMaxBreadth',
-                 default=self.getValue('maxbreadth', self.theme(), default=0))
+                                             default=self.getValue('maxbreadth', self.theme(), default=0))
         return self._maxbreadth
 
     @property
@@ -83,7 +83,7 @@ class Body(BrowserView):
         """
         if self._maxitems is None:
             self._maxitems = self.getValue('pdfMaxItems',
-                 default=self.getValue('maxitems', self.theme(), default=0))
+                                           default=self.getValue('maxitems', self.theme(), default=0))
         return self._maxitems
 
     @property
@@ -116,10 +116,11 @@ class Body(BrowserView):
         """ Folder children
         """
         self._depth += 1
+        contentish = ['Folder', 'Collection', 'Topic']
         if not self.request.get('pdf_last_brain_url'):
             brains = self.context.getFolderContents(
                 contentFilter={
-                    'portal_type': ['Folder', 'Collection', 'Topic']
+                    'portal_type': contentish
                 })
             if brains:
                 self.request['pdf_last_brain_url'] = brains[-1].getURL()
@@ -153,7 +154,7 @@ class Body(BrowserView):
             if isinstance(body, unicode):
                 body = body.encode('utf-8')
             if (self.theme(self.context).id == theme.id and
-                self.depth == self.maxdepth):
+                        self.depth == self.maxdepth):
                 if brain.getURL() == self.request.get('pdf_last_brain_url'):
                     if not self.request.get('pdflimit'):
                         self.request['pdflimit'] = "reached"
@@ -170,11 +171,15 @@ class Body(BrowserView):
                     depth=self.depth,
                     count=self.count
                 )
-            except Exception:
+            except Exception, err:
+                logger.exception(err)
                 continue
             else:
                 self._count = getattr(pdf, 'count', self._count)
-                yield html
+                ptype = doc.portal_type
+                orig_title = doc.title
+                title = orig_title if ptype in contentish else ''
+                yield (title, html)
 
         self.request.form['ajax_load'] = ajax_load
 
