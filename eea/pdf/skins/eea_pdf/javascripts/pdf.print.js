@@ -57,7 +57,6 @@ jQuery(document).ready(function($){
         $h1 = $h1.add($h3);
         $h1 = $h1.add($h4);
         $h1.each(function(idx, el) {
-            el.innerHTML = el.innerHTML + ' ' + el.tagName;
             var $el = $(el);
 
             var incremented_header = window.parseInt(el.tagName[1], 10);
