@@ -124,7 +124,8 @@ img {
 #keywords-tags,
 .temporal-coverage,
 .excludeFromPDF,
-.archiveMessage
+.archiveMessage,
+.formTabs
 {
   display: none;
 }
