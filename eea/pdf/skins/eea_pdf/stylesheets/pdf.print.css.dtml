@@ -16,6 +16,13 @@
     height: inherit !important;
 }
 
+/* 83520 fixed height of fig1 chart at
+www/SITE/data-and-maps/indicators/land-take-2/assessment-1/
+*/
+.googledashboard-chart {
+  height: inherit !important;
+}
+
 body {
   color: #333;
   margin: 0;
@@ -34,11 +41,7 @@ body {
     margin-right: 0;
 }
 
-.googlechart_dashboard .googlechart-notes {
-   clear:both;
-    position: relative;
-    width: auto !important;
-}
+
 /* due to 4 pages restriction size soer pdf has font-size smaller */
 body.section-soer-2015 {
   font-size: 9pt;
@@ -475,11 +478,6 @@ h4.figureHeading {
 
 .googlechart_view:after {
     clear: both;
-}
-
-.googledashboard-chart.googledashboard-widget {
-   float: none !important;
-   clear: both;
 }
 
 .googlechart_bottom_images {
