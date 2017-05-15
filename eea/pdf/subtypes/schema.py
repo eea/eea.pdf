@@ -2,14 +2,12 @@
 """
 from Products.Archetypes.Widget import ImageWidget
 from Products.Archetypes.utils import IntDisplayList
-from plone.app.blob.field import ImageField
-
-from zope.interface import implements
 from Products.Archetypes import public
+from plone.app.blob.field import ImageField
+from zope.interface import implements
 from archetypes.schemaextender.interfaces import ISchemaExtender
 from archetypes.schemaextender.interfaces import IBrowserLayerAwareExtender
 from archetypes.schemaextender.field import ExtensionField
-
 from eea.pdf.config import EEAMessageFactory as _
 from eea.pdf.interfaces import ILayer, IPDFTool, IPDFTheme
 
