@@ -6,15 +6,41 @@
   src: local("TeX Gyre Pagella");
 }
 
+
+/* 83520 fixed height of googledashboard chart because of absolute position and inline dimensions */
+.googledashboard-chart > div > div > div {
+    position: relative !important;
+    left: inherit !important;
+    top: inherit !important;
+    width: inherit !important;
+    height: inherit !important;
+}
+
+/* 83520 fixed height of fig1 chart at
+www/SITE/data-and-maps/indicators/land-take-2/assessment-1/
+*/
+.googledashboard-chart {
+  height: inherit !important;
+}
+
 body {
   color: #333;
   margin: 0;
   padding: 0;
+
   font-family: "Palatino Linotype", serif !important;
   /*#font-family: Verdana, sans-serif !important;*/
   /*#font-family: "Open Sans", sans-serif !important;*/
   font-size: 11pt;
 }
+
+.body-print .indicator-figure-plus img {
+    max-height: 670px;
+    width: inherit;
+    float: none;
+    margin-right: 0;
+}
+
 
 /* due to 4 pages restriction size soer pdf has font-size smaller */
 body.section-soer-2015 {
@@ -62,8 +88,7 @@ table.invisible td, table.invisible th, table.plain td, table.plain th, table.li
 
 img {
   max-width: 100%;
-  page-break-inside: avoid;
-  height: 100%; /* #80861 avoid wkhtmltopdf segmentation fault for page-break-avoid rules */
+  page-break-inside: avoid; /* #80861 avoid wkhtmltopdf segmentation fault for page-break-avoid rules */
 }
 
 .documentFirstHeading {
@@ -102,7 +127,8 @@ img {
 #keywords-tags,
 .temporal-coverage,
 .excludeFromPDF,
-.archiveMessage
+.archiveMessage,
+.formTabs
 {
   display: none;
 }
@@ -394,12 +420,6 @@ http://stackoverflow.com/questions/9238868/how-do-i-avoid-a-page-break-immediate
 .nobreak.break{ page-break-before: always !important; }
 .pageBreak{ height: 1px; }
 
-div[id^="googlechart_table"] .googlechart,
-div[id^="googlechart_table"] .googlechart .google-visualization-table,
-div[id^="googlechart_table"] .googlechart .google-visualization-table div,
-div[id^="googlechart_table"] .googlechart .google-visualization-table table{
-  height: auto !important;
-}
 
 div[id^="googlechart_table"] .googlechart .google-visualization-table table{
   width: 100% !important;
@@ -450,4 +470,17 @@ h4.figureHeading {
 .hideOnPrint,
 .showOnPrint + iframe {
   display: none !important;
+}
+
+#googlechart_dashboard, .googlechart_dashboard, .googlechart_table {
+   clear: both;
+}
+
+.googlechart_view:after {
+    clear: both;
+}
+
+.googlechart_bottom_images {
+   clear: both;
+
 }

@@ -2,6 +2,8 @@
 """
 import logging
 from zope import event
+
+from Products.Five import BrowserView
 from zope.publisher.interfaces import NotFound
 from zope.component import queryMultiAdapter, queryUtility
 from zope.component.hooks import getSite
@@ -125,27 +127,34 @@ class Download(Pdf):
     def download(self, email='', **kwargs):
         """ Download
         """
+        context = self.context
         # Fallback PDF provided
-        fallback = self.context.restrictedTraverse('action-download-pdf', None)
+        fallback = context.restrictedTraverse('action-download-pdf', None)
         if fallback and fallback.absolute_url().startswith(
-                self.context.absolute_url()):
-            self._link = self.context.absolute_url() + '/action-download-pdf'
+                context.absolute_url()):
+            self._link = context.absolute_url() + '/action-download-pdf'
         else:
             fallback = None
+        wrapped_field = getattr(context, 'getWrappedField')
+        if wrapped_field:
+            static = context.getWrappedField('pdfStatic')
+            if static and getattr(static, 'getFilename', lambda x: '')(context):
+                self._link = context.absolute_url() + '/download.pdf.static'
+                fallback = True
 
         # PDF already generated
-        storage = IStorage(self.context).of('pdf')
+        storage = IStorage(context).of('pdf')
         filepath = storage.filepath()
         fileurl = self.link()
-        url = self.context.absolute_url()
-        title = self.context.title_or_id()
+        url = context.absolute_url()
+        title = context.title_or_id()
 
         portal = getSite()
         from_name = portal.getProperty('email_from_name')
         from_email = portal.getProperty('email_from_address')
 
         if fallback or async.file_exists(filepath):
-            wrapper = IContextWrapper(self.context)(
+            wrapper = IContextWrapper(context)(
                 fileurl=fileurl,
                 filepath=filepath,
                 email=email,
@@ -167,7 +176,7 @@ class Download(Pdf):
         queue = worker.getQueues()['']
         worker.queueJobInQueue(queue, ('pdf',),
             async.run_async_job,
-            self.context, converter,
+            context, converter,
             success_event=AsyncPDFExportSuccess,
             fail_event=AsyncPDFExportFail,
             email=email,
@@ -222,3 +231,16 @@ class Download(Pdf):
 
         # Ask for email
         return self._redirect()
+
+
+class DownloadStaticPdf(BrowserView):
+    """ Download Static PDF
+    """
+
+    def __call__(self, *args, **kwargs):
+        context = self.context
+        field = context.getWrappedField('pdfStatic')
+        if field is None or not getattr(field, 'getFilename',
+            lambda x: '')(context):
+            raise NotFound(context, self.__name__, self.context.REQUEST)
+        return field.download(context)

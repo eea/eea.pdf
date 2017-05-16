@@ -1,9 +1,11 @@
 """ Schema extender
 """
 from Products.Archetypes.Widget import ImageWidget
+from Products.Archetypes.Widget import FileWidget
 from Products.Archetypes.utils import IntDisplayList
 from Products.Archetypes import public
 from plone.app.blob.field import ImageField
+from plone.app.blob.field import FileField
 from zope.interface import implements
 from archetypes.schemaextender.interfaces import ISchemaExtender
 from archetypes.schemaextender.interfaces import IBrowserLayerAwareExtender
@@ -16,11 +18,17 @@ class ExtendedIntegerField(ExtensionField, public.IntegerField):
     """ IntegerField for schema extender
     """
 
+
 class ExtendedStringField(ExtensionField, public.StringField):
     """ StringField for schema extender
     """
 
+
 class ExtendedImageField(ExtensionField, ImageField):
+    """ derivative of blobfield for extending schemas """
+
+
+class ExtendedFileField(ExtensionField, FileField):
     """ derivative of blobfield for extending schemas """
 
 
@@ -84,6 +92,19 @@ class CollectionSchemaExtender(PDFSchemaExtender):
     layer = ILayer
 
     fields = (
+
+        ExtendedFileField(
+            name='pdfStatic',
+            schemata='settings',
+            write_permission="Can customize PDF",
+            widget=FileWidget(
+                label=_(u"PDF static"),
+                description=_(
+                    u"Upload custom pdf bypassing the dynamically generated pdf"
+                )
+            )
+        ),
+
         ExtendedIntegerField(
             name='pdfMaxDepth',
             schemata='settings',
@@ -136,4 +157,5 @@ class CollectionSchemaExtender(PDFSchemaExtender):
                 )
             )
         ),
+
     )
