@@ -2,10 +2,8 @@
 """
 from zope.interface import implementer
 from Products.Archetypes import atapi
-from plone.app.blob.field import ImageField
-
 from Products.ATContentTypes.content.folder import ATFolder
-
+from plone.app.blob.field import ImageField
 from eea.pdf.content.interfaces import IPDFTheme
 from eea.pdf.config import EEAMessageFactory as _
 from archetypes.referencebrowserwidget import ReferenceBrowserWidget

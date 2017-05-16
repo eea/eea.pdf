@@ -2,14 +2,14 @@
 """
 from Products.CMFCore import utils as cmfutils
 from Products.Archetypes.atapi import process_types, listTypes
+from Products.Archetypes.atapi import registerType
+from eea.pdf.content.tool import PDFTool
+from eea.pdf.content.theme import PDFTheme
 from eea.pdf.config import (
     PROJECTNAME,
     ADD_PERMISSION
 )
 
-from Products.Archetypes.atapi import registerType
-from eea.pdf.content.tool import PDFTool
-from eea.pdf.content.theme import PDFTheme
 
 registerType(PDFTool, PROJECTNAME)
 registerType(PDFTheme, PROJECTNAME)

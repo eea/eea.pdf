@@ -1,8 +1,26 @@
 Changelog
 =========
 
-7.6.dev0 - (unreleased)
+8.0.dev0 - (unreleased)
 -----------------------
+
+7.9 - (2017-05-15)
+------------------
+* Change: fixed PyLint warnings and errors
+  [eduard-fironda refs #84949]
+
+7.8 - (2017-04-24)
+------------------
+* Change: updated package information
+  [eduard-fironda]
+
+7.7 - (2017-04-19)
+------------------
+* Bug fix: safely check for cover subtitle
+  [ichim-david refs #83520]
+
+7.6 - (2017-04-13)
+------------------
 * Feature: added ability to disable cover subtitle per theme
   [ichim-david refs #83520]
 

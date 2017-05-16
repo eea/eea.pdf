@@ -3,15 +3,13 @@
 from Products.Archetypes.Widget import ImageWidget
 from Products.Archetypes.Widget import FileWidget
 from Products.Archetypes.utils import IntDisplayList
+from Products.Archetypes import public
 from plone.app.blob.field import ImageField
 from plone.app.blob.field import FileField
-
 from zope.interface import implements
-from Products.Archetypes import public
 from archetypes.schemaextender.interfaces import ISchemaExtender
 from archetypes.schemaextender.interfaces import IBrowserLayerAwareExtender
 from archetypes.schemaextender.field import ExtensionField
-
 from eea.pdf.config import EEAMessageFactory as _
 from eea.pdf.interfaces import ILayer, IPDFTool, IPDFTheme
 
