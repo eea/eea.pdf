@@ -44,7 +44,7 @@ class Cover(PDFCover):
 
     def truncate(self, text, length=70, orphans=10,
                  suffix=u".", end=u".", cut=False):
-        """ Custom truncate
+        """ Custom truncate (changed defaults from Cover.truncate)
         """
         return super(Cover, self).truncate(text, length, orphans,
                                            suffix, end, cut)

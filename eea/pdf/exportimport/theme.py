@@ -6,6 +6,7 @@ from Products.GenericSetup.utils import XMLAdapterBase
 from eea.pdf.interfaces import IPDFTheme
 from eea.pdf.content.theme import EditSchema
 
+
 class PDFThemeXMLAdapter(XMLAdapterBase):
     """ Generic setup import/export xml adapter
     """
@@ -73,7 +74,7 @@ class PDFThemeXMLAdapter(XMLAdapterBase):
                 else:
                     value = self._getNodeText(child)
                     value = value.decode('utf-8')
-                    value = (not purge) and value or u''
+                    value = value if not purge else u''
 
                 field.getMutator(self.context)(value)
                 notify(ObjectModifiedEvent(self.context))

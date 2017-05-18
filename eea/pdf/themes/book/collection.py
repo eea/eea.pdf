@@ -1,11 +1,11 @@
 """ PDF View
 """
+import logging
+
 from zope.component import queryUtility
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.Five.browser import BrowserView
 from eea.pdf.interfaces import IPDFTool
-
-import logging
 
 logger = logging.getLogger("pdf_collection")
 
@@ -38,7 +38,6 @@ class Body(BrowserView):
 
         return self._theme
 
-
     def getValue(self, name, context='', default=None):
         """ Get value
         """
@@ -64,8 +63,9 @@ class Body(BrowserView):
         """ Maximum depth
         """
         if self._maxdepth is None:
-            self._maxdepth = self.getValue('pdfMaxDepth',
-                                           default=self.getValue('maxdepth', self.theme(), default=0))
+            self._maxdepth = self.getValue(
+                'pdfMaxDepth',
+                default=self.getValue('maxdepth', self.theme(), default=0))
         return self._maxdepth
 
     @property
@@ -73,8 +73,9 @@ class Body(BrowserView):
         """ Maximum breadth
         """
         if self._maxbreadth is None:
-            self._maxbreadth = self.getValue('pdfMaxBreadth',
-                                             default=self.getValue('maxbreadth', self.theme(), default=0))
+            self._maxbreadth = self.getValue(
+                'pdfMaxBreadth',
+                default=self.getValue('maxbreadth', self.theme(), default=0))
         return self._maxbreadth
 
     @property
@@ -82,8 +83,9 @@ class Body(BrowserView):
         """ Maximum items
         """
         if self._maxitems is None:
-            self._maxitems = self.getValue('pdfMaxItems',
-                                           default=self.getValue('maxitems', self.theme(), default=0))
+            self._maxitems = self.getValue(
+                'pdfMaxItems',
+                default=self.getValue('maxitems', self.theme(), default=0))
         return self._maxitems
 
     @property
@@ -109,7 +111,6 @@ class Body(BrowserView):
         """
         pdf = self.context.restrictedTraverse("@@pdf.limit")
         return pdf()
-
 
     @property
     def pdfs(self):
@@ -154,7 +155,7 @@ class Body(BrowserView):
             if isinstance(body, unicode):
                 body = body.encode('utf-8')
             if (self.theme(self.context).id == theme.id and
-                        self.depth == self.maxdepth):
+                    self.depth == self.maxdepth):
                 if brain.getURL() == self.request.get('pdf_last_brain_url'):
                     if not self.request.get('pdflimit'):
                         self.request['pdflimit'] = "reached"
