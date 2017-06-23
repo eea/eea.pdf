@@ -3,6 +3,8 @@ Changelog
 
 8.1.dev0 - (unreleased)
 -----------------------
+* Bug fix: return None if the attribute is not found
+  [iulianpetchesi #86181]
 
 8.0 - (2017-05-22)
 ------------------
