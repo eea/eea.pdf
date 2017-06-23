@@ -137,7 +137,7 @@ class Download(Pdf):
             self._link = context.absolute_url() + '/action-download-pdf'
         else:
             fallback = None
-        wrapped_field = getattr(context, 'getWrappedField')
+        wrapped_field = getattr(context, 'getWrappedField', None)
         if wrapped_field:
             static = context.getWrappedField('pdfStatic')
             if static and getattr(static, 'getFilename', lambda x: '')(context):
