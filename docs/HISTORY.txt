@@ -1,8 +1,11 @@
 Changelog
 =========
 
-8.1.dev0 - (unreleased)
+8.2.dev0 - (unreleased)
 -----------------------
+
+8.1 - (2017-06-23)
+------------------
 * Bug fix: return None if the attribute is not found
   [iulianpetchesi #86181]
 
