@@ -24,6 +24,11 @@ class Support(BrowserView):
         if not checkPermission('eea.pdf.download', self.context):
             return False
 
+        # check for Zope2.View permission of context not just permission
+        # to download
+        if not checkPermission('zope2.View', self.context):
+            return False
+
         tool = queryUtility(IPDFTool)
         if not tool:
             return False

@@ -3,7 +3,7 @@ Changelog
 
 8.2.dev0 - (unreleased)
 -----------------------
-* Change: download.pdf now checks also zope2.View permission on context.
+* Change: can_download now checks also zope2.View permission on context.
   This avoids a situation where you cannot view the context but you can
   trigger a pdf download
   [ichim-david refs #86581]

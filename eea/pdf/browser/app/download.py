@@ -3,7 +3,6 @@
 import logging
 from zope import event
 
-from zope.security import checkPermission
 from zope.publisher.interfaces import NotFound
 from zope.component import queryMultiAdapter, queryUtility
 from zope.component.hooks import getSite
@@ -70,7 +69,7 @@ class Download(Pdf):
             title = title.decode('utf-8')
 
         return _(
-          u"Enter your email address where to send '${title}' PDF when ready",
+            u"Enter your email address where to send '${title}' PDF when ready",
             mapping={
                 'title': title
             }
@@ -124,7 +123,7 @@ class Download(Pdf):
                 mapping={
                     u"link": u"%s?direct=1" % self.link(),
                     u"period": self.period()
-            })
+                })
         return self._redirect()
 
     def download(self, email='', **kwargs):
@@ -219,11 +218,6 @@ class Download(Pdf):
         if not getattr(support, 'can_download', lambda: False)():
             raise NotFound(self.context, self.__name__, self.request)
 
-        # check for Zope2.View permission of context not just permission
-        # to download
-        if not checkPermission('zope2.View', self.context):
-            raise NotFound(self.context, self.__name__, self.request)
-
         # Don't download PDF asynchronously
         if not support.async():
             return super(Download, self).__call__(**kwargs)
@@ -244,14 +238,25 @@ class Download(Pdf):
 class DownloadStaticPdf(BrowserView):
     """ Download Static PDF
     """
+    
+    def __init__(self, context, request):
+        """ init """
+        self.request = request
+        self.context = context
 
     def __call__(self, *args, **kwargs):
         context = self.context
+
+        support = queryMultiAdapter((self.context, self.request),
+                                    name='pdf.support')
+
+        # Check for permission
+        if not getattr(support, 'can_download', lambda: False)():
+            raise NotFound(self.context, self.__name__, self.request)
         field = context.getWrappedField('pdfStatic')
         if field is None or not getattr(field, 'getFilename',
-            lambda x: '')(context):
+                                        lambda x: '')(context):
             raise NotFound(context, self.__name__, self.context.REQUEST)
-        filename = field.getFilename(context)
         request = self.context.REQUEST
         request.response.setHeader("Content-type", "application/pdf")
         request.response.setHeader("X-Robots-Tag", "noindex")
