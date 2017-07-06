@@ -3,6 +3,7 @@
 import logging
 from zope import event
 
+from zope.security import checkPermission
 from zope.publisher.interfaces import NotFound
 from zope.component import queryMultiAdapter, queryUtility
 from zope.component.hooks import getSite
@@ -216,6 +217,11 @@ class Download(Pdf):
 
         # Check for permission
         if not getattr(support, 'can_download', lambda: False)():
+            raise NotFound(self.context, self.__name__, self.request)
+
+        # check for Zope2.View permission of context not just permission
+        # to download
+        if not checkPermission('zope2.View', self.context):
             raise NotFound(self.context, self.__name__, self.request)
 
         # Don't download PDF asynchronously
