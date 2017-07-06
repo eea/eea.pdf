@@ -238,7 +238,7 @@ class Download(Pdf):
 class DownloadStaticPdf(BrowserView):
     """ Download Static PDF
     """
-    
+
     def __init__(self, context, request):
         """ init """
         self.request = request
