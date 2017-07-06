@@ -251,4 +251,9 @@ class DownloadStaticPdf(BrowserView):
         if field is None or not getattr(field, 'getFilename',
             lambda x: '')(context):
             raise NotFound(context, self.__name__, self.context.REQUEST)
-        return field.download(context)
+        filename = field.getFilename(context)
+        request = self.context.REQUEST
+        request.response.setHeader("Content-type", "application/pdf")
+        request.response.setHeader("X-Robots-Tag", "noindex")
+        data = field.getRaw(context).data
+        return data
