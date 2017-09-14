@@ -1,10 +1,8 @@
 =======
 EEA PDF
 =======
-.. image:: http://ci.eionet.europa.eu/job/eea.pdf-www/badge/icon
-  :target: http://ci.eionet.europa.eu/job/eea.pdf-www/lastBuild
-.. image:: http://ci.eionet.europa.eu/job/eea.pdf-plone4/badge/icon
-  :target: http://ci.eionet.europa.eu/job/eea.pdf-plone4/lastBuild
+.. image:: http://ci.eionet.europa.eu/job/eea/job/eea.pdf/job/master/badge/icon
+  :target: http://ci.eionet.europa.eu/job/eea/job/eea.pdf/job/master/display/redirect
 
 This package allows your users to download Plone content as PDF files. As admin
 you can define specific PDF themes per content-type.
