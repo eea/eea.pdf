@@ -19,7 +19,7 @@
 
         <dl class="cover-copyright-notice">
             <dt i18n:translate="copyright-notice-name">Copyright notice</dt>
-            <dd tal:define="rights context/rights" tal:condition="rights" i18n:translate="">Rights: <span i18n:name="rights" ital:content="rights"></span></dd>
+            <dd tal:define="rights context/rights" tal:condition="rights" i18n:translate="">Rights: <span i18n:name="rights" tal:content="rights"></span></dd>
             <dd i18n:translate="copyright-notice-eea">© European Environment Agency, <tal:year replace="view/year" i18n:name="copyright-notice-year">2013</tal:year></dd>
             <dd i18n:translate="copyright-notice-desc1">Reproduction is authorised, provided the source is acknowledged, save where otherwise stated.</dd>
             <br/>
@@ -32,7 +32,7 @@
                 current_date python:toLocalizedTime(DateTime(), long_format=1);">
 
             <dt i18n:translate="">Electronic publication notice</dt>
-            <dd i18n:translate="">This report has been generated automagically by the EEA Web content management system on <span class="discreet" i18n:name="date"><span tal:replace="python:current_date"></span>.</span></dd>
+            <dd i18n:translate="">This report has been generated automatically by the EEA Web content management system on <span class="discreet" i18n:name="date"><span tal:replace="python:current_date"></span>.</span></dd>
             <dd i18n:translate="">This report is available as a website at <a tal:define="here_url context/@@plone_context_state/object_url" tal:attributes="href here_url" tal:content="python:here_url" i18n:name="url">URL</a>. Go online to get more interactive facts and figures.</dd>
             <dd i18n:translate="">On the report web page you may download the electronic publication (EPUB) for easy reading on your preferred eBook reader.</dd>
             <dd i18n:translate="">Please consider the environment before printing.</dd>

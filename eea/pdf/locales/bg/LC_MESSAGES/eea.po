@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-10-20 13:38+0000\n"
+"POT-Creation-Date: 2017-09-18 15:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,89 +14,118 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../../pdf/browser/app/download.py:26
+#: ../../pdf/browser/app/download.py:31
 msgid "* The email is only used for the purpose of sending the PDF. We do not store it for any other use."
 msgstr "* В имейла се използва само за целите на изпращането на PDF. Ние не го съхранява за друга употреба."
 
-#: ../../pdf/content/theme.py:52
+#: ../../pdf/content/theme.py:63
 msgid "A page template to be used for PDF Back Cover. Leave empty to disable it."
 msgstr "Шаблонът страница, за да бъдат използвани за PDF задния капак. Оставете празно, за да го изключите."
 
-#: ../../pdf/content/theme.py:41
+#: ../../pdf/content/theme.py:52
 msgid "A page template to be used for PDF Body. Leave empty to disable it."
 msgstr "Шаблонът страница, за да бъдат използвани за PDF Body. Оставете празно, за да го изключите."
 
-#: ../../pdf/content/theme.py:18
+#: ../../pdf/content/theme.py:17
 msgid "A page template to be used for PDF Cover. Leave empty to disable it."
 msgstr "Шаблонът страница, за да бъдат използвани за PDF Cover. Оставете празно, за да го изключите."
 
-#: ../../pdf/content/theme.py:29
+#: ../../pdf/content/theme.py:40
 msgid "A page template to be used for PDF Disclaimer, the first page after PDF cover. Leave empty to disable it."
 msgstr "Шаблонът страница, за да бъдат използвани за PDF Disclaimer. Оставете празно, за да го изключите."
 
-#: ../../pdf/content/theme.py:74
+#: ../../pdf/content/theme.py:85
 msgid "A page template to be used for PDF Footer. Leave empty to disable it."
 msgstr "Шаблонът страница, за да бъдат използвани за PDF Footer. Оставете празно, за да го изключите."
 
-#: ../../pdf/content/theme.py:63
+#: ../../pdf/content/theme.py:74
 msgid "A page template to be used for PDF Header. Leave empty to disable it."
 msgstr "Шаблонът страница, за да бъдат използвани за PDF Header. Оставете празно, за да го изключите."
 
-#: ../../pdf/content/theme.py:148
+#: ../../pdf/content/theme.py:159
 msgid "Abort PDF export after specified number of seconds. Use zero to disable it."
 msgstr "Прекъсване PDF износ след определен брой секунди. Използвайте нула да го изключите."
 
-#: ../../pdf/content/theme.py:98
+#: ../../pdf/content/theme.py:109
 msgid "An XSL page template to be used for PDF Table of contents. Leave empty to disable it."
 msgstr "шаблон за XSL страница, за да бъдат използвани за PDF Съдържание. Оставете празно, за да го изключите."
 
-#: ../../pdf/browser/app/download.py:112
+#: ../../pdf/browser/app/download.py:117
 msgid "An email will be sent to you when the PDF is ready"
 msgstr "Един имейл ще бъде изпратено до вас, когато PDF е готов"
 
 #: ../../pdf/browser/zpt/theme.pt:15
 #: ../../pdf/browser/zpt/tool.pt:36
-#: ../../pdf/content/theme.py:158
+#: ../../pdf/content/theme.py:169
 msgid "Asynchronous"
 msgstr "Asynchronous"
 
-#: ../../pdf/content/theme.py:51
+#: ../../pdf/content/theme.py:62
 msgid "Back Cover"
 msgstr "Задна корица"
 
-#: ../../pdf/content/theme.py:40
+#: ../../pdf/content/theme.py:51
 msgid "Body"
 msgstr "тяло"
 
-#: ../../pdf/content/theme.py:17
+#: ../../pdf/content/theme.py:16
 msgid "Cover"
 msgstr "Покрийте"
 
-#: ../../pdf/subtypes/schema.py:44
+#: ../../pdf/content/theme.py:27
+msgid "Cover subtitle"
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:50
 msgid "Disable PDF export or override theme used to export this content as PDF."
 msgstr "Изключване на PDF износ или замяна тема използва за износ на това съдържание като PDF."
 
-#: ../../pdf/content/theme.py:28
+#: ../../pdf/content/theme.py:39
 msgid "Disclaimer"
 msgstr "Опровержение"
 
+#: ../../pdf/profiles.zcml:18
 #: ../../pdf/profiles/default/actions.xml
 msgid "Download as PDF"
 msgstr "Изтегляне като PDF"
 
-#: ../../pdf/content/theme.py:132
+#: ../../pdf/profiles.zcml:27
+msgid "Download as PDF sections and manuals from PloneHelpCenter"
+msgstr ""
+
+#: ../../pdf/profiles.zcml:35
+msgid "Download as PDF uninstall"
+msgstr ""
+
+#: ../../pdf/profiles.zcml:18
+msgid "EEA PDF"
+msgstr ""
+
+#: ../../pdf/profiles.zcml:35
+msgid "EEA PDF - uninstall"
+msgstr ""
+
+#: ../../pdf/profiles.zcml:27
+msgid "EEA PDF - with themes for PloneHelpCenter"
+msgstr ""
+
+#: ../../pdf/content/theme.py:28
+msgid "Enable display of subtitle within cover page. By default subtitle is created from content description truncated to first 70 characters"
+msgstr ""
+
+#: ../../pdf/content/theme.py:143
 msgid "Enable or disable javascript"
 msgstr "Включване или изключване на JavaScript"
 
-#: ../../pdf/content/theme.py:86
+#: ../../pdf/content/theme.py:97
 msgid "Enable static footer and header html pages. Footer and header templates are evaluated once and then served for every pdf page."
 msgstr "Активиране на статични долния и удар с глава на HTML страници. Footer и колекторни шаблони се оценяват веднъж и след това служили за всеки PDF страница."
 
-#: ../../pdf/content/theme.py:110
+#: ../../pdf/content/theme.py:121
 msgid "Enable table of contents links"
 msgstr "Активиране на маса на съдържание връзки"
 
-#: ../../pdf/browser/app/download.py:66
+#: ../../pdf/browser/app/download.py:71
 msgid "Enter your email address where to send '${title}' PDF when ready"
 msgstr "Въведете своя имейл адрес, на който да се изпрати '${title}' PDF, когато е готов"
 
@@ -108,23 +137,23 @@ msgstr "промиване"
 msgid "Flush all PDFs cache for this theme"
 msgstr "промиване всички PDF файлове кешират за тази тема"
 
-#: ../../pdf/content/theme.py:73
+#: ../../pdf/content/theme.py:84
 msgid "Footer"
 msgstr "Footer"
 
-#: ../../pdf/content/theme.py:159
+#: ../../pdf/content/theme.py:170
 msgid "Generate PDF asynchronously and send an email to the user when it's done."
 msgstr "Създаване на PDF асинхронно и изпращане на имейл до потребителя, когато това е направено."
 
-#: ../../pdf/content/theme.py:62
+#: ../../pdf/content/theme.py:73
 msgid "Header"
 msgstr "удар с глава"
 
-#: ../../pdf/browser/app/download.py:115
+#: ../../pdf/browser/app/download.py:120
 msgid "If you don't have access to your email address check <a href='${link}'>this link</a> in a few ${period}."
 msgstr "Ако нямате достъп до вашия имейл адрес проверка <a href='${link}'> тази връзка </a> в няколко ${period}."
 
-#: ../../pdf/content/theme.py:122
+#: ../../pdf/content/theme.py:133
 msgid "Images cover collection"
 msgstr "Снимки покриват колекция"
 
@@ -133,11 +162,11 @@ msgid "Invalidate latest generated PDF file"
 msgstr "Анулиране последна генерира PDF файл"
 
 #: ../../pdf/browser/zpt/tool.pt:38
-#: ../../pdf/content/theme.py:131
+#: ../../pdf/content/theme.py:142
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: ../../pdf/content/theme.py:139
+#: ../../pdf/content/theme.py:150
 msgid "JavaScript delay"
 msgstr "JavaScript закъснение"
 
@@ -150,39 +179,43 @@ msgstr "Javascript"
 msgid "Javascript delay"
 msgstr "Javacript закъснение"
 
-#: ../../pdf/subtypes/schema.py:134
+#: ../../pdf/subtypes/schema.py:155
 msgid "Main cover image that will show up on the pdf cover page"
 msgstr "Главна изображение на корицата, която ще се появи на корицата страницата на PDF"
 
-#: ../../pdf/content/theme.py:191
+#: ../../pdf/content/theme.py:202
 msgid "Maximum breadth"
 msgstr "Максимална широчина"
 
-#: ../../pdf/content/theme.py:192
-msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types."
-msgstr "Максимална ширина за включване на децата предмети при генериране на PDF за събиране или folderish съдържание типове."
+#: ../../pdf/content/theme.py:203
+msgid "Maximum breadth to include children items while generating PDF for collection or folderish content-types where object is collection or folderish."
+msgstr ""
 
-#: ../../pdf/subtypes/schema.py:108
-msgid "Maximum breadth to include children items while generating PDF. Leave it empty to use the portal global defined value."
-msgstr "Максимална ширина за включване на децата предмети при генериране PDF. Оставете я празна, за да използвате портал глобалната определена стойност."
+#: ../../pdf/subtypes/schema.py:127
+msgid "Maximum children items to include while generating PDF for collection or folderish content-types where object is collection or folderish. Leave it empty to use the portal global defined value."
+msgstr ""
 
-#: ../../pdf/content/theme.py:179
+#: ../../pdf/content/theme.py:190
 msgid "Maximum depth"
 msgstr "Максимална дълбочина"
 
-#: ../../pdf/content/theme.py:180
+#: ../../pdf/content/theme.py:191
 msgid "Maximum depth to recursively include children items while generating PDF for collection or folderish content-types."
 msgstr "Максимална дълбочина на рекурсивно включва детски позиции при генериране на PDF за събиране или folderish съдържание типове."
 
-#: ../../pdf/subtypes/schema.py:95
+#: ../../pdf/subtypes/schema.py:114
 msgid "Maximum depth to recursively include children items while generating PDF. Leave it empty to use the portal global defined value."
 msgstr "Максимална дълбочина на рекурсивно включва детски позиции при генериране PDF. Оставете я празна, за да използвате портал глобалната определена стойност."
 
-#: ../../pdf/content/theme.py:203
+#: ../../pdf/content/theme.py:215
 msgid "Maximum items"
 msgstr "Максимални елементи"
 
-#: ../../pdf/content/theme.py:169
+#: ../../pdf/themes/book/pdf.limit.pt:18
+msgid "NOTE: Some content has been excluded from this generated PDF"
+msgstr ""
+
+#: ../../pdf/content/theme.py:180
 msgid "Offset"
 msgstr "Изместване"
 
@@ -191,39 +224,47 @@ msgstr "Изместване"
 msgid "PDF"
 msgstr "PDF"
 
-#: ../../pdf/subtypes/schema.py:107
+#: ../../pdf/subtypes/schema.py:126
 msgid "PDF Maximum breadth"
 msgstr "PDF Максимална широчина"
 
-#: ../../pdf/subtypes/schema.py:94
+#: ../../pdf/subtypes/schema.py:113
 msgid "PDF Maximum depth"
 msgstr "PDF Максимална дълбочина"
 
-#: ../../pdf/subtypes/schema.py:120
+#: ../../pdf/subtypes/schema.py:141
 msgid "PDF Maximum items"
 msgstr "елементи"
 
-#: ../../pdf/subtypes/schema.py:43
+#: ../../pdf/subtypes/schema.py:49
 msgid "PDF Theme"
 msgstr "PDF тема"
 
-#: ../../pdf/subtypes/schema.py:133
+#: ../../pdf/subtypes/schema.py:154
 msgid "PDF cover main image"
 msgstr "PDF покритие основната картинка"
 
-#: ../../pdf/content/theme.py:170
+#: ../../pdf/subtypes/schema.py:101
+msgid "PDF static"
+msgstr ""
+
+#: ../../pdf/content/theme.py:181
 msgid "Page numbering offset within PDF Body."
 msgstr "номериране Page компенсират в рамките на PDF Body."
+
+#: ../../pdf/themes/book/pdf.limit.pt:20
+msgid "Please visit the online version in order to view more content or contact the author of this content."
+msgstr ""
 
 #: ../../pdf/browser/zpt/tool.pt:52
 msgid "Please wait..."
 msgstr "Моля Изчакай..."
 
-#: ../../pdf/content/theme.py:217
+#: ../../pdf/content/theme.py:229
 msgid "Portal types"
 msgstr "Portal видове"
 
-#: ../../pdf/content/theme.py:227
+#: ../../pdf/content/theme.py:239
 msgid "Preview"
 msgstr "предварителен преглед"
 
@@ -231,41 +272,45 @@ msgstr "предварителен преглед"
 msgid "Send"
 msgstr "изпращам"
 
-#: ../../pdf/content/theme.py:85
+#: ../../pdf/content/theme.py:96
 msgid "Static Footer and Header"
 msgstr "Статично Footer и Header"
 
-#: ../../pdf/content/theme.py:97
+#: ../../pdf/content/theme.py:108
 msgid "Table of contents"
 msgstr "Съдържание"
 
-#: ../../pdf/subtypes/schema.py:56
+#: ../../pdf/subtypes/schema.py:62
 msgid "Table of contents depth level"
 msgstr "Съдържание ниво дълбочина"
 
-#: ../../pdf/content/theme.py:109
+#: ../../pdf/content/theme.py:120
 msgid "Table of contents links"
 msgstr "Съдържание звена"
 
 #: ../../pdf/browser/zpt/theme.pt:24
 #: ../../pdf/browser/zpt/tool.pt:45
-#: ../../pdf/content/theme.py:147
+#: ../../pdf/content/theme.py:158
 msgid "Timeout"
 msgstr "Timeout"
 
-#: ../../pdf/content/theme.py:204
+#: ../../pdf/content/theme.py:216
 msgid "Total maximum children items to be included while generating PDF for collection or folderish content-types."
 msgstr "Общо максимални детски артикули да бъдат включени при генериране на PDF за събиране или folderish съдържание типове."
 
-#: ../../pdf/subtypes/schema.py:121
+#: ../../pdf/subtypes/schema.py:142
 msgid "Total maximum children items to be includedwhile generating PDF. Leave it empty to use the portal global defined value."
 msgstr "Общо максимални детски артикули да бъдат includedwhile генериране на PDF. Оставете я празна, за да използвате портал глобалната определена стойност."
 
-#: ../../pdf/content/theme.py:228
+#: ../../pdf/content/theme.py:240
 msgid "Upload a preview image for this theme"
 msgstr "Качване на изображение за визуализация за тази тема"
 
-#: ../../pdf/content/theme.py:218
+#: ../../pdf/subtypes/schema.py:102
+msgid "Upload custom pdf bypassing the dynamically generated pdf"
+msgstr ""
+
+#: ../../pdf/content/theme.py:230
 msgid "Use this PDF Theme for the following Portal-Types."
 msgstr "Използвайте този PDF Тема за следните Portal-Type."
 
@@ -274,25 +319,28 @@ msgstr "Използвайте този PDF Тема за следните Porta
 msgid "Used for:"
 msgstr "Използвани за:"
 
-#: ../../pdf/content/theme.py:140
+#: ../../pdf/content/theme.py:151
 msgid "Wait some seconds for javascript to finish"
 msgstr "Изчакайте няколко секунди, за JavaScript, за да продължи"
 
-#: ../../pdf/subtypes/schema.py:57
+#: ../../pdf/themes/book/pdf.limit.pt:19
+msgid "We reached the limit of number of items that can be included in the PDF."
+msgstr ""
+
+#: ../../pdf/subtypes/schema.py:63
 msgid "Which header tags should be taken into consideration for the table of contents."
 msgstr "Кои заглавни тагове трябва да бъдат взети под внимание за таблицата на съдържанието."
 
-#: ../../pdf/content/theme.py:123
+#: ../../pdf/content/theme.py:134
 msgid "if cover image not present use a random cover from the collection."
 msgstr "Ако капакът на изображението не присъства използване случаен покритие от колекцията."
 
-#: ../../pdf/browser/app/download.py:104
+#: ../../pdf/browser/app/download.py:109
 msgid "minutes"
 msgstr "минути"
 
-#: ../../pdf/browser/app/download.py:105
+#: ../../pdf/browser/app/download.py:110
 #: ../../pdf/browser/zpt/theme.pt:22
 #: ../../pdf/browser/zpt/tool.pt:43
 msgid "seconds"
 msgstr "секунди"
-
