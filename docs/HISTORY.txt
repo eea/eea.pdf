@@ -1,8 +1,8 @@
 Changelog
 =========
 
-8.5.dev0 - (unreleased)
------------------------
+8.5 - (2018-01-08)
+------------------
 * Change: updated pdf.print.css with changes from custom
   [ichim-david refs #90180]
 
