@@ -1,8 +1,13 @@
 Changelog
 =========
 
-8.4.dev0 - (unreleased)
------------------------
+8.5 - (2018-01-08)
+------------------
+* Change: updated pdf.print.css with changes from custom
+  [ichim-david refs #90180]
+
+8.4 - (2017-12-12)
+------------------
 * Change: Replace eeacms/zptlint with eeacms/plone-test:4 zptlint
   [avoinea refs #90415]
 

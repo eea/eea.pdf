@@ -34,12 +34,6 @@ body {
   font-size: 11pt;
 }
 
-.body-print .indicator-figure-plus img {
-    max-height: 670px;
-    width: inherit;
-    float: none;
-    margin-right: 0;
-}
 
 
 /* due to 4 pages restriction size soer pdf has font-size smaller */
@@ -89,6 +83,11 @@ table.invisible td, table.invisible th, table.plain td, table.plain th, table.li
 img {
   max-width: 100%;
   page-break-inside: avoid; /* #80861 avoid wkhtmltopdf segmentation fault for page-break-avoid rules */
+}
+
+
+table img {
+    page-break-inside: initial !important;
 }
 
 .documentFirstHeading {
@@ -420,6 +419,12 @@ http://stackoverflow.com/questions/9238868/how-do-i-avoid-a-page-break-immediate
 .nobreak.break{ page-break-before: always !important; }
 .pageBreak{ height: 1px; }
 
+div[id^="googlechart_table"] .googlechart,
+div[id^="googlechart_table"] .googlechart .google-visualization-table,
+div[id^="googlechart_table"] .googlechart .google-visualization-table div,
+div[id^="googlechart_table"] .googlechart .google-visualization-table table{
+  height: auto !important;
+}
 
 div[id^="googlechart_table"] .googlechart .google-visualization-table table{
   width: 100% !important;
@@ -439,6 +444,7 @@ div[id^="googlechart_table"] .googlechart .google-visualization-table table tr t
 }
 .cover-logo2 {
   margin-bottom: 2em;
+  page-break-inside: initial !important;
 }
 
 
