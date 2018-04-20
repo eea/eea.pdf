@@ -181,6 +181,7 @@ class Download(Pdf):
             context, converter,
             success_event=AsyncPDFExportSuccess,
             fail_event=AsyncPDFExportFail,
+            info=async.AsyncInfo(
             email=email,
             filepath=filepath,
             fileurl=fileurl,
@@ -189,7 +190,7 @@ class Download(Pdf):
             from_email=from_email,
             title=title,
             etype='pdf'
-        )
+        ))
 
         return self.finish(email=email)
 
