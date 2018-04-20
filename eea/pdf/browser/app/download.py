@@ -173,14 +173,7 @@ class Download(Pdf):
         self.request['ACTUAL_URL'] = self.context.absolute_url()
 
         # Async generate PDF
-        converter = self.make_pdf(dry_run=True)
-        worker = queryUtility(IAsyncService)
-        queue = worker.getQueues()['']
-        worker.queueJobInQueue(queue, ('pdf',),
-            async.run_async_job,
-            context, converter,
-            success_event=AsyncPDFExportSuccess,
-            fail_event=AsyncPDFExportFail,
+        wrapper = IContextWrapper(self.context)(
             email=email,
             filepath=filepath,
             fileurl=fileurl,
@@ -190,7 +183,15 @@ class Download(Pdf):
             title=title,
             etype='pdf'
         )
-
+        converter = self.make_pdf(dry_run=True)
+        worker = queryUtility(IAsyncService)
+        queue = worker.getQueues()['']
+        worker.queueJobInQueue(queue, ('pdf',),
+            async.run_async_job,
+            wrapper, converter,
+            success_event=AsyncPDFExportSuccess,
+            fail_event=AsyncPDFExportFail
+        )
         return self.finish(email=email)
 
     def post(self, **kwargs):
