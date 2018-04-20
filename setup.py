@@ -38,7 +38,7 @@ setup(name=NAME,
       install_requires=[
           'setuptools',
           'plone.app.async',
-          'eea.converter > 12.1',
+          'eea.converter > 10.7',
           'eea.downloads > 1.0',
       ],
       entry_points="""
