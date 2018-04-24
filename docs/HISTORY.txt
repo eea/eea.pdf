@@ -1,6 +1,9 @@
 Changelog
 =========
 
+8.7-dev0 - (unreleased)
+---------------------
+
 8.6 - (2018-04-24)
 -----------------------
 * Change: Make zc.async logs less verbose about PDF downloads
@@ -457,4 +460,3 @@ Changelog
 * Upgrade step: Within "Plone > Site setup > Add-ons" install "EEA PDF"
   [voineali refs #19761]
 * Initial release
-
