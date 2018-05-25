@@ -18,8 +18,8 @@ def cacheKey(method, self, *args, **kwargs):
 def _updateBackRefs(obj, evt):
     """ Update back-refs modification date
     """
-    getBRefs = getattr(obj, 'getBRefs', lambda: [])
-    for item in getBRefs():
+    getBRefs = getattr(obj, 'getBRefs', lambda r: [])
+    for item in getBRefs('relatesTo'):
         setModificationDate = getattr(
             item, 'setModificationDate', lambda modification_date: None)
         setModificationDate(DateTime())

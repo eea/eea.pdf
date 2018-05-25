@@ -1,6 +1,11 @@
 Changelog
 =========
 
+8.7 - (2018-05-25)
+-----------------------
+* Bug fix: Speed-up cache invalidation for backward-references
+  [avoinea refs #95020]
+
 8.6 - (2018-04-24)
 -----------------------
 * Change: Make zc.async logs less verbose about PDF downloads
@@ -457,4 +462,3 @@ Changelog
 * Upgrade step: Within "Plone > Site setup > Add-ons" install "EEA PDF"
   [voineali refs #19761]
 * Initial release
-
