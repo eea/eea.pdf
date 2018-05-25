@@ -1,7 +1,7 @@
 Changelog
 =========
 
-8.7-dev0 - (unreleased)
+8.7 - (2018-05-25)
 -----------------------
 * Bug fix: Speed-up cache invalidation for backward-references
   [avoinea refs #95020]
