@@ -405,9 +405,9 @@ Funding
 
 EEA_ - European Environment Agency (EU)
 
-.. _EEA: http://www.eea.europa.eu/
-.. _eea.converter: http://eea.github.com/docs/eea.converter
-.. _eea.downloads: http://eea.github.com/docs/eea.downloads
+.. _EEA: https://www.eea.europa.eu/
+.. _eea.converter: https://eea.github.io/docs/eea.converter
+.. _eea.downloads: https://eea.github.io/docs/eea.downloads
 .. _wkhtmltopdf: http://wkhtmltopdf.org
-.. _eea.cache: http://eea.github.com/docs/eea.cache
+.. _eea.cache: https://eea.github.io/docs/eea.cache
 .. _plone.app.async: https://github.com/plone/plone.app.async#ploneappasync
