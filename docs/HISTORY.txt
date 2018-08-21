@@ -5,6 +5,10 @@ Changelog
 ---------------------
 * Change: updated URLs pointing to eea.europa.eu with https://
   [alecghica refs #95849]
+* Change: Don't hide figure images when printing pdf
+  [szabozo0 refs #97516]
+  Upgrade step: delete or update from git
+  /portal_skins/custom_templates/pdf.print.css/
 
 8.7 - (2018-05-25)
 -----------------------
