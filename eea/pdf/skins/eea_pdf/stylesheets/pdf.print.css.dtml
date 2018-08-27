@@ -6,35 +6,31 @@
   src: local("TeX Gyre Pagella");
 }
 
-
-/* 83520 fixed height of googledashboard chart because of absolute position and inline dimensions */
-.googledashboard-chart > div > div > div {
-    position: relative !important;
-    left: inherit !important;
-    top: inherit !important;
-    width: inherit !important;
-    height: inherit !important;
+/* 83520 fixed height of googledashboard chart because of absolute position and inline dimensions */	
+.googledashboard-chart > div > div > div {	
+    position: relative !important;	
+    left: inherit !important;	
+    top: inherit !important;	
+    width: inherit !important;	
+    height: inherit !important;	
 }
 
-/* 83520 fixed height of fig1 chart at
-www/SITE/data-and-maps/indicators/land-take-2/assessment-1/
-*/
-.googledashboard-chart {
-  height: inherit !important;
+/* 83520 fixed height of fig1 chart at	
+www/SITE/data-and-maps/indicators/land-take-2/assessment-1/	
+*/	
+.googledashboard-chart {	
+  height: inherit !important;	
 }
 
 body {
   color: #333;
   margin: 0;
   padding: 0;
-
   font-family: "Palatino Linotype", serif !important;
   /*#font-family: Verdana, sans-serif !important;*/
   /*#font-family: "Open Sans", sans-serif !important;*/
   font-size: 11pt;
 }
-
-
 
 /* due to 4 pages restriction size soer pdf has font-size smaller */
 body.section-soer-2015 {
@@ -88,7 +84,7 @@ img {
 
 table img {
     page-break-inside: initial !important;
-}
+} 
 
 .documentFirstHeading {
   font-size: 18pt;
@@ -113,8 +109,8 @@ table img {
 .eea-annotator,
 .eea-location-listing,
 .fiche-thumbnail,
-.figure-plus-container-wide,
-.figure-plus-wide,
+.figure-plus-container-wide,	
+.figure-plus-wide,	
 .figure-image,
 .geographical-coverage,
 #portal-footer,
@@ -478,15 +474,14 @@ h4.figureHeading {
   display: none !important;
 }
 
-#googlechart_dashboard, .googlechart_dashboard, .googlechart_table {
-   clear: both;
+#googlechart_dashboard, .googlechart_dashboard, .googlechart_table {	
+   clear: both;	
 }
 
-.googlechart_view:after {
-    clear: both;
+.googlechart_view:after {	
+    clear: both;	
 }
 
-.googlechart_bottom_images {
-   clear: both;
-
-}
+.googlechart_bottom_images {	
+   clear: both;	
+ }
