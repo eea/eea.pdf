@@ -6,22 +6,6 @@
   src: local("TeX Gyre Pagella");
 }
 
-/* 83520 fixed height of googledashboard chart because of absolute position and inline dimensions */	
-.googledashboard-chart > div > div > div {	
-    position: relative !important;	
-    left: inherit !important;	
-    top: inherit !important;	
-    width: inherit !important;	
-    height: inherit !important;	
-}
-
-/* 83520 fixed height of fig1 chart at	
-www/SITE/data-and-maps/indicators/land-take-2/assessment-1/	
-*/	
-.googledashboard-chart {	
-  height: inherit !important;	
-}
-
 body {
   color: #333;
   margin: 0;
@@ -78,13 +62,13 @@ table.invisible td, table.invisible th, table.plain td, table.plain th, table.li
 
 img {
   max-width: 100%;
-  page-break-inside: avoid; /* #80861 avoid wkhtmltopdf segmentation fault for page-break-avoid rules */
+  page-break-inside: avoid;/* #80861 avoid wkhtmltopdf segmentation fault for page-break-avoid rules */
 }
 
 
 table img {
     page-break-inside: initial !important;
-} 
+}
 
 .documentFirstHeading {
   font-size: 18pt;
@@ -109,8 +93,8 @@ table img {
 .eea-annotator,
 .eea-location-listing,
 .fiche-thumbnail,
-.figure-plus-container-wide,	
-.figure-plus-wide,	
+.figure-plus-container-wide,
+.figure-plus-wide,
 .figure-image,
 .geographical-coverage,
 #portal-footer,
@@ -122,8 +106,7 @@ table img {
 #keywords-tags,
 .temporal-coverage,
 .excludeFromPDF,
-.archiveMessage,
-.formTabs
+.archiveMessage
 {
   display: none;
 }
@@ -473,15 +456,3 @@ h4.figureHeading {
 .showOnPrint + iframe {
   display: none !important;
 }
-
-#googlechart_dashboard, .googlechart_dashboard, .googlechart_table {	
-   clear: both;	
-}
-
-.googlechart_view:after {	
-    clear: both;	
-}
-
-.googlechart_bottom_images {	
-   clear: both;	
- }
