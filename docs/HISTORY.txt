@@ -3,6 +3,9 @@ Changelog
 
 8.9-dev0 - (unreleased)
 ---------------------
+* Bug fix: Fixed PDF generator with short title
+  [avoinea refs #97618]
+
 
 8.8 - (2018-08-21)
 ---------------------

@@ -22,6 +22,7 @@ body.section-soer-2015 {
 }
 .section-soer-2015 .cover-logo2 {
    margin-bottom: 0;
+   margin-left: 0;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -422,7 +423,8 @@ div[id^="googlechart_table"] .googlechart .google-visualization-table table tr t
   display: none;
 }
 .cover-logo2 {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  margin-left: 1em;
   page-break-inside: initial !important;
 }
 
