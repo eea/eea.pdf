@@ -1,6 +1,9 @@
 Changelog
 =========
 
+9.0-dev0 - (unreleased)
+---------------------
+
 8.9 - (2018-08-30)
 ---------------------
 * Bug fix: Fixed PDF generator with short title
