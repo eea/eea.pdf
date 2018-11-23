@@ -1,6 +1,9 @@
 Changelog
 =========
 
+9.1-dev0 - (unreleased)
+---------------------
+
 9.0 - (2018-11-23)
 ---------------------
 * Change: Group only the first paragraph with heading
