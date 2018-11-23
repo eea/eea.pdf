@@ -7,12 +7,12 @@ jQuery(document).ready(function($){
     var $content_core = $('#content-core');
     $content_core.find('h2').each(function(i, e){
         if (!$(e).closest('.cover').length){
-            $(e).nextUntil('h2').andSelf().wrapAll('<div class="nobreak">');
+            $(e).next().andSelf().wrapAll('<div class="nobreak">');
         }
     });
     $content_core.find('h3').each(function(i, e){
        if (!$(e).closest('.nobreak, .keyMessage').length){
-         $(e).nextUntil('h3').andSelf().wrapAll('<div class="nobreak">');
+         $(e).next().andSelf().wrapAll('<div class="nobreak">');
        }
     });
 
