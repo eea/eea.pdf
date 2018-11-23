@@ -3,6 +3,8 @@ Changelog
 
 9.0-dev0 - (unreleased)
 ---------------------
+* Bug fix: Fixed PDF header width for Fiches
+  [avoinea refs #100179]
 
 8.9 - (2018-08-30)
 ---------------------

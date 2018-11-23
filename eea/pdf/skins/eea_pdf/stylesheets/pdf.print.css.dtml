@@ -445,11 +445,6 @@ h4.figureHeading {
     word-wrap: break-word;
 }
 
-
-.section-airs .pdf-fiche-header {
-   width: 730px;
-}
-
 .showOnPrint {
    display: block !important;
 }
