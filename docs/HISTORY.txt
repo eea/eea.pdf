@@ -1,6 +1,11 @@
 Changelog
 =========
 
+9.1 - (2019-01-28)
+---------------------
+* Jenkins: Add sonarqube step
+  [avoinea refs #101552]
+
 9.0 - (2018-11-23)
 ---------------------
 * Change: Group only the first paragraph with heading
