@@ -3,6 +3,8 @@ Changelog
 
 9.2-dev0 - (unreleased)
 ---------------------
+* Change: Use sans serif fallback instead of Open Sans due to issues with font loading of wkhtmltopdf 
+  [ichim-david refs #107145]
 
 9.1 - (2019-01-28)
 ---------------------
