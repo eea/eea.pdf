@@ -29,7 +29,8 @@ h1, h2, h3, h4, h5, h6,
 .figure-title,
 .googlechart-notes,
 .documentFirstHeading, .cover-header {
-  font-family: "Open Sans", sans-serif !important;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  /* font-family: "Open Sans", sans-serif !important; #107145 disable Open Sans due to wkhtmltopdf issues to render it */
   letter-spacing: inherit;
 }
 

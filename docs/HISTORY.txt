@@ -1,6 +1,11 @@
 Changelog
 =========
 
+9.2 - (2019-07-04)
+---------------------
+* Change: Use sans serif fallback instead of Open Sans due to issues with font loading of wkhtmltopdf 
+  [ichim-david refs #107145]
+
 9.1 - (2019-01-28)
 ---------------------
 * Jenkins: Add sonarqube step
