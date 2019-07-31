@@ -3,10 +3,6 @@ Changelog
 
 9.3-dev0 - (unreleased)
 ---------------------
-* Change: removed assessment_view nobreak override, if no break
-  is added then pdf engine should avoid breaking inside the content
-  area
-  [ichim-david refs #106884]
 
 9.2 - (2019-07-04)
 ---------------------
