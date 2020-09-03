@@ -562,3 +562,34 @@ h4.figureHeading {
 #region-content .content-header-body {
   padding-top:0;
 }
+
+#region-content .assessment_view > div {
+  font-size:11pt;
+}
+
+#region-content .content-core p,
+#region-content .content-core li{
+  font-size:100%;
+}
+
+#region-content .content-core li {
+  padding-left:0;
+}
+
+#region-content .content-core ul {
+  margin-left:1.5em;
+  list-style: square inside url(//www.eea.europa.eu/bullet.gif);
+}
+
+.eea-accordion-panel .eea-accordion-title > .eea-icon-left:before{
+  display:none;
+}
+
+#region-content .eea-accordion-title, .eea-accordion-panel > h2 {
+  padding-left:0;
+}
+
+#region-content .eea-accordion-panel .pane {
+  padding-left:0;
+  padding-right:0;
+}
