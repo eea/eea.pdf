@@ -606,3 +606,15 @@ span.geotags-category {
 .mini-header-below-content.eea-accordion-panels.eea-accordion-panels-plain.eea-accordion-panels-bordered-primary.non-exclusive.collapsed-by-default.eea-accordion-initialized {
   border-top:0;
 }
+
+#region-content .eea-accordion-title {
+  border:none;
+}
+
+#region-content h4 {
+  font-size:1em;
+}
+
+#region-content p.notoc.eea-accordion-title.eea-icon-left-container {
+  font-size:1.5em;
+}
