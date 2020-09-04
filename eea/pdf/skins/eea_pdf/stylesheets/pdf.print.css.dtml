@@ -593,3 +593,16 @@ h4.figureHeading {
   padding-left:0;
   padding-right:0;
 }
+
+.geographical-coverage.eea-accordion-panel {
+  display:block;
+}
+
+span.geotags-category {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.mini-header-below-content.eea-accordion-panels.eea-accordion-panels-plain.eea-accordion-panels-bordered-primary.non-exclusive.collapsed-by-default.eea-accordion-initialized {
+  border-top:0;
+}
