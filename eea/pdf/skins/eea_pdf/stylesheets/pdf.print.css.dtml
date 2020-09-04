@@ -618,3 +618,7 @@ span.geotags-category {
 #region-content p.notoc.eea-accordion-title.eea-icon-left-container {
   font-size:1.5em;
 }
+
+.indicator-figure-image img {
+  width:100%
+}
