@@ -3,6 +3,8 @@ Changelog
 
 9.3-dev0 - (unreleased)
 ---------------------
+* Bugfix: Adjust pdf output of indicators
+  [szabozo0 refs #121188]
 
 9.2 - (2019-07-04)
 ---------------------
