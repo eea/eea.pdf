@@ -461,3 +461,164 @@ h4.figureHeading {
 .showOnPrint + iframe {
   display: none !important;
 }
+
+.mini-header #region-content{
+  padding-top:0;
+}
+
+#region-content .content-header{
+  display:none;
+}
+
+#region-content .fullwidth-img-container{
+  display:none;
+}
+
+#region-content .mini-header-below-content{
+  display:block;
+}
+
+#region-content .content-core-wrapper{
+  margin-top:0;
+}
+
+#region-content .cover-title{
+  margin:42pt 42pt 0;
+}
+
+.template-view #region-content .content-header{
+  display:block;
+  padding-left:0;
+  padding-right:0;
+  color:black !important;
+  margin-top:0;
+  padding-top:0;
+}
+
+.template-view #region-content .content-header .mini-portal-type{
+  display:none;
+}
+
+.template-view #region-content .content-core-wrapper{
+  margin-top:3.75em;
+}
+
+#region-content .indicator-figure-sources {
+  background-color:white;
+  padding:0;
+}
+
+#region-content .documentFirstHeading {
+  font-weight:bold;
+  font-size:18pt;
+  letter-spacing:normal;
+  margin-top: 0.67em;
+  line-height: 1.38;
+  margin-bottom: 0.67em;
+}
+
+#region-content .documentDescription {
+  font-size:12pt;
+  line-height: 1.5;
+}
+
+#region-content .documentDescription p{
+  font-size:12pt;
+  line-height: 1.5;
+}
+
+#region-content .assessment_view .figure-title{
+  font-size:1.6em !important;
+}
+
+#region-content .indicator-figure-plus-container {
+  font-size:11pt;
+}
+
+#region-content .assessment_view .indicator-figure-plus {
+  font-size:0.8em;
+  padding-left:0;
+  padding-right:0;
+}
+
+#region-content .widescreen-container {
+  padding-left:0;
+  padding-right:0;
+}
+
+#region-content .embedded-dashboard {
+  padding-left:0;
+  padding-right:0;
+}
+
+.fullwidth-img-bg {
+  display:none;
+}
+
+#region-content .content-header:before {
+  background-color:white;
+}
+
+#region-content .content-header-body {
+  padding-top:0;
+}
+
+#region-content .assessment_view > div {
+  font-size:11pt;
+}
+
+#region-content .content-core p,
+#region-content .content-core li{
+  font-size:100%;
+}
+
+#region-content .content-core li {
+  padding-left:0;
+}
+
+#region-content .content-core ul {
+  margin-left:1.5em;
+  list-style: square inside url(//www.eea.europa.eu/bullet.gif);
+}
+
+.eea-accordion-panel .eea-accordion-title > .eea-icon-left:before{
+  display:none;
+}
+
+#region-content .eea-accordion-title, .eea-accordion-panel > h2 {
+  padding-left:0;
+}
+
+#region-content .eea-accordion-panel .pane {
+  padding-left:0;
+  padding-right:0;
+}
+
+.geographical-coverage.eea-accordion-panel {
+  display:block;
+}
+
+span.geotags-category {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.mini-header-below-content.eea-accordion-panels.eea-accordion-panels-plain.eea-accordion-panels-bordered-primary.non-exclusive.collapsed-by-default.eea-accordion-initialized {
+  border-top:0;
+}
+
+#region-content .eea-accordion-title {
+  border:none;
+}
+
+#region-content h4 {
+  font-size:1em;
+}
+
+#region-content p.notoc.eea-accordion-title.eea-icon-left-container {
+  font-size:1.5em;
+}
+
+.indicator-figure-image img {
+  width:100%
+}
