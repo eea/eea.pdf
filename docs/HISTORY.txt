@@ -2,22 +2,22 @@ Changelog
 =========
 
 9.3-dev0 - (unreleased)
----------------------
+--------------------------
 * Bugfix: Adjust pdf output of indicators
   [szabozo0 refs #121188]
 
 9.2 - (2019-07-04)
----------------------
+--------------------------
 * Change: Use sans serif fallback instead of Open Sans due to issues with font loading of wkhtmltopdf 
   [ichim-david refs #107145]
 
 9.1 - (2019-01-28)
----------------------
+--------------------------
 * Jenkins: Add sonarqube step
   [avoinea refs #101552]
 
 9.0 - (2018-11-23)
----------------------
+--------------------------
 * Change: Group only the first paragraph with heading
   h2 and h3 within "nobreak" container to avoid to many
   white-space blocks in generated PDF files.
@@ -26,13 +26,13 @@ Changelog
   [avoinea refs #100179]
 
 8.9 - (2018-08-30)
----------------------
+--------------------------
 * Bug fix: Fixed PDF generator with short title
   [avoinea refs #97618]
 
 
 8.8 - (2018-08-21)
----------------------
+--------------------------
 * Change: updated URLs pointing to eea.europa.eu with https://
   [alecghica refs #95849]
 
