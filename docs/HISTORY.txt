@@ -1,7 +1,7 @@
 Changelog
 =========
 
-9.3-dev0 - (unreleased)
+9.3 - (2020-09-18)
 --------------------------
 * Bugfix: Adjust pdf output of indicators
   [szabozo0 refs #121188]
