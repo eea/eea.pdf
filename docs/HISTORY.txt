@@ -1,6 +1,12 @@
 Changelog
 =========
 
+9.4 - (2021-05-11)
+---------------------------
+* Bugfix: use filename from the pdf uploaded in pdf static field otherwise
+  default to download.pdf
+  [ichim-david refs #133890]
+
 9.3 - (2020-09-18)
 --------------------------
 * Bugfix: Adjust pdf output of indicators
