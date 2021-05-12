@@ -1,6 +1,9 @@
 Changelog
 =========
 
+9.5-dev0 - (unreleased)
+---------------------------
+
 9.4 - (2021-05-11)
 ---------------------------
 * Bugfix: use filename from the pdf uploaded in pdf static field otherwise
