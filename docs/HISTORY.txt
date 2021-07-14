@@ -1,6 +1,11 @@
 Changelog
 =========
 
+9.5 - (2021-07-14)
+---------------------------
+* Bugfix: un-hide entire content-header within print
+  [ichim-david refs #136489]
+
 9.4 - (2021-05-11)
 ---------------------------
 * Bugfix: use filename from the pdf uploaded in pdf static field otherwise

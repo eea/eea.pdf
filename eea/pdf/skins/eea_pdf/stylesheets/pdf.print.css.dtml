@@ -466,10 +466,6 @@ h4.figureHeading {
   padding-top:0;
 }
 
-#region-content .content-header{
-  display:none;
-}
-
 #region-content .fullwidth-img-container{
   display:none;
 }
@@ -486,7 +482,7 @@ h4.figureHeading {
   margin:42pt 42pt 0;
 }
 
-.template-view #region-content .content-header{
+.mini-header .content-header{
   display:block;
   padding-left:0;
   padding-right:0;
@@ -495,7 +491,7 @@ h4.figureHeading {
   padding-top:0;
 }
 
-.template-view #region-content .content-header .mini-portal-type{
+.content-header .mini-portal-type {
   display:none;
 }
 
