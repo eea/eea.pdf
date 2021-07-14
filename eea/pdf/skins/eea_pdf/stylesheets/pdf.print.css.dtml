@@ -482,7 +482,7 @@ h4.figureHeading {
   margin:42pt 42pt 0;
 }
 
-.template-view #region-content .content-header{
+.mini-header .content-header{
   display:block;
   padding-left:0;
   padding-right:0;
